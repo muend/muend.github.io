@@ -1,0 +1,664 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Batı Antalya Tarımsal Kalkınma Rehberi</title>
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Inter Font Family -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    
+    <style>
+        /* Ana stil ayarları */
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #f9fafb; /* Açık gri arka plan */
+        }
+        
+        /* Özel yazdırma stilleri */
+        @media print {
+            /* Yazdırılmayacak elementleri gizle */
+            .no-print {
+                display: none !important;
+            }
+            
+            /* Yazdırma için ana içerik alanını ayarla */
+            #print-content {
+                box-shadow: none !important;
+                border: none !important;
+                padding: 0 !important;
+                margin: 0 !important;
+                width: 100% !important; /* Tam genişlik kullan */
+                max-width: 100% !important;
+            }
+
+            /* Tüm sayfa kenar boşluklarını sıfırla */
+            @page {
+                margin: 1cm; /* Yazdırma kenar boşluğu */
+                size: A4; /* Kağıt boyutunu A4 olarak ayarla */
+            }
+            
+            body {
+                font-family: Arial, sans-serif; /* Daha standart bir font */
+                background-color: #ffffff;
+                color: #000000;
+                font-size: 10pt; /* Genel font boyutunu küçült */
+            }
+            
+            /* Başlık ve tablo stillerini basitleştir */
+            #bolgeTitle {
+                font-size: 14pt; /* Başlık boyutunu ayarla */
+                font-weight: bold;
+                color: #000;
+                text-align: center;
+                margin-bottom: 15px; /* Boşluğu azalt */
+            }
+            
+            h3 {
+                font-size: 12pt; /* Alt başlık boyutunu ayarla */
+                border-bottom: 1px solid #000; /* Çizgiyi incelt */
+                padding-bottom: 3px;
+                margin-top: 15px; /* Boşluğu azalt */
+                color: #000;
+            }
+            
+            table {
+                width: 100%;
+                border-collapse: collapse;
+                margin-top: 8px; /* Boşluğu azalt */
+                table-layout: fixed; /* Sabit tablo düzeni */
+                word-wrap: break-word; /* Uzun kelimeleri kır */
+            }
+            
+            th, td {
+                border: 1px solid #000;
+                padding: 5px; /* Dolguyu azalt */
+                text-align: left;
+                font-size: 9pt; /* Tablo font boyutunu küçült */
+                vertical-align: top; /* İçeriği üste hizala */
+            }
+            
+            th {
+                background-color: #eee;
+            }
+
+            /* Sütun genişliklerini ayarla (örnek) */
+             table thead tr th:nth-child(1) { width: 25%; } /* Ürün */
+             table thead tr th:nth-child(2) { width: 15%; } /* Verim */
+             table thead tr th:nth-child(3) { width: 15%; } /* Kârlılık */
+             table thead tr th:nth-child(4) { width: 45%; } /* Not */
+
+
+            /* Renkli etiketleri yazdırma için ayarla */
+            .print-badge {
+                background-color: transparent !important;
+                color: #000 !important;
+                border: 1px solid #999; /* Daha açık border */
+                padding: 1px 3px; /* Dolguyu azalt */
+                border-radius: 3px;
+                font-weight: normal; /* Normal font ağırlığı */
+                font-size: 8pt; /* Etiket font boyutunu küçült */
+                display: inline-block; /* Satır içinde kalmasını sağla */
+                white-space: nowrap; /* Tek satırda göster */
+            }
+
+            #longTermRecommendation, #market-gap-card {
+                background-color: #f5f5f5 !important; /* Açık gri arka plan */
+                border: 1px solid #ccc !important;
+                color: #000 !important;
+                padding: 8px; /* Dolguyu azalt */
+                font-size: 9pt; /* Kart font boyutunu küçült */
+                margin-bottom: 15px; /* Boşluk ekle */
+            }
+             #longTermRecommendation p:first-child, #market-gap-card h3 {
+                 font-weight: bold;
+                 font-size: 10pt;
+                 margin-bottom: 5px;
+             }
+        }
+    </style>
+</head>
+<body class="bg-gray-50 text-gray-800">
+
+    <div class="max-w-5xl mx-auto p-4 sm:p-8">
+        
+        <!-- BAŞLIK -->
+        <header class="flex items-center justify-between mb-8 no-print">
+            <div class="flex items-center space-x-3">
+                <!-- Basit bir logo/ikon -->
+                                 <svg class="w-10 h-10 text-green-700" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor">
+                    <path stroke-linecap="round" stroke-linejoin="round" d="M12 18v-5.25m0 0a6.01 6.01 0 0 0 1.5-.189m-1.5.189a6.01 6.01 0 0 1-1.5-.189m3.75 7.478a12.06 12.06 0 0 1-4.5 0m3.75 0a12.06 12.06 0 0 0 4.5 0m-8.25 0a12.06 12.06 0 0 0-4.5 0m12.75 0a12.06 12.06 0 0 1-4.5 0M4.135 10.61a3.75 3.75 0 0 1 5.74 0m8.25 0a3.75 3.75 0 0 0 5.74 0m-11.48.04a.75.75 0 0 0-1.06 0m13.6 0a.75.75 0 0 1-1.06 0m-5.25 0a.75.75 0 0 0-1.06 0m3.18-5.93a3.75 3.75 0 0 0-5.74 0" />
+                </svg>
+                <h1 class="text-2xl sm:text-3xl font-bold text-green-800">
+                    Batı Antalya Tarım Rehberi
+                </h1>
+            </div>
+        </header>
+
+        <!-- GİRİŞ KARTI (Bölge Seçimi) -->
+        <div id="input-card" class="bg-white p-6 rounded-lg shadow-lg mb-6 no-print">
+            <h2 class="text-xl font-semibold text-gray-700 mb-4">Bölgenizi Seçin</h2>
+            <p class="text-sm text-gray-600 mb-5">
+                Konumunuza (İlçe ve Mahalle) göre bu sezon en yüksek verim ve kar getirecek topraklı tarım ürünlerini ve uzun vadeli yatırım tavsiyelerini görmek için analiz yapın. (Bu prototip, sağlanan raporlardaki bilgilere dayalı kavramsal veriler kullanmaktadır.)
+            </p>
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-4 items-end">
+                <!-- İlçe Seçimi -->
+                <div>
+                    <label for="ilceSelect" class="block text-sm font-medium text-gray-700 mb-1">İlçe</label>
+                    <select id="ilceSelect" class="w-full p-3 border border-gray-300 rounded-md shadow-sm focus:ring-green-500 focus:border-green-500">
+                        <option value="">Lütfen ilçe seçin...</option>
+                    </select>
+                </div>
+                <!-- Mahalle Seçimi -->
+                <div>
+                    <label for="mahalleSelect" class="block text-sm font-medium text-gray-700 mb-1">Mahalle / Alt Bölge</label>
+                    <select id="mahalleSelect" class="w-full p-3 border border-gray-300 rounded-md shadow-sm focus:ring-green-500 focus:border-green-500" disabled>
+                        <option value="">Önce ilçe seçin...</option>
+                    </select>
+                </div>
+                <!-- Hesapla Butonu -->
+                <div>
+                    <button id="hesaplaButton" class="w-full bg-green-600 text-white p-3 rounded-md font-semibold shadow-md hover:bg-green-700 transition duration-200 focus:outline-none focus:ring-2 focus:ring-green-500 focus:ring-offset-2" disabled>
+                        Analiz Yap
+                    </button>
+                </div>
+            </div>
+            <div id="loadingIndicator" class="hidden text-center mt-4">
+                <p class="text-green-600 font-medium">Veriler hesaplanıyor...</p>
+            </div>
+        </div>
+
+        <!-- SONUÇ ALANI (Başlangıçta Gizli) -->
+        <div id="resultsArea" class="hidden">
+            
+            <!-- YAZDIRMA BUTONU (Sadece Ekranda Görünür) -->
+            <div class="w-full text-right mb-4 no-print">
+                <button id="printButton" class="bg-gray-700 text-white px-5 py-2 rounded-md font-medium hover:bg-gray-800 transition duration-200 flex items-center ml-auto">
+                                         <svg class="w-5 h-5 mr-2" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" d="M6.72 13.829c-.24.03-.48.062-.72.096m.72-.096a42.415 42.415 0 0 1 10.56 0m-10.56 0L6 13.829m0 0c-.24.03-.48.062-.72.096m11.28 0c-.24.03-.48.062-.72.096m.72-.096A42.415 42.415 0 0 0 18 13.829m0 0c.24.03.48.062.72.096m-11.28 0c.24.03.48.062.72.096" />
+                        <path stroke-linecap="round" stroke-linejoin="round" d="M16.5 12.094a42.58 42.58 0 0 1-9 0M16.5 12.094L16.5 12m0 0 0 0m-9 0L7.5 12m0 0 0 0M3 10.5a1.5 1.5 0 0 1 1.5-1.5h15a1.5 1.5 0 0 1 1.5 1.5v3a1.5 1.5 0 0 1-1.5 1.5h-15a1.5 1.5 0 0 1-1.5-1.5v-3Z" />
+                        <path stroke-linecap="round" stroke-linejoin="round" d="M20.25 12a.75.75 0 1 1-1.5 0 .75.75 0 0 1 1.5 0Z" />
+                        <path stroke-linecap="round" stroke-linejoin="round" d="M3 13.5v.75a1.5 1.5 0 0 0 1.5 1.5h15a1.5 1.5 0 0 0 1.5-1.5v-.75m-18 0v.75a1.5 1.5 0 0 0 1.5 1.5h15a1.5 1.5 0 0 0 1.5-1.5v-.75" />
+                        <path stroke-linecap="round" stroke-linejoin="round" d="m15 12-3-3m0 0-3 3m3-3v12" />
+                    </svg>
+                    Muhtarlık Panosu için Yazdır
+                </button>
+            </div>
+
+            <!-- YAZDIRILABİLİR İÇERİK ALANI -->
+            <div id="print-content" class="bg-white p-6 sm:p-8 rounded-lg shadow-lg">
+                <h2 id="bolgeTitle" class="text-2xl font-bold text-gray-800 mb-6 text-center sm:text-left">
+                    Bölge Analizi
+                </h2>
+
+                <!-- 1. KART: KISA VADELİ ÜRÜN TAVSİYELERİ -->
+                <div class="mb-8">
+                    <h3 class="text-lg font-semibold text-green-800 border-b-2 border-green-200 pb-2 mb-4">
+                        Bu Sezon için En Uygun Ürünler (Topraklı Tarım)
+                    </h3>
+                    <div class="overflow-x-auto">
+                        <table class="min-w-full divide-y divide-gray-200">
+                            <thead class="bg-gray-50">
+                                <tr>
+                                    <th class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Ürün</th>
+                                    <th class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Tahmini Verim</th>
+                                    <th class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Tahmini Kârlılık</th>
+                                    <th class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Sistem Notu / Gerekçe</th>
+                                </tr>
+                            </thead>
+                            <tbody id="cropsTableBody" class="bg-white divide-y divide-gray-200">
+                                <!-- JS ile doldurulacak -->
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+
+                <!-- 2. KART: UZUN VADELİ TAVSİYE -->
+                <div class="mb-8">
+                    <h3 class="text-lg font-semibold text-purple-800 border-b-2 border-purple-200 pb-2 mb-4">
+                        Uzun Vadeli Yatırım Tavsiyesi (Ağaç/Fidan)
+                    </h3>
+                    <div id="longTermRecommendation" class="bg-purple-50 p-5 rounded-md border-l-4 border-purple-400">
+                        <!-- JS ile doldurulacak -->
+                    </div>
+                </div>
+
+                <!-- 3. KART: PAZAR ANALİZİ (KAVRAMSAL) -->
+                <div id="market-gap-card" class="bg-blue-50 border-l-4 border-blue-400 p-5 rounded-md">
+                    <h3 class="text-lg font-semibold text-blue-800 mb-2">
+                        Gelecek Faz: Pazar Analizi ve Fırsatlar (Kavramsal)
+                    </h3>
+                    <p class="text-sm text-blue-700">
+                        Bu bölüm, sistemin gelecekteki aşamalarında gerçek pazar verileriyle çalışacaktır.
+                        Şu anda, bölgedeki potansiyel fırsatlara dayalı kavramsal bir öneri sunulmaktadır.
+                    </p>
+                    <p id="marketGapText" class="text-md text-blue-900 font-semibold mt-4">
+                        <!-- JS ile doldurulacak -->
+                    </p>
+                </div>
+
+            </div>
+        </div>
+
+    </div>
+
+    <script>
+        // --- SİSTEMİN KALBİ: KAVRAMSAL VERİ TABANI (RAPORLARA GÖRE GÜNCELLENDİ) ---
+        // Bu veriler, normalde sunucudan (iklim, toprak, piyasa veritabanları vb.)
+        // karmaşık hesaplamalarla gelir. Burada, sağlanan raporlardaki (Ekonomi, Çevre, Arazi Kullanımı vb.)
+        // bilgilere dayanarak, konsepti daha gerçekçi göstermek için "mock data" güncellenmiştir.
+        // Kısa vadeli ürünler topraklı tarıma, uzun vadeliler ağaç/fidana odaklıdır.
+        
+        // Veri oluşturmak için yardımcı fonksiyon (Tekrarı önlemek için)
+        function createMockEntry(crops, longTerm, marketGap) {
+            return {
+                topCrops: crops,
+                longTermCrop: longTerm,
+                marketGap: marketGap
+            };
+        }
+
+        // Genel Ürün Setleri (Kısa Vade)
+        const seraDomatesBiberSalatalik = [
+            { name: "Domates (Sera)", yield: "Yüksek", profit: "Yüksek", note: "Bölgeniz sera domatesi için ideal koşullara sahip (Alüvyal Toprak/Örtü altı tarım yaygınlığı)." },
+            { name: "Biber (Sera - Çeşitli)", yield: "Yüksek", profit: "Yüksek", note: "Pazar talebi stabil. Sivri, Çarliston veya Kapya biber tercih edilebilir." },
+            { name: "Salatalık (Sera)", yield: "Yüksek", profit: "Orta", note: "Hızlı döngü, pazar fiyatı değişken. Sulama ve gübreleme önemli." }
+        ];
+        
+        const seraPatlicanKapyaKavun = [
+            { name: "Patlıcan (Sera/Örtü altı)", yield: "Yüksek", profit: "Yüksek", note: "Bölgeniz bu ürün için çok elverişli. Hastalıklara dikkat." },
+            { name: "Kapya Biber (Sera)", yield: "Yüksek", profit: "Çok Yüksek", note: "Pazar değeri yüksek, ihracata uygun. Kaliteli fide seçimi önemli." },
+            { name: "Kavun (Sera altı)", yield: "Orta", profit: "Orta", note: "Erkenci üretimde avantajlı. Toprak hazırlığı ve sulama kritik." }
+        ];
+
+        const acikTarlaMarulAlternatif = [
+            { name: "Marul (Açık tarla/Örtü altı)", yield: "Orta", profit: "Düşük-Orta", note: "Sezonda ikinci ürün veya otellere taze tedarik için uygun." },
+            { name: "Fasulye (Sırık/Yer)", yield: "Orta", profit: "Orta", note: "Toprak isteği az, pazar talebi mevcut. Sulama gerektirir."},
+            { name: "Kabak (Sakız)", yield: "Yüksek", profit: "Orta", note: "Verimli, hızlı büyür. Pazar fiyatı dalgalı olabilir." }
+        ];
+         const yaylaUrunleri = [
+            { name: "Domates (Yayla)", yield: "Orta", profit: "Yüksek", note: "Geç sezon avantajı, lezzet profili yüksek. Don riskine dikkat." },
+            { name: "Fasulye (Yayla)", yield: "Yüksek", profit: "Orta", note: "Serin iklimi sever. Kaliteli tohum kullanılmalı." },
+            { name: "Elma/Armut (Bahçe - Genç Fidan)", yield: "Düşük (İlk Yıllar)", profit: "Orta-Yüksek (Uzun Vade)", note: "Yayla koşullarına uygun çeşitler seçilmeli." }
+        ];
+
+
+        // Genel Tavsiyeler (Uzun Vade)
+        const avokado = { name: "Avokado", note: "Yeni yatırım, don riskine karşı koruma gerektirir (özellikle Kaş, Kemer, Finike kıyıları). Yüksek kârlılık potansiyeli." };
+        const zeytin = { name: "Zeytin (Yağlık/Sofralık)", note: "Geleneksel ürün, kaliteli yağ potansiyeli. Az bakım gerektirir, kuraklığa dayanıklı (Kaş, Kemer yamaçları)." };
+        const nar = { name: "Nar", note: "Uzun vadeli yatırım. Sulama altyapısı kritik. Pazar talebi mevcut (Kumluca, Finike, Kemer)." };
+        const badem = { name: "Badem", note: "Yamaç araziler için uygun. Su ihtiyacı az (Kaş, Demre, Finike iç kesimleri)." };
+        const finikePortakal = { name: "Portakal (Finike - Coğrafi İşaretli)", note: "Coğrafi işaretli ürün. Marka değeri çok yüksek. Sadece Finike ve çevresi için önerilir." };
+        const digerNarenciye = { name: "Diğer Narenciye (Limon, Greyfurt)", note: "Portakala alternatif olarak veya karışık bahçelerde düşünülebilir (Finike, Kumluca, Kemer)." };
+        const keciboynuzu = { name: "Keçiboynuzu", note: "Az bakım gerektiren, ek gelir kalemi. Kurak ve taşlık arazilere uygun." };
+        const ceviz = { name: "Ceviz", note: "Yayla ve iç kesimler için uygun. Uzun vadeli, değerli bir yatırım." };
+
+
+        const mockData = {
+            "Demre": {
+                // Raporlar Demre'yi biber üretim merkezi olarak vurguluyor. Sera domatesi ve kavun da önemli. Alüvyal topraklar verimli.
+                "Alakent": createMockEntry(seraDomatesBiberSalatalik, avokado, "Organik/İyi Tarım Uygulamalı Sebze"),
+                "Belören": createMockEntry(seraPatlicanKapyaKavun, badem, "Tıbbi Aromatik Bitkiler (Örn: Adaçayı)"),
+                "Beymelek": createMockEntry(
+                    [
+                        { name: "Biber (Sivri/Çarliston - Sera)", yield: "Çok Yüksek", profit: "Çok Yüksek", note: "Bölgeniz Türkiye'nin biber üretim merkezi. Toprak ve iklim çok uygun." },
+                        { name: "Domates (Sera)", yield: "Yüksek", profit: "Yüksek", note: "Yüksek verim potansiyeli. Kaliteli fide ve bakım önemli." },
+                        { name: "Kavun (Sera altı)", yield: "Orta", profit: "Orta", note: "Erkenci üretimde avantajlı. Sulama ve gübrelemeye dikkat." }
+                    ], 
+                    avokado, 
+                    "Özel Cins (Gurme) Domates/Biber"
+                ),
+                "Büyükkum": createMockEntry(seraDomatesBiberSalatalik, zeytin, "Enginar (Alternatif Ürün)"),
+                "Çağman": createMockEntry(acikTarlaMarulAlternatif, badem, "Kekik (Tıbbi Aromatik)"),
+                "Çevreli": createMockEntry(seraDomatesBiberSalatalik, nar, "Sera Dışı Biber (İkinci Ürün)"),
+                "Davazlar": createMockEntry(acikTarlaMarulAlternatif, badem, "Organik Bakliyat (Nohut/Mercimek)"),
+                "Gökyazı": createMockEntry(seraDomatesBiberSalatalik, zeytin, "Avokado (Fidan Denemesi)"),
+                "Gürses": createMockEntry(seraPatlicanKapyaKavun, nar, "Taze Fasulye (Sera/Açık)"),
+                "Kaleüçağız": createMockEntry(acikTarlaMarulAlternatif, zeytin, "Butik Zeytinyağı (Turizm Odaklı)"), // Turizm etkisi
+                "Kapaklı": createMockEntry(acikTarlaMarulAlternatif, badem, "Adaçayı (Tıbbi Aromatik)"),
+                "Karabucak": createMockEntry(seraDomatesBiberSalatalik, avokado, "Muz (Sera - Deneysel)"),
+                "Kayaaltı": createMockEntry(acikTarlaMarulAlternatif, badem, "Kekik (Tıbbi Aromatik)"),
+                "Köşkerler": createMockEntry(seraDomatesBiberSalatalik, nar, "Erkenci Domates (Pazar Avantajı)"),
+                "Küçükkum": createMockEntry(seraDomatesBiberSalatalik, avokado, "Çilek (Örtü altı/Açık)"),
+                "Yavu": createMockEntry(acikTarlaMarulAlternatif, zeytin, "Keçiboynuzu (Ek Gelir)"),
+                "Yaylakaya": createMockEntry(acikTarlaMarulAlternatif, badem, "Lavanta (Kurak Arazi)")
+            },
+            "Kaş": {
+                 // Kaş çok çeşitli: Kıyıda seracılık (Kınık, Ova), içlerde zeytin, badem, üzüm, yaylada elma/armut.
+                "Ağullu": createMockEntry(acikTarlaMarulAlternatif, zeytin, "Organik Zeytinyağı"),
+                "Ahatlı": createMockEntry(acikTarlaMarulAlternatif, badem, "Tıbbi Aromatik Bitkiler"),
+                "Aklar": createMockEntry(acikTarlaMarulAlternatif, badem, "Lavanta"),
+                "Akörü": createMockEntry(seraDomatesBiberSalatalik, zeytin, "Enginar"),
+                "Andifli": createMockEntry(acikTarlaMarulAlternatif, avokado, "Turizm Odaklı Butik Tarım (Yerel Pazara Yönelik Sebze/Meyve)"), // Merkez ilçe, turizm etkisi
+                "Bayındır": createMockEntry(acikTarlaMarulAlternatif, zeytin, "Avokado (Kıyı Yamaçları)"),
+                "Beldibi": createMockEntry(seraDomatesBiberSalatalik, avokado, "Çilek (Örtü altı)"),
+                "Belenli": createMockEntry(acikTarlaMarulAlternatif, badem, "Badem (Yamaç Araziler)"),
+                "Belkonak": createMockEntry(acikTarlaMarulAlternatif, badem, "Adaçayı"),
+                "Bezirgan": createMockEntry(yaylaUrunleri, zeytin, "Yayla Domatesi (Organik/İyi Tarım)"), // Yayla karakteri
+                "Boğazcık": createMockEntry(acikTarlaMarulAlternatif, zeytin, "Keçiboynuzu"),
+                "Cemre": createMockEntry(acikTarlaMarulAlternatif, badem, "Kekik"),
+                "Çamlıköy": createMockEntry(acikTarlaMarulAlternatif, zeytin, "Organik Arıcılık Ürünleri"),
+                "Çamlıova": createMockEntry(acikTarlaMarulAlternatif, ceviz, "Ceviz (İç Kesimler)"),
+                "Çataloluk": createMockEntry(acikTarlaMarulAlternatif, badem, "Tıbbi Bitkiler"),
+                "Çavdır": createMockEntry(seraDomatesBiberSalatalik, zeytin, "Sera Domatesi (İhracat potansiyeli)"),
+                "Çayköy": createMockEntry(seraDomatesBiberSalatalik, nar, "Sera Biberi (Kaliteli üretim)"),
+                "Çerler": createMockEntry(acikTarlaMarulAlternatif, badem, "Nohut (Kuru Tarım)"),
+                "Çeşme": createMockEntry(acikTarlaMarulAlternatif, badem, "Lavanta"),
+                "Çukurbağ": createMockEntry(acikTarlaMarulAlternatif, badem, "Badem (Yamaçlar)"),
+                "Dere": createMockEntry(acikTarlaMarulAlternatif, zeytin, "Zeytin (Sofralık/Yağlık)"),
+                "Dirgenler": createMockEntry(acikTarlaMarulAlternatif, badem, "Mercimek (Kuru Tarım)"),
+                "Doğantaş": createMockEntry(acikTarlaMarulAlternatif, zeytin, "Zeytin (Organik Tarım Potansiyeli)"),
+                "Gelemiş": createMockEntry(seraDomatesBiberSalatalik, nar, "Turistik Taze Ürün (Patara Yakınlığı)"), // Patara etkisi
+                "Gökçeören": createMockEntry(acikTarlaMarulAlternatif, zeytin, "Yayla Seracılığı (Domates/Biber)"),
+                "Gökçeyazı": createMockEntry(acikTarlaMarulAlternatif, badem, "Badem"),
+                "Gömbe": createMockEntry(yaylaUrunleri, ceviz, "Elma, Armut (Yayla - Soğuk Hava Depolama İmkanı Araştırılmalı)"), // Yayla
+                "Gürsu": createMockEntry(seraDomatesBiberSalatalik, nar, "Nar (Bahçe Tesisi)"),
+                "Hacıoğlan": createMockEntry(acikTarlaMarulAlternatif, zeytin, "Zeytin"),
+                "İkizce": createMockEntry(acikTarlaMarulAlternatif, badem, "Badem"),
+                "İslamlar": createMockEntry(acikTarlaMarulAlternatif, { name: "Üzüm (Margaz)", note: "Yerel çeşit, butik şarap/pekmez potansiyeli. Turizmle entegre edilebilir." }, "Butik Şarapçılık/Pekmez"), // Üzüm
+                "Kalkan": createMockEntry(acikTarlaMarulAlternatif, avokado, "Turizm Odaklı Butik Tarım (Özel Sebzeler, Otlar)"), // Turizm merkezi
+                "Karadağ": createMockEntry(acikTarlaMarulAlternatif, zeytin, "Zeytin"),
+                "Kasaba": createMockEntry(seraDomatesBiberSalatalik, nar, "Nar"),
+                "Kemer": createMockEntry(acikTarlaMarulAlternatif, zeytin, "Zeytin"), // Kaş'ın Kemer mahallesi
+                "Kınık": createMockEntry(seraPatlicanKapyaKavun, avokado, "Ananas (Sera - Deneysel), İhracata Yönelik Sebze"), // Önemli sera merkezi
+                "Kızılağaç": createMockEntry(acikTarlaMarulAlternatif, zeytin, "Zeytin"),
+                "Ova": createMockEntry(seraPatlicanKapyaKavun, avokado, "Sera Domatesi/Biber (Yüksek Verim)"), // Önemli sera merkezi
+                "Ortabağ": createMockEntry(acikTarlaMarulAlternatif, zeytin, "Zeytin"),
+                "Palamut": createMockEntry(acikTarlaMarulAlternatif, nar, "Nar"),
+                "Pınarbaşı": createMockEntry(acikTarlaMarulAlternatif, zeytin, "Zeytin"),
+                "Sahil Barak": createMockEntry(seraDomatesBiberSalatalik, avokado, "Muz (Sera - Kıyı Şeridi)"),
+                "Sahilkılınçlı": createMockEntry(seraDomatesBiberSalatalik, nar, "Domates (Sera)"),
+                "Sarıbelen": createMockEntry(acikTarlaMarulAlternatif, zeytin, "Organik Zeytinyağı"),
+                "Sarılar": createMockEntry(seraDomatesBiberSalatalik, nar, "Nar"),
+                "Sinneli": createMockEntry(acikTarlaMarulAlternatif, badem, "Badem"),
+                "Sütleğen": createMockEntry(yaylaUrunleri, ceviz, "Ceviz, Elma (Yayla)"), // Yayla
+                "Uğrar": createMockEntry(acikTarlaMarulAlternatif, badem, "Badem"),
+                "Üzümlü": createMockEntry(acikTarlaMarulAlternatif, { name: "Üzüm (Margaz)", note: "Yerel çeşit, butik şarap/pekmez potansiyeli." }, "Üzüm Pekmezi/Sirkesi"), // Üzüm
+                "Yaylakılınçlı": createMockEntry(acikTarlaMarulAlternatif, badem, "Badem"),
+                "Yaylapalamut": createMockEntry(acikTarlaMarulAlternatif, ceviz, "Ceviz (Yayla)"),
+                "Yeşilbarak": createMockEntry(acikTarlaMarulAlternatif, zeytin, "Zeytin"),
+                "Yeşilköy": createMockEntry(seraPatlicanKapyaKavun, avokado, "Organik Badem/Zeytin"), // Sera + Badem/Zeytin potansiyeli
+                "Yuvacık": createMockEntry(acikTarlaMarulAlternatif, zeytin, "Zeytin")
+             },
+            "Kumluca": {
+                 // Kumluca = Sera merkezi (Domates, Biber, Patlıcan, Salatalık). Nar ve Narenciye de mevcut.
+                "Altınyaka": createMockEntry(yaylaUrunleri, badem, "Yayla Domatesi (Geç Sezon)"), // Yayla karakteri
+                "Bağlık": createMockEntry(seraDomatesBiberSalatalik, digerNarenciye, "Narenciye Alternatifi Sebzeler"),
+                "Belen": createMockEntry(acikTarlaMarulAlternatif, badem, "Badem (Yamaçlar)"),
+                "Beşikçi": createMockEntry(seraDomatesBiberSalatalik, nar, "Nar"),
+                "Beykonak": createMockEntry(seraDomatesBiberSalatalik, avokado, "Organik Çilek (Sera/Tünel)"), // Önemli sera alanı
+                "Büyükalan": createMockEntry(acikTarlaMarulAlternatif, badem, "Kekik"),
+                "Çaltı": createMockEntry(acikTarlaMarulAlternatif, badem, "Lavanta"),
+                 "Çayiçi": createMockEntry(seraDomatesBiberSalatalik, nar, "Sera Sebzeciliği (Modern Teknikler)"), // Merkez'e yakın
+                "Cumhuriyet": createMockEntry(seraDomatesBiberSalatalik, nar, "Sera Sebzeciliği (Lojistik Avantajı)"), // Merkez'e yakın
+                "Dereköy": createMockEntry(acikTarlaMarulAlternatif, badem, "Badem"),
+                "Ellinci Yıl": createMockEntry(seraDomatesBiberSalatalik, avokado, "Modern Sera Ürünleri"), // Yeni yerleşim, modern tarım
+                "Erentepe": createMockEntry(acikTarlaMarulAlternatif, badem, "Kekik"),
+                "Eskicami": createMockEntry(seraDomatesBiberSalatalik, digerNarenciye, "Şehir İçi Tüketime Yönelik Sebze"), // Merkez
+                "Göksu": createMockEntry(seraDomatesBiberSalatalik, nar, "Narenciye (Bahçe Tesisi)"),
+                "Gölcük": createMockEntry(acikTarlaMarulAlternatif, ceviz, "Ceviz (Yayla)"),
+                "Güzören": createMockEntry(acikTarlaMarulAlternatif, badem, "Lavanta"),
+                "Hacıveliler": createMockEntry(seraDomatesBiberSalatalik, nar, "Narenciye"),
+                "Hızırkahya": createMockEntry(seraDomatesBiberSalatalik, avokado, "Çilek (Sera)"),
+                "İncircik": createMockEntry(acikTarlaMarulAlternatif, nar, "Nar"),
+                "Karacaağaç": createMockEntry(acikTarlaMarulAlternatif, badem, "Badem"),
+                "Karacaören": createMockEntry(acikTarlaMarulAlternatif, badem, "Badem"),
+                "Karşıyaka": createMockEntry(seraDomatesBiberSalatalik, nar, "Narenciye"),
+                "Kasapçayırı": createMockEntry(seraDomatesBiberSalatalik, avokado, "Sera Ürünleri"), // Merkez'e yakın
+                "Kavakköy": createMockEntry(seraDomatesBiberSalatalik, nar, "Narenciye"),
+                "Kuzca": createMockEntry(acikTarlaMarulAlternatif, {name: "Kestane", note:"Yayla koşulları, sınırlı alanlarda."}, "Kestane (Yayla)"), // Yayla
+                "Mavikent": createMockEntry(seraPatlicanKapyaKavun, nar, "Tıbbi Aromatik Bitkiler (Biberiye, Defne)"), // Önemli tarım alanı
+                "Merkez": createMockEntry(seraDomatesBiberSalatalik, avokado, "Ticari Sera Ürünleri"), // Merkez
+                "Meydan": createMockEntry(seraDomatesBiberSalatalik, avokado, "Sera Ürünleri (Merkez Yakını)"), // Merkez'e yakın
+                "Narenciye": createMockEntry(seraDomatesBiberSalatalik, digerNarenciye, "Limon, Greyfurt"), // Adı üstünde
+                "Ortaköy": createMockEntry(seraDomatesBiberSalatalik, nar, "Sera Sebzeciliği"),
+                "Salur": createMockEntry(seraDomatesBiberSalatalik, nar, "Narenciye"),
+                "Sarıcasu": createMockEntry(seraDomatesBiberSalatalik, avokado, "Avokado"), // Sahile yakın
+                "Sarıkavak": createMockEntry(acikTarlaMarulAlternatif, badem, "Kekik"),
+                "Temel Eğitim": createMockEntry(seraDomatesBiberSalatalik, avokado, "Modern Tarım Uygulamaları"), // Yeni yerleşim?
+                "Toptaş": createMockEntry(acikTarlaMarulAlternatif, badem, "Badem"),
+                "Yeni": createMockEntry(seraDomatesBiberSalatalik, nar, "Sera Sebzeciliği"), // Merkez'e yakın
+                "Yenikışla": createMockEntry(acikTarlaMarulAlternatif, badem, "Badem"),
+                "Yeşilköy": createMockEntry(acikTarlaMarulAlternatif, nar, "Nar")
+             },
+            "Kemer": {
+                 // Kemer = Turizm odaklı. Nar, Avokado, Portakal (yerel pazar/oteller). Sınırlı sebzecilik. Zeytin yamaçlarda.
+                "Arslanbucak": createMockEntry(acikTarlaMarulAlternatif, avokado, "Otellere Yönelik Taze Yeşillik/Otlar"), // Yerleşim alanı, turizme yakın
+                "Beldibi": createMockEntry(acikTarlaMarulAlternatif, avokado, "Avokado, Tropik Meyveler"), // Turizm bölgesi
+                "Beycik": createMockEntry(yaylaUrunleri, zeytin, "Yayla Domatesi, Ceviz, Organik Ürünler"), // Yayla, ekoturizm
+                "Çamyuva": createMockEntry(
+                    [
+                        { name: "Domates (Örtü altı)", yield: "Yüksek", profit: "Yüksek", note: "Turizm bölgesine yakınlık (otellere satış) avantaj." },
+                        { name: "Salatalık (Örtü altı)", yield: "Yüksek", profit: "Orta", note: "Taze tüketim için otellere satış." },
+                        { name: "Biber (Açık Tarla/Örtü altı)", yield: "Orta", profit: "Yüksek", note: "Yerel pazar ve oteller için." }
+                    ], 
+                    avokado, 
+                    "Tropik Meyveler (Mango, Papaya), Otellere Özel Yeşillikler"
+                ), // Turizm bölgesi
+                "Göynük": createMockEntry(acikTarlaMarulAlternatif, nar, "Nar Suyu, Pekmezi (Katma Değerli Ürün)"), // Turizm bölgesi
+                "Kiriş": createMockEntry(acikTarlaMarulAlternatif, avokado, "Avokado"), // Turizm bölgesi
+                "Kuzdere": createMockEntry(acikTarlaMarulAlternatif, nar, "Narenciye (Yerel Tüketim)"), // Yerleşim alanı
+                "Merkez": createMockEntry(acikTarlaMarulAlternatif, avokado, "Çilek (Yerel Pazar/Turizm)"), // Merkez
+                "Ovacık": createMockEntry(yaylaUrunleri, ceviz, "Ceviz, Kestane (Yayla)"), // Yayla
+                "Tekirova": createMockEntry(acikTarlaMarulAlternatif, nar, "Nar, Avokado"), // Turizm bölgesi
+                "Ulupınar": createMockEntry(acikTarlaMarulAlternatif, zeytin, "Butik Zeytinyağı, Organik Ürünler (Çıralı/Olympos etkisi)"), // Turizm, doğa
+                "Yeni": createMockEntry(acikTarlaMarulAlternatif, nar, "Narenciye (Yerel Tüketim)") // Merkez'e yakın
+            },
+            "Finike": {
+                 // Finike = Portakal (Coğrafi İşaret). Limon, greyfurt. Kıyıda sera sebzeciliği. İçlerde nar, zeytin, badem.
+                "Akçaalan": createMockEntry(seraDomatesBiberSalatalik, nar, "Nar"),
+                "Alacadağ": createMockEntry(acikTarlaMarulAlternatif, badem, "Kekik, Lavanta"), // Yüksek rakım
+                "Arif": createMockEntry(acikTarlaMarulAlternatif, finikePortakal, "Narenciye (Portakal ağırlıklı)"),
+                "Asarönü": createMockEntry(acikTarlaMarulAlternatif, zeytin, "Zeytin (Yağlık)"),
+                "Boldağ": createMockEntry(acikTarlaMarulAlternatif, badem, "Lavanta"),
+                "Çamlıbel": createMockEntry(acikTarlaMarulAlternatif, zeytin, "Zeytin"),
+                "Dağbağ": createMockEntry(acikTarlaMarulAlternatif, badem, "Badem"),
+                "Ernez": createMockEntry(acikTarlaMarulAlternatif, ceviz, "Ceviz (İç kesim)"),
+                "Eski": createMockEntry(seraDomatesBiberSalatalik, finikePortakal, "Portakal (Finike)"), // Merkez'e yakın
+                "Gökbük": createMockEntry(acikTarlaMarulAlternatif, nar, "Nar (Organik potansiyeli)"),
+                "Gökçeyaka": createMockEntry(acikTarlaMarulAlternatif, badem, "Badem"),
+                "Hasyurt": createMockEntry(seraPatlicanKapyaKavun, finikePortakal, "Erkenci Sera Domatesi/Biber"), // Önemli tarım alanı
+                "İskele": createMockEntry(seraDomatesBiberSalatalik, finikePortakal, "Portakal (Finike)"), // Merkez, sahil
+                "Kale": createMockEntry(seraDomatesBiberSalatalik, finikePortakal, "Portakal (Finike)"), // Merkez
+                "Karşıyaka": createMockEntry(seraDomatesBiberSalatalik, finikePortakal, "Portakal (Finike)"), // Merkez'e yakın
+                "Kızılca": createMockEntry(acikTarlaMarulAlternatif, badem, "Badem"),
+                "Kum": createMockEntry(seraPatlicanKapyaKavun, finikePortakal, "Narenciye, Sera Sebzeciliği"), // Sahil, verimli alan
+                "Sahilkent": createMockEntry( seraDomatesBiberSalatalik, finikePortakal, "Kumkuat (Kamkat), Turfanda Sebze"), // Sahil, önemli tarım alanı
+                "Saklısu": createMockEntry(seraDomatesBiberSalatalik, avokado, "Avokado"), // Kıyı
+                "Turunçova": createMockEntry( seraDomatesBiberSalatalik, finikePortakal, "Avokado, Narenciye Arası Sera Sebzeciliği"), // Önemli tarım alanı, narenciye merkezi
+                "Yalnız": createMockEntry(acikTarlaMarulAlternatif, badem, "Badem"),
+                "Yazır": createMockEntry(acikTarlaMarulAlternatif, nar, "Nar"),
+                "Yeni": createMockEntry(seraDomatesBiberSalatalik, finikePortakal, "Portakal (Finike)"), // Merkez
+                "Yeşilköy": createMockEntry(acikTarlaMarulAlternatif, zeytin, "Zeytin"),
+                "Yeşilyurt": createMockEntry(seraDomatesBiberSalatalik, finikePortakal, "Narenciye"),
+                "Yuvalı": createMockEntry(seraDomatesBiberSalatalik, finikePortakal, "Narenciye")
+             }
+        };
+
+        // --- DOM ELEMENTLERİNİ SEÇME ---
+        const ilceSelect = document.getElementById('ilceSelect');
+        const mahalleSelect = document.getElementById('mahalleSelect');
+        const hesaplaButton = document.getElementById('hesaplaButton');
+        const loadingIndicator = document.getElementById('loadingIndicator');
+        const resultsArea = document.getElementById('resultsArea');
+        const bolgeTitle = document.getElementById('bolgeTitle');
+        const cropsTableBody = document.getElementById('cropsTableBody');
+        const longTermRecommendation = document.getElementById('longTermRecommendation');
+        const marketGapText = document.getElementById('marketGapText');
+        const printButton = document.getElementById('printButton');
+
+        // --- YARDIMCI FONKSİYONLAR (GÖRSELLEŞTİRME İÇİN) ---
+
+        // Verim etiketini renklendiren fonksiyon
+        function getYieldBadge(yieldText) {
+            let colorClasses = "print-badge ";
+            switch (yieldText) {
+                case "Çok Yüksek": colorClasses += "bg-green-100 text-green-800"; break;
+                case "Yüksek": colorClasses += "bg-green-100 text-green-700"; break;
+                case "Orta": colorClasses += "bg-yellow-100 text-yellow-800"; break;
+                case "Düşük": colorClasses += "bg-red-100 text-red-800"; break;
+                default: colorClasses += "bg-gray-100 text-gray-800";
+            }
+            // Yazdırma için metni de ekle
+            return `<span class="px-3 py-1 rounded-full text-xs font-medium ${colorClasses}">${yieldText}</span>`;
+        }
+
+        // Kârlılık etiketini renklendiren fonksiyon
+        function getProfitBadge(profitText) {
+            let colorClasses = "print-badge ";
+            switch (profitText) {
+                case "Çok Yüksek": colorClasses += "bg-blue-100 text-blue-800"; break;
+                case "Yüksek": colorClasses += "bg-blue-100 text-blue-700"; break;
+                case "Orta": colorClasses += "bg-yellow-100 text-yellow-800"; break;
+                case "Düşük": colorClasses += "bg-red-100 text-red-800"; break;
+                default: colorClasses += "bg-gray-100 text-gray-800";
+            }
+             // Yazdırma için metni de ekle
+            return `<span class="px-3 py-1 rounded-full text-xs font-medium ${colorClasses}">${profitText}</span>`;
+        }
+
+
+        // --- ANA FONKSİYONLAR ---
+
+        // 1. İlçeleri Doldur
+        function populateIlceler() {
+            const ilceler = Object.keys(mockData);
+            // İlçeleri alfabetik sırala
+            ilceler.sort(); 
+            ilceler.forEach(ilce => {
+                const option = document.createElement('option');
+                option.value = ilce;
+                option.textContent = ilce;
+                ilceSelect.appendChild(option);
+            });
+        }
+
+        // 2. İlçe Seçimine Göre Mahalleleri Doldur
+        function populateMahalleler() {
+            const secilenIlce = ilceSelect.value;
+            mahalleSelect.innerHTML = '<option value="">Önce ilçe seçin...</option>'; // Temizle
+            mahalleSelect.disabled = true;
+            hesaplaButton.disabled = true;
+            resultsArea.classList.add('hidden'); // Sonuçları gizle
+
+            if (secilenIlce && mockData[secilenIlce]) {
+                mahalleSelect.innerHTML = '<option value="">Lütfen mahalle seçin...</option>';
+                const mahalleler = Object.keys(mockData[secilenIlce]);
+                mahalleler.sort(); // Mahalleleri alfabetik sırala
+                mahalleler.forEach(mahalle => {
+                    const option = document.createElement('option');
+                    option.value = mahalle;
+                    option.textContent = mahalle;
+                    mahalleSelect.appendChild(option);
+                });
+                mahalleSelect.disabled = false;
+            }
+        }
+        
+        // 3. Mahalle seçildiğinde Hesapla butonunu aktif et
+        function checkMahalleSelection() {
+            if (mahalleSelect.value) {
+                hesaplaButton.disabled = false;
+            } else {
+                hesaplaButton.disabled = true;
+            }
+            resultsArea.classList.add('hidden'); // Mahalle değiştiğinde sonuçları gizle
+        }
+
+        // 4. Sonuçları Göster
+        function showResults() {
+            const ilce = ilceSelect.value;
+            const mahalle = mahalleSelect.value;
+
+            if (!ilce || !mahalle) return;
+
+            // Yükleniyor animasyonu
+            loadingIndicator.classList.remove('hidden');
+            resultsArea.classList.add('hidden');
+            hesaplaButton.disabled = true; // Hesaplama sırasında butonu tekrar pasif yap
+            
+            // Simülasyon için kısa bir bekleme
+            setTimeout(() => {
+                // Veri bulunamazsa varsayılan bir veri ata (güvenlik önlemi)
+                const data = mockData[ilce]?.[mahalle] || createMockEntry(
+                    [{ name: "Veri Yok", yield: "N/A", profit: "N/A", note: "Bu mahalle için henüz detaylı veri girişi yapılmamıştır." }],
+                    { name: "Veri Yok", note: "Bu mahalle için henüz uzun vadeli veri girişi yapılmamıştır." },
+                    "Belirlenemedi"
+                );
+
+
+                // Başlığı güncelle
+                bolgeTitle.textContent = `Analiz Sonuçları: ${mahalle}, ${ilce}`;
+
+                // 1. Kısa Vadeli Tabloyu temizle ve doldur
+                cropsTableBody.innerHTML = "";
+                if (data.topCrops && data.topCrops.length > 0) {
+                    data.topCrops.forEach(crop => {
+                        const tr = document.createElement('tr');
+                        tr.innerHTML = `
+                            <td class="px-6 py-4 whitespace-normal"> <!-- whitespace-normal eklendi -->
+                                <div class="text-sm font-medium text-gray-900">${crop.name}</div>
+                            </td>
+                            <td class="px-6 py-4 whitespace-nowrap">
+                                ${getYieldBadge(crop.yield)}
+                            </td>
+                            <td class="px-6 py-4 whitespace-nowrap">
+                                ${getProfitBadge(crop.profit)}
+                            </td>
+                            <td class="px-6 py-4 whitespace-normal"> <!-- whitespace-normal eklendi -->
+                                <div class="text-sm text-gray-600">${crop.note}</div>
+                            </td>
+                        `;
+                        cropsTableBody.appendChild(tr);
+                    });
+                 } else {
+                     cropsTableBody.innerHTML = `<tr><td colspan="4" class="text-center py-4 text-gray-500">Bu bölge için kısa vadeli ürün önerisi bulunmamaktadır.</td></tr>`;
+                 }
+
+                // 2. Uzun Vadeli Tavsiyeyi doldur
+                 if (data.longTermCrop && data.longTermCrop.name !== "Veri Yok") {
+                    longTermRecommendation.innerHTML = `
+                        <p class="text-lg font-semibold text-purple-900">${data.longTermCrop.name}</p>
+                        <p class="text-sm text-purple-700 mt-1">${data.longTermCrop.note}</p>
+                    `;
+                 } else {
+                     longTermRecommendation.innerHTML = `<p class="text-sm text-purple-700">Bu bölge için uzun vadeli yatırım tavsiyesi bulunmamaktadır.</p>`;
+                 }
+
+                // 3. Pazar Açığı (Kavramsal) bölümünü doldur
+                if (data.marketGap && data.marketGap !== "Belirlenemedi" && data.marketGap !== "N/A") {
+                    marketGapText.textContent = `Sistem (kavramsal olarak), pazar verilerine dayanarak bölgenizde '${data.marketGap}' ürünü veya alanı için bir talep artışı/arz açığı veya gelişim potansiyeli öngörmektedir.`;
+                } else {
+                     marketGapText.textContent = `Bu bölge için özel bir pazar fırsatı önerisi şu anda bulunmamaktadır. Genel pazar trendlerini takip ediniz.`;
+                }
+
+                // Sonuçları göster ve yükleniyor animasyonunu gizle
+                loadingIndicator.classList.add('hidden');
+                resultsArea.classList.remove('hidden');
+                hesaplaButton.disabled = false; // Hesaplama bitince butonu aktif yap
+
+                // Sonuçlara odaklan (opsiyonel)
+                // resultsArea.scrollIntoView({ behavior: 'smooth' });
+
+            }, 500); // 0.5 saniyelik gecikme (daha hızlı yanıt için)
+        }
+
+        // 5. Yazdır Fonksiyonu
+        function printResults() {
+            window.print();
+        }
+
+        // --- OLAY DİNLEYİCİLERİ ---
+        document.addEventListener('DOMContentLoaded', populateIlceler);
+        ilceSelect.addEventListener('change', populateMahalleler);
+        mahalleSelect.addEventListener('change', checkMahalleSelection);
+        hesaplaButton.addEventListener('click', showResults);
+        printButton.addEventListener('click', printResults);
+
+    </script>
+</body>
+</html>
+
