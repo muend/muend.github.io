@@ -11,13 +11,6 @@ MLOps pipelines.
 A single, self-contained static landing page (`index.html`) served via GitHub Pages. No build
 step, no dependencies — just HTML and CSS (fonts loaded from Google Fonts).
 
-## Project moved
-
-The **Agri-DSS** prototype that previously lived in this repository now has its own home:
-
-- Source: https://github.com/muend/agri-dss
-- Live app: https://tarimsalkoridor.online
-
 ## Contact
 
 - Email: edcoders@gmail.com
