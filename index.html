@@ -4,9 +4,9 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Muhammed Enes Duran — Data Scientist &amp; ML Engineer</title>
-<meta name="description" content="Muhammed Enes Duran — Data Scientist & ML Engineer specializing in Spatial Data Science, GeoAI infrastructure, computer vision for remote sensing, and automated MLOps pipelines.">
+<meta name="description" content="Muhammed Enes Duran — Data Scientist & ML Engineer building GeoAI infrastructure, spatial decision-support systems, remote-sensing ML pipelines, and applied simulation products.">
 <meta property="og:title" content="Muhammed Enes Duran — Data Scientist & ML Engineer">
-<meta property="og:description" content="Production-grade GeoAI: spatial decision-support systems, ArcGIS automation for LLM agents, and deep-learning pipelines for satellite imagery.">
+<meta property="og:description" content="Production-grade GeoAI, ArcGIS automation for LLM agents, spatial DSS products, remote-sensing ML, and browser-based simulation systems.">
 <meta property="og:type" content="website">
 <meta property="og:url" content="https://muend.github.io">
 <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -19,6 +19,8 @@
     --paper-2:#F1F1EA;
     --green:#0A7D32;
     --green-dark:#075423;
+    --amber:#EBA93F;
+    --amber-dark:#B77719;
     --line:#1314140F;
     --line-solid:#D8D8CF;
     --muted:#5C5E54;
@@ -40,7 +42,6 @@
   .mono{font-family:'Space Mono',monospace;text-transform:uppercase;letter-spacing:.14em;font-size:12px}
   .wrap{max-width:var(--maxw);margin:0 auto;padding:0 32px}
 
-  /* ---- top bar ---- */
   .topbar{
     position:sticky;top:0;z-index:50;
     border-bottom:1px solid var(--line-solid);
@@ -55,7 +56,6 @@
   .navlinks a:hover{color:var(--green)}
   @media(max-width:720px){.navlinks{display:none}}
 
-  /* ---- hero ---- */
   .hero{padding:88px 0 64px;border-bottom:1px solid var(--line-solid);position:relative}
   .hero::after{
     content:"";position:absolute;inset:0;pointer-events:none;
@@ -69,8 +69,8 @@
     font-weight:900;letter-spacing:-.035em;line-height:.96;
     font-size:clamp(40px,8.5vw,104px);
   }
-  h1 .sub{display:block;color:var(--muted);font-weight:600;font-size:clamp(18px,3vw,30px);letter-spacing:-.02em;margin-top:18px;max-width:18ch}
-  .lede{margin-top:34px;max-width:62ch;font-size:clamp(18px,2.2vw,22px);line-height:1.5;color:#26271F}
+  h1 .sub{display:block;color:var(--muted);font-weight:600;font-size:clamp(18px,3vw,30px);letter-spacing:-.02em;margin-top:18px;max-width:21ch}
+  .lede{margin-top:34px;max-width:68ch;font-size:clamp(18px,2.2vw,22px);line-height:1.5;color:#26271F}
   .lede em{font-style:normal;color:var(--green);font-weight:600}
   .cta{margin-top:38px;display:flex;gap:14px;flex-wrap:wrap}
   .btn{
@@ -82,8 +82,9 @@
   .btn:hover{background:var(--ink);color:var(--paper)}
   .btn.solid{background:var(--green);border-color:var(--green);color:#fff}
   .btn.solid:hover{background:var(--green-dark);border-color:var(--green-dark)}
+  .btn.amber{background:var(--amber);border-color:var(--amber);color:var(--ink)}
+  .btn.amber:hover{background:var(--amber-dark);border-color:var(--amber-dark);color:#fff}
 
-  /* ---- stats strip ---- */
   .stats{border-bottom:1px solid var(--line-solid);background:var(--paper-2)}
   .stats .wrap{display:grid;grid-template-columns:repeat(4,1fr)}
   .stat{padding:26px 24px;border-left:1px solid var(--line-solid)}
@@ -92,16 +93,15 @@
   .stat .lbl{color:var(--muted);margin-top:8px}
   @media(max-width:720px){.stats .wrap{grid-template-columns:repeat(2,1fr)}.stat:nth-child(3){border-left:none}}
 
-  /* ---- section frame ---- */
   section{padding:74px 0}
   .sec-head{display:flex;align-items:baseline;gap:16px;margin-bottom:42px}
   .sec-head .idx{color:var(--green)}
   .sec-head h2{font-size:clamp(24px,3.4vw,38px);font-weight:800;letter-spacing:-.025em}
   .sec-head .rule{flex:1;height:1px;background:var(--line-solid);align-self:center}
 
-  /* ---- flagship projects ---- */
-  .flag{display:grid;grid-template-columns:1fr 1fr;gap:28px}
-  @media(max-width:860px){.flag{grid-template-columns:1fr}}
+  .flag{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:28px}
+  @media(max-width:1050px){.flag{grid-template-columns:1fr 1fr}}
+  @media(max-width:760px){.flag{grid-template-columns:1fr}}
   .card{
     border:1px solid var(--line-solid);border-radius:3px;background:#fff;
     padding:30px 30px 26px;display:flex;flex-direction:column;
@@ -109,21 +109,26 @@
     position:relative;overflow:hidden;
   }
   .card::before{content:"";position:absolute;top:0;left:0;width:100%;height:3px;background:var(--green);transform:scaleX(0);transform-origin:left;transition:transform .3s ease}
+  .card.amber-card::before{background:var(--amber)}
   .card:hover{transform:translateY(-4px);box-shadow:0 18px 40px -22px rgba(19,20,15,.4);border-color:var(--ink)}
   .card:hover::before{transform:scaleX(1)}
-  .card .tag{color:var(--green);margin-bottom:16px;display:flex;justify-content:space-between;align-items:center}
+  .card .tag{color:var(--green);margin-bottom:16px;display:flex;justify-content:space-between;align-items:center;gap:14px}
+  .card.amber-card .tag{color:var(--amber-dark)}
   .card .live{color:#fff;background:var(--green);padding:3px 9px;border-radius:2px;font-size:10px;letter-spacing:.12em}
+  .card .game{color:var(--ink);background:var(--amber);padding:3px 9px;border-radius:2px;font-size:10px;letter-spacing:.12em}
   .card h3{font-size:25px;font-weight:800;letter-spacing:-.02em;margin-bottom:12px}
   .card p{color:#33352B;font-size:15.5px;line-height:1.55;margin-bottom:16px}
   .card ul{list-style:none;margin-bottom:20px}
   .card ul li{position:relative;padding-left:18px;font-size:14.5px;color:var(--muted);margin-bottom:7px}
   .card ul li::before{content:"";position:absolute;left:0;top:9px;width:6px;height:6px;background:var(--green);border-radius:1px}
-  .card .links{margin-top:auto;display:flex;gap:18px;font-weight:600;font-size:14px}
+  .card.amber-card ul li::before{background:var(--amber)}
+  .card .links{margin-top:auto;display:flex;gap:18px;font-weight:600;font-size:14px;flex-wrap:wrap}
   .card .links a{border-bottom:2px solid transparent;padding-bottom:2px;transition:border-color .2s}
   .card .links a:hover{border-color:var(--green)}
+  .card.amber-card .links a:hover{border-color:var(--amber)}
   .card .links a .arr{color:var(--green)}
+  .card.amber-card .links a .arr{color:var(--amber-dark)}
 
-  /* ---- research list ---- */
   .research{border-top:1px solid var(--line-solid)}
   .rrow{
     display:grid;grid-template-columns:minmax(0,1fr) auto;gap:24px;align-items:start;
@@ -138,7 +143,6 @@
   .rrow .meta .grant{display:block;margin-top:7px;color:var(--muted)}
   @media(max-width:720px){.rrow{grid-template-columns:1fr}.rrow .meta{text-align:left}}
 
-  /* ---- skills ---- */
   .skills{background:var(--paper-2);border-top:1px solid var(--line-solid);border-bottom:1px solid var(--line-solid)}
   .skillgrid{display:grid;grid-template-columns:repeat(3,1fr);gap:0;border:1px solid var(--line-solid);background:var(--line-solid);gap:1px}
   @media(max-width:860px){.skillgrid{grid-template-columns:1fr}}
@@ -147,11 +151,10 @@
   .chips{display:flex;flex-wrap:wrap;gap:8px}
   .chips span{background:#fff;border:1px solid var(--line-solid);border-radius:2px;padding:6px 11px;font-size:13px;font-weight:500}
 
-  /* ---- contact ---- */
   .contact{text-align:center;padding:96px 0}
   .contact .kicker{margin-bottom:20px}
   .contact h2{font-size:clamp(30px,6vw,68px);font-weight:900;letter-spacing:-.035em;line-height:1}
-  .contact p{color:var(--muted);max-width:52ch;margin:24px auto 0;font-size:18px}
+  .contact p{color:var(--muted);max-width:56ch;margin:24px auto 0;font-size:18px}
   .contact .cta{justify-content:center}
 
   footer{border-top:1px solid var(--line-solid);background:var(--ink);color:#C9CBC0}
@@ -160,7 +163,6 @@
   footer a:hover{color:var(--green)}
   footer .mono{color:#8C8E82}
 
-  /* ---- load animation ---- */
   .reveal{opacity:0;transform:translateY(18px);animation:rise .7s cubic-bezier(.2,.7,.2,1) forwards}
   @keyframes rise{to{opacity:1;transform:none}}
   @media(prefers-reduced-motion:reduce){.reveal{animation:none;opacity:1;transform:none}.hero::after{display:none}}
@@ -185,15 +187,16 @@
     <span class="kicker mono reveal">Data Scientist &amp; ML Engineer</span>
     <h1 class="reveal" style="animation-delay:.06s">
       Muhammed<br>Enes Duran
-      <span class="sub">Spatial Data Science · GeoAI · Deep Learning for Remote Sensing</span>
+      <span class="sub">Spatial Data Science · GeoAI · Applied Simulation Systems</span>
     </h1>
     <p class="lede reveal" style="animation-delay:.14s">
-      I build <em>production-grade GeoAI</em>: spatial decision-support systems, ArcGIS automation
-      exposed to LLM agents, and deep-learning pipelines for satellite imagery — connecting rigorous
-      mathematical models to systems people can actually use.
+      I build <em>production-grade GeoAI</em> and applied simulation products: spatial decision-support systems,
+      ArcGIS automation exposed to LLM agents, deep-learning pipelines for satellite imagery, and browser-native
+      rule-based simulations that turn complex real-world processes into usable systems.
     </p>
     <div class="cta reveal" style="animation-delay:.22s">
       <a class="btn solid" href="https://tarimsalkoridor.online" target="_blank" rel="noopener"><span></span>View live app</a>
+      <a class="btn amber" href="https://muend.itch.io/founderexe" target="_blank" rel="noopener">Play FOUNDER.EXE</a>
       <a class="btn" href="https://github.com/muend" target="_blank" rel="noopener"><span class="dot"></span>GitHub</a>
       <a class="btn" href="mailto:edcoders@gmail.com">Email</a>
     </div>
@@ -204,7 +207,7 @@
   <div class="wrap">
     <div class="stat reveal"><div class="num">100</div><div class="lbl mono">Geoprocessing tools</div></div>
     <div class="stat reveal" style="animation-delay:.06s"><div class="num">147</div><div class="lbl mono">Neighborhoods modeled</div></div>
-    <div class="stat reveal" style="animation-delay:.12s"><div class="num">5</div><div class="lbl mono">Districts covered</div></div>
+    <div class="stat reveal" style="animation-delay:.12s"><div class="num">1</div><div class="lbl mono">Published simulation game</div></div>
     <div class="stat reveal" style="animation-delay:.18s"><div class="num">2209&#8209;A</div><div class="lbl mono">TÜBİTAK grant</div></div>
   </div>
 </div>
@@ -226,8 +229,9 @@
              geoprocessing tools directly to LLM hosts — turning ArcGIS Pro into a programmable backend
              for AI workflows.</p>
           <ul>
-            <li>Decoupled multi-process architecture (async core / isolated worker subprocess).</li>
+            <li>Decoupled multi-process architecture: async core and isolated worker subprocess.</li>
             <li>Strict PathGuard sandbox with prefix validation before any execution.</li>
+            <li>Designed for controlled local ArcGIS Pro automation from LLM hosts.</li>
           </ul>
           <div class="links">
             <a href="https://github.com/muend/arcgis-mcp-bridge" target="_blank" rel="noopener">Repository <span class="arr">→</span></a>
@@ -242,11 +246,28 @@
              a concrete, printable plan per neighborhood.</p>
           <ul>
             <li>Zero-backend static architecture; vanilla JS against a decoupled data layer.</li>
-            <li>Swiss typographic UI collapsing to a clean A4 print layout.</li>
+            <li>DRY crop / region data contract resolved at runtime.</li>
+            <li>Swiss typographic UI with clean A4 print output.</li>
           </ul>
           <div class="links">
             <a href="https://tarimsalkoridor.online" target="_blank" rel="noopener">Live app <span class="arr">→</span></a>
             <a href="https://github.com/muend/agri-dss" target="_blank" rel="noopener">Repository <span class="arr">→</span></a>
+          </div>
+        </article>
+
+        <article class="card amber-card">
+          <div class="tag mono"><span>Simulation · Browser Game</span><span class="game">LIVE</span></div>
+          <h3>FOUNDER.EXE</h3>
+          <p>A browser-based startup simulation game modeling the practical stress of founding a company
+             in Türkiye or the USA: taxes, company types, grants, investor expectations, regulation,
+             cash flow, bankruptcy, and exit outcomes.</p>
+          <ul>
+            <li>Idea-aware onboarding analyzes sector, market path, and regulatory requirements.</li>
+            <li>Optional live AI assistant via the player's own Gemini, OpenAI, or Anthropic API key.</li>
+            <li>Static web release on itch.io; local save, free / pay-what-you-want access.</li>
+          </ul>
+          <div class="links">
+            <a href="https://muend.itch.io/founderexe" target="_blank" rel="noopener">Play on itch.io <span class="arr">→</span></a>
           </div>
         </article>
 
@@ -318,10 +339,10 @@
           </div>
         </div>
         <div class="skillcol">
-          <h4 class="mono">MLOps &amp; Infrastructure</h4>
+          <h4 class="mono">Systems &amp; Product</h4>
           <div class="chips">
             <span>FastAPI</span><span>Pydantic</span><span>Docker</span><span>Pytest</span>
-            <span>Ruff</span><span>Mypy</span><span>Git</span>
+            <span>Ruff</span><span>Mypy</span><span>Vanilla JS</span><span>HTML/CSS</span><span>localStorage</span><span>Git</span>
           </div>
         </div>
       </div>
@@ -331,11 +352,12 @@
   <section id="contact" class="contact">
     <div class="wrap">
       <span class="kicker mono">Open to collaboration</span>
-      <h2>Let's build<br>GeoAI that ships.</h2>
-      <p>Production-grade data science, spatial machine-learning pipelines, and automated GeoAI systems architecture.</p>
+      <h2>Let's build<br>systems that ship.</h2>
+      <p>Production-grade data science, spatial machine-learning pipelines, automated GeoAI systems architecture, and applied simulation products.</p>
       <div class="cta">
         <a class="btn solid" href="mailto:edcoders@gmail.com">edcoders@gmail.com</a>
         <a class="btn" href="https://github.com/muend" target="_blank" rel="noopener"><span class="dot"></span>github.com/muend</a>
+        <a class="btn amber" href="https://muend.itch.io/founderexe" target="_blank" rel="noopener">FOUNDER.EXE</a>
       </div>
     </div>
   </section>
