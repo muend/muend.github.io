@@ -9,10 +9,10 @@
 <link rel="icon" href="./assets/brand/favicon-32.png" sizes="32x32" type="image/png">
 <link rel="apple-touch-icon" href="./assets/brand/favicon-180.png">
 <link rel="manifest" href="./assets/brand/site.webmanifest">
-<title>Muhammed Enes Duran — Data Scientist &amp; ML Engineer</title>
-<meta name="description" content="Muhammed Enes Duran — Data Scientist & ML Engineer building GeoAI infrastructure, spatial decision-support systems, remote-sensing ML pipelines, and applied simulation products.">
-<meta property="og:title" content="Muhammed Enes Duran — Data Scientist & ML Engineer">
-<meta property="og:description" content="Production-grade GeoAI, ArcGIS automation for LLM agents, spatial DSS products, remote-sensing ML, and browser-based simulation systems.">
+<title>Muhammed Enes Duran — GeoAI · Remote Sensing ML · Applied Simulation Systems</title>
+<meta name="description" content="Muhammed Enes Duran — GeoAI infrastructure, Sentinel-2 remote-sensing data pipelines, spatial decision-support systems, and applied simulation products.">
+<meta property="og:title" content="Muhammed Enes Duran — GeoAI · Remote Sensing ML · Applied Simulation Systems">
+<meta property="og:description" content="Production-grade GeoAI, ArcGIS automation for LLM agents, Sentinel-2 data pipelines, spatial DSS products, remote-sensing ML, and browser-based simulation systems.">
 <meta property="og:type" content="website">
 <meta property="og:url" content="https://muend.github.io">
 <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -92,12 +92,12 @@
   .btn.amber:hover{background:var(--amber-dark);border-color:var(--amber-dark);color:#fff}
 
   .stats{border-bottom:1px solid var(--line-solid);background:var(--paper-2)}
-  .stats .wrap{display:grid;grid-template-columns:repeat(4,1fr)}
+  .stats .wrap{display:grid;grid-template-columns:repeat(5,1fr)}
   .stat{padding:26px 24px;border-left:1px solid var(--line-solid)}
   .stat:first-child{border-left:none}
   .stat .num{font-weight:900;font-size:clamp(28px,4vw,44px);letter-spacing:-.03em;line-height:1}
   .stat .lbl{color:var(--muted);margin-top:8px}
-  @media(max-width:720px){.stats .wrap{grid-template-columns:repeat(2,1fr)}.stat:nth-child(3){border-left:none}}
+  @media(max-width:900px){.stats .wrap{grid-template-columns:repeat(2,1fr)}.stat:nth-child(3),.stat:nth-child(5){border-left:none}}
 
   section{padding:74px 0}
   .sec-head{display:flex;align-items:baseline;gap:16px;margin-bottom:42px}
@@ -197,12 +197,13 @@
     </h1>
     <p class="lede reveal" style="animation-delay:.14s">
       I build <em>production-grade GeoAI</em> and applied simulation products: spatial decision-support systems,
-      ArcGIS automation exposed to LLM agents, deep-learning pipelines for satellite imagery, and browser-native
+      ArcGIS automation exposed to LLM agents, reproducible Sentinel-2 data pipelines, and browser-native
       rule-based simulations that turn complex real-world processes into usable systems.
     </p>
     <div class="cta reveal" style="animation-delay:.22s">
       <a class="btn solid" href="https://tarimsalkoridor.online" target="_blank" rel="noopener"><span></span>View live app</a>
       <a class="btn amber" href="https://muend.itch.io/founderexe" target="_blank" rel="noopener">Play FOUNDER.EXE</a>
+      <a class="btn" href="https://github.com/muend/sentinel-crop-pipeline" target="_blank" rel="noopener"><span class="dot"></span>Sentinel pipeline</a>
       <a class="btn" href="https://github.com/muend" target="_blank" rel="noopener"><span class="dot"></span>GitHub</a>
       <a class="btn" href="mailto:edcoders@gmail.com">Email</a>
     </div>
@@ -215,6 +216,7 @@
     <div class="stat reveal" style="animation-delay:.06s"><div class="num">147</div><div class="lbl mono">Neighborhoods modeled</div></div>
     <div class="stat reveal" style="animation-delay:.12s"><div class="num">1</div><div class="lbl mono">Published simulation game</div></div>
     <div class="stat reveal" style="animation-delay:.18s"><div class="num">2209&#8209;A</div><div class="lbl mono">TÜBİTAK grant</div></div>
+    <div class="stat reveal" style="animation-delay:.24s"><div class="num">PyPI</div><div class="lbl mono">Sentinel-2 pipeline</div></div>
   </div>
 </div>
 
@@ -241,6 +243,27 @@
           </ul>
           <div class="links">
             <a href="https://github.com/muend/arcgis-mcp-bridge" target="_blank" rel="noopener">Repository <span class="arr">→</span></a>
+          </div>
+        </article>
+
+
+
+        <article class="card">
+          <div class="tag mono"><span>Remote Sensing · Data Pipeline</span><span class="live">PyPI</span></div>
+          <h3>sentinel-crop-pipeline</h3>
+          <p>A reproducible Sentinel-2 data preparation pipeline for crop-classification research —
+             from CDSE scene discovery and AOI-cropped download to cloud masking, spectral indices,
+             spatially blocked patches, and patch-aligned label masks.</p>
+          <ul>
+            <li>CDSE-first Sentinel-2 L2A workflow with Process API AOI-cropped downloads.</li>
+            <li>SCL-based invalid-pixel filtering, reflectance normalization, NDVI/NDRE support.</li>
+            <li>COG + NPY/TFRecord patch export with spatially blocked train / validation / test splits.</li>
+            <li>Published on PyPI with Zenodo DOI and validation-run documentation.</li>
+          </ul>
+          <div class="links">
+            <a href="https://github.com/muend/sentinel-crop-pipeline" target="_blank" rel="noopener">Repository <span class="arr">→</span></a>
+            <a href="https://pypi.org/project/sentinel-crop-pipeline/" target="_blank" rel="noopener">PyPI <span class="arr">→</span></a>
+            <a href="https://doi.org/10.5281/zenodo.21284444" target="_blank" rel="noopener">DOI <span class="arr">→</span></a>
           </div>
         </article>
 
@@ -290,12 +313,23 @@
       </div>
       <div class="research">
 
+
+        <a class="rrow" href="https://github.com/muend/sentinel-crop-pipeline" target="_blank" rel="noopener">
+          <div class="rmain">
+            <h3>sentinel-crop-pipeline</h3>
+            <p>A PyPI-published, DOI-backed Sentinel-2 data pipeline for preparing crop-classification datasets:
+               CDSE discovery, AOI-cropped download, SCL cloud masking, spectral indices, patch generation,
+               spatially blocked splits, and ground-truth label masks.</p>
+          </div>
+          <div class="meta mono"><span class="chip">Sentinel-2 / Data Pipeline</span><span class="grant">PyPI · Zenodo DOI</span></div>
+        </a>
+
         <a class="rrow" href="https://github.com/muend/agri-unet" target="_blank" rel="noopener">
           <div class="rmain">
             <h3>agri-unet</h3>
-            <p>A U-Net semantic segmentation pipeline for agricultural pattern identification from
-               high-resolution, multi-temporal satellite imagery — extracting field parcels and crop
-               structures for downstream suitability modeling.</p>
+            <p>Downstream model-training work for agricultural pattern identification from satellite imagery,
+               separated from sentinel-crop-pipeline so the data-preparation layer remains reusable
+               and auditable.</p>
           </div>
           <div class="meta mono"><span class="chip">Deep Learning / CV</span><span class="grant">TÜBİTAK 2209-A · funded</span></div>
         </a>
@@ -341,7 +375,7 @@
         <div class="skillcol">
           <h4 class="mono">Spatial Data Science</h4>
           <div class="chips">
-            <span>GeoPandas</span><span>Shapely</span><span>ArcPy</span><span>Rasterio</span><span>PySAL</span>
+            <span>GeoPandas</span><span>Shapely</span><span>ArcPy</span><span>Rasterio</span><span>PySAL</span><span>Sentinel-2</span><span>CDSE</span><span>COG</span>
           </div>
         </div>
         <div class="skillcol">
@@ -359,7 +393,7 @@
     <div class="wrap">
       <span class="kicker mono">Open to collaboration</span>
       <h2>Let's build<br>systems that ship.</h2>
-      <p>Production-grade data science, spatial machine-learning pipelines, automated GeoAI systems architecture, and applied simulation products.</p>
+      <p>Production-grade data science, remote-sensing ML pipelines, automated GeoAI systems architecture, spatial decision support, and applied simulation products.</p>
       <div class="cta">
         <a class="btn solid" href="mailto:edcoders@gmail.com">edcoders@gmail.com</a>
         <a class="btn" href="https://github.com/muend" target="_blank" rel="noopener"><span class="dot"></span>github.com/muend</a>
