@@ -838,6 +838,124 @@
     html,body,a,button,[role="tab"],.project-card{cursor:auto!important}
   }
 </style>
+
+<style id="stability-performance-fixes">
+  /* Lightweight material texture: no SVG turbulence, blend compositing, or giant fixed surface. */
+  body::after{
+    content:"";position:fixed;inset:0;z-index:-2;pointer-events:none;
+    opacity:.26;mix-blend-mode:normal;transform:none;
+    background:
+      repeating-radial-gradient(circle at 17% 23%,rgba(19,20,15,.055) 0 .45px,transparent .65px 3px),
+      linear-gradient(115deg,rgba(255,255,255,.32),transparent 34%,rgba(19,20,15,.018) 68%,transparent);
+    background-size:7px 7px,100% 100%;
+  }
+  .topbar{backdrop-filter:none;background:rgba(250,250,246,.975)}
+  .topbar::after,.project-card::after,.hero-console::after,.proof-dashboard::after,.system-map::after{display:none!important;background:none!important}
+  .hero-console,.project-card,.project-visual,.proof-dashboard,.system-map{contain:paint}
+
+  /* Stop permanent animation loops. Motion is reserved for direct interaction. */
+  .status-pill i,.route-line,.node-pulse,.ticker-track,.orbit-ring.dashed,.arc-flow .flow-dash,.sat-path,.map-path,.route-active{
+    animation:none!important;
+  }
+  .ticker{overflow-x:auto;scrollbar-width:none}
+  .ticker::-webkit-scrollbar{display:none}
+  .ticker-track{width:max-content;transform:none!important}
+  .score-ring,.bar i{animation:none!important}
+
+  /* Content must never disappear because an observer has not fired. */
+  .reveal,.js .reveal,.js .reveal.is-visible{opacity:1!important;transform:none!important;transition:none!important}
+
+  /* Remove expensive per-pointer card perspective and filter effects. */
+  .project-card{transform:none!important;transform-style:flat;will-change:auto;scroll-margin-top:86px}
+  .project-card:hover .diagram-primary{filter:none!important}
+  .packet{filter:none!important}
+  .project-visual::before{
+    background:
+      linear-gradient(rgba(19,20,15,.035) 1px,transparent 1px),
+      linear-gradient(90deg,rgba(19,20,15,.035) 1px,transparent 1px),
+      radial-gradient(circle at 20% 16%,rgba(235,169,63,.055),transparent 44%);
+    background-size:20px 20px,20px 20px,100% 100%;
+    opacity:.5;
+  }
+  .project-card.featured .project-visual::before{
+    background:
+      linear-gradient(rgba(255,255,255,.035) 1px,transparent 1px),
+      linear-gradient(90deg,rgba(255,255,255,.035) 1px,transparent 1px),
+      radial-gradient(circle at 20% 16%,rgba(235,169,63,.08),transparent 48%);
+    background-size:20px 20px,20px 20px,100% 100%;
+  }
+
+  /* Custom pointer remains distinctive but uses only three compositor transforms. */
+  .cursor-dot,.cursor-ring,.cursor-caption{
+    transform:translate3d(-100px,-100px,0);will-change:transform;mix-blend-mode:normal;
+  }
+  .cursor-ring{border-color:rgba(19,20,15,.78);background:rgba(250,250,246,.18)}
+  body:not(.cursor-visible) .cursor-dot,body:not(.cursor-visible) .cursor-ring,body:not(.cursor-visible) .cursor-caption{opacity:0!important}
+
+  /* Diagram typography and reusable plate primitives. */
+  .project-visual--mcp{min-height:390px!important}
+  .project-visual--agri{min-height:350px!important}
+  .project-visual--founder{min-height:330px!important}
+  .diagram-title{font-size:10.5px}
+  .diagram-label{font-size:9.2px;letter-spacing:.045em}
+  .diagram-label--large{font-size:10.7px}
+  .diagram-micro{font-size:7.4px;letter-spacing:.025em}
+  .diagram-note{font-size:8.6px}
+  .diagram-kicker{font:700 8px/1 'Space Mono',monospace;letter-spacing:.12em;fill:#0A7D32}
+  .plate-box{fill:#fff;stroke:#13140F;stroke-width:1.15;vector-effect:non-scaling-stroke}
+  .plate-box--host{fill:#F8F8F3}
+  .plate-box--green{fill:#DCECDF;stroke:#0A7D32}
+  .plate-box--safety{fill:#F5E8C9;stroke:#A9650E}
+  .plate-box--dark{fill:#13140F;stroke:#13140F}
+  .boundary{fill:none;stroke:#9A9C92;stroke-width:1.1;stroke-dasharray:6 4;vector-effect:non-scaling-stroke}
+  .boundary--server{stroke:#0A7D32}
+  .boundary--worker{stroke:#13140F}
+  .boundary--decision{fill:rgba(220,236,223,.42);stroke:#0A7D32}
+  .boundary-label{font:700 7.4px/1 'Space Mono',monospace;letter-spacing:.08em;fill:#5C5E54}
+  .plate-flow{fill:none;stroke:#0A7D32;stroke-width:1.5;vector-effect:non-scaling-stroke}
+  .return-flow{fill:none;stroke:#2C67A0;stroke-width:1.35;vector-effect:non-scaling-stroke}
+  .bridge-label{fill:#13140F}
+  .criterion{fill:#fff;stroke:#0A7D32;stroke-width:1;vector-effect:non-scaling-stroke}
+  .plan-row{stroke:#13140F;stroke-width:1;vector-effect:non-scaling-stroke}
+  .plan-row--one{fill:#DCECDF}.plan-row--two{fill:#F7E7C7}.plan-row--three{fill:#DCE5EE}
+  .founder-column{fill:#fff;stroke:#13140F;stroke-width:1.1;vector-effect:non-scaling-stroke}
+  .founder-column--dark{fill:#13140F}
+  .founder-link{fill:none;stroke:#EBA93F;stroke-width:1.6;vector-effect:non-scaling-stroke}
+  .decision-chip{stroke:#13140F;stroke-width:1;vector-effect:non-scaling-stroke}
+  .decision-chip--amber{fill:#EBA93F}.decision-chip--green{fill:#DCECDF}
+  .risk-box{fill:#F1D8D3;stroke:#B83C2C;stroke-width:1;vector-effect:non-scaling-stroke}
+
+  /* The final product deserves a complete row; removes the orphaned one-third card. */
+  .project-card.featured,.project-card.wide{grid-column:span 7}
+  .project-card:not(.featured):not(.wide):not(.founder-showcase){grid-column:span 5}
+  .project-card.founder-showcase{grid-column:span 12;min-height:auto}
+  .project-card.founder-showcase .project-copy{max-width:78ch}
+
+  @media(max-width:1120px){
+    .project-card.featured,.project-card.wide{grid-column:span 12}
+    .project-card:not(.featured):not(.wide):not(.founder-showcase){grid-column:span 6}
+    .project-card.founder-showcase{grid-column:span 12}
+  }
+  @media(max-width:900px){
+    .project-card.founder-showcase{grid-column:1/-1}
+    .project-visual--mcp{min-height:360px!important}
+  }
+  @media(max-width:700px){
+    .project-card,.project-card.featured,.project-card.wide,.project-card.founder-showcase,.project-card:not(.featured):not(.wide):not(.founder-showcase){grid-column:span 12}
+    .project-header{flex-wrap:wrap}
+  }
+  @media(max-width:620px){
+    .project-visual--mcp{min-height:330px!important}
+    .project-visual--agri{min-height:310px!important}
+    .project-visual--founder{min-height:280px!important}
+    .diagram-title{font-size:12px}
+    .diagram-label{font-size:10px}
+    .diagram-label--large{font-size:11px}
+    .diagram-micro{font-size:8px}
+    .diagram-note{font-size:9px}
+  }
+</style>
+
 </head>
 <body>
 <div aria-hidden="true" class="exhibition-frame"><i class="tl"></i><i class="tr"></i><i class="br"></i><i class="bl"></i><span class="edge-code mono">MUEND / SPATIAL SYSTEMS / 2026</span></div>
@@ -921,7 +1039,7 @@
 </g>
 <path d="M49 171H470" marker-end="url(#heroArrowMuted)" stroke="#73766B" stroke-width="1"></path>
 <path class="route-active" d="M49 171H437" marker-end="url(#heroArrow)" stroke="#EBA93F" stroke-width="1.6"></path>
-<circle class="packet" cx="49" cy="171" fill="#EBA93F" r="4"><animate attributename="cx" dur="5.8s" repeatcount="indefinite" values="49;437"></animate></circle>
+<circle class="packet" cx="49" cy="171" fill="#EBA93F" r="4"></circle>
 <!-- Stage cards -->
 <g class="diagram-primary">
 <rect fill="#141510" height="58" stroke="#4E8D62" width="83" x="28" y="151"></rect><text class="diagram-label" fill="#EEF0E8" text-anchor="middle" x="69.5" y="180">STAC / OSM</text><text class="diagram-micro" fill="#8EA896" text-anchor="middle" x="69.5" y="194">DATA ENG.</text>
@@ -1009,7 +1127,7 @@
 </div>
 <p class="section-intro reveal">Not isolated demos. Each project occupies a specific layer of a broader spatial software stack: knowledge, execution, data preparation, decision delivery, or simulation.</p>
 <div class="systems-grid">
-<article class="project-card featured reveal" data-tilt="">
+<article class="project-card featured reveal">
 <div class="project-header">
 <span class="project-type mono">Agent Skills · GeoAI knowledge infrastructure</span>
 <div class="badges"><span class="badge mono">MIT</span><span class="badge mono">18 skills</span><span class="badge live mono">active</span></div>
@@ -1054,7 +1172,7 @@
 <!-- orthogonal route spine -->
 <path d="M107 123V285M278 123V285M450 123V285M622 123V285M793 123V285" stroke="#34362F"></path>
 <path class="route-active" d="M107 150H793" marker-end="url(#atlasArrow)" stroke="#EBA93F" stroke-width="1.5"></path>
-<circle class="packet" fill="#EBA93F" r="4"><animatemotion dur="6.6s" path="M107 150H793" repeatcount="indefinite"></animatemotion></circle>
+<circle class="packet" fill="#EBA93F" r="4"></circle>
 <!-- module cards -->
 <g class="diagram-primary">
 <rect fill="#12130F" height="39" stroke="#56D77E" width="142" x="36" y="132"></rect><text class="diagram-label" fill="#E5E7DF" text-anchor="middle" x="107" y="148">GEO DATA ENGINEERING</text><text class="diagram-micro" fill="#829E8A" text-anchor="middle" x="107" y="161">STAC · OSM · FORMATS</text>
@@ -1087,7 +1205,7 @@
 <span class="project-index mono">01 / flagship</span>
 </div>
 </article>
-<article class="project-card reveal" data-delay="1" data-tilt="">
+<article class="project-card reveal" data-delay="1">
 <div class="project-header">
 <span class="project-type mono">MCP · Secure GIS execution</span>
 <div class="badges"><span class="badge pkg mono">PyPI</span><span class="badge mono">100 tools</span></div>
@@ -1096,58 +1214,82 @@
 <h3>arcgis-mcp-bridge</h3>
 <p>A local-first MCP framework that exposes ArcGIS Pro geoprocessing while isolating the licensed ArcPy runtime behind a validated worker boundary.</p>
 <ul class="project-points">
-<li>Async MCP server and isolated ArcPy worker.</li>
-<li>PathGuard validation before filesystem operations.</li>
-<li>Mocked ArcPy testing for CI without ArcGIS Pro.</li>
+<li>Async MCP server with a per-job ArcPy subprocess worker.</li>
+<li>PathGuard enforced independently in both processes.</li>
+<li>Structured failures and an 86-test offline quality gate.</li>
 </ul>
 </div>
-<div aria-hidden="true" class="project-visual" data-figure="FIG. 02 / TRUST BOUNDARY">
-<svg aria-label="Secure ArcGIS MCP architecture with trust boundary, PathGuard, isolated ArcPy worker, and audit output" class="arc-flow" preserveaspectratio="xMidYMid meet" role="img" viewbox="0 0 620 258">
+<div class="project-visual project-visual--mcp" data-figure="FIG. 02 / TWO-PROCESS SECURITY FLOOR">
+<svg aria-label="Accurate two-process architecture of arcgis-mcp-bridge with Layer A and Layer B PathGuard validation" class="arc-flow arc-flow-v2" preserveAspectRatio="xMidYMid meet" role="img" viewBox="0 0 620 390">
 <defs>
-<marker id="arcArrowSafe" markerheight="7" markerwidth="7" orient="auto" refx="6" refy="3.5"><path d="M0 0 7 3.5 0 7Z" fill="#0A7D32"></path></marker>
-<marker id="arcArrowBlock" markerheight="7" markerwidth="7" orient="auto" refx="6" refy="3.5"><path d="M0 0 7 3.5 0 7Z" fill="#B83C2C"></path></marker>
+  <marker id="mcpArrow" markerHeight="8" markerWidth="8" orient="auto" refX="7" refY="4"><path d="M0 0 8 4 0 8Z" fill="#0A7D32"/></marker>
 </defs>
-<text class="diagram-title" fill="#13140F" x="18" y="22">LOCAL-FIRST MCP / PROCESS ISOLATION</text><text class="diagram-micro" fill="#6B6D64" text-anchor="end" x="602" y="22">SHEET B-02</text>
-<line class="diagram-rule" x1="18" x2="602" y1="34" y2="34"></line>
-<!-- client zone -->
-<text class="diagram-micro" fill="#6B6D64" x="18" y="55">UNTRUSTED REQUEST SURFACE</text>
-<rect fill="#fff" height="73" stroke="#13140F" width="116" x="18" y="66"></rect>
-<text class="diagram-label" text-anchor="middle" x="76" y="89">LLM HOST</text><text class="diagram-micro" text-anchor="middle" x="76" y="102">CLAUDE · CODEX</text>
-<rect fill="#F1F1EA" height="13" width="82" x="35" y="112"></rect><text class="diagram-micro" text-anchor="middle" x="76" y="121">MCP REQUEST</text>
-<path d="M134 102H176" marker-end="url(#arcArrowSafe)" stroke="#0A7D32" stroke-width="1.4"></path>
-<text class="diagram-micro" fill="#0A7D32" text-anchor="middle" x="155" y="91">STDIO / JSON-RPC</text>
-<circle class="packet" fill="#EBA93F" r="4"><animatemotion dur="3.8s" path="M134 102H176" repeatcount="indefinite"></animatemotion></circle>
-<!-- server and validation -->
-<rect fill="#DCECDF" height="73" stroke="#0A7D32" width="116" x="176" y="66"></rect>
-<text class="diagram-label" text-anchor="middle" x="234" y="89">ASYNC MCP SERVER</text><text class="diagram-micro" text-anchor="middle" x="234" y="102">DISCOVER · DISPATCH</text>
-<rect fill="#fff" height="13" width="82" x="193" y="112"></rect><text class="diagram-micro" text-anchor="middle" x="234" y="121">TYPED CONTRACT</text>
-<path d="M292 102H323" marker-end="url(#arcArrowSafe)" stroke="#0A7D32" stroke-width="1.4"></path>
-<rect fill="#FAFAF6" height="94" stroke="#0A7D32" stroke-width="1.5" width="94" x="323" y="55"></rect>
-<text class="diagram-label" text-anchor="middle" x="370" y="81">PATHGUARD</text>
-<path d="M346 101l15 15 32-38" fill="none" stroke="#0A7D32" stroke-width="3"></path>
-<text class="diagram-micro" text-anchor="middle" x="370" y="133">ALLOWLIST · PREFIX</text>
-<!-- isolated licensed runtime -->
-<rect fill="none" height="110" stroke="#13140F" stroke-dasharray="5 4" width="157" x="445" y="47"></rect>
-<text class="diagram-micro" fill="#6B6D64" x="455" y="61">LICENSED PROCESS BOUNDARY</text>
-<path d="M417 90H455" marker-end="url(#arcArrowSafe)" stroke="#0A7D32" stroke-width="1.4"></path>
-<rect fill="#13140F" height="35" width="129" x="459" y="73"></rect><text class="diagram-label" fill="#fff" text-anchor="middle" x="523.5" y="88">ARCPY WORKER</text><text class="diagram-micro" fill="#AEB1A6" text-anchor="middle" x="523.5" y="100">REVIVE · ISOLATE</text>
-<rect fill="#fff" height="25" stroke="#13140F" width="61" x="459" y="116"></rect><text class="diagram-micro" text-anchor="middle" x="489.5" y="132">ARCGIS PRO</text>
-<rect fill="#fff" height="25" stroke="#13140F" width="61" x="527" y="116"></rect><text class="diagram-micro" text-anchor="middle" x="557.5" y="132">.GDB / .APRX</text>
-<!-- unsafe branch -->
-<path d="M370 149V177H449" marker-end="url(#arcArrowBlock)" stroke="#B83C2C" stroke-width="1.4"></path>
-<rect fill="#F1D8D3" height="27" stroke="#B83C2C" width="139" x="449" y="164"></rect>
-<text class="diagram-label" fill="#7C261B" text-anchor="middle" x="518.5" y="181">REJECT UNSAFE PATH</text>
-<!-- audit bus -->
-<line class="diagram-rule" x1="18" x2="602" y1="211" y2="211"></line>
-<text class="diagram-micro" fill="#6B6D64" x="18" y="229">AUDIT / OBSERVABILITY BUS</text>
-<rect fill="#F1F1EA" height="21" width="116" x="176" y="219"></rect><text class="diagram-micro" text-anchor="middle" x="234" y="233">REQUEST HASH</text>
-<rect fill="#F1F1EA" height="21" width="94" x="323" y="219"></rect><text class="diagram-micro" text-anchor="middle" x="370" y="233">PATH DECISION</text>
-<rect fill="#F1F1EA" height="21" width="157" x="445" y="219"></rect><text class="diagram-micro" text-anchor="middle" x="523.5" y="233">RESULT · ERROR · LATENCY</text>
+<text class="diagram-title" x="22" y="25">LOCAL-FIRST MCP / TWO-PROCESS ARCHITECTURE</text>
+<text class="diagram-micro" fill="#6B6D64" text-anchor="end" x="598" y="25">SHEET B-02 · VERIFIED AGAINST REPOSITORY</text>
+<line class="diagram-rule" x1="22" x2="598" y1="38" y2="38"/>
+
+<!-- Request surface -->
+<text class="diagram-kicker" x="22" y="61">01 / MCP HOST</text>
+<rect class="plate-box plate-box--host" x="22" y="73" width="576" height="54" rx="1"/>
+<text class="diagram-label diagram-label--large" x="42" y="96">CLAUDE DESKTOP · CURSOR · OTHER MCP HOSTS</text>
+<text class="diagram-note" fill="#5C5E54" x="42" y="114">JSON-RPC 2.0 over stdio — untrusted tool arguments enter here</text>
+
+<path class="plate-flow" d="M310 127V146" marker-end="url(#mcpArrow)"/>
+<text class="diagram-micro" fill="#0A7D32" x="323" y="141">STDIO</text>
+
+<!-- Layer A -->
+<rect class="boundary boundary--server" x="22" y="151" width="576" height="100" rx="1"/>
+<text class="boundary-label" x="34" y="168">LAYER A / BRIDGE INTERPRETER · arcgis_mcp/server.py</text>
+
+<rect class="plate-box plate-box--green" x="36" y="181" width="164" height="52"/>
+<text class="diagram-label diagram-label--large" text-anchor="middle" x="118" y="202">FASTMCP SERVER</text>
+<text class="diagram-micro" text-anchor="middle" x="118" y="220">ASYNC DISPATCH · NO ARCPY IMPORT</text>
+
+<path class="plate-flow" d="M200 207H220" marker-end="url(#mcpArrow)"/>
+
+<rect class="plate-box" x="220" y="181" width="166" height="52"/>
+<text class="diagram-label diagram-label--large" text-anchor="middle" x="303" y="202">CONTRACT + REGISTRY</text>
+<text class="diagram-micro" text-anchor="middle" x="303" y="220">PYDANTIC V2 · 100 TOOLSPEC</text>
+
+<path class="plate-flow" d="M386 207H406" marker-end="url(#mcpArrow)"/>
+
+<rect class="plate-box plate-box--safety" x="406" y="181" width="178" height="52"/>
+<text class="diagram-label diagram-label--large" text-anchor="middle" x="495" y="201">SAFETY FLOOR A</text>
+<text class="diagram-micro" text-anchor="middle" x="495" y="218">PATHGUARD PRE-CHECK · CONFIRM GATE</text>
+
+<!-- IPC bridge -->
+<path class="plate-flow" d="M310 251V278" marker-end="url(#mcpArrow)"/>
+<rect class="bridge-label" x="196" y="257" width="228" height="20"/>
+<text class="diagram-micro" fill="#fff" text-anchor="middle" x="310" y="271">NDJSON SUBPROCESS BRIDGE · SPAWNED PER JOB</text>
+
+<!-- Layer B -->
+<rect class="boundary boundary--worker" x="22" y="284" width="576" height="76" rx="1"/>
+<text class="boundary-label" x="34" y="301">LAYER B / LICENSED ARCGIS PRO INTERPRETER · arcgis_mcp/worker.py</text>
+
+<rect class="plate-box plate-box--safety" x="36" y="313" width="154" height="34"/>
+<text class="diagram-label" text-anchor="middle" x="113" y="327">PATHGUARD B</text>
+<text class="diagram-micro" text-anchor="middle" x="113" y="340">RE-VALIDATE</text>
+
+<path class="plate-flow" d="M190 330H212" marker-end="url(#mcpArrow)"/>
+
+<rect class="plate-box plate-box--dark" x="212" y="313" width="174" height="34"/>
+<text class="diagram-label" fill="#fff" text-anchor="middle" x="299" y="327">RUN_TOOL / ARCPY WORKER</text>
+<text class="diagram-micro" fill="#BFC2B7" text-anchor="middle" x="299" y="340">ARCPY IMPORT LEGAL ONLY HERE</text>
+
+<path class="plate-flow" d="M386 330H408" marker-end="url(#mcpArrow)"/>
+
+<rect class="plate-box" x="408" y="313" width="176" height="34"/>
+<text class="diagram-label" text-anchor="middle" x="496" y="327">ARCGIS PRO RUNTIME</text>
+<text class="diagram-micro" text-anchor="middle" x="496" y="340">.APRX · .GDB · RASTER · NETWORK</text>
+
+<!-- Result contract -->
+<rect x="22" y="367" width="576" height="16" fill="#DCE5EE" stroke="#2C67A0" stroke-width="1"/>
+<text class="diagram-micro" fill="#214F78" text-anchor="middle" x="310" y="378">FINAL NDJSON RESULT FRAME · VALIDATION / SECURITY / LICENSE / GEOPROCESSING / INTERNAL</text>
 </svg>
 </div>
 <div class="project-footer"><div class="project-links"><a href="https://github.com/muend/arcgis-mcp-bridge" rel="noopener" target="_blank">Repository ↗</a><a href="https://pypi.org/project/arcgis-mcp-bridge/" rel="noopener" target="_blank">PyPI ↗</a></div><span class="project-index mono">02</span></div>
 </article>
-<article class="project-card wide blue reveal" data-tilt="">
+<article class="project-card wide blue reveal">
 <div class="project-header">
 <span class="project-type mono">Remote sensing · Reproducible data pipeline</span>
 <div class="badges"><span class="badge pkg mono">PyPI</span><span class="badge mono">Zenodo DOI</span></div>
@@ -1222,7 +1364,7 @@
 </div>
 <div class="project-footer"><div class="project-links"><a href="https://github.com/muend/sentinel-crop-pipeline" rel="noopener" target="_blank">Repository ↗</a><a href="https://pypi.org/project/sentinel-crop-pipeline/" rel="noopener" target="_blank">PyPI ↗</a><a href="https://doi.org/10.5281/zenodo.21284444" rel="noopener" target="_blank">DOI ↗</a></div><span class="project-index mono">03</span></div>
 </article>
-<article class="project-card reveal" data-delay="1" data-tilt="">
+<article class="project-card reveal" data-delay="1">
 <div class="project-header">
 <span class="project-type mono">Spatial DSS · Public-facing product</span>
 <div class="badges"><span class="badge live mono">live</span><span class="badge mono">147 areas</span></div>
@@ -1236,37 +1378,42 @@
 <li>Clean A4 field plans and static deployment.</li>
 </ul>
 </div>
-<div aria-hidden="true" class="project-visual" data-figure="FIG. 04 / TERRITORIAL DECISION">
-<svg aria-label="Spatial decision support plate showing five districts, selected neighborhoods, crop suitability, and printable plan output" class="dss-map" role="img" viewbox="0 0 620 270">
-<text class="diagram-title" fill="#13140F" x="18" y="22">WESTERN ANTALYA / DECISION PLATE</text><text class="diagram-micro" fill="#6B6D64" text-anchor="end" x="602" y="22">5 DISTRICTS · 147 NEIGHBORHOODS</text>
-<line class="diagram-rule" x1="18" x2="602" y1="34" y2="34"></line>
-<!-- coastal territory -->
-<g transform="translate(18 55)">
-<path d="M13 45C82 9 145 13 200 41S315 84 386 52" fill="none" stroke="#2C67A0" stroke-width="2"></path>
-<path d="M13 51C82 15 145 19 200 47S315 90 386 58L386 160 13 160Z" fill="#E9EFE8"></path>
-<path class="district" d="M18 56 88 24 151 38 137 93 77 112 24 95Z"></path><path class="district" d="M151 38 224 27 270 62 241 113 183 102 137 93Z"></path><path class="district" d="M270 62 333 33 391 60 372 118 313 129 241 113Z"></path><path class="district" d="M77 112 137 93 183 102 190 159 116 166 55 145Z"></path><path class="district" d="M183 102 241 113 313 129 286 173 190 159Z"></path>
-<g fill="none" stroke="rgba(19,20,15,.24)"><path d="M52 62 84 101M94 42 110 104M158 51 186 96M205 43 221 108M282 69 305 121M329 51 350 117M91 124 130 157M144 111 165 158M207 116 229 162M257 122 273 166"></path></g>
-<g><circle cx="83" cy="78" fill="#EBA93F" r="5"></circle><circle cx="203" cy="72" fill="#EBA93F" r="5"></circle><circle cx="327" cy="87" fill="#EBA93F" r="5"></circle><circle cx="131" cy="136" fill="#EBA93F" r="5"></circle><circle cx="244" cy="140" fill="#EBA93F" r="5"></circle></g>
-<text class="diagram-micro" text-anchor="middle" x="84" y="17">DEMRE</text><text class="diagram-micro" text-anchor="middle" x="206" y="16">FİNİKE</text><text class="diagram-micro" text-anchor="middle" x="345" y="27">KEMER</text><text class="diagram-micro" text-anchor="middle" x="95" y="188">KAŞ</text><text class="diagram-micro" text-anchor="middle" x="264" y="188">KUMLUCA</text>
-<text class="diagram-micro" fill="#6B6D64" x="14" y="210">COASTLINE / DISTRICT / NEIGHBORHOOD SELECTION</text>
+<div class="project-visual project-visual--agri" data-figure="FIG. 04 / AUDITABLE DECISION CHAIN">
+<svg aria-label="Auditable agricultural decision-support chain from regional data through suitability criteria to a neighborhood plan" class="dss-flow-v2" preserveAspectRatio="xMidYMid meet" role="img" viewBox="0 0 620 350">
+<defs><marker id="dssArrow" markerHeight="8" markerWidth="8" orient="auto" refX="7" refY="4"><path d="M0 0 8 4 0 8Z" fill="#0A7D32"/></marker></defs>
+<text class="diagram-title" x="22" y="25">WESTERN ANTALYA / AUDITABLE DECISION CHAIN</text>
+<text class="diagram-micro" fill="#6B6D64" text-anchor="end" x="598" y="25">5 DISTRICTS · 147 NEIGHBORHOODS</text>
+<line class="diagram-rule" x1="22" x2="598" y1="38" y2="38"/>
+
+<text class="diagram-kicker" x="22" y="63">01 / TERRITORIAL INDEX</text>
+<rect class="plate-box" x="22" y="75" width="576" height="58"/>
+<text class="diagram-label diagram-label--large" x="42" y="98">DEMRE · FİNİKE · KAŞ · KEMER · KUMLUCA</text>
+<text class="diagram-note" fill="#5C5E54" x="42" y="117">Neighborhood selection resolves a compact, versioned region and crop data contract.</text>
+
+<path class="plate-flow" d="M310 133V151" marker-end="url(#dssArrow)"/>
+
+<text class="diagram-kicker" x="22" y="171">02 / RECOMMENDATION LOGIC</text>
+<rect class="boundary boundary--decision" x="22" y="182" width="576" height="78"/>
+<g transform="translate(38 200)">
+  <rect class="criterion" width="92" height="30"/><text class="diagram-label" text-anchor="middle" x="46" y="19">CLIMATE</text>
+  <rect class="criterion" x="105" width="92" height="30"/><text class="diagram-label" text-anchor="middle" x="151" y="19">WATER</text>
+  <rect class="criterion" x="210" width="92" height="30"/><text class="diagram-label" text-anchor="middle" x="256" y="19">SOIL</text>
+  <rect class="criterion" x="315" width="92" height="30"/><text class="diagram-label" text-anchor="middle" x="361" y="19">SLOPE</text>
+  <rect class="criterion" x="420" width="92" height="30"/><text class="diagram-label" text-anchor="middle" x="466" y="19">MARKET</text>
 </g>
-<!-- printable plan -->
-<g transform="translate(427 55)">
-<rect fill="#fff" height="190" stroke="#13140F" width="175"></rect>
-<rect fill="#13140F" height="27" width="175"></rect><text class="diagram-label" fill="#fff" x="13" y="17">NEIGHBORHOOD PLAN / 042</text>
-<text class="diagram-micro" fill="#6B6D64" x="13" y="48">TOP SUITABILITY</text>
-<text class="diagram-label" x="13" y="66">01 · OLIVE</text><rect fill="#DCECDF" height="10" width="67" x="92" y="57"></rect><rect fill="#0A7D32" height="10" width="58" x="92" y="57"></rect>
-<text class="diagram-label" x="13" y="86">02 · CITRUS</text><rect fill="#F1F1EA" height="10" width="67" x="92" y="77"></rect><rect fill="#EBA93F" height="10" width="48" x="92" y="77"></rect>
-<text class="diagram-label" x="13" y="106">03 · AVOCADO</text><rect fill="#F1F1EA" height="10" width="67" x="92" y="97"></rect><rect fill="#2C67A0" height="10" width="38" x="92" y="97"></rect>
-<line class="diagram-rule" x1="13" x2="162" y1="121" y2="121"></line>
-<text class="diagram-micro" fill="#6B6D64" x="13" y="139">FIELD ACTIONS</text>
-<text class="diagram-micro" x="13" y="154">• SOIL TEST / pH</text><text class="diagram-micro" x="13" y="168">• IRRIGATION CHECK</text><text class="diagram-micro" x="13" y="182">• PRINT A4 PLAN</text>
-</g>
+<text class="diagram-micro" fill="#5C5E54" text-anchor="middle" x="310" y="249">SCHEMA-DRIVEN SCORE · TRACEABLE INPUTS · NO SERVER-SIDE BLACK BOX</text>
+
+<path class="plate-flow" d="M310 260V278" marker-end="url(#dssArrow)"/>
+
+<text class="diagram-kicker" x="22" y="298">03 / NEIGHBORHOOD PLAN</text>
+<rect class="plan-row plan-row--one" x="22" y="309" width="174" height="25"/><text class="diagram-label" x="34" y="326">01 · OLIVE</text><text class="diagram-micro" text-anchor="end" x="184" y="326">HIGH FIT</text>
+<rect class="plan-row plan-row--two" x="210" y="309" width="174" height="25"/><text class="diagram-label" x="222" y="326">02 · CITRUS</text><text class="diagram-micro" text-anchor="end" x="372" y="326">FIELD CHECK</text>
+<rect class="plan-row plan-row--three" x="398" y="309" width="200" height="25"/><text class="diagram-label" x="410" y="326">A4 ACTION PLAN</text><text class="diagram-micro" text-anchor="end" x="586" y="326">PRINT / SHARE</text>
 </svg>
 </div>
 <div class="project-footer"><div class="project-links"><a href="https://tarimsalkoridor.online" rel="noopener" target="_blank">Live app ↗</a><a href="https://github.com/muend/agri-dss" rel="noopener" target="_blank">Repository ↗</a></div><span class="project-index mono">04</span></div>
 </article>
-<article class="project-card amber reveal" data-tilt="">
+<article class="project-card amber founder-showcase reveal">
 <div class="project-header">
 <span class="project-type mono">Applied simulation · Browser game</span>
 <div class="badges"><span class="badge game mono">published</span></div>
@@ -1280,35 +1427,50 @@
 <li>Static, browser-native release with local saves.</li>
 </ul>
 </div>
-<div aria-hidden="true" class="project-visual" data-figure="FIG. 05 / SIMULATION CONTROL">
-<svg aria-label="Founder EXE simulation control interface with runway, cap table, compliance, and decision queue" class="founder-ui" role="img" viewbox="0 0 620 270">
-<text class="diagram-title" fill="#13140F" x="18" y="22">FOUNDER.EXE / OPERATING CONTROL</text><text class="diagram-micro" fill="#6B6D64" text-anchor="end" x="602" y="22">RULE-DRIVEN SIMULATION</text>
-<line class="diagram-rule" x1="18" x2="602" y1="34" y2="34"></line>
-<rect class="black" height="202" width="584" x="18" y="49"></rect>
-<rect fill="#20221B" height="202" width="96" x="18" y="49"></rect>
-<text class="diagram-label" fill="#EBA93F" x="32" y="70">FOUNDER.OS</text>
-<text class="diagram-micro" fill="#AEB1A6" x="32" y="98">01 / COMPANY</text><text class="diagram-micro" fill="#fff" x="32" y="116">02 / FINANCE</text><text class="diagram-micro" fill="#AEB1A6" x="32" y="134">03 / PRODUCT</text><text class="diagram-micro" fill="#AEB1A6" x="32" y="152">04 / LEGAL</text><text class="diagram-micro" fill="#AEB1A6" x="32" y="170">05 / TEAM</text>
-<rect fill="#EBA93F" height="25" width="70" x="31" y="200"></rect><text class="diagram-label" text-anchor="middle" x="66" y="216">MONTH 08</text>
-<!-- runway panel -->
-<rect class="panel" height="93" width="222" x="130" y="66"></rect>
-<text class="diagram-label" x="145" y="84">RUNWAY / CASH</text><text class="diagram-micro" fill="#6B6D64" text-anchor="end" x="336" y="84">5.2 MONTHS</text>
-<line stroke="#B83C2C" x1="145" x2="336" y1="138" y2="138"></line>
-<path class="chart" d="M145 101 170 97 196 104 222 98 248 116 273 112 299 132 336 136"></path>
-<g fill="#13140F"><circle cx="145" cy="101" r="2"></circle><circle cx="196" cy="104" r="2"></circle><circle cx="248" cy="116" r="2"></circle><circle cx="299" cy="132" r="2"></circle></g>
-<text class="diagram-micro" fill="#6B6D64" x="145" y="151">BURN ↑ / REVENUE → / TAX DUE 18D</text>
-<!-- cap table -->
-<rect class="panel" height="93" width="217" x="367" y="66"></rect>
-<text class="diagram-label" x="382" y="84">CAP TABLE / DILUTION</text>
-<rect class="green-fill" height="20" width="108" x="382" y="101"></rect><rect class="amber-fill" height="20" width="52" x="490" y="101"></rect><rect class="red-fill" height="20" width="25" x="542" y="101"></rect>
-<text class="diagram-micro" x="382" y="137">FOUNDER 58%</text><text class="diagram-micro" x="466" y="137">INV. 28%</text><text class="diagram-micro" x="538" y="137">POOL 14%</text>
-<!-- decision queue -->
-<rect class="panel" height="59" width="222" x="130" y="174"></rect>
-<rect class="red-fill" height="31" width="9" x="144" y="188"></rect><text class="diagram-label" x="164" y="197">COMPLIANCE DEADLINE</text><text class="diagram-micro" x="164" y="213">REGISTER · PAY · OR ACCEPT RISK</text>
-<rect class="panel" height="59" width="217" x="367" y="174"></rect>
-<text class="diagram-label" x="382" y="192">DECISION QUEUE</text>
-<rect fill="#EBA93F" height="14" width="55" x="382" y="203"></rect><text class="diagram-micro" text-anchor="middle" x="409.5" y="213">HIRE</text>
-<rect fill="#DCECDF" height="14" width="55" x="443" y="203"></rect><text class="diagram-micro" text-anchor="middle" x="470.5" y="213">PIVOT</text>
-<rect fill="#F1D8D3" height="14" width="63" x="504" y="203"></rect><text class="diagram-micro" text-anchor="middle" x="535.5" y="213">DEFER</text>
+<div class="project-visual project-visual--founder" data-figure="FIG. 05 / RULE-DRIVEN OPERATING MODEL">
+<svg aria-label="Founder.exe operating model showing country rules, runway, ownership, compliance and decision outcomes" class="founder-flow-v2" preserveAspectRatio="xMidYMid meet" role="img" viewBox="0 0 900 330">
+<defs><marker id="founderArrow" markerHeight="8" markerWidth="8" orient="auto" refX="7" refY="4"><path d="M0 0 8 4 0 8Z" fill="#EBA93F"/></marker></defs>
+<text class="diagram-title" x="24" y="25">FOUNDER.EXE / RULE-DRIVEN OPERATING MODEL</text>
+<text class="diagram-micro" fill="#6B6D64" text-anchor="end" x="876" y="25">TÜRKİYE · USA · LOCAL SAVE</text>
+<line class="diagram-rule" x1="24" x2="876" y1="38" y2="38"/>
+
+<rect class="founder-column founder-column--dark" x="24" y="58" width="188" height="222"/>
+<text class="diagram-kicker" fill="#EBA93F" x="42" y="82">01 / RULESET</text>
+<text class="diagram-label diagram-label--large" fill="#fff" x="42" y="108">COUNTRY + COMPANY TYPE</text>
+<text class="diagram-micro" fill="#BFC2B7" x="42" y="131">TAX · GRANTS · REGULATION</text>
+<line x1="42" x2="194" y1="148" y2="148" stroke="rgba(255,255,255,.2)"/>
+<text class="diagram-label" fill="#fff" x="42" y="174">MONTH 08</text>
+<text class="diagram-micro" fill="#BFC2B7" x="42" y="195">IDEA-AWARE SECTOR PATH</text>
+<text class="diagram-micro" fill="#BFC2B7" x="42" y="215">SCRIPTED OFFLINE FALLBACK</text>
+<rect x="42" y="238" width="124" height="24" fill="#EBA93F"/><text class="diagram-label" text-anchor="middle" x="104" y="255">ADVANCE MONTH</text>
+
+<path class="founder-link" d="M212 169H236" marker-end="url(#founderArrow)"/>
+
+<rect class="founder-column" x="236" y="58" width="398" height="222"/>
+<text class="diagram-kicker" x="254" y="82">02 / OPERATING STATE</text>
+<text class="diagram-label diagram-label--large" x="254" y="108">RUNWAY / CASH</text>
+<text class="diagram-micro" fill="#6B6D64" text-anchor="end" x="616" y="108">5.2 MONTHS</text>
+<line x1="254" x2="616" y1="190" y2="190" stroke="#D6D6CC"/>
+<path d="M254 132C295 135 321 142 351 151S405 164 445 171S520 181 616 187" fill="none" stroke="#B83C2C" stroke-width="3"/>
+<g fill="#13140F"><circle cx="254" cy="132" r="3"/><circle cx="351" cy="151" r="3"/><circle cx="445" cy="171" r="3"/><circle cx="616" cy="187" r="3"/></g>
+<text class="diagram-micro" fill="#6B6D64" x="254" y="209">BURN ↑ · REVENUE → · TAX DUE 18D</text>
+<line x1="254" x2="616" y1="224" y2="224" stroke="#D6D6CC"/>
+<text class="diagram-label" x="254" y="246">CAP TABLE</text>
+<rect x="339" y="234" width="156" height="15" fill="#0A7D32"/><rect x="495" y="234" width="76" height="15" fill="#2C67A0"/><rect x="571" y="234" width="45" height="15" fill="#EBA93F"/>
+<text class="diagram-micro" x="339" y="269">FOUNDER 58% · INVESTOR 28% · OPTION POOL 14%</text>
+
+<path class="founder-link" d="M634 169H658" marker-end="url(#founderArrow)"/>
+
+<rect class="founder-column" x="658" y="58" width="218" height="222"/>
+<text class="diagram-kicker" x="676" y="82">03 / DECISION + CONSEQUENCE</text>
+<rect class="decision-chip decision-chip--amber" x="676" y="101" width="84" height="28"/><text class="diagram-label" text-anchor="middle" x="718" y="119">HIRE</text>
+<rect class="decision-chip decision-chip--green" x="770" y="101" width="84" height="28"/><text class="diagram-label" text-anchor="middle" x="812" y="119">PIVOT</text>
+<rect class="risk-box" x="676" y="145" width="178" height="58"/>
+<text class="diagram-label" fill="#7C261B" x="690" y="167">COMPLIANCE DEADLINE</text>
+<text class="diagram-micro" fill="#7C261B" x="690" y="186">REGISTER · PAY · ACCEPT RISK</text>
+<text class="diagram-label" x="676" y="229">OUTCOME ENGINE</text>
+<text class="diagram-micro" fill="#6B6D64" x="676" y="249">SURVIVE · FAIL · FUND · EXIT</text>
+<line x1="676" x2="854" y1="264" y2="264" stroke="#13140F"/>
 </svg>
 </div>
 <div class="project-footer"><div class="project-links"><a href="https://muend.itch.io/founderexe" rel="noopener" target="_blank">Play on itch.io ↗</a></div><span class="project-index mono">05</span></div>
@@ -1430,7 +1592,7 @@
 <path class="map-path" d="M220 485H480V310H600" marker-end="url(#mapArrow)"></path>
 <path class="map-path" d="M980 485H720V310H600" marker-end="url(#mapArrow)"></path>
 <path d="M600 238V382" stroke="#EBA93F" stroke-dasharray="5 5" stroke-width="1.5"></path>
-<circle class="packet" fill="#EBA93F" r="5"><animatemotion dur="7s" path="M220 145H480V310H600" repeatcount="indefinite"></animatemotion></circle>
+<circle class="packet" fill="#EBA93F" r="5"></circle>
 <text class="diagram-micro" fill="#6B6D64" text-anchor="middle" x="346" y="133">ROUTING / INVARIANTS</text>
 <text class="diagram-micro" fill="#6B6D64" text-anchor="middle" x="852" y="133">GUARDED EXECUTION</text>
 <text class="diagram-micro" fill="#6B6D64" text-anchor="middle" x="346" y="505">DATA / MODEL EVIDENCE</text>
@@ -1470,152 +1632,118 @@
 <script id="exhibition-interactions">
 (() => {
   'use strict';
-
   const root = document.documentElement;
   const body = document.body;
-  const reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
-  const finePointer = window.matchMedia('(pointer:fine)').matches;
+  const reduceMotion = matchMedia('(prefers-reduced-motion: reduce)').matches;
+  const finePointer = matchMedia('(pointer:fine) and (min-width: 980px)').matches;
 
-  const yearNode = document.getElementById('yr');
-  if (yearNode) yearNode.textContent = new Date().getFullYear();
+  const year = document.getElementById('yr');
+  if (year) year.textContent = new Date().getFullYear();
 
+  // Scroll progress: one DOM write per animation frame, never per raw scroll event.
   const progress = document.getElementById('scroll-progress');
-  const updateProgress = () => {
+  let scrollFrame = 0;
+  const paintProgress = () => {
+    scrollFrame = 0;
     if (!progress) return;
-    const scrollable = root.scrollHeight - window.innerHeight;
-    progress.style.width = `${scrollable > 0 ? Math.min(100, Math.max(0, window.scrollY / scrollable * 100)) : 0}%`;
+    const max = Math.max(1, root.scrollHeight - innerHeight);
+    progress.style.transform = `scaleX(${Math.min(1, Math.max(0, scrollY / max))})`;
   };
-  updateProgress();
-  window.addEventListener('scroll', updateProgress, { passive: true });
-  window.addEventListener('resize', updateProgress);
-
-  const revealItems = document.querySelectorAll('.reveal');
-  if (reduceMotion || !('IntersectionObserver' in window)) {
-    revealItems.forEach((item) => item.classList.add('is-visible'));
-  } else {
-    const revealObserver = new IntersectionObserver((entries, observer) => {
-      entries.forEach((entry) => {
-        if (entry.isIntersecting) {
-          entry.target.classList.add('is-visible');
-          observer.unobserve(entry.target);
-        }
-      });
-    }, { threshold: 0.1, rootMargin: '0px 0px -42px 0px' });
-    revealItems.forEach((item) => revealObserver.observe(item));
+  if (progress) {
+    progress.style.width = '100%';
+    progress.style.transformOrigin = 'left';
+    addEventListener('scroll', () => {
+      if (!scrollFrame) scrollFrame = requestAnimationFrame(paintProgress);
+    }, {passive:true});
+    addEventListener('resize', () => {
+      if (!scrollFrame) scrollFrame = requestAnimationFrame(paintProgress);
+    });
+    paintProgress();
   }
 
+  // Never gate content visibility on JavaScript or viewport timing.
+  document.querySelectorAll('.reveal').forEach(el => el.classList.add('is-visible'));
+
+  // Active section navigation.
   const navLinks = [...document.querySelectorAll('.navlinks a[href^="#"]')];
-  const sections = navLinks.map((link) => document.querySelector(link.getAttribute('href'))).filter(Boolean);
+  const sections = navLinks.map(link => document.querySelector(link.getAttribute('href'))).filter(Boolean);
   if ('IntersectionObserver' in window && sections.length) {
-    const navObserver = new IntersectionObserver((entries) => {
-      const visible = entries.filter((entry) => entry.isIntersecting).sort((a, b) => b.intersectionRatio - a.intersectionRatio)[0];
+    const navObserver = new IntersectionObserver(entries => {
+      const visible = entries.filter(e => e.isIntersecting).sort((a,b) => b.intersectionRatio - a.intersectionRatio)[0];
       if (!visible) return;
-      navLinks.forEach((link) => {
+      navLinks.forEach(link => {
         const active = link.getAttribute('href') === `#${visible.target.id}`;
-        if (active) link.setAttribute('aria-current', 'true'); else link.removeAttribute('aria-current');
+        link.toggleAttribute('aria-current', active);
+        if (active) link.setAttribute('aria-current','true');
       });
-    }, { rootMargin: '-20% 0px -65% 0px', threshold: [0.05, 0.2, 0.5] });
-    sections.forEach((section) => navObserver.observe(section));
+    }, {rootMargin:'-24% 0px -62% 0px', threshold:[.05,.2,.45]});
+    sections.forEach(section => navObserver.observe(section));
   }
 
+  // Accessible capability tabs.
   const tabs = [...document.querySelectorAll('.capability-tab')];
   const panels = [...document.querySelectorAll('.capability-panel')];
-  const activateTab = (tab) => {
-    tabs.forEach((item) => item.setAttribute('aria-selected', String(item === tab)));
-    panels.forEach((panel) => {
+  const activateTab = tab => {
+    tabs.forEach(item => item.setAttribute('aria-selected', String(item === tab)));
+    panels.forEach(panel => {
       const active = panel.id === `panel-${tab.dataset.panel}`;
       panel.classList.toggle('active', active);
       panel.hidden = !active;
     });
   };
-  tabs.forEach((tab, index) => {
+  tabs.forEach((tab,index) => {
     tab.addEventListener('click', () => activateTab(tab));
-    tab.addEventListener('keydown', (event) => {
-      if (!['ArrowDown','ArrowRight','ArrowUp','ArrowLeft','Home','End'].includes(event.key)) return;
+    tab.addEventListener('keydown', event => {
+      const keys = ['ArrowDown','ArrowRight','ArrowUp','ArrowLeft','Home','End'];
+      if (!keys.includes(event.key)) return;
       event.preventDefault();
       let next = index;
       if (event.key === 'ArrowDown' || event.key === 'ArrowRight') next = (index + 1) % tabs.length;
       if (event.key === 'ArrowUp' || event.key === 'ArrowLeft') next = (index - 1 + tabs.length) % tabs.length;
       if (event.key === 'Home') next = 0;
       if (event.key === 'End') next = tabs.length - 1;
-      tabs[next].focus(); activateTab(tabs[next]);
+      tabs[next].focus();
+      activateTab(tabs[next]);
     });
   });
 
-  const traceLabel = document.getElementById('trace-label');
-  if (traceLabel && !reduceMotion) {
-    const traces = ['pipeline / verified','route / deterministic','worker / isolated','output / auditable'];
-    let traceIndex = 0;
-    window.setInterval(() => {
-      traceIndex = (traceIndex + 1) % traces.length;
-      traceLabel.animate([{opacity:1},{opacity:0},{opacity:1}],{duration:420,easing:'ease'});
-      traceLabel.textContent = traces[traceIndex];
-    }, 3200);
-  }
-
+  // Event-delegated, demand-driven exhibition cursor. The RAF stops when settled.
   if (!reduceMotion && finePointer) {
-    body.classList.add('custom-cursor-enabled');
-    // Precision cursor with delayed ring and context labels.
+    const dot = document.querySelector('.cursor-dot');
+    const ring = document.querySelector('.cursor-ring');
     const caption = document.getElementById('cursor-caption');
-    let pointerX = innerWidth / 2, pointerY = innerHeight / 2;
-    let ringX = pointerX, ringY = pointerY;
-    let raf = 0;
-    const animateCursor = () => {
-      ringX += (pointerX - ringX) * .18;
-      ringY += (pointerY - ringY) * .18;
-      root.style.setProperty('--cursor-ring-x', `${ringX}px`);
-      root.style.setProperty('--cursor-ring-y', `${ringY}px`);
-      raf = requestAnimationFrame(animateCursor);
-    };
-    raf = requestAnimationFrame(animateCursor);
-    window.addEventListener('pointermove', (event) => {
-      pointerX = event.clientX; pointerY = event.clientY;
-      root.style.setProperty('--cursor-x', `${pointerX}px`);
-      root.style.setProperty('--cursor-y', `${pointerY}px`);
-    }, { passive: true });
-    window.addEventListener('pointerdown', () => body.classList.add('cursor-down'));
-    window.addEventListener('pointerup', () => body.classList.remove('cursor-down'));
+    if (dot && ring) {
+      body.classList.add('custom-cursor-enabled');
+      let targetX = innerWidth / 2, targetY = innerHeight / 2;
+      let ringX = targetX, ringY = targetY;
+      let cursorFrame = 0;
+      let currentLabel = '';
 
-    const interactive = document.querySelectorAll('a,button,[role="tab"],.project-card,.research-row,.map-module');
-    interactive.forEach((element) => {
-      const inferred = element.dataset.cursor ||
-        (element.matches('a') ? 'OPEN' : element.matches('[role="tab"]') ? 'VIEW' : element.matches('.project-card') ? 'INSPECT' : 'EXPLORE');
-      element.addEventListener('pointerenter', () => {
-        body.classList.add('cursor-active');
-        if (caption) caption.textContent = inferred;
-      });
-      element.addEventListener('pointerleave', () => body.classList.remove('cursor-active'));
-    });
+      const paintCursor = () => {
+        cursorFrame = 0;
+        ringX += (targetX - ringX) * .24;
+        ringY += (targetY - ringY) * .24;
+        dot.style.transform = `translate3d(${targetX - 2.5}px,${targetY - 2.5}px,0)`;
+        ring.style.transform = `translate3d(${ringX - ring.offsetWidth/2}px,${ringY - ring.offsetHeight/2}px,0)`;
+        if (caption) caption.style.transform = `translate3d(${targetX + 18}px,${targetY + 18}px,0)`;
+        if (Math.abs(targetX-ringX) > .35 || Math.abs(targetY-ringY) > .35) cursorFrame = requestAnimationFrame(paintCursor);
+      };
+      const requestCursorPaint = () => { if (!cursorFrame) cursorFrame = requestAnimationFrame(paintCursor); };
 
-    // Diagram spotlight and restrained depth.
-    document.querySelectorAll('.project-card').forEach((card) => {
-      const visual = card.querySelector('.project-visual');
-      card.addEventListener('pointermove', (event) => {
-        const rect = card.getBoundingClientRect();
-        const x = (event.clientX - rect.left) / rect.width;
-        const y = (event.clientY - rect.top) / rect.height;
-        if (visual) {
-          visual.style.setProperty('--spot-x', `${x * 100}%`);
-          visual.style.setProperty('--spot-y', `${y * 100}%`);
-        }
-        card.style.transform = `perspective(1400px) rotateX(${((.5-y)*1.15).toFixed(2)}deg) rotateY(${((x-.5)*1.35).toFixed(2)}deg) translateY(-2px)`;
-      });
-      card.addEventListener('pointerleave', () => { card.style.transform = ''; });
-    });
-
-    // Gentle magnetic response for compact controls.
-    document.querySelectorAll('.btn,.project-links a,.navlinks a').forEach((element) => {
-      element.addEventListener('pointermove', (event) => {
-        const rect = element.getBoundingClientRect();
-        const x = (event.clientX - rect.left - rect.width / 2) * .09;
-        const y = (event.clientY - rect.top - rect.height / 2) * .12;
-        element.style.setProperty('--mag-x', `${x}px`);
-        element.style.setProperty('--mag-y', `${y}px`);
-      });
-      element.addEventListener('pointerleave', () => {
-        element.style.setProperty('--mag-x', '0px'); element.style.setProperty('--mag-y', '0px');
-      });
-    });
+      addEventListener('pointermove', event => {
+        targetX = event.clientX; targetY = event.clientY;
+        body.classList.add('cursor-visible');
+        const item = event.target.closest('a,button,[role="tab"],.project-card,.research-row,.map-module');
+        const label = item ? (item.dataset.cursor || (item.matches('a') ? 'OPEN' : item.matches('[role="tab"]') ? 'VIEW' : item.matches('.project-card') ? 'INSPECT' : 'EXPLORE')) : '';
+        body.classList.toggle('cursor-active', Boolean(item));
+        if (caption && label !== currentLabel) { caption.textContent = label; currentLabel = label; }
+        requestCursorPaint();
+      }, {passive:true});
+      addEventListener('pointerdown', () => body.classList.add('cursor-down'), {passive:true});
+      addEventListener('pointerup', () => body.classList.remove('cursor-down'), {passive:true});
+      document.addEventListener('mouseleave', () => body.classList.remove('cursor-visible'));
+      addEventListener('blur', () => body.classList.remove('cursor-visible'));
+    }
   }
 })();
 </script>
