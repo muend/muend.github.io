@@ -1,1751 +1,302 @@
-<!DOCTYPE html>
-
+<!doctype html>
 <html lang="en">
 <head>
-<meta charset="utf-8"/>
-<meta content="width=device-width, initial-scale=1.0, viewport-fit=cover" name="viewport"/>
-<script>document.documentElement.classList.add('js');</script>
-<link href="./assets/brand/favicon.svg" rel="icon" type="image/svg+xml"/>
-<link href="./assets/brand/favicon.ico" rel="icon" sizes="any"/>
-<link href="./assets/brand/favicon-32.png" rel="icon" sizes="32x32" type="image/png"/>
-<link href="./assets/brand/favicon-180.png" rel="apple-touch-icon"/>
-<link href="./assets/brand/site.webmanifest" rel="manifest"/>
-<link href="https://muend.github.io/" rel="canonical"/>
-<title>Muhammed Enes Duran — GeoAI Agent Systems · Spatial ML · Applied Simulation</title>
-<meta content="Muhammed Enes Duran builds GeoAI agent systems, secure ArcGIS automation, reproducible Sentinel-2 pipelines, spatial decision-support products, and applied simulations." name="description"/>
-<meta content="#FAFAF6" name="theme-color"/>
-<meta content="light" name="color-scheme"/>
-<meta content="strict-origin-when-cross-origin" name="referrer"/>
-<meta content="index,follow,max-image-preview:large" name="robots"/>
-<meta content="Muhammed Enes Duran" name="author"/>
-<meta content="Muhammed Enes Duran — GeoAI Agent Systems · Spatial ML · Applied Simulation" property="og:title"/>
-<meta content="Open-source GeoAI skills, secure MCP infrastructure, Sentinel-2 research pipelines, spatial decision systems, and browser-native simulations." property="og:description"/>
-<meta content="website" property="og:type"/>
-<meta content="https://muend.github.io/" property="og:url"/>
-<meta content="Muhammed Enes Duran" property="og:site_name"/>
-<meta content="en_US" property="og:locale"/>
-<meta content="summary_large_image" name="twitter:card"/>
-<meta content="Muhammed Enes Duran — GeoAI Agent Systems" name="twitter:title"/>
-<meta content="GeoAI agent systems, secure GIS automation, spatial ML pipelines, and applied simulation products." name="twitter:description"/>
-<link href="https://fonts.googleapis.com" rel="preconnect"/>
-<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
-<link href="https://fonts.googleapis.com/css2?family=Archivo:wght@400;500;600;700;800;900&amp;family=Space+Mono:wght@400;700&amp;display=swap" rel="stylesheet"/>
-<script type="application/ld+json">
-{
-  "@context": "https://schema.org",
-  "@type": "Person",
-  "name": "Muhammed Enes Duran",
-  "url": "https://muend.github.io/",
-  "email": "mailto:edcoders@gmail.com",
-  "sameAs": [
-    "https://github.com/muend",
-    "https://pypi.org/user/muend/",
-    "https://muend.itch.io/founderexe"
-  ],
-  "knowsAbout": [
-    "GeoAI",
-    "Spatial Data Science",
-    "Remote Sensing",
-    "Model Context Protocol",
-    "ArcGIS Pro Automation",
-    "Spatial Machine Learning",
-    "Decision Support Systems",
-    "Agent Skills Evaluation"
-  ]
-}
-</script>
-<style>
-  :root{
-    --ink:#13140F;
-    --ink-2:#24251E;
-    --paper:#FAFAF6;
-    --paper-2:#F1F1EA;
-    --paper-3:#E8E8DE;
-    --white:#FFFFFF;
-    --green:#0A7D32;
-    --green-dark:#075423;
-    --green-soft:#DCECDF;
-    --amber:#EBA93F;
-    --amber-dark:#A9650E;
-    --amber-soft:#F7E7C7;
-    --red:#B83C2C;
-    --red-soft:#F1D8D3;
-    --blue:#2C67A0;
-    --blue-soft:#DCE5EE;
-    --line:rgba(19,20,15,.07);
-    --line-strong:#D6D6CC;
-    --muted:#5C5E54;
-    --muted-2:#797B70;
-    --maxw:1280px;
-    --radius:3px;
-    --shadow-sm:0 12px 34px -28px rgba(19,20,15,.7);
-    --shadow-lg:0 34px 80px -52px rgba(19,20,15,.78);
-    --ease:cubic-bezier(.2,.75,.2,1);
-  }
-
-  *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
-  html{scroll-behavior:smooth;scroll-padding-top:82px}
-  body{
-    background:var(--paper);
-    color:var(--ink);
-    font-family:'Archivo',sans-serif;
-    font-size:17px;
-    line-height:1.56;
-    -webkit-font-smoothing:antialiased;
-    text-rendering:optimizeLegibility;
-    overflow-x:hidden;
-  }
-  body::before{
-    content:"";
-    position:fixed;inset:0;z-index:-3;pointer-events:none;
-    background:
-      linear-gradient(var(--line) 1px,transparent 1px),
-      linear-gradient(90deg,var(--line) 1px,transparent 1px);
-    background-size:40px 40px;
-    mask-image:linear-gradient(to bottom,#000 0,#000 80%,transparent 100%);
-  }
-
-  a{color:inherit;text-decoration:none}
-  button,input,textarea,select{font:inherit}
-  button{color:inherit}
-  img,svg{max-width:100%;display:block}
-  section{scroll-margin-top:82px}
-  ::selection{background:var(--amber);color:var(--ink)}
-
-  a:focus-visible,button:focus-visible,summary:focus-visible{
-    outline:3px solid var(--amber);
-    outline-offset:4px;
-    border-radius:2px;
-  }
-
-  .skip-link{
-    position:fixed;left:18px;top:14px;z-index:300;
-    transform:translateY(-170%);
-    background:var(--ink);color:#fff;padding:10px 14px;
-    border-radius:2px;font-weight:800;
-  }
-  .skip-link:focus{transform:none}
-
-  .scroll-progress{
-    position:fixed;top:0;left:0;z-index:250;height:3px;width:0;
-    background:var(--green);pointer-events:none;
-    box-shadow:0 0 0 1px rgba(10,125,50,.04);
-  }
-
-  .mono{
-    font-family:'Space Mono',monospace;
-    text-transform:uppercase;
-    letter-spacing:.14em;
-    font-size:11.5px;
-  }
-  .wrap{width:min(100% - 64px,var(--maxw));margin-inline:auto}
-  .visually-hidden{
-    position:absolute!important;width:1px!important;height:1px!important;
-    padding:0!important;margin:-1px!important;overflow:hidden!important;
-    clip:rect(0,0,0,0)!important;white-space:nowrap!important;border:0!important;
-  }
-
-  .topbar{
-    position:sticky;top:0;z-index:100;
-    border-bottom:1px solid var(--line-strong);
-    background:rgba(250,250,246,.9);
-    backdrop-filter:blur(16px) saturate(1.1);
-  }
-  .topbar .wrap{
-    min-height:66px;display:flex;align-items:center;justify-content:space-between;
-    gap:28px;
-  }
-  .brand{font-weight:900;letter-spacing:-.025em;font-size:18px;white-space:nowrap}
-  .brand b{color:var(--green)}
-  .nav-area{display:flex;align-items:center;gap:25px;min-width:0}
-  .navlinks{display:flex;gap:24px;align-items:center}
-  .navlinks a{
-    color:var(--muted);position:relative;white-space:nowrap;
-    transition:color .18s ease;
-  }
-  .navlinks a::after{
-    content:"";position:absolute;left:0;right:0;bottom:-9px;height:2px;
-    background:var(--green);transform:scaleX(0);transform-origin:left;
-    transition:transform .2s var(--ease);
-  }
-  .navlinks a:hover,.navlinks a[aria-current="true"]{color:var(--ink)}
-  .navlinks a[aria-current="true"]::after{transform:scaleX(1)}
-  .status-pill{
-    display:inline-flex;align-items:center;gap:8px;border-left:1px solid var(--line-strong);
-    padding-left:24px;color:var(--muted);white-space:nowrap;
-  }
-  .status-pill i{
-    width:8px;height:8px;border-radius:50%;background:var(--green);
-    box-shadow:0 0 0 5px rgba(10,125,50,.1);
-    animation:pulse 2.4s ease-in-out infinite;
-  }
-
-  .hero{
-    position:relative;overflow:hidden;
-    border-bottom:1px solid var(--line-strong);
-  }
-  .hero::before{
-    content:"";position:absolute;inset:auto -12% -25% 43%;height:620px;
-    border:1px solid rgba(10,125,50,.18);border-radius:50%;
-    transform:rotate(-12deg);pointer-events:none;
-    box-shadow:
-      0 0 0 54px rgba(10,125,50,.025),
-      0 0 0 108px rgba(10,125,50,.02),
-      0 0 0 162px rgba(10,125,50,.015);
-  }
-  .hero-grid{
-    min-height:calc(100svh - 66px);
-    display:grid;grid-template-columns:minmax(0,1.18fr) minmax(390px,.82fr);
-    gap:64px;align-items:center;padding:82px 0 70px;
-  }
-  .hero-copy{position:relative;z-index:2}
-  .eyebrow-row{display:flex;align-items:center;gap:14px;flex-wrap:wrap;margin-bottom:25px}
-  .kicker{color:var(--green)}
-  .eyebrow-line{width:78px;height:1px;background:var(--green)}
-  .edition{color:var(--muted)}
-  h1{
-    font-weight:900;letter-spacing:-.052em;line-height:.88;
-    font-size:clamp(56px,8.8vw,122px);max-width:9.2ch;
-  }
-  h1 .name-accent{position:relative;display:inline-block}
-  h1 .name-accent::after{
-    content:"";position:absolute;left:.03em;right:.02em;bottom:.05em;height:.11em;
-    background:var(--amber);z-index:-1;transform:skewX(-12deg);
-  }
-  h1 .sub{
-    display:block;color:var(--muted);font-weight:600;
-    font-size:clamp(18px,2.5vw,30px);letter-spacing:-.028em;
-    line-height:1.12;margin-top:26px;max-width:24ch;
-  }
-  .lede{
-    margin-top:34px;max-width:68ch;
-    font-size:clamp(18px,1.8vw,22px);line-height:1.55;color:#292A23;
-  }
-  .lede em{font-style:normal;color:var(--green);font-weight:750}
-  .cta{margin-top:38px;display:flex;gap:11px;flex-wrap:wrap}
-  .btn{
-    --btn-bg:transparent;--btn-fg:var(--ink);--btn-border:var(--ink);
-    display:inline-flex;align-items:center;justify-content:center;gap:10px;
-    min-height:50px;padding:12px 21px;border:1.5px solid var(--btn-border);
-    border-radius:2px;background:var(--btn-bg);color:var(--btn-fg);
-    font-weight:800;font-size:14px;position:relative;overflow:hidden;
-    transition:transform .2s var(--ease),background .2s ease,color .2s ease,border-color .2s ease;
-  }
-  .btn::before{
-    content:"";position:absolute;inset:0;background:var(--ink);transform:translateY(105%);
-    transition:transform .24s var(--ease);z-index:0;
-  }
-  .btn span,.btn svg{position:relative;z-index:1}
-  .btn svg{width:15px;height:15px}
-  .btn:hover{color:var(--paper);transform:translateY(-2px);box-shadow:var(--shadow-sm)}
-  .btn:hover::before{transform:translateY(0)}
-  .btn.solid{--btn-bg:var(--green);--btn-fg:#fff;--btn-border:var(--green)}
-  .btn.solid::before{background:var(--green-dark)}
-  .btn.amber{--btn-bg:var(--amber);--btn-fg:var(--ink);--btn-border:var(--amber)}
-  .btn.amber::before{background:var(--amber-dark)}
-  .btn.ghost{--btn-border:var(--line-strong);background:rgba(255,255,255,.56)}
-  .btn .dot{width:8px;height:8px;border-radius:50%;background:var(--green)}
-
-  .hero-console{
-    position:relative;z-index:2;border:1px solid var(--ink);background:var(--ink);color:#fff;
-    min-height:600px;box-shadow:var(--shadow-lg);overflow:hidden;
-    transform:translateZ(0);
-  }
-  .console-top{
-    min-height:49px;display:flex;align-items:center;justify-content:space-between;gap:18px;
-    padding:0 17px;border-bottom:1px solid rgba(255,255,255,.16);
-  }
-  .console-dots{display:flex;gap:7px}
-  .console-dots i{width:8px;height:8px;border-radius:50%;background:#707168}
-  .console-dots i:nth-child(1){background:var(--red)}
-  .console-dots i:nth-child(2){background:var(--amber)}
-  .console-dots i:nth-child(3){background:var(--green)}
-  .console-status{display:flex;align-items:center;gap:8px;color:#C3C5BA}
-  .console-status::before{content:"";width:7px;height:7px;background:#48D476;border-radius:50%;box-shadow:0 0 12px rgba(72,212,118,.7)}
-  .console-map{
-    position:relative;height:348px;border-bottom:1px solid rgba(255,255,255,.14);
-    background:
-      linear-gradient(rgba(255,255,255,.055) 1px,transparent 1px),
-      linear-gradient(90deg,rgba(255,255,255,.055) 1px,transparent 1px);
-    background-size:32px 32px;
-  }
-  .console-map svg{width:100%;height:100%}
-  .route-line{stroke-dasharray:7 7;animation:dash 12s linear infinite}
-  .node-pulse{transform-box:fill-box;transform-origin:center;animation:nodePulse 2.8s ease-in-out infinite}
-  .node-pulse:nth-of-type(2){animation-delay:.35s}
-  .node-pulse:nth-of-type(3){animation-delay:.7s}
-  .console-label{
-    position:absolute;padding:6px 8px;border:1px solid rgba(255,255,255,.2);
-    background:rgba(19,20,15,.88);font-size:9px;color:#DDE0D5;
-    backdrop-filter:blur(4px);
-  }
-  .label-a{left:6%;top:13%}.label-b{right:5%;top:31%}.label-c{left:10%;bottom:12%}
-  .console-output{padding:20px 20px 22px}
-  .console-output-head{display:flex;align-items:center;justify-content:space-between;gap:16px;margin-bottom:18px}
-  .console-output-head span:first-child{color:#BDE3C9}
-  .console-output-head span:last-child{color:#9A9C91}
-  .terminal-lines{display:grid;gap:11px}
-  .terminal-line{display:grid;grid-template-columns:72px 1fr auto;gap:11px;align-items:center;font-family:'Space Mono',monospace;font-size:11px}
-  .terminal-line .time{color:#74776D}
-  .terminal-line .command{color:#F1F2EC;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
-  .terminal-line .ok{color:#69DC8F}
-  .console-metrics{
-    display:grid;grid-template-columns:repeat(3,1fr);border-top:1px solid rgba(255,255,255,.14);
-  }
-  .console-metric{padding:17px;border-left:1px solid rgba(255,255,255,.14)}
-  .console-metric:first-child{border-left:0}
-  .console-metric strong{display:block;font-size:23px;letter-spacing:-.035em}
-  .console-metric span{display:block;color:#92958A;margin-top:5px;font-size:9.5px}
-
-  .ticker{
-    border-bottom:1px solid var(--line-strong);background:var(--paper-2);overflow:hidden;
-  }
-  .ticker-track{
-    display:flex;width:max-content;animation:ticker 34s linear infinite;
-  }
-  .ticker-group{display:flex;align-items:center}
-  .ticker-item{
-    display:flex;align-items:center;gap:16px;padding:17px 28px;
-    border-right:1px solid var(--line-strong);white-space:nowrap;color:var(--muted);
-  }
-  .ticker-item b{color:var(--ink)}
-  .ticker-item i{width:6px;height:6px;background:var(--green);transform:rotate(45deg)}
-
-  .stats{border-bottom:1px solid var(--line-strong);background:var(--paper)}
-  .stats .wrap{display:grid;grid-template-columns:repeat(6,1fr)}
-  .stat{position:relative;padding:29px 20px 27px;border-left:1px solid var(--line-strong);min-width:0}
-  .stat:first-child{border-left:none}
-  .stat::after{content:"";position:absolute;left:20px;right:20px;bottom:0;height:3px;background:var(--green);transform:scaleX(0);transform-origin:left;transition:transform .3s var(--ease)}
-  .stat:hover::after{transform:scaleX(1)}
-  .stat .num{font-weight:900;font-size:clamp(29px,3.15vw,45px);letter-spacing:-.045em;line-height:1}
-  .stat .lbl{color:var(--muted);margin-top:10px;line-height:1.35}
-
-  section{padding:96px 0}
-  .section-shell{position:relative}
-  .sec-head{display:grid;grid-template-columns:auto auto 1fr auto;align-items:center;gap:17px;margin-bottom:24px}
-  .sec-head .idx{color:var(--green)}
-  .sec-head h2{font-size:clamp(29px,3.65vw,46px);font-weight:900;letter-spacing:-.04em;line-height:1}
-  .sec-head .rule{height:1px;background:var(--line-strong)}
-  .sec-head .section-count{color:var(--muted)}
-  .section-intro{max-width:78ch;color:var(--muted);margin:0 0 44px;font-size:16.5px}
-
-  .systems-grid{
-    display:grid;grid-template-columns:repeat(12,minmax(0,1fr));gap:22px;
-  }
-  .project-card{
-    --accent:var(--green);
-    grid-column:span 4;position:relative;overflow:hidden;
-    border:1px solid var(--line-strong);background:var(--white);
-    min-height:520px;display:flex;flex-direction:column;
-    transition:transform .24s var(--ease),border-color .24s ease,box-shadow .24s ease;
-    transform-style:preserve-3d;
-  }
-  .project-card:hover{border-color:var(--ink);box-shadow:var(--shadow-lg)}
-  .project-card.featured{grid-column:span 8;min-height:630px;background:var(--ink);color:#fff;border-color:var(--ink);--accent:var(--amber)}
-  .project-card.wide{grid-column:span 8;min-height:570px}
-  .project-card.amber{--accent:var(--amber)}
-  .project-card.blue{--accent:var(--blue)}
-  .project-card::before{
-    content:"";position:absolute;left:0;right:0;top:0;height:4px;background:var(--accent);
-    transform:scaleX(.18);transform-origin:left;transition:transform .4s var(--ease);z-index:5;
-  }
-  .project-card:hover::before{transform:scaleX(1)}
-  .project-header{display:flex;justify-content:space-between;align-items:flex-start;gap:18px;padding:27px 28px 0}
-  .project-card.featured .project-header{padding:30px 32px 0}
-  .project-type{color:var(--accent)}
-  .project-card.featured .project-type{color:#F5D89D}
-  .badges{display:flex;gap:7px;flex-wrap:wrap;justify-content:flex-end}
-  .badge{padding:5px 8px;border:1px solid var(--line-strong);background:var(--paper);font-size:9.5px;line-height:1}
-  .project-card.featured .badge{border-color:rgba(255,255,255,.2);background:rgba(255,255,255,.06);color:#E0E2D8}
-  .badge.live{background:var(--green);border-color:var(--green);color:#fff}
-  .badge.pkg{background:var(--blue);border-color:var(--blue);color:#fff}
-  .badge.game{background:var(--amber);border-color:var(--amber);color:var(--ink)}
-  .project-copy{padding:22px 28px 23px}
-  .project-card.featured .project-copy{padding:24px 32px 26px;display:grid;grid-template-columns:minmax(0,1fr) minmax(270px,.68fr);gap:34px;align-items:start}
-  .project-copy h3{font-size:clamp(28px,3vw,43px);font-weight:900;letter-spacing:-.04em;line-height:1;margin-bottom:15px}
-  .project-card:not(.featured) .project-copy h3{font-size:28px}
-  .project-copy p{color:#3F4137;font-size:15.5px;line-height:1.58}
-  .project-card.featured .project-copy p{color:#BFC2B7}
-  .project-points{list-style:none;display:grid;gap:10px;margin-top:19px}
-  .project-points li{position:relative;padding-left:17px;color:var(--muted);font-size:13.8px}
-  .project-points li::before{content:"";position:absolute;left:0;top:.62em;width:6px;height:6px;background:var(--accent)}
-  .project-card.featured .project-points li{color:#AEB1A6}
-  .project-stats{border-left:1px solid rgba(255,255,255,.15);padding-left:25px;display:grid;gap:0}
-  .project-stat{padding:14px 0;border-top:1px solid rgba(255,255,255,.15)}
-  .project-stat:last-child{border-bottom:1px solid rgba(255,255,255,.15)}
-  .project-stat strong{font-size:27px;letter-spacing:-.04em}
-  .project-stat span{display:block;color:#9EA197;margin-top:4px}
-  .project-visual{margin-top:auto;min-height:215px;border-top:1px solid var(--line-strong);background:var(--paper-2);position:relative;overflow:hidden}
-  .project-card.featured .project-visual{min-height:300px;border-color:rgba(255,255,255,.15);background:#0D0E0B}
-  .project-visual svg{width:100%;height:100%;position:absolute;inset:0}
-  .project-footer{display:flex;align-items:center;justify-content:space-between;gap:16px;padding:19px 28px;border-top:1px solid var(--line-strong);margin-top:auto}
-  .project-card.featured .project-footer{padding:20px 32px;border-color:rgba(255,255,255,.15)}
-  .project-links{display:flex;gap:18px;flex-wrap:wrap}
-  .project-links a{font-weight:800;font-size:13px;position:relative}
-  .project-links a::after{content:"";position:absolute;left:0;right:0;bottom:-3px;height:2px;background:var(--accent);transform:scaleX(0);transform-origin:left;transition:transform .2s ease}
-  .project-links a:hover::after{transform:scaleX(1)}
-  .project-index{color:var(--muted)}
-  .project-card.featured .project-index{color:#878A80}
-
-  .skills-orbit{position:absolute;inset:0;overflow:hidden}
-  .orbit-ring{fill:none;stroke:rgba(255,255,255,.15);stroke-width:1}
-  .orbit-ring.dashed{stroke-dasharray:5 7;animation:dash 24s linear infinite}
-  .skill-node{fill:#11120E;stroke:#EBA93F;stroke-width:1.5}
-  .skill-node.green{stroke:#56D77E}
-  .skill-node.blue{stroke:#6FA7D6}
-  .orbit-label{fill:#DBDDD4;font-family:'Space Mono',monospace;font-size:8px;letter-spacing:.08em}
-  .orbit-core{fill:#EBA93F}
-  .orbit-core-text{fill:#13140F;font-family:'Archivo',sans-serif;font-weight:900;font-size:11px}
-
-  .arc-flow .box{fill:#fff;stroke:#13140F;stroke-width:1.2}
-  .arc-flow .blocked{fill:#F1D8D3;stroke:#B83C2C}
-  .arc-flow .safe{fill:#DCECDF;stroke:#0A7D32}
-  .arc-flow .flow{stroke:#13140F;stroke-width:1.2;fill:none;marker-end:url(#arrowArc)}
-  .arc-flow .flow-dash{stroke:#0A7D32;stroke-dasharray:5 5;animation:dash 9s linear infinite}
-  .arc-flow text{font-family:'Space Mono',monospace;font-size:8px;fill:#13140F}
-
-  .sat-grid rect{stroke:#FAFAF6;stroke-width:1}
-  .sat-path{fill:none;stroke:#13140F;stroke-width:2;stroke-dasharray:6 6;animation:dash 13s linear infinite}
-  .sat-marker{fill:#EBA93F;stroke:#13140F;stroke-width:1.5}
-
-  .dss-map .district{stroke:#FAFAF6;stroke-width:2;transition:opacity .2s ease}
-  .dss-map .district:nth-child(1){fill:#0A7D32}.dss-map .district:nth-child(2){fill:#2D9550}.dss-map .district:nth-child(3){fill:#67AD7D}.dss-map .district:nth-child(4){fill:#A5CFB1}.dss-map .district:nth-child(5){fill:#DCECDF}
-  .dss-map text{font-family:'Space Mono',monospace;font-size:8px;fill:#13140F}
-
-  .founder-ui .panel{fill:#FAFAF6;stroke:#13140F;stroke-width:1}
-  .founder-ui .black{fill:#13140F}.founder-ui .amber-fill{fill:#EBA93F}.founder-ui .red-fill{fill:#B83C2C}.founder-ui .green-fill{fill:#0A7D32}
-  .founder-ui .chart{fill:none;stroke:#B83C2C;stroke-width:2.4}
-  .founder-ui text{font-family:'Space Mono',monospace;font-size:7px;fill:#13140F}
-
-  .proof-section{background:var(--paper-2);border-top:1px solid var(--line-strong);border-bottom:1px solid var(--line-strong)}
-  .proof-dashboard{display:grid;grid-template-columns:minmax(350px,.82fr) minmax(0,1.18fr);border:1px solid var(--ink);background:var(--white)}
-  .score-panel{background:var(--ink);color:#fff;padding:34px;display:flex;flex-direction:column;justify-content:space-between;min-height:490px}
-  .score-head{display:flex;align-items:flex-start;justify-content:space-between;gap:20px}
-  .score-head p{color:#AEB1A6;max-width:31ch;font-size:13px;margin-top:8px}
-  .score-gauge{width:min(100%,290px);margin:26px auto 18px;position:relative}
-  .score-gauge svg{transform:rotate(-90deg)}
-  .score-ring-bg{fill:none;stroke:#2D2F28;stroke-width:12}
-  .score-ring{fill:none;stroke:var(--amber);stroke-width:12;stroke-linecap:square;stroke-dasharray:301.59;stroke-dashoffset:21.54;animation:ringIn 1.4s var(--ease) both}
-  .score-center{position:absolute;inset:0;display:grid;place-content:center;text-align:center}
-  .score-center strong{font-size:58px;line-height:.9;letter-spacing:-.065em}
-  .score-center span{color:#B3B6AB;margin-top:9px}
-  .score-foot{display:grid;grid-template-columns:repeat(2,1fr);border-top:1px solid rgba(255,255,255,.16)}
-  .score-foot div{padding:17px 0;border-right:1px solid rgba(255,255,255,.16)}
-  .score-foot div:last-child{border-right:0;padding-left:18px}
-  .score-foot strong{display:block;font-size:22px}
-  .score-foot span{color:#95988D}
-
-  .evidence-panel{padding:34px;display:flex;flex-direction:column}
-  .evidence-top{display:flex;justify-content:space-between;gap:24px;align-items:flex-start;padding-bottom:25px;border-bottom:1px solid var(--line-strong)}
-  .evidence-top h3{font-size:27px;letter-spacing:-.035em}
-  .evidence-top p{color:var(--muted);max-width:50ch;font-size:14px;margin-top:8px}
-  .benchmark-table{margin-top:28px;display:grid;gap:22px}
-  .benchmark-row{display:grid;grid-template-columns:150px 1fr 65px;gap:16px;align-items:center}
-  .benchmark-row .metric{font-weight:800;font-size:14px}
-  .bar{height:12px;background:var(--paper-3);position:relative;overflow:hidden}
-  .bar i{display:block;height:100%;width:var(--value);background:var(--green);transform-origin:left;animation:barIn 1s var(--ease) both}
-  .benchmark-row:nth-child(2) .bar i{background:var(--blue)}
-  .benchmark-row:nth-child(3) .bar i{background:var(--amber)}
-  .benchmark-row strong{text-align:right;font-size:14px}
-  .evidence-notes{margin-top:auto;padding-top:26px;display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:var(--line-strong);border:1px solid var(--line-strong)}
-  .evidence-note{background:var(--paper);padding:18px}
-  .evidence-note strong{display:block;font-size:18px;letter-spacing:-.02em}
-  .evidence-note span{display:block;color:var(--muted);margin-top:6px;font-size:11px;line-height:1.4}
-
-  .principles{display:grid;grid-template-columns:repeat(4,1fr);margin-top:24px;border:1px solid var(--line-strong)}
-  .principle{padding:25px;border-left:1px solid var(--line-strong);background:var(--paper)}
-  .principle:first-child{border-left:0}
-  .principle .number{color:var(--green)}
-  .principle h3{font-size:20px;letter-spacing:-.025em;margin:17px 0 9px}
-  .principle p{font-size:13.5px;color:var(--muted)}
-
-  .research-list{border-top:1px solid var(--ink)}
-  .research-row{
-    display:grid;grid-template-columns:72px minmax(0,1fr) minmax(250px,.7fr) auto;
-    gap:24px;align-items:center;padding:29px 8px;border-bottom:1px solid var(--line-strong);
-    transition:padding .2s var(--ease),background .2s ease;
-  }
-  .research-row:hover{padding-left:18px;padding-right:18px;background:var(--white)}
-  .research-no{color:var(--green)}
-  .research-title h3{font-size:22px;letter-spacing:-.025em}
-  .research-title span{display:block;color:var(--muted);margin-top:6px}
-  .research-desc{color:var(--muted);font-size:14px}
-  .research-arrow{font-size:22px;transition:transform .2s ease}
-  .research-row:hover .research-arrow{transform:translate(4px,-4px)}
-
-  .method-section{background:var(--ink);color:#fff;overflow:hidden;position:relative}
-  .method-section::before{
-    content:"";position:absolute;inset:0;pointer-events:none;
-    background:
-      radial-gradient(circle at 75% 20%,rgba(235,169,63,.12),transparent 28%),
-      linear-gradient(rgba(255,255,255,.035) 1px,transparent 1px),
-      linear-gradient(90deg,rgba(255,255,255,.035) 1px,transparent 1px);
-    background-size:auto,40px 40px,40px 40px;
-  }
-  .method-section .wrap{position:relative}
-  .method-section .sec-head .rule{background:rgba(255,255,255,.18)}
-  .method-section .section-intro{color:#AEB1A6}
-  .method-track{display:grid;grid-template-columns:repeat(4,1fr);position:relative}
-  .method-track::before{content:"";position:absolute;left:10%;right:10%;top:40px;border-top:1px dashed rgba(255,255,255,.25)}
-  .method-step{position:relative;padding:0 26px;border-left:1px solid rgba(255,255,255,.15);min-height:260px}
-  .method-step:first-child{border-left:0;padding-left:0}
-  .method-step:last-child{padding-right:0}
-  .method-node{width:80px;height:80px;border:1px solid rgba(255,255,255,.35);background:var(--ink);display:grid;place-items:center;position:relative;z-index:1}
-  .method-node::after{content:"";width:10px;height:10px;background:var(--amber);transform:rotate(45deg)}
-  .method-step:nth-child(2) .method-node::after{background:var(--green)}
-  .method-step:nth-child(3) .method-node::after{background:#68A2D2}
-  .method-step:nth-child(4) .method-node::after{background:#fff}
-  .method-step .phase{display:block;color:#93968B;margin-top:23px}
-  .method-step h3{font-size:23px;letter-spacing:-.025em;margin:12px 0 10px}
-  .method-step p{color:#AEB1A6;font-size:14px;max-width:28ch}
-
-  .skills-section{background:var(--paper-2);border-bottom:1px solid var(--line-strong)}
-  .capability-layout{display:grid;grid-template-columns:300px minmax(0,1fr);gap:24px}
-  .capability-nav{border:1px solid var(--line-strong);background:var(--paper)}
-  .capability-tab{
-    width:100%;display:flex;align-items:center;justify-content:space-between;gap:14px;
-    border:0;border-bottom:1px solid var(--line-strong);background:transparent;
-    padding:19px 20px;text-align:left;cursor:pointer;color:var(--muted);
-    transition:background .2s ease,color .2s ease;
-  }
-  .capability-tab:last-child{border-bottom:0}
-  .capability-tab:hover,.capability-tab[aria-selected="true"]{background:var(--ink);color:#fff}
-  .capability-tab .count{color:var(--green)}
-  .capability-tab[aria-selected="true"] .count{color:var(--amber)}
-  .capability-panel{border:1px solid var(--ink);background:var(--white);padding:30px;min-height:390px;display:none}
-  .capability-panel.active{display:grid;grid-template-columns:minmax(0,.7fr) minmax(300px,1.3fr);gap:35px;animation:panelIn .36s var(--ease) both}
-  .capability-panel h3{font-size:32px;letter-spacing:-.04em;line-height:1.04}
-  .capability-panel p{color:var(--muted);margin-top:15px;font-size:14.5px}
-  .capability-proof{margin-top:26px;border-top:1px solid var(--line-strong)}
-  .capability-proof div{display:flex;justify-content:space-between;gap:15px;padding:11px 0;border-bottom:1px solid var(--line-strong);font-size:12px}
-  .capability-proof span{color:var(--muted)}
-  .chip-cloud{display:flex;align-content:flex-start;flex-wrap:wrap;gap:9px}
-  .chip-cloud span{padding:9px 12px;border:1px solid var(--line-strong);background:var(--paper);font-weight:700;font-size:13px;transition:transform .18s ease,border-color .18s ease,background .18s ease}
-  .chip-cloud span:hover{transform:translateY(-2px);border-color:var(--ink);background:var(--amber-soft)}
-
-  .work-map{position:relative;overflow:hidden}
-  .system-map{border:1px solid var(--ink);background:var(--white);min-height:560px;position:relative;overflow:hidden}
-  .system-map::before{content:"";position:absolute;inset:0;background:linear-gradient(var(--line) 1px,transparent 1px),linear-gradient(90deg,var(--line) 1px,transparent 1px);background-size:32px 32px}
-  .map-lines{position:absolute;inset:0;width:100%;height:100%}
-  .map-path{fill:none;stroke:#9A9C92;stroke-width:1.4;stroke-dasharray:6 7;animation:dash 16s linear infinite}
-  .map-path.hot{stroke:var(--green);stroke-width:2}
-  .map-module{position:absolute;width:245px;min-height:130px;border:1px solid var(--ink);background:rgba(250,250,246,.96);padding:20px;box-shadow:var(--shadow-sm)}
-  .map-module .mono{color:var(--green)}
-  .map-module h3{font-size:20px;letter-spacing:-.025em;margin:10px 0 7px}
-  .map-module p{font-size:12.5px;color:var(--muted)}
-  .map-module.center{left:50%;top:50%;transform:translate(-50%,-50%);background:var(--ink);color:#fff;width:265px;min-height:150px}
-  .map-module.center .mono{color:var(--amber)}
-  .map-module.center p{color:#AEB1A6}
-  .map-module.m1{left:5%;top:11%}.map-module.m2{right:5%;top:11%}.map-module.m3{left:5%;bottom:11%}.map-module.m4{right:5%;bottom:11%}
-
-  .contact{padding:126px 0;text-align:center;position:relative;overflow:hidden}
-  .contact::before{
-    content:"";position:absolute;width:720px;height:720px;border:1px solid rgba(10,125,50,.17);
-    border-radius:50%;left:50%;top:52%;transform:translate(-50%,-50%);
-    box-shadow:0 0 0 70px rgba(10,125,50,.025),0 0 0 140px rgba(10,125,50,.018);
-  }
-  .contact .wrap{position:relative}
-  .contact h2{font-size:clamp(48px,8vw,102px);font-weight:900;letter-spacing:-.055em;line-height:.88;max-width:11ch;margin:0 auto}
-  .contact p{color:var(--muted);max-width:63ch;margin:29px auto 0;font-size:18px}
-  .contact .cta{justify-content:center}
-  .contact-note{font-size:12px!important;margin-top:22px!important}
-
-  footer{border-top:1px solid var(--line-strong);background:var(--ink);color:#C9CBC0}
-  footer .wrap{display:grid;grid-template-columns:auto 1fr auto;align-items:center;gap:25px;padding-top:27px;padding-bottom:27px}
-  footer a{color:#fff}
-  footer a:hover{color:#78D995}
-  .footer-links{display:flex;justify-content:center;gap:22px;font-size:13px}
-  footer .mono{color:#8C8E82;text-align:right}
-
-  .reveal{opacity:1;transform:none}
-  .js .reveal{opacity:0;transform:translateY(22px)}
-  .js .reveal.is-visible{opacity:1;transform:none;transition:opacity .72s var(--ease),transform .72s var(--ease)}
-  .js .reveal[data-delay="1"].is-visible{transition-delay:.08s}
-  .js .reveal[data-delay="2"].is-visible{transition-delay:.16s}
-  .js .reveal[data-delay="3"].is-visible{transition-delay:.24s}
-
-  @keyframes pulse{0%,100%{opacity:1;transform:scale(1)}50%{opacity:.55;transform:scale(.85)}}
-  @keyframes dash{to{stroke-dashoffset:-120}}
-  @keyframes nodePulse{0%,100%{transform:scale(1);opacity:1}50%{transform:scale(1.14);opacity:.72}}
-  @keyframes ticker{to{transform:translateX(-50%)}}
-  @keyframes ringIn{from{stroke-dashoffset:301.59}}
-  @keyframes barIn{from{transform:scaleX(0)}}
-  @keyframes panelIn{from{opacity:0;transform:translateY(7px)}to{opacity:1;transform:none}}
-
-  @media(max-width:1120px){
-    .hero-grid{grid-template-columns:minmax(0,1fr) minmax(340px,.72fr);gap:38px}
-    .project-card{grid-column:span 6}
-    .project-card.featured,.project-card.wide{grid-column:span 12}
-    .project-card.featured .project-copy{grid-template-columns:1fr .7fr}
-    .principles{grid-template-columns:repeat(2,1fr)}
-    .principle:nth-child(3){border-left:0;border-top:1px solid var(--line-strong)}
-    .principle:nth-child(4){border-top:1px solid var(--line-strong)}
-    .method-track{grid-template-columns:repeat(2,1fr);gap:42px 0}
-    .method-track::before{display:none}
-    .method-step:nth-child(3){border-left:0;padding-left:0}
-  }
-
-  @media(max-width:920px){
-    .wrap{width:min(100% - 40px,var(--maxw))}
-    .navlinks{gap:16px;overflow:auto;max-width:58vw;padding-bottom:2px;scrollbar-width:none}
-    .navlinks::-webkit-scrollbar{display:none}
-    .status-pill{display:none}
-    .hero-grid{grid-template-columns:1fr;min-height:auto;padding:76px 0 62px}
-    .hero-copy{max-width:850px}
-    .hero-console{min-height:560px;max-width:680px}
-    .stats .wrap{grid-template-columns:repeat(3,1fr)}
-    .stat:nth-child(4){border-left:0;border-top:1px solid var(--line-strong)}
-    .stat:nth-child(5),.stat:nth-child(6){border-top:1px solid var(--line-strong)}
-    .proof-dashboard{grid-template-columns:1fr}
-    .score-panel{min-height:auto}
-    .score-gauge{width:240px}
-    .evidence-panel{min-height:470px}
-    .research-row{grid-template-columns:58px 1fr auto}
-    .research-desc{grid-column:2/3}
-    .capability-layout{grid-template-columns:1fr}
-    .capability-nav{display:grid;grid-template-columns:repeat(2,1fr)}
-    .capability-tab:nth-child(odd){border-right:1px solid var(--line-strong)}
-    .capability-panel.active{grid-template-columns:1fr}
-    .system-map{min-height:780px}
-    .map-module.center{top:50%}
-    .map-module.m1,.map-module.m2{top:7%}
-    .map-module.m3,.map-module.m4{bottom:7%}
-    .map-module{width:40%}
-  }
-
-  @media(max-width:700px){
-    body{font-size:16px}
-    .wrap{width:min(100% - 28px,var(--maxw))}
-    .topbar .wrap{min-height:60px}
-    .brand{font-size:17px}
-    .nav-area{gap:15px;min-width:0}
-    .navlinks{max-width:66vw;gap:15px}
-    .navlinks a{font-size:10px}
-    .hero-grid{padding:64px 0 46px}
-    .eyebrow-line{width:38px}
-    h1{font-size:clamp(49px,16vw,78px)}
-    .hero-console{min-height:530px}
-    .console-map{height:300px}
-    .console-output{padding:17px 15px}
-    .terminal-line{grid-template-columns:52px 1fr auto;font-size:9px;gap:7px}
-    .console-metrics{grid-template-columns:1fr}
-    .console-metric{border-left:0;border-top:1px solid rgba(255,255,255,.14);display:flex;justify-content:space-between;align-items:baseline}
-    .console-metric:first-child{border-top:0}
-    .ticker-item{padding:14px 19px}
-    .stats .wrap{grid-template-columns:repeat(2,1fr)}
-    .stat:nth-child(3),.stat:nth-child(5){border-left:0}
-    .stat:nth-child(3){border-top:1px solid var(--line-strong)}
-    .stat:nth-child(4),.stat:nth-child(5),.stat:nth-child(6){border-top:1px solid var(--line-strong)}
-    section{padding:72px 0}
-    .sec-head{grid-template-columns:auto 1fr auto;gap:11px}
-    .sec-head h2{font-size:31px}
-    .sec-head .rule{display:none}
-    .project-card,.project-card.featured,.project-card.wide{grid-column:span 12;min-height:auto}
-    .project-card.featured .project-copy{grid-template-columns:1fr;padding:21px 23px}
-    .project-header,.project-card.featured .project-header{padding:23px 23px 0}
-    .project-copy{padding:20px 23px}
-    .project-stats{border-left:0;border-top:1px solid rgba(255,255,255,.15);padding:10px 0 0;grid-template-columns:repeat(3,1fr)}
-    .project-stat{padding:12px 10px;border-bottom:0!important;border-left:1px solid rgba(255,255,255,.15);text-align:center}
-    .project-stat:first-child{border-left:0}
-    .project-footer,.project-card.featured .project-footer{padding:17px 23px;align-items:flex-start}
-    .project-visual{min-height:230px}.project-card.featured .project-visual{min-height:280px}
-    .evidence-panel,.score-panel{padding:25px}
-    .benchmark-row{grid-template-columns:115px 1fr 54px;gap:10px}
-    .evidence-notes{grid-template-columns:1fr}
-    .principles{grid-template-columns:1fr}
-    .principle{border-left:0;border-top:1px solid var(--line-strong)}
-    .principle:first-child{border-top:0}
-    .research-row{grid-template-columns:46px 1fr auto;gap:14px;padding:24px 3px}
-    .research-desc{display:none}
-    .method-track{grid-template-columns:1fr;gap:38px}
-    .method-step,.method-step:nth-child(3){border-left:0;padding:0}
-    .method-step{display:grid;grid-template-columns:70px 1fr;column-gap:20px;min-height:auto}
-    .method-node{width:70px;height:70px;grid-row:1/4}
-    .method-step .phase{margin-top:0}
-    .capability-nav{grid-template-columns:1fr}
-    .capability-tab:nth-child(odd){border-right:0}
-    .capability-panel{padding:23px}
-    .system-map{min-height:auto;padding:18px;display:grid;gap:12px}
-    .map-lines{display:none}
-    .map-module,.map-module.center,.map-module.m1,.map-module.m2,.map-module.m3,.map-module.m4{position:relative;left:auto;right:auto;top:auto;bottom:auto;transform:none;width:100%;min-height:auto}
-    .map-module.center{order:-1}
-    .contact{padding:95px 0}
-    footer .wrap{grid-template-columns:1fr;text-align:center}
-    .footer-links{order:2;flex-wrap:wrap}
-    footer .mono{text-align:center;order:3}
-  }
-
-  @media(prefers-reduced-motion:reduce){
-    html{scroll-behavior:auto}
-    *,*::before,*::after{animation-duration:.01ms!important;animation-iteration-count:1!important;transition-duration:.01ms!important;scroll-behavior:auto!important}
-    .ticker-track{animation:none;transform:none}
-    .ticker-group[aria-hidden="true"]{display:none}
-    .js .reveal{opacity:1;transform:none}
-  }
-
-  @media(print){
-    .topbar,.scroll-progress,.ticker,.hero-console,.cta,.method-section,.contact,footer{display:none!important}
-    body::before{display:none}
-    body{background:#fff;color:#000;font-size:11pt}
-    section{padding:28px 0;break-inside:avoid}
-    .project-card,.proof-dashboard,.research-row,.capability-panel{break-inside:avoid;box-shadow:none}
-    .project-card{grid-column:span 6!important}
-  }
-</style>
-
-<style id="exhibition-upgrade">
-  :root{
-    --grain-opacity:.065;
-    --cursor-x:50vw;
-    --cursor-y:50vh;
-    --diagram-line:rgba(19,20,15,.28);
-  }
-
-  /* Material field: archival paper, registration grid, restrained light falloff. */
-  body{
-    background:
-      radial-gradient(1100px 720px at 9% -4%,rgba(235,169,63,.075),transparent 54%),
-      radial-gradient(900px 650px at 102% 24%,rgba(10,125,50,.055),transparent 58%),
-      var(--paper);
-  }
-  body::before{
-    background:
-      linear-gradient(rgba(19,20,15,.045) 1px,transparent 1px),
-      linear-gradient(90deg,rgba(19,20,15,.045) 1px,transparent 1px),
-      linear-gradient(rgba(19,20,15,.018) 1px,transparent 1px),
-      linear-gradient(90deg,rgba(19,20,15,.018) 1px,transparent 1px);
-    background-size:40px 40px,40px 40px,8px 8px,8px 8px;
-    mask-image:linear-gradient(to bottom,#000 0,#000 82%,transparent 100%);
-  }
-  body::after{
-    content:"";position:fixed;inset:-25%;z-index:500;pointer-events:none;
-    opacity:var(--grain-opacity);mix-blend-mode:multiply;
-    background-image:url("data:image/svg+xml,%3Csvg viewBox='0 0 180 180' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.78' numOctaves='4' stitchTiles='stitch'/%3E%3CfeColorMatrix type='saturate' values='0'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='.42'/%3E%3C/svg%3E");
-    transform:rotate(.001deg);
-  }
-  .topbar,.hero-console,.project-card,.proof-dashboard,.system-map,.capability-shell{
-    isolation:isolate;
-  }
-  .topbar::after,.project-card::after,.hero-console::after,.proof-dashboard::after,.system-map::after{
-    content:"";position:absolute;inset:0;pointer-events:none;z-index:8;
-    background-image:url("data:image/svg+xml,%3Csvg viewBox='0 0 120 120' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='f'%3E%3CfeTurbulence baseFrequency='.9' numOctaves='3' stitchTiles='stitch'/%3E%3CfeColorMatrix values='0 0 0 0 0.1 0 0 0 0 0.1 0 0 0 0 0.08 0 0 0 .18 0'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23f)'/%3E%3C/svg%3E");
-    opacity:.035;mix-blend-mode:multiply;
-  }
-  .hero-console::after,.project-card.featured::after,.method-section::after{mix-blend-mode:screen;opacity:.025}
-
-  /* Exhibition frame / registration marks. */
-  .exhibition-frame{position:fixed;inset:0;z-index:490;pointer-events:none}
-  .exhibition-frame i{position:absolute;width:22px;height:22px;opacity:.42}
-  .exhibition-frame i::before,.exhibition-frame i::after{content:"";position:absolute;background:var(--ink)}
-  .exhibition-frame i::before{width:22px;height:1px;top:0;left:0}
-  .exhibition-frame i::after{width:1px;height:22px;top:0;left:0}
-  .exhibition-frame .tl{top:12px;left:12px}.exhibition-frame .tr{top:12px;right:12px;transform:rotate(90deg)}
-  .exhibition-frame .br{right:12px;bottom:12px;transform:rotate(180deg)}.exhibition-frame .bl{left:12px;bottom:12px;transform:rotate(270deg)}
-  .exhibition-frame .edge-code{position:absolute;right:15px;top:50%;transform:translateY(-50%) rotate(90deg);transform-origin:center;color:rgba(19,20,15,.36);font-size:8px;letter-spacing:.22em}
-
-  /* Custom curatorial cursor: precise, restrained, context-aware. */
-  body.custom-cursor-enabled,body.custom-cursor-enabled a,body.custom-cursor-enabled button,body.custom-cursor-enabled [role="tab"],body.custom-cursor-enabled .project-card{cursor:none!important}
-  body.custom-cursor-enabled .cursor-dot,body.custom-cursor-enabled .cursor-ring,body.custom-cursor-enabled .cursor-caption{display:block}
-  .cursor-dot,.cursor-ring,.cursor-caption{display:none;position:fixed;left:0;top:0;pointer-events:none;z-index:1000;will-change:transform}
-  .cursor-dot{width:5px;height:5px;border-radius:50%;background:var(--amber);box-shadow:0 0 0 1px rgba(19,20,15,.45);transform:translate3d(calc(var(--cursor-x) - 2.5px),calc(var(--cursor-y) - 2.5px),0)}
-  .cursor-ring{width:34px;height:34px;border:1px solid rgba(19,20,15,.8);border-radius:50%;mix-blend-mode:difference;transform:translate3d(calc(var(--cursor-ring-x, var(--cursor-x)) - 17px),calc(var(--cursor-ring-y, var(--cursor-y)) - 17px),0);transition:width .22s var(--ease),height .22s var(--ease),border-radius .22s var(--ease),opacity .2s ease,background .22s ease}
-  .cursor-ring::before,.cursor-ring::after{content:"";position:absolute;background:currentColor;opacity:.55}
-  .cursor-ring::before{width:8px;height:1px;left:50%;top:50%;transform:translate(-50%,-50%)}
-  .cursor-ring::after{width:1px;height:8px;left:50%;top:50%;transform:translate(-50%,-50%)}
-  .cursor-caption{padding:6px 8px;background:var(--ink);color:#fff;font:700 8px/1 'Space Mono',monospace;letter-spacing:.16em;text-transform:uppercase;white-space:nowrap;opacity:0;transform:translate3d(calc(var(--cursor-x) + 18px),calc(var(--cursor-y) + 18px),0);transition:opacity .16s ease}
-  body.cursor-active .cursor-ring{width:48px;height:48px;border-radius:50%;background:transparent;border-width:1.5px}
-  body.cursor-active .cursor-caption{opacity:1}
-  body.cursor-down .cursor-ring{width:24px;height:24px;border-radius:50%}
-
-  /* Section choreography and editorial notation. */
-  section{position:relative}
-  .section-shell::before,.proof-section .wrap::before,.research-section .wrap::before,.capabilities-section .wrap::before,.work-map .wrap::before{
-    content:"";position:absolute;left:-18px;top:4px;width:7px;height:7px;border-left:1px solid var(--green);border-top:1px solid var(--green);opacity:.7;
-  }
-  .sec-head{position:relative}
-  .sec-head::after{content:"SECTION / " attr(data-section);position:absolute;right:0;top:-23px;color:rgba(19,20,15,.34);font:700 8px/1 'Space Mono',monospace;letter-spacing:.18em}
-  .method-section .sec-head::after{color:rgba(255,255,255,.34)}
-
-  /* Diagram plates: consistent industrial editorial system. */
-  .project-visual{min-height:258px;background:#F4F4EE}
-  .project-card.featured .project-visual{min-height:365px;background:#0B0C09}
-  .project-visual::before{
-    content:"";position:absolute;inset:0;z-index:2;pointer-events:none;
-    background:
-      radial-gradient(420px circle at var(--spot-x,50%) var(--spot-y,50%),rgba(235,169,63,.10),transparent 64%),
-      linear-gradient(rgba(19,20,15,.045) 1px,transparent 1px),
-      linear-gradient(90deg,rgba(19,20,15,.045) 1px,transparent 1px);
-    background-size:auto,20px 20px,20px 20px;
-    opacity:.58;
-  }
-  .project-card.featured .project-visual::before{
-    background:
-      radial-gradient(520px circle at var(--spot-x,50%) var(--spot-y,50%),rgba(235,169,63,.11),transparent 63%),
-      linear-gradient(rgba(255,255,255,.04) 1px,transparent 1px),
-      linear-gradient(90deg,rgba(255,255,255,.04) 1px,transparent 1px);
-    background-size:auto,20px 20px,20px 20px;
-  }
-  .project-visual::after{
-    content:attr(data-figure);position:absolute;right:14px;bottom:11px;z-index:4;color:rgba(19,20,15,.52);
-    font:700 8px/1 'Space Mono',monospace;letter-spacing:.16em;text-transform:uppercase;
-  }
-  .project-card.featured .project-visual::after{color:rgba(255,255,255,.48)}
-  .project-visual svg{z-index:1;overflow:visible}
-  .diagram-title{font:800 9px/1 'Space Mono',monospace;letter-spacing:.13em}
-  .diagram-label{font:700 7.2px/1 'Space Mono',monospace;letter-spacing:.06em}
-  .diagram-micro{font:400 5.8px/1 'Space Mono',monospace;letter-spacing:.04em}
-  .diagram-note{font:600 6.6px/1 'Archivo',sans-serif;letter-spacing:.01em}
-  .diagram-rule{stroke:rgba(19,20,15,.28);stroke-width:1;vector-effect:non-scaling-stroke}
-  .diagram-rule-light{stroke:rgba(255,255,255,.25);stroke-width:1;vector-effect:non-scaling-stroke}
-  .route-active{stroke-dasharray:8 7;animation:dash 14s linear infinite}
-  .packet{filter:drop-shadow(0 0 5px rgba(235,169,63,.55))}
-  .project-card:hover .route-active{stroke-width:1.7}
-  .project-card:hover .diagram-primary{filter:drop-shadow(0 7px 13px rgba(19,20,15,.12))}
-
-  /* Hero console becomes a technical atlas rather than a generic node graph. */
-  .hero-console{min-height:626px;box-shadow:0 48px 100px -64px rgba(19,20,15,.95),0 0 0 1px rgba(19,20,15,.7)}
-  .console-map{height:372px;background:#0D0E0B}
-  .console-map::before{content:"";position:absolute;inset:0;background:radial-gradient(circle at 52% 34%,rgba(235,169,63,.07),transparent 36%);pointer-events:none}
-  .console-label{border-color:rgba(255,255,255,.16);background:rgba(13,14,11,.84);box-shadow:0 7px 20px rgba(0,0,0,.24)}
-  .label-a{left:4%;top:9%}.label-b{right:4%;top:9%}.label-c{left:4%;bottom:8%}
-
-  /* Refined cards: thin material seams and deliberate hover depth. */
-  .project-card{box-shadow:0 1px 0 rgba(255,255,255,.75) inset,0 18px 40px -42px rgba(19,20,15,.68)}
-  .project-card:hover{box-shadow:0 1px 0 rgba(255,255,255,.7) inset,0 42px 90px -60px rgba(19,20,15,.92)}
-  .project-card.featured{box-shadow:0 1px 0 rgba(255,255,255,.08) inset,0 48px 100px -64px rgba(19,20,15,.96)}
-  .project-header,.project-copy,.project-footer{position:relative;z-index:10}
-
-  /* System map as an exhibition wall diagram. */
-  .system-map{min-height:620px;background:#F7F7F2;box-shadow:0 30px 78px -64px rgba(19,20,15,.82)}
-  .system-map::before{background-size:24px 24px;opacity:.72}
-  .system-map .map-lines{z-index:1}
-  .map-module{z-index:3;box-shadow:0 16px 32px -30px rgba(19,20,15,.65)}
-  .map-module::after{content:attr(data-node);position:absolute;right:10px;top:9px;color:rgba(19,20,15,.38);font:700 7px/1 'Space Mono',monospace;letter-spacing:.12em}
-  .map-module.center::after{color:rgba(255,255,255,.4)}
-
-  /* Subtle magnetic response without turning the portfolio into a toy. */
-  .btn,.project-links a,.navlinks a{transform:translate3d(var(--mag-x,0),var(--mag-y,0),0)}
-
-  @media(max-width:760px){
-    :root{--grain-opacity:.05}
-    .exhibition-frame{display:none}
-    .project-visual{min-height:245px}.project-card.featured .project-visual{min-height:330px}
-    .sec-head::after{display:none}
-  }
-  @media(prefers-reduced-motion:reduce){
-    .route-active,.route-line,.orbit-ring.dashed{animation:none!important}
-    .cursor-dot,.cursor-ring,.cursor-caption{display:none!important}
-    html,body,a,button,[role="tab"],.project-card{cursor:auto!important}
-  }
-</style>
-
-<style id="stability-performance-fixes">
-  /* Lightweight material texture: no SVG turbulence, blend compositing, or giant fixed surface. */
-  body::after{
-    content:"";position:fixed;inset:0;z-index:-2;pointer-events:none;
-    opacity:.26;mix-blend-mode:normal;transform:none;
-    background:
-      repeating-radial-gradient(circle at 17% 23%,rgba(19,20,15,.055) 0 .45px,transparent .65px 3px),
-      linear-gradient(115deg,rgba(255,255,255,.32),transparent 34%,rgba(19,20,15,.018) 68%,transparent);
-    background-size:7px 7px,100% 100%;
-  }
-  .topbar{backdrop-filter:none;background:rgba(250,250,246,.975)}
-  .topbar::after,.project-card::after,.hero-console::after,.proof-dashboard::after,.system-map::after{display:none!important;background:none!important}
-  .hero-console,.project-card,.project-visual,.proof-dashboard,.system-map{contain:paint}
-
-  /* Stop permanent animation loops. Motion is reserved for direct interaction. */
-  .status-pill i,.route-line,.node-pulse,.ticker-track,.orbit-ring.dashed,.arc-flow .flow-dash,.sat-path,.map-path,.route-active{
-    animation:none!important;
-  }
-  .ticker{overflow-x:auto;scrollbar-width:none}
-  .ticker::-webkit-scrollbar{display:none}
-  .ticker-track{width:max-content;transform:none!important}
-  .score-ring,.bar i{animation:none!important}
-
-  /* Content must never disappear because an observer has not fired. */
-  .reveal,.js .reveal,.js .reveal.is-visible{opacity:1!important;transform:none!important;transition:none!important}
-
-  /* Remove expensive per-pointer card perspective and filter effects. */
-  .project-card{transform:none!important;transform-style:flat;will-change:auto;scroll-margin-top:86px}
-  .project-card:hover .diagram-primary{filter:none!important}
-  .packet{filter:none!important}
-  .project-visual::before{
-    background:
-      linear-gradient(rgba(19,20,15,.035) 1px,transparent 1px),
-      linear-gradient(90deg,rgba(19,20,15,.035) 1px,transparent 1px),
-      radial-gradient(circle at 20% 16%,rgba(235,169,63,.055),transparent 44%);
-    background-size:20px 20px,20px 20px,100% 100%;
-    opacity:.5;
-  }
-  .project-card.featured .project-visual::before{
-    background:
-      linear-gradient(rgba(255,255,255,.035) 1px,transparent 1px),
-      linear-gradient(90deg,rgba(255,255,255,.035) 1px,transparent 1px),
-      radial-gradient(circle at 20% 16%,rgba(235,169,63,.08),transparent 48%);
-    background-size:20px 20px,20px 20px,100% 100%;
-  }
-
-  /* Custom pointer remains distinctive but uses only three compositor transforms. */
-  .cursor-dot,.cursor-ring,.cursor-caption{
-    transform:translate3d(-100px,-100px,0);will-change:transform;mix-blend-mode:normal;
-  }
-  .cursor-ring{border-color:rgba(19,20,15,.78);background:rgba(250,250,246,.18)}
-  body:not(.cursor-visible) .cursor-dot,body:not(.cursor-visible) .cursor-ring,body:not(.cursor-visible) .cursor-caption{opacity:0!important}
-
-  /* Diagram typography and reusable plate primitives. */
-  .project-visual--mcp{min-height:390px!important}
-  .project-visual--agri{min-height:350px!important}
-  .project-visual--founder{min-height:330px!important}
-  .diagram-title{font-size:10.5px}
-  .diagram-label{font-size:9.2px;letter-spacing:.045em}
-  .diagram-label--large{font-size:10.7px}
-  .diagram-micro{font-size:7.4px;letter-spacing:.025em}
-  .diagram-note{font-size:8.6px}
-  .diagram-kicker{font:700 8px/1 'Space Mono',monospace;letter-spacing:.12em;fill:#0A7D32}
-  .plate-box{fill:#fff;stroke:#13140F;stroke-width:1.15;vector-effect:non-scaling-stroke}
-  .plate-box--host{fill:#F8F8F3}
-  .plate-box--green{fill:#DCECDF;stroke:#0A7D32}
-  .plate-box--safety{fill:#F5E8C9;stroke:#A9650E}
-  .plate-box--dark{fill:#13140F;stroke:#13140F}
-  .boundary{fill:none;stroke:#9A9C92;stroke-width:1.1;stroke-dasharray:6 4;vector-effect:non-scaling-stroke}
-  .boundary--server{stroke:#0A7D32}
-  .boundary--worker{stroke:#13140F}
-  .boundary--decision{fill:rgba(220,236,223,.42);stroke:#0A7D32}
-  .boundary-label{font:700 7.4px/1 'Space Mono',monospace;letter-spacing:.08em;fill:#5C5E54}
-  .plate-flow{fill:none;stroke:#0A7D32;stroke-width:1.5;vector-effect:non-scaling-stroke}
-  .return-flow{fill:none;stroke:#2C67A0;stroke-width:1.35;vector-effect:non-scaling-stroke}
-  .bridge-label{fill:#13140F}
-  .criterion{fill:#fff;stroke:#0A7D32;stroke-width:1;vector-effect:non-scaling-stroke}
-  .plan-row{stroke:#13140F;stroke-width:1;vector-effect:non-scaling-stroke}
-  .plan-row--one{fill:#DCECDF}.plan-row--two{fill:#F7E7C7}.plan-row--three{fill:#DCE5EE}
-  .founder-column{fill:#fff;stroke:#13140F;stroke-width:1.1;vector-effect:non-scaling-stroke}
-  .founder-column--dark{fill:#13140F}
-  .founder-link{fill:none;stroke:#EBA93F;stroke-width:1.6;vector-effect:non-scaling-stroke}
-  .decision-chip{stroke:#13140F;stroke-width:1;vector-effect:non-scaling-stroke}
-  .decision-chip--amber{fill:#EBA93F}.decision-chip--green{fill:#DCECDF}
-  .risk-box{fill:#F1D8D3;stroke:#B83C2C;stroke-width:1;vector-effect:non-scaling-stroke}
-
-  /* The final product deserves a complete row; removes the orphaned one-third card. */
-  .project-card.featured,.project-card.wide{grid-column:span 7}
-  .project-card:not(.featured):not(.wide):not(.founder-showcase){grid-column:span 5}
-  .project-card.founder-showcase{grid-column:span 12;min-height:auto}
-  .project-card.founder-showcase .project-copy{max-width:78ch}
-
-  @media(max-width:1120px){
-    .project-card.featured,.project-card.wide{grid-column:span 12}
-    .project-card:not(.featured):not(.wide):not(.founder-showcase){grid-column:span 6}
-    .project-card.founder-showcase{grid-column:span 12}
-  }
-  @media(max-width:900px){
-    .project-card.founder-showcase{grid-column:1/-1}
-    .project-visual--mcp{min-height:360px!important}
-  }
-  @media(max-width:700px){
-    .project-card,.project-card.featured,.project-card.wide,.project-card.founder-showcase,.project-card:not(.featured):not(.wide):not(.founder-showcase){grid-column:span 12}
-    .project-header{flex-wrap:wrap}
-  }
-  @media(max-width:620px){
-    .project-visual--mcp{min-height:330px!important}
-    .project-visual--agri{min-height:310px!important}
-    .project-visual--founder{min-height:280px!important}
-    .diagram-title{font-size:12px}
-    .diagram-label{font-size:10px}
-    .diagram-label--large{font-size:11px}
-    .diagram-micro{font-size:8px}
-    .diagram-note{font-size:9px}
-  }
-</style>
-
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Muhammed Enes Duran — GeoAI, evaluation systems, and spatial software</title>
+  <meta name="description" content="Muhammed Enes Duran builds GeoAI systems, deterministic evaluation infrastructure, local-first GIS automation, and reproducible remote-sensing pipelines.">
+  <meta name="author" content="Muhammed Enes Duran">
+  <meta name="theme-color" content="#f7f7f4">
+  <meta name="color-scheme" content="light">
+  <meta name="robots" content="index,follow">
+  <link rel="canonical" href="https://muend.github.io/">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://muend.github.io/">
+  <meta property="og:title" content="Muhammed Enes Duran — GeoAI, evaluation systems, and spatial software">
+  <meta property="og:description" content="Selected work in GeoAI, deterministic evaluation, GIS automation, remote sensing, and spatial decision systems.">
+  <meta name="twitter:card" content="summary">
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Person",
+    "name": "Muhammed Enes Duran",
+    "url": "https://muend.github.io/",
+    "email": "mailto:edcoders@gmail.com",
+    "sameAs": [
+      "https://github.com/muend",
+      "https://pypi.org/user/muend/",
+      "https://muend.itch.io"
+    ],
+    "knowsAbout": [
+      "GeoAI",
+      "Spatial Data Science",
+      "Remote Sensing",
+      "Model Evaluation",
+      "Model Context Protocol",
+      "ArcGIS Pro Automation"
+    ]
+  }
+  </script>
+  <style>
+    :root {
+      --background: #f7f7f4;
+      --text: #171814;
+      --muted: #5f6259;
+      --line: #d8d9d2;
+      --accent: #205c3b;
+      --max-width: 1120px;
+    }
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body {
+      margin: 0;
+      background: var(--background);
+      color: var(--text);
+      font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      font-size: 17px;
+      line-height: 1.65;
+      -webkit-font-smoothing: antialiased;
+    }
+    a {
+      color: inherit;
+      text-decoration-color: #9a9d93;
+      text-underline-offset: 0.18em;
+    }
+    a:hover { color: var(--accent); }
+    a:focus-visible { outline: 2px solid var(--accent); outline-offset: 4px; }
+    .skip-link {
+      position: absolute;
+      top: 0.75rem;
+      left: -100rem;
+      padding: 0.55rem 0.75rem;
+      background: var(--text);
+      color: white;
+    }
+    .skip-link:focus { left: 0.75rem; }
+    .container {
+      width: min(calc(100% - 2.5rem), var(--max-width));
+      margin: 0 auto;
+    }
+    header { border-bottom: 1px solid var(--line); }
+    nav {
+      min-height: 64px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 2rem;
+    }
+    .name { font-size: 0.98rem; font-weight: 700; text-decoration: none; }
+    .nav-links {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 1.25rem;
+      font-size: 0.92rem;
+    }
+    .nav-links a { text-decoration: none; }
+    .intro {
+      padding: clamp(5rem, 10vw, 8.5rem) 0 clamp(4rem, 8vw, 7rem);
+      border-bottom: 1px solid var(--line);
+    }
+    .eyebrow, .meta, .section-label {
+      color: var(--muted);
+      font-size: 0.82rem;
+      font-weight: 650;
+      letter-spacing: 0.07em;
+      text-transform: uppercase;
+    }
+    h1, h2, h3, p { margin-top: 0; }
+    h1 {
+      max-width: 900px;
+      margin: 1.1rem 0 1.6rem;
+      font-size: clamp(2.7rem, 7vw, 5.8rem);
+      line-height: 1.02;
+      letter-spacing: -0.055em;
+      font-weight: 720;
+    }
+    .lede {
+      max-width: 760px;
+      margin-bottom: 2rem;
+      color: #3f423b;
+      font-size: clamp(1.12rem, 2vw, 1.35rem);
+    }
+    .primary-links {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.65rem 1.25rem;
+      font-size: 0.96rem;
+    }
+    section {
+      padding: clamp(4rem, 8vw, 6.5rem) 0;
+      border-bottom: 1px solid var(--line);
+    }
+    .section-head {
+      display: grid;
+      grid-template-columns: 220px minmax(0, 1fr);
+      gap: 2rem;
+      margin-bottom: 3rem;
+    }
+    h2 {
+      max-width: 700px;
+      margin-bottom: 0;
+      font-size: clamp(1.9rem, 4vw, 3.1rem);
+      line-height: 1.13;
+      letter-spacing: -0.035em;
+    }
+    .project-list { border-top: 1px solid var(--line); }
+    .project {
+      display: grid;
+      grid-template-columns: minmax(190px, 0.7fr) minmax(0, 1.6fr) minmax(150px, 0.45fr);
+      gap: 2rem;
+      padding: 2rem 0;
+      border-bottom: 1px solid var(--line);
+    }
+    .project h3 { margin-bottom: 0.35rem; font-size: 1.16rem; letter-spacing: -0.015em; }
+    .project h3 a { text-decoration: none; }
+    .project p, .plain-block p { margin-bottom: 0; color: #45483f; }
+    .project .meta { line-height: 1.6; }
+    .project-links {
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+      gap: 0.35rem;
+      font-size: 0.92rem;
+    }
+    .two-column {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 2rem 4rem;
+    }
+    .plain-block { padding-top: 1.4rem; border-top: 1px solid var(--line); }
+    .plain-block h3 { margin-bottom: 0.65rem; font-size: 1.08rem; }
+    .note { max-width: 780px; color: #45483f; }
+    .contact-grid {
+      display: grid;
+      grid-template-columns: minmax(0, 1.4fr) minmax(250px, 0.6fr);
+      gap: 3rem;
+      align-items: end;
+    }
+    .contact-grid h2 { margin-bottom: 1.2rem; }
+    .contact-links { display: grid; gap: 0.5rem; justify-items: start; }
+    footer { padding: 1.5rem 0 2rem; color: var(--muted); font-size: 0.85rem; }
+    footer .container { display: flex; justify-content: space-between; gap: 1rem; }
+    @media (max-width: 760px) {
+      nav { align-items: flex-start; padding: 1rem 0; }
+      .nav-links { justify-content: flex-end; gap: 0.5rem 1rem; }
+      .section-head, .project, .two-column, .contact-grid { grid-template-columns: 1fr; }
+      .section-head { gap: 0.8rem; }
+      .project { gap: 0.8rem; }
+      .project-links { flex-direction: row; flex-wrap: wrap; gap: 0.4rem 1rem; }
+      footer .container { display: block; }
+    }
+    @media (max-width: 480px) {
+      .container { width: min(calc(100% - 1.5rem), var(--max-width)); }
+      nav { display: block; }
+      .nav-links { margin-top: 0.7rem; justify-content: flex-start; }
+    }
+  </style>
 </head>
 <body>
-<div aria-hidden="true" class="exhibition-frame"><i class="tl"></i><i class="tr"></i><i class="br"></i><i class="bl"></i><span class="edge-code mono">MUEND / SPATIAL SYSTEMS / 2026</span></div>
-<div aria-hidden="true" class="cursor-dot"></div><div aria-hidden="true" class="cursor-ring"></div><div aria-hidden="true" class="cursor-caption" id="cursor-caption"></div>
+  <a class="skip-link" href="#content">Skip to content</a>
+  <header>
+    <nav class="container" aria-label="Primary navigation">
+      <a class="name" href="#top">Muhammed Enes Duran</a>
+      <div class="nav-links">
+        <a href="#work">Work</a>
+        <a href="#practice">Practice</a>
+        <a href="#research">Research</a>
+        <a href="#contact">Contact</a>
+      </div>
+    </nav>
+  </header>
 
-<a class="skip-link" href="#main-content">Skip to content</a>
-<div aria-hidden="true" class="scroll-progress" id="scroll-progress"></div>
-<div class="topbar">
-<div class="wrap">
-<a aria-label="Muhammed Enes Duran portfolio home" class="brand" href="#top">muend<b>.</b></a>
-<div class="nav-area">
-<nav aria-label="Primary navigation" class="navlinks mono">
-<a href="#systems">Systems</a>
-<a href="#proof">Evidence</a>
-<a href="#research">Research</a>
-<a href="#method">Method</a>
-<a href="#stack">Stack</a>
-<a href="#contact">Contact</a>
-</nav>
-<span class="status-pill mono"><i aria-hidden="true"></i>Open source · active</span>
-</div>
-</div>
-</div>
-<header class="hero" id="top">
-<div class="wrap hero-grid">
-<div class="hero-copy">
-<div class="eyebrow-row reveal">
-<span class="kicker mono">GeoAI · Spatial ML · Agent Systems</span>
-<span aria-hidden="true" class="eyebrow-line"></span>
-<span class="edition mono">Portfolio / 2026</span>
-</div>
-<h1 class="reveal" data-delay="1">
-        Muhammed<br/><span class="name-accent">Enes</span> Duran
-        <span class="sub">I turn geospatial methods into reliable software systems.</span>
-</h1>
-<p class="lede reveal" data-delay="2">
-        I build <em>production-grade GeoAI</em>: agent skill systems, secure ArcGIS automation,
-        reproducible Sentinel-2 pipelines, spatial decision-support products, and applied simulations
-        designed around the failure modes that ordinary software quietly ignores.
-      </p>
-<div class="cta reveal" data-delay="3">
-<a class="btn solid" href="https://github.com/muend/geoai-skills" rel="noopener" target="_blank">
-<span>Explore GeoAI Skills</span>
-<svg aria-hidden="true" viewbox="0 0 16 16"><path d="M3 13 13 3M6 3h7v7" fill="none" stroke="currentColor" stroke-width="1.6"></path></svg>
-</a>
-<a class="btn amber" href="https://tarimsalkoridor.online" rel="noopener" target="_blank"><span>Open live DSS</span></a>
-<a class="btn ghost" href="https://github.com/muend" rel="noopener" target="_blank"><span aria-hidden="true" class="dot"></span><span>GitHub</span></a>
-</div>
-</div>
-<aside aria-label="GeoAI systems overview" class="hero-console reveal" data-delay="2">
-<div class="console-top">
-<div aria-hidden="true" class="console-dots"><i></i><i></i><i></i></div>
-<span class="mono">geoai.system / routing-map</span>
-<span class="console-status mono">operational</span>
-</div>
-<div class="console-map">
-<svg aria-label="Editorial GeoAI lifecycle atlas showing orchestrated routing, methodological rails, and guarded ArcGIS execution" role="img" viewbox="0 0 520 372">
-<defs>
-<marker id="heroArrow" markerheight="7" markerwidth="7" orient="auto" refx="6" refy="3.5"><path d="M0 0 7 3.5 0 7Z" fill="#EBA93F"></path></marker>
-<marker id="heroArrowMuted" markerheight="7" markerwidth="7" orient="auto" refx="6" refy="3.5"><path d="M0 0 7 3.5 0 7Z" fill="#73766B"></path></marker>
-<pattern height="20" id="heroTicks" patternunits="userSpaceOnUse" width="20"><path d="M20 0H0V20" fill="none" stroke="rgba(255,255,255,.03)"></path></pattern>
-</defs>
-<rect fill="url(#heroTicks)" height="372" width="520"></rect>
-<text class="diagram-title" fill="#D9DCD2" x="24" y="26">GEOAI LIFECYCLE / LIVE ROUTE</text>
-<text class="diagram-micro" fill="#777A70" text-anchor="end" x="496" y="26">SHEET A-01 · SCALE NTS</text>
-<line class="diagram-rule-light" x1="24" x2="496" y1="39" y2="39"></line>
-<!-- Orchestration header -->
-<g class="diagram-primary">
-<rect fill="#EBA93F" height="43" rx="1" width="178" x="171" y="53"></rect>
-<text class="diagram-title" fill="#13140F" text-anchor="middle" x="260" y="72">GEOAI ORCHESTRATOR</text>
-<text class="diagram-micro" fill="#4A3512" text-anchor="middle" x="260" y="86">DECOMPOSE · ROUTE · VERIFY</text>
-</g>
-<path d="M260 96V119" marker-end="url(#heroArrow)" stroke="#EBA93F" stroke-width="1.5"></path>
-<!-- Lifecycle stages -->
-<g>
-<text class="diagram-micro" fill="#74776D" x="48" y="126">01</text><text class="diagram-label" fill="#DDE0D6" x="48" y="139">ACQUIRE</text>
-<text class="diagram-micro" fill="#74776D" x="145" y="126">02</text><text class="diagram-label" fill="#DDE0D6" x="145" y="139">SENSE</text>
-<text class="diagram-micro" fill="#74776D" x="242" y="126">03</text><text class="diagram-label" fill="#DDE0D6" x="242" y="139">MODEL</text>
-<text class="diagram-micro" fill="#74776D" x="339" y="126">04</text><text class="diagram-label" fill="#DDE0D6" x="339" y="139">ANALYZE</text>
-<text class="diagram-micro" fill="#74776D" x="436" y="126">05</text><text class="diagram-label" fill="#DDE0D6" x="436" y="139">DELIVER</text>
-</g>
-<path d="M49 171H470" marker-end="url(#heroArrowMuted)" stroke="#73766B" stroke-width="1"></path>
-<path class="route-active" d="M49 171H437" marker-end="url(#heroArrow)" stroke="#EBA93F" stroke-width="1.6"></path>
-<circle class="packet" cx="49" cy="171" fill="#EBA93F" r="4"></circle>
-<!-- Stage cards -->
-<g class="diagram-primary">
-<rect fill="#141510" height="58" stroke="#4E8D62" width="83" x="28" y="151"></rect><text class="diagram-label" fill="#EEF0E8" text-anchor="middle" x="69.5" y="180">STAC / OSM</text><text class="diagram-micro" fill="#8EA896" text-anchor="middle" x="69.5" y="194">DATA ENG.</text>
-<rect fill="#141510" height="58" stroke="#4E8D62" width="83" x="125" y="151"></rect><text class="diagram-label" fill="#EEF0E8" text-anchor="middle" x="166.5" y="180">SENTINEL-2</text><text class="diagram-micro" fill="#8EA896" text-anchor="middle" x="166.5" y="194">RS ANALYSIS</text>
-<rect fill="#141510" height="58" stroke="#628DB4" width="83" x="222" y="151"></rect><text class="diagram-label" fill="#EEF0E8" text-anchor="middle" x="263.5" y="180">U-NET</text><text class="diagram-micro" fill="#8CA8C0" text-anchor="middle" x="263.5" y="194">GEO DL</text>
-<rect fill="#141510" height="58" stroke="#EBA93F" width="83" x="319" y="151"></rect><text class="diagram-label" fill="#EEF0E8" text-anchor="middle" x="360.5" y="180">MCDA</text><text class="diagram-micro" fill="#C5A76E" text-anchor="middle" x="360.5" y="194">SPATIAL STATS</text>
-<rect fill="#141510" height="58" stroke="#EBA93F" width="76" x="416" y="151"></rect><text class="diagram-label" fill="#EEF0E8" text-anchor="middle" x="454" y="180">MAP</text><text class="diagram-micro" fill="#C5A76E" text-anchor="middle" x="454" y="194">DELIVERY</text>
-</g>
-<!-- Cross-cutting methodological rails -->
-<g>
-<line stroke="#4D5048" x1="28" x2="492" y1="236" y2="236"></line><text class="diagram-micro" fill="#7F8278" x="28" y="229">CROSS-CUTTING INVARIANTS</text>
-<rect fill="#1B1D17" height="25" stroke="#3F423A" width="106" x="28" y="247"></rect><text class="diagram-label" fill="#BFC3B8" text-anchor="middle" x="81" y="263">CRS / UNITS</text>
-<rect fill="#1B1D17" height="25" stroke="#3F423A" width="106" x="145" y="247"></rect><text class="diagram-label" fill="#BFC3B8" text-anchor="middle" x="198" y="263">SPATIAL CV</text>
-<rect fill="#1B1D17" height="25" stroke="#3F423A" width="106" x="262" y="247"></rect><text class="diagram-label" fill="#BFC3B8" text-anchor="middle" x="315" y="263">UNCERTAINTY</text>
-<rect fill="#1B1D17" height="25" stroke="#3F423A" width="113" x="379" y="247"></rect><text class="diagram-label" fill="#BFC3B8" text-anchor="middle" x="435.5" y="263">VERIFY / ACCOUNT</text>
-</g>
-<!-- Guarded proprietary execution -->
-<g>
-<text class="diagram-micro" fill="#74776D" x="28" y="302">PROPRIETARY EXECUTION / LOCAL TRUST BOUNDARY</text>
-<rect fill="#11120E" height="39" stroke="#3F423A" stroke-dasharray="4 4" width="464" x="28" y="312"></rect>
-<rect fill="#DCECDF" height="21" width="132" x="45" y="321"></rect><text class="diagram-label" fill="#13140F" text-anchor="middle" x="111" y="335">PATHGUARD</text>
-<path d="M177 331H227" marker-end="url(#heroArrowMuted)" stroke="#56D77E"></path>
-<rect fill="#20221B" height="21" stroke="#56D77E" width="126" x="227" y="321"></rect><text class="diagram-label" fill="#DDE0D6" text-anchor="middle" x="290" y="335">ARCPY WORKER</text>
-<path d="M353 331H392" marker-end="url(#heroArrowMuted)" stroke="#56D77E"></path>
-<rect fill="#20221B" height="21" stroke="#56D77E" width="83" x="392" y="321"></rect><text class="diagram-label" fill="#DDE0D6" text-anchor="middle" x="433.5" y="335">OUTPUT</text>
-</g>
-</svg>
-<span class="console-label label-a mono">CRS invariant</span>
-<span class="console-label label-b mono">spatial CV</span>
-<span class="console-label label-c mono">verify output</span>
-</div>
-<div class="console-output">
-<div class="console-output-head mono"><span>Latest system trace</span><span id="trace-label">pipeline / verified</span></div>
-<div aria-live="polite" class="terminal-lines">
-<div class="terminal-line"><span class="time">14:32:04</span><span class="command">route → geo-data-engineering</span><span class="ok">OK</span></div>
-<div class="terminal-line"><span class="time">14:32:05</span><span class="command">check → projected CRS / valid units</span><span class="ok">PASS</span></div>
-<div class="terminal-line"><span class="time">14:32:07</span><span class="command">execute → guarded ArcPy worker</span><span class="ok">SAFE</span></div>
-<div class="terminal-line"><span class="time">14:32:10</span><span class="command">deliver → numeric + visual verification</span><span class="ok">DONE</span></div>
-</div>
-</div>
-<div class="console-metrics">
-<div class="console-metric"><strong>18</strong><span class="mono">Agent skills</span></div>
-<div class="console-metric"><strong>100</strong><span class="mono">ArcGIS tools</span></div>
-<div class="console-metric"><strong>0 FP</strong><span class="mono">Frozen routing suite</span></div>
-</div>
-</aside>
-</div>
-</header>
-<div aria-label="Areas of work" class="ticker">
-<div class="ticker-track">
-<div class="ticker-group">
-<span class="ticker-item mono"><i></i><b>Agentic GIS</b> / MCP infrastructure</span>
-<span class="ticker-item mono"><i></i><b>Remote sensing</b> / Sentinel-2</span>
-<span class="ticker-item mono"><i></i><b>Spatial ML</b> / leakage-aware validation</span>
-<span class="ticker-item mono"><i></i><b>Decision systems</b> / browser-native delivery</span>
-<span class="ticker-item mono"><i></i><b>Applied simulation</b> / rules into interaction</span>
-</div>
-<div aria-hidden="true" class="ticker-group">
-<span class="ticker-item mono"><i></i><b>Agentic GIS</b> / MCP infrastructure</span>
-<span class="ticker-item mono"><i></i><b>Remote sensing</b> / Sentinel-2</span>
-<span class="ticker-item mono"><i></i><b>Spatial ML</b> / leakage-aware validation</span>
-<span class="ticker-item mono"><i></i><b>Decision systems</b> / browser-native delivery</span>
-<span class="ticker-item mono"><i></i><b>Applied simulation</b> / rules into interaction</span>
-</div>
-</div>
-</div>
-<div aria-label="Portfolio metrics" class="stats">
-<div class="wrap">
-<div class="stat reveal"><div class="num" data-count="18">18</div><div class="lbl mono">GeoAI agent skills</div></div>
-<div class="stat reveal" data-delay="1"><div class="num" data-count="100">100</div><div class="lbl mono">ArcGIS tools</div></div>
-<div class="stat reveal" data-delay="2"><div class="num" data-count="120">120</div><div class="lbl mono">Frozen routing cases</div></div>
-<div class="stat reveal"><div class="num">92.5%</div><div class="lbl mono">Full-route accuracy</div></div>
-<div class="stat reveal" data-delay="1"><div class="num" data-count="147">147</div><div class="lbl mono">Neighborhoods modeled</div></div>
-<div class="stat reveal" data-delay="2"><div class="num">2209-A</div><div class="lbl mono">TÜBİTAK funded</div></div>
-</div>
-</div>
-<main id="main-content">
-<section aria-labelledby="systems-title" id="systems">
-<div class="wrap section-shell">
-<div class="sec-head reveal" data-section="01">
-<span class="idx mono">01</span>
-<h2 id="systems-title">Flagship Systems</h2>
-<span class="rule"></span>
-<span class="section-count mono">05 systems</span>
-</div>
-<p class="section-intro reveal">Not isolated demos. Each project occupies a specific layer of a broader spatial software stack: knowledge, execution, data preparation, decision delivery, or simulation.</p>
-<div class="systems-grid">
-<article class="project-card featured reveal">
-<div class="project-header">
-<span class="project-type mono">Agent Skills · GeoAI knowledge infrastructure</span>
-<div class="badges"><span class="badge mono">MIT</span><span class="badge mono">18 skills</span><span class="badge live mono">active</span></div>
-</div>
-<div class="project-copy">
-<div>
-<h3>geoai-skills</h3>
-<p>A complete geospatial discipline layer for AI agents: acquisition, remote sensing, spatial statistics, deep learning, geostatistics, network analysis, cartography, PostGIS, and guarded ArcGIS execution.</p>
-<ul class="project-points">
-<li>Fail-loud defaults for CRS, units, geometry validity, leakage, and uncertainty.</li>
-<li>Orchestrated multi-skill routing across the full GeoAI lifecycle.</li>
-<li>Versioned evaluation harness with deterministic routing evidence.</li>
-</ul>
-</div>
-<div aria-label="GeoAI Skills metrics" class="project-stats">
-<div class="project-stat"><strong>18</strong><span class="mono">specialist skills</span></div>
-<div class="project-stat"><strong>100%</strong><span class="mono">routing precision*</span></div>
-<div class="project-stat"><strong>92.5%</strong><span class="mono">route accuracy*</span></div>
-</div>
-</div>
-<div aria-hidden="true" class="project-visual" data-figure="FIG. 01 / ROUTING ATLAS">
-<svg aria-label="GeoAI Skills lifecycle atlas with eighteen specialist and cross-cutting skills" class="skills-orbit" preserveaspectratio="xMidYMid meet" role="img" viewbox="0 0 900 365">
-<defs>
-<marker id="atlasArrow" markerheight="7" markerwidth="7" orient="auto" refx="6" refy="3.5"><path d="M0 0 7 3.5 0 7Z" fill="#EBA93F"></path></marker>
-<pattern height="20" id="atlasGrid" patternunits="userSpaceOnUse" width="20"><path d="M20 0H0V20" fill="none" stroke="rgba(255,255,255,.025)"></path></pattern>
-</defs>
-<rect fill="url(#atlasGrid)" height="365" width="900"></rect>
-<text class="diagram-title" fill="#E2E4DB" x="24" y="26">GEOAI SKILLS / LIFECYCLE ROUTING ATLAS</text>
-<text class="diagram-micro" fill="#777A70" text-anchor="end" x="876" y="26">18 MODULES · AGENTSKILLS.IO</text>
-<line class="diagram-rule-light" x1="24" x2="876" y1="39" y2="39"></line>
-<rect fill="#EBA93F" height="38" width="852" x="24" y="53"></rect>
-<text class="diagram-title" fill="#13140F" text-anchor="middle" x="450" y="70">GEOAI ORCHESTRATOR</text>
-<text class="diagram-micro" fill="#503812" text-anchor="middle" x="450" y="82">PIPELINE DESIGN · ROUTING · MODULE-WIDE INVARIANTS</text>
-<!-- headers -->
-<g fill="#9EA197">
-<text class="diagram-label" text-anchor="middle" x="107" y="112">01 / ACQUIRE</text>
-<text class="diagram-label" text-anchor="middle" x="278" y="112">02 / SENSE</text>
-<text class="diagram-label" text-anchor="middle" x="450" y="112">03 / MODEL</text>
-<text class="diagram-label" text-anchor="middle" x="622" y="112">04 / ANALYZE</text>
-<text class="diagram-label" text-anchor="middle" x="793" y="112">05 / DELIVER</text>
-</g>
-<!-- orthogonal route spine -->
-<path d="M107 123V285M278 123V285M450 123V285M622 123V285M793 123V285" stroke="#34362F"></path>
-<path class="route-active" d="M107 150H793" marker-end="url(#atlasArrow)" stroke="#EBA93F" stroke-width="1.5"></path>
-<circle class="packet" fill="#EBA93F" r="4"></circle>
-<!-- module cards -->
-<g class="diagram-primary">
-<rect fill="#12130F" height="39" stroke="#56D77E" width="142" x="36" y="132"></rect><text class="diagram-label" fill="#E5E7DF" text-anchor="middle" x="107" y="148">GEO DATA ENGINEERING</text><text class="diagram-micro" fill="#829E8A" text-anchor="middle" x="107" y="161">STAC · OSM · FORMATS</text>
-<rect fill="#12130F" height="39" stroke="#56D77E" width="142" x="36" y="181"></rect><text class="diagram-label" fill="#E5E7DF" text-anchor="middle" x="107" y="197">POSTGIS / SPATIAL SQL</text><text class="diagram-micro" fill="#829E8A" text-anchor="middle" x="107" y="210">INDEX · SCALE · DUCKDB</text>
-<rect fill="#12130F" height="39" stroke="#56D77E" width="142" x="36" y="230"></rect><text class="diagram-label" fill="#E5E7DF" text-anchor="middle" x="107" y="246">POINT CLOUD / LIDAR</text><text class="diagram-micro" fill="#829E8A" text-anchor="middle" x="107" y="259">PDAL · DTM · CHM</text>
-<rect fill="#12130F" height="39" stroke="#56D77E" width="142" x="207" y="132"></rect><text class="diagram-label" fill="#E5E7DF" text-anchor="middle" x="278" y="148">REMOTE SENSING</text><text class="diagram-micro" fill="#829E8A" text-anchor="middle" x="278" y="161">L1/L2 · MASK · INDEX</text>
-<rect fill="#12130F" height="39" stroke="#56D77E" width="142" x="207" y="181"></rect><text class="diagram-label" fill="#E5E7DF" text-anchor="middle" x="278" y="197">GOOGLE EARTH ENGINE</text><text class="diagram-micro" fill="#829E8A" text-anchor="middle" x="278" y="210">COMPOSITE · REDUCE · EXPORT</text>
-<rect fill="#12130F" height="39" stroke="#56D77E" width="142" x="207" y="230"></rect><text class="diagram-label" fill="#E5E7DF" text-anchor="middle" x="278" y="246">CHANGE DETECTION</text><text class="diagram-micro" fill="#829E8A" text-anchor="middle" x="278" y="259">CO-REG · BREAKS · AREA</text>
-<rect fill="#12130F" height="39" stroke="#6FA7D6" width="142" x="379" y="132"></rect><text class="diagram-label" fill="#E5E7DF" text-anchor="middle" x="450" y="148">GEO DEEP LEARNING</text><text class="diagram-micro" fill="#8CA8C0" text-anchor="middle" x="450" y="161">U-NET · DETECT · INFER</text>
-<rect fill="#12130F" height="39" stroke="#6FA7D6" width="142" x="379" y="181"></rect><text class="diagram-label" fill="#E5E7DF" text-anchor="middle" x="450" y="197">ML EXPERIMENT STDS.</text><text class="diagram-micro" fill="#8CA8C0" text-anchor="middle" x="450" y="210">LEAKAGE · METRICS · REPRO</text>
-<rect fill="#12130F" height="39" stroke="#6FA7D6" width="142" x="379" y="230"></rect><text class="diagram-label" fill="#E5E7DF" text-anchor="middle" x="450" y="246">SWE / DEVOPS STDS.</text><text class="diagram-micro" fill="#8CA8C0" text-anchor="middle" x="450" y="259">TEST · CI · PIN · AUDIT</text>
-<rect fill="#12130F" height="39" stroke="#EBA93F" width="142" x="551" y="132"></rect><text class="diagram-label" fill="#E5E7DF" text-anchor="middle" x="622" y="148">SPATIAL STATISTICS</text><text class="diagram-micro" fill="#C3A56D" text-anchor="middle" x="622" y="161">MORAN · LISA · GWR</text>
-<rect fill="#12130F" height="39" stroke="#EBA93F" width="142" x="551" y="181"></rect><text class="diagram-label" fill="#E5E7DF" text-anchor="middle" x="622" y="197">GEOSTATISTICS</text><text class="diagram-micro" fill="#C3A56D" text-anchor="middle" x="622" y="210">VARIOGRAM · KRIGING · SD</text>
-<rect fill="#12130F" height="39" stroke="#EBA93F" width="142" x="551" y="230"></rect><text class="diagram-label" fill="#E5E7DF" text-anchor="middle" x="622" y="246">MCDA / SUITABILITY</text><text class="diagram-micro" fill="#C3A56D" text-anchor="middle" x="622" y="259">AHP · WLC · SENSITIVITY</text>
-<rect fill="#12130F" height="39" stroke="#EBA93F" width="142" x="722" y="132"></rect><text class="diagram-label" fill="#E5E7DF" text-anchor="middle" x="793" y="148">CARTOGRAPHY / GEOVIZ</text><text class="diagram-micro" fill="#C3A56D" text-anchor="middle" x="793" y="161">CLASSIFY · COLOR · DELIVER</text>
-<rect fill="#12130F" height="39" stroke="#EBA93F" width="142" x="722" y="181"></rect><text class="diagram-label" fill="#E5E7DF" text-anchor="middle" x="793" y="197">NETWORK ACCESSIBILITY</text><text class="diagram-micro" fill="#C3A56D" text-anchor="middle" x="793" y="210">OD · ISOCHRONE · 2SFCA</text>
-<rect fill="#12130F" height="39" stroke="#EBA93F" width="142" x="722" y="230"></rect><text class="diagram-label" fill="#E5E7DF" text-anchor="middle" x="793" y="246">MOVEMENT / TERRAIN</text><text class="diagram-micro" fill="#C3A56D" text-anchor="middle" x="793" y="259">TRAJECTORY · HYDROLOGY</text>
-</g>
-<!-- execution rail -->
-<line class="diagram-rule-light" x1="24" x2="876" y1="293" y2="293"></line>
-<text class="diagram-micro" fill="#777A70" x="24" y="311">PROPRIETARY EXECUTION</text>
-<rect fill="#181A15" height="34" stroke="#56D77E" stroke-dasharray="5 4" width="580" x="160" y="301"></rect>
-<text class="diagram-label" fill="#DDE0D6" text-anchor="middle" x="450" y="315">ARCGIS PRO AUTOMATION → ARCGIS-MCP-BRIDGE → GUARDED LOCAL ARCPY</text>
-<text class="diagram-micro" fill="#829E8A" text-anchor="middle" x="450" y="327">.APRX · .GDB · GEOPROCESSING · RASTER · NETWORK · LAYOUTS</text>
-<text class="diagram-micro" fill="#777A70" x="24" y="350">SAMPLE ROUTE / STAC → REMOTE SENSING → GEO DL → CARTOGRAPHY · EVERY STAGE ENDS WITH NUMERIC + VISUAL VERIFICATION</text>
-</svg>
-</div>
-<div class="project-footer">
-<div class="project-links"><a href="https://github.com/muend/geoai-skills" rel="noopener" target="_blank">Repository ↗</a><a href="https://github.com/muend/geoai-skills/blob/main/BENCHMARK.md" rel="noopener" target="_blank">Benchmark ↗</a></div>
-<span class="project-index mono">01 / flagship</span>
-</div>
-</article>
-<article class="project-card reveal" data-delay="1">
-<div class="project-header">
-<span class="project-type mono">MCP · Secure GIS execution</span>
-<div class="badges"><span class="badge pkg mono">PyPI</span><span class="badge mono">100 tools</span></div>
-</div>
-<div class="project-copy">
-<h3>arcgis-mcp-bridge</h3>
-<p>A local-first MCP framework that exposes ArcGIS Pro geoprocessing while isolating the licensed ArcPy runtime behind a validated worker boundary.</p>
-<ul class="project-points">
-<li>Async MCP server with a per-job ArcPy subprocess worker.</li>
-<li>PathGuard enforced independently in both processes.</li>
-<li>Structured failures and an 86-test offline quality gate.</li>
-</ul>
-</div>
-<div class="project-visual project-visual--mcp" data-figure="FIG. 02 / TWO-PROCESS SECURITY FLOOR">
-<svg aria-label="Accurate two-process architecture of arcgis-mcp-bridge with Layer A and Layer B PathGuard validation" class="arc-flow arc-flow-v2" preserveAspectRatio="xMidYMid meet" role="img" viewBox="0 0 620 390">
-<defs>
-  <marker id="mcpArrow" markerHeight="8" markerWidth="8" orient="auto" refX="7" refY="4"><path d="M0 0 8 4 0 8Z" fill="#0A7D32"/></marker>
-</defs>
-<text class="diagram-title" x="22" y="25">LOCAL-FIRST MCP / TWO-PROCESS ARCHITECTURE</text>
-<text class="diagram-micro" fill="#6B6D64" text-anchor="end" x="598" y="25">SHEET B-02 · VERIFIED AGAINST REPOSITORY</text>
-<line class="diagram-rule" x1="22" x2="598" y1="38" y2="38"/>
+  <main id="content">
+    <section class="intro" id="top">
+      <div class="container">
+        <p class="eyebrow">Data Scientist · ML Engineer</p>
+        <h1>GeoAI, evaluation systems, and spatial software.</h1>
+        <p class="lede">I build deterministic evaluation infrastructure, geospatial agent systems, local-first GIS automation, remote-sensing pipelines, and decision-support products. My work connects research discipline with software that can be inspected, reproduced, and used.</p>
+        <div class="primary-links" aria-label="Profiles and contact">
+          <a href="https://github.com/muend">GitHub</a>
+          <a href="https://pypi.org/user/muend/">PyPI</a>
+          <a href="https://muend.itch.io">itch.io</a>
+          <a href="mailto:edcoders@gmail.com">edcoders@gmail.com</a>
+        </div>
+      </div>
+    </section>
 
-<!-- Request surface -->
-<text class="diagram-kicker" x="22" y="61">01 / MCP HOST</text>
-<rect class="plate-box plate-box--host" x="22" y="73" width="576" height="54" rx="1"/>
-<text class="diagram-label diagram-label--large" x="42" y="96">CLAUDE DESKTOP · CURSOR · OTHER MCP HOSTS</text>
-<text class="diagram-note" fill="#5C5E54" x="42" y="114">JSON-RPC 2.0 over stdio — untrusted tool arguments enter here</text>
+    <section id="work">
+      <div class="container">
+        <div class="section-head">
+          <p class="section-label">Selected work</p>
+          <h2>Current projects and production systems</h2>
+        </div>
+        <div class="project-list">
+          <article class="project">
+            <div><h3><a href="https://github.com/muend/benchfck">benchfck</a></h3><p class="meta">Rust · Evaluation</p></div>
+            <p>A Brainfuck-based generator and exact Rust harness for controlled machine-state tasks. It uses deterministic execution, equivalence checks, restricted answer verification, and separate metrics. The current v0.4.0-alpha is an engineering candidate; no model results or leaderboard are published.</p>
+            <div class="project-links"><a href="https://github.com/muend/benchfck">Repository</a><a href="https://github.com/muend/benchfck/blob/main/VALIDITY.md">Validity contract</a></div>
+          </article>
+          <article class="project">
+            <div><h3><a href="https://github.com/muend/geoai-skills">geoai-skills</a></h3><p class="meta">Python · Agent Skills</p></div>
+            <p>Eighteen measured Agent Skills for geospatial AI. The suite encodes CRS and unit checks, leakage-resistant validation, explicit uncertainty, reproducible evidence, and stop conditions for unsupported claims.</p>
+            <div class="project-links"><a href="https://github.com/muend/geoai-skills">Repository</a><a href="https://github.com/muend/geoai-skills/blob/main/BENCHMARK.md">Routing benchmark</a></div>
+          </article>
+          <article class="project">
+            <div><h3><a href="https://github.com/muend/arcgis-mcp-bridge">arcgis-mcp-bridge</a></h3><p class="meta">Python · MCP</p></div>
+            <p>A secure, local-first MCP server exposing ArcGIS Pro's ArcPy engine over stdio JSON-RPC. It isolates the licensed GIS runtime from the host process and applies path controls before filesystem or geodatabase work.</p>
+            <div class="project-links"><a href="https://github.com/muend/arcgis-mcp-bridge">Repository</a><a href="https://pypi.org/project/arcgis-mcp-bridge/">PyPI</a></div>
+          </article>
+          <article class="project">
+            <div><h3><a href="https://github.com/muend/sentinel-crop-pipeline">sentinel-crop-pipeline</a></h3><p class="meta">Python · Remote sensing</p></div>
+            <p>A configuration-driven Sentinel-2 L2A pipeline for crop-classification research. It covers scene discovery, cloud-aware preprocessing, ground-truth integration, patch generation, and spatially blocked data splits.</p>
+            <div class="project-links"><a href="https://github.com/muend/sentinel-crop-pipeline">Repository</a><a href="https://pypi.org/project/sentinel-crop-pipeline/">PyPI</a></div>
+          </article>
+          <article class="project">
+            <div><h3><a href="https://github.com/muend/agri-dss">agri-dss</a></h3><p class="meta">Spatial decision support</p></div>
+            <p>An agricultural decision-support system for the Western Antalya corridor. It turns regional suitability and crop information into a public-facing, inspectable application.</p>
+            <div class="project-links"><a href="https://github.com/muend/agri-dss">Repository</a><a href="https://tarimsalkoridor.online">Live application</a></div>
+          </article>
+          <article class="project">
+            <div><h3><a href="https://muend.itch.io/founderexe">FOUNDER.EXE</a></h3><p class="meta">Browser simulation</p></div>
+            <p>A startup simulation built around incorporation, tax, funding, regulation, runway, and market decisions in Türkiye and the United States. It remains playable without an external AI service.</p>
+            <div class="project-links"><a href="https://muend.itch.io/founderexe">Play on itch.io</a></div>
+          </article>
+        </div>
+      </div>
+    </section>
 
-<path class="plate-flow" d="M310 127V146" marker-end="url(#mcpArrow)"/>
-<text class="diagram-micro" fill="#0A7D32" x="323" y="141">STDIO</text>
+    <section id="practice">
+      <div class="container">
+        <div class="section-head"><p class="section-label">Practice</p><h2>What guides the work</h2></div>
+        <div class="two-column">
+          <article class="plain-block"><h3>Evidence before claims</h3><p>Benchmarks and agent systems should state what was measured, what was not measured, and where the evidence stops.</p></article>
+          <article class="plain-block"><h3>Spatial validity</h3><p>CRS, units, spatial leakage, support, uncertainty, and reproducible splits are part of the method, not cleanup steps.</p></article>
+          <article class="plain-block"><h3>Controlled automation</h3><p>Tool access should be explicit, local runtimes should stay isolated, and mutations should be bounded and auditable.</p></article>
+          <article class="plain-block"><h3>Usable research software</h3><p>Research code is more valuable when it has clear interfaces, deterministic checks, documentation, and practical outputs.</p></article>
+        </div>
+      </div>
+    </section>
 
-<!-- Layer A -->
-<rect class="boundary boundary--server" x="22" y="151" width="576" height="100" rx="1"/>
-<text class="boundary-label" x="34" y="168">LAYER A / BRIDGE INTERPRETER · arcgis_mcp/server.py</text>
+    <section id="research">
+      <div class="container">
+        <div class="section-head"><p class="section-label">Research and analysis</p><h2>Reproducible spatial studies</h2></div>
+        <div class="two-column">
+          <article class="plain-block"><h3><a href="https://github.com/muend/kutri-resilience-index">kutri-resilience-index</a></h3><p>A five-pillar urban-territorial resilience index prototype with transparent normalization, weighting, sensitivity analysis, and reproducible notebooks.</p></article>
+          <article class="plain-block"><h3><a href="https://github.com/muend/turkiye-housing-prices-pandemic">Türkiye housing prices and the pandemic</a></h3><p>A regional housing analysis separating nominal movement from inflation-adjusted change and using spatial statistics to examine clusters.</p></article>
+          <article class="plain-block"><h3><a href="https://github.com/muend/studyo_rehberi">Studyo Rehberi</a></h3><p>An accessible, browser-based study guide for planning, zoning legislation, and urban analysis focused on Kaş and Antalya.</p></article>
+          <article class="plain-block"><h3>Technical core</h3><p>Python, Rust, SQL, JavaScript, PyTorch, TensorFlow, GeoPandas, Rasterio, PySAL, ArcPy, FastAPI, Pydantic, Docker, pytest, and GitHub Actions.</p></article>
+        </div>
+      </div>
+    </section>
 
-<rect class="plate-box plate-box--green" x="36" y="181" width="164" height="52"/>
-<text class="diagram-label diagram-label--large" text-anchor="middle" x="118" y="202">FASTMCP SERVER</text>
-<text class="diagram-micro" text-anchor="middle" x="118" y="220">ASYNC DISPATCH · NO ARCPY IMPORT</text>
-
-<path class="plate-flow" d="M200 207H220" marker-end="url(#mcpArrow)"/>
-
-<rect class="plate-box" x="220" y="181" width="166" height="52"/>
-<text class="diagram-label diagram-label--large" text-anchor="middle" x="303" y="202">CONTRACT + REGISTRY</text>
-<text class="diagram-micro" text-anchor="middle" x="303" y="220">PYDANTIC V2 · 100 TOOLSPEC</text>
-
-<path class="plate-flow" d="M386 207H406" marker-end="url(#mcpArrow)"/>
-
-<rect class="plate-box plate-box--safety" x="406" y="181" width="178" height="52"/>
-<text class="diagram-label diagram-label--large" text-anchor="middle" x="495" y="201">SAFETY FLOOR A</text>
-<text class="diagram-micro" text-anchor="middle" x="495" y="218">PATHGUARD PRE-CHECK · CONFIRM GATE</text>
-
-<!-- IPC bridge -->
-<path class="plate-flow" d="M310 251V278" marker-end="url(#mcpArrow)"/>
-<rect class="bridge-label" x="196" y="257" width="228" height="20"/>
-<text class="diagram-micro" fill="#fff" text-anchor="middle" x="310" y="271">NDJSON SUBPROCESS BRIDGE · SPAWNED PER JOB</text>
-
-<!-- Layer B -->
-<rect class="boundary boundary--worker" x="22" y="284" width="576" height="76" rx="1"/>
-<text class="boundary-label" x="34" y="301">LAYER B / LICENSED ARCGIS PRO INTERPRETER · arcgis_mcp/worker.py</text>
-
-<rect class="plate-box plate-box--safety" x="36" y="313" width="154" height="34"/>
-<text class="diagram-label" text-anchor="middle" x="113" y="327">PATHGUARD B</text>
-<text class="diagram-micro" text-anchor="middle" x="113" y="340">RE-VALIDATE</text>
-
-<path class="plate-flow" d="M190 330H212" marker-end="url(#mcpArrow)"/>
-
-<rect class="plate-box plate-box--dark" x="212" y="313" width="174" height="34"/>
-<text class="diagram-label" fill="#fff" text-anchor="middle" x="299" y="327">RUN_TOOL / ARCPY WORKER</text>
-<text class="diagram-micro" fill="#BFC2B7" text-anchor="middle" x="299" y="340">ARCPY IMPORT LEGAL ONLY HERE</text>
-
-<path class="plate-flow" d="M386 330H408" marker-end="url(#mcpArrow)"/>
-
-<rect class="plate-box" x="408" y="313" width="176" height="34"/>
-<text class="diagram-label" text-anchor="middle" x="496" y="327">ARCGIS PRO RUNTIME</text>
-<text class="diagram-micro" text-anchor="middle" x="496" y="340">.APRX · .GDB · RASTER · NETWORK</text>
-
-<!-- Result contract -->
-<rect x="22" y="367" width="576" height="16" fill="#DCE5EE" stroke="#2C67A0" stroke-width="1"/>
-<text class="diagram-micro" fill="#214F78" text-anchor="middle" x="310" y="378">FINAL NDJSON RESULT FRAME · VALIDATION / SECURITY / LICENSE / GEOPROCESSING / INTERNAL</text>
-</svg>
-</div>
-<div class="project-footer"><div class="project-links"><a href="https://github.com/muend/arcgis-mcp-bridge" rel="noopener" target="_blank">Repository ↗</a><a href="https://pypi.org/project/arcgis-mcp-bridge/" rel="noopener" target="_blank">PyPI ↗</a></div><span class="project-index mono">02</span></div>
-</article>
-<article class="project-card wide blue reveal">
-<div class="project-header">
-<span class="project-type mono">Remote sensing · Reproducible data pipeline</span>
-<div class="badges"><span class="badge pkg mono">PyPI</span><span class="badge mono">Zenodo DOI</span></div>
-</div>
-<div class="project-copy">
-<h3>sentinel-crop-pipeline</h3>
-<p>Sentinel-2 L2A preparation for crop classification—from CDSE discovery and AOI-cropped download to cloud-aware preprocessing, spectral indices, spatially blocked patches, and aligned ground-truth masks.</p>
-<ul class="project-points">
-<li>Cloud, shadow, snow, and invalid-pixel discipline.</li>
-<li>COG/TIFF plus NPY/TFRecord training exports.</li>
-<li>Spatial blocking designed to reduce train/test leakage.</li>
-</ul>
-</div>
-<div aria-hidden="true" class="project-visual" data-figure="FIG. 03 / EO DATA LINEAGE">
-<svg aria-label="Sentinel-2 crop data lineage from acquisition to cloud mask, indices, spatial split, and exports" class="sat-grid" preserveaspectratio="xMidYMid meet" role="img" viewbox="0 0 900 270">
-<defs>
-<clippath id="sceneClip"><rect height="132" width="142" x="31" y="75"></rect></clippath>
-<marker id="satArrow" markerheight="7" markerwidth="7" orient="auto" refx="6" refy="3.5"><path d="M0 0 7 3.5 0 7Z" fill="#13140F"></path></marker>
-</defs>
-<text class="diagram-title" fill="#13140F" x="24" y="24">SENTINEL-2 / REPRODUCIBLE DATA LINEAGE</text><text class="diagram-micro" fill="#6B6D64" text-anchor="end" x="876" y="24">L2A · AOI-CROPPED · SPATIAL BLOCKING</text>
-<line class="diagram-rule" x1="24" x2="876" y1="36" y2="36"></line>
-<!-- stage indexes -->
-<g fill="#6B6D64"><text class="diagram-micro" x="31" y="58">01 / ACQUIRE</text><text class="diagram-micro" x="214" y="58">02 / MASK</text><text class="diagram-micro" x="391" y="58">03 / DERIVE</text><text class="diagram-micro" x="568" y="58">04 / SPLIT</text><text class="diagram-micro" x="744" y="58">05 / EXPORT</text></g>
-<!-- Source scene -->
-<rect fill="#1E3B29" height="132" stroke="#13140F" width="142" x="31" y="75"></rect>
-<g clip-path="url(#sceneClip)">
-<path d="M15 99 70 67 126 91 183 58 207 83 143 129 84 114Z" fill="#6E8C4C"></path>
-<path d="M18 153 65 122 117 139 166 107 205 130 166 178 103 166Z" fill="#A59A55"></path>
-<path d="M17 204 61 171 118 187 170 157 210 178 164 223 92 218Z" fill="#405F36"></path>
-<path d="M40 77 58 207M74 70 91 210M111 78 126 211M148 70 164 206" stroke="rgba(255,255,255,.24)"></path>
-<polygon fill="none" points="54,99 130,86 151,169 70,187" stroke="#EBA93F" stroke-width="2"></polygon>
-</g>
-<text class="diagram-label" fill="#13140F" text-anchor="middle" x="102" y="222">CDSE SCENE + AOI</text>
-<path class="sat-path" d="M173 141H205" marker-end="url(#satArrow)"></path>
-<!-- mask -->
-<rect fill="#fff" height="132" stroke="#13140F" width="142" x="214" y="75"></rect>
-<g transform="translate(230 93)">
-<rect fill="#0A7D32" height="26" width="26"></rect><rect fill="#D8D8CF" height="26" width="26" x="28"></rect><rect fill="#0A7D32" height="26" width="26" x="56"></rect><rect fill="#0A7D32" height="26" width="26" x="84"></rect>
-<rect fill="#0A7D32" height="26" width="26" y="28"></rect><rect fill="#B83C2C" height="26" width="26" x="28" y="28"></rect><rect fill="#D8D8CF" height="26" width="26" x="56" y="28"></rect><rect fill="#0A7D32" height="26" width="26" x="84" y="28"></rect>
-<rect fill="#D8D8CF" height="26" width="26" y="56"></rect><rect fill="#0A7D32" height="26" width="26" x="28" y="56"></rect><rect fill="#0A7D32" height="26" width="26" x="56" y="56"></rect><rect fill="#B83C2C" height="26" width="26" x="84" y="56"></rect>
-</g>
-<rect fill="#0A7D32" height="8" width="8" x="230" y="184"></rect><text class="diagram-micro" x="243" y="191">VALID</text><rect fill="#B83C2C" height="8" width="8" x="281" y="184"></rect><text class="diagram-micro" x="294" y="191">CLOUD</text><rect fill="#D8D8CF" height="8" width="8" x="332" y="184"></rect><text class="diagram-micro" text-anchor="end" x="345" y="191">SHADOW</text>
-<text class="diagram-label" text-anchor="middle" x="285" y="222">SCL QUALITY MASK</text>
-<path class="sat-path" d="M356 141H382" marker-end="url(#satArrow)"></path>
-<!-- derive -->
-<rect fill="#F8F8F3" height="132" stroke="#13140F" width="142" x="391" y="75"></rect>
-<text class="diagram-micro" fill="#6B6D64" x="409" y="97">REFLECTANCE</text>
-<rect fill="#D8D8CF" height="12" width="106" x="409" y="107"></rect><rect fill="#2C67A0" height="12" width="78" x="409" y="107"></rect>
-<text class="diagram-micro" fill="#6B6D64" x="409" y="138">NDVI</text><path d="M409 166C430 151 449 172 470 151S505 150 516 142" fill="none" stroke="#0A7D32" stroke-width="2"></path>
-<line stroke="#D8D8CF" x1="409" x2="516" y1="176" y2="176"></line><text class="diagram-micro" x="409" y="192">NDRE · NORMALIZE · STACK</text>
-<text class="diagram-label" text-anchor="middle" x="462" y="222">BANDS + INDICES</text>
-<path class="sat-path" d="M533 141H559" marker-end="url(#satArrow)"></path>
-<!-- spatial splits -->
-<rect fill="#fff" height="132" stroke="#13140F" width="142" x="568" y="75"></rect>
-<g transform="translate(586 92)">
-<rect fill="#0A7D32" height="28" width="28"></rect><rect fill="#0A7D32" height="28" width="28" x="30"></rect><rect fill="#EBA93F" height="28" width="28" x="60"></rect><rect fill="#2C67A0" height="28" width="28" x="90"></rect>
-<rect fill="#0A7D32" height="28" width="28" y="30"></rect><rect fill="#0A7D32" height="28" width="28" x="30" y="30"></rect><rect fill="#EBA93F" height="28" width="28" x="60" y="30"></rect><rect fill="#2C67A0" height="28" width="28" x="90" y="30"></rect>
-<rect fill="#0A7D32" height="28" width="28" y="60"></rect><rect fill="#0A7D32" height="28" width="28" x="30" y="60"></rect><rect fill="#EBA93F" height="28" width="28" x="60" y="60"></rect><rect fill="#2C67A0" height="28" width="28" x="90" y="60"></rect>
-</g>
-<text class="diagram-micro" text-anchor="middle" x="639" y="194">TRAIN · VALID · TEST BY BLOCK</text>
-<text class="diagram-label" text-anchor="middle" x="639" y="222">SPATIAL SPLIT</text>
-<path class="sat-path" d="M710 141H736" marker-end="url(#satArrow)"></path>
-<!-- exports -->
-<rect fill="#13140F" height="132" width="132" x="744" y="75"></rect>
-<text class="diagram-label" fill="#fff" x="760" y="98">TRAINING ARTIFACTS</text>
-<rect fill="#F1F1EA" height="23" width="100" x="760" y="111"></rect><text class="diagram-label" text-anchor="middle" x="810" y="126">COG / TIFF</text>
-<rect fill="#EBA93F" height="23" width="100" x="760" y="141"></rect><text class="diagram-label" text-anchor="middle" x="810" y="156">NPY</text>
-<rect fill="#2C67A0" height="23" width="100" x="760" y="171"></rect><text class="diagram-label" fill="#fff" text-anchor="middle" x="810" y="186">TFRECORD</text>
-<text class="diagram-label" fill="#13140F" text-anchor="middle" x="810" y="222">VERSIONED EXPORT</text>
-<text class="diagram-micro" fill="#6B6D64" x="24" y="252">ACCOUNTING REPORT / DISCOVERED → DOWNLOADED → MASKED → PATCHED → SPLIT · EVERY LOSS IS COUNTED</text>
-</svg>
-</div>
-<div class="project-footer"><div class="project-links"><a href="https://github.com/muend/sentinel-crop-pipeline" rel="noopener" target="_blank">Repository ↗</a><a href="https://pypi.org/project/sentinel-crop-pipeline/" rel="noopener" target="_blank">PyPI ↗</a><a href="https://doi.org/10.5281/zenodo.21284444" rel="noopener" target="_blank">DOI ↗</a></div><span class="project-index mono">03</span></div>
-</article>
-<article class="project-card reveal" data-delay="1">
-<div class="project-header">
-<span class="project-type mono">Spatial DSS · Public-facing product</span>
-<div class="badges"><span class="badge live mono">live</span><span class="badge mono">147 areas</span></div>
-</div>
-<div class="project-copy">
-<h3>agri-dss</h3>
-<p>A zero-backend decision-support system for the Western Antalya agricultural corridor, translating crop and regional knowledge into practical neighborhood-level plans.</p>
-<ul class="project-points">
-<li>Five districts and 147 neighborhoods.</li>
-<li>Auditable data-driven recommendation logic.</li>
-<li>Clean A4 field plans and static deployment.</li>
-</ul>
-</div>
-<div class="project-visual project-visual--agri" data-figure="FIG. 04 / AUDITABLE DECISION CHAIN">
-<svg aria-label="Auditable agricultural decision-support chain from regional data through suitability criteria to a neighborhood plan" class="dss-flow-v2" preserveAspectRatio="xMidYMid meet" role="img" viewBox="0 0 620 350">
-<defs><marker id="dssArrow" markerHeight="8" markerWidth="8" orient="auto" refX="7" refY="4"><path d="M0 0 8 4 0 8Z" fill="#0A7D32"/></marker></defs>
-<text class="diagram-title" x="22" y="25">WESTERN ANTALYA / AUDITABLE DECISION CHAIN</text>
-<text class="diagram-micro" fill="#6B6D64" text-anchor="end" x="598" y="25">5 DISTRICTS · 147 NEIGHBORHOODS</text>
-<line class="diagram-rule" x1="22" x2="598" y1="38" y2="38"/>
-
-<text class="diagram-kicker" x="22" y="63">01 / TERRITORIAL INDEX</text>
-<rect class="plate-box" x="22" y="75" width="576" height="58"/>
-<text class="diagram-label diagram-label--large" x="42" y="98">DEMRE · FİNİKE · KAŞ · KEMER · KUMLUCA</text>
-<text class="diagram-note" fill="#5C5E54" x="42" y="117">Neighborhood selection resolves a compact, versioned region and crop data contract.</text>
-
-<path class="plate-flow" d="M310 133V151" marker-end="url(#dssArrow)"/>
-
-<text class="diagram-kicker" x="22" y="171">02 / RECOMMENDATION LOGIC</text>
-<rect class="boundary boundary--decision" x="22" y="182" width="576" height="78"/>
-<g transform="translate(38 200)">
-  <rect class="criterion" width="92" height="30"/><text class="diagram-label" text-anchor="middle" x="46" y="19">CLIMATE</text>
-  <rect class="criterion" x="105" width="92" height="30"/><text class="diagram-label" text-anchor="middle" x="151" y="19">WATER</text>
-  <rect class="criterion" x="210" width="92" height="30"/><text class="diagram-label" text-anchor="middle" x="256" y="19">SOIL</text>
-  <rect class="criterion" x="315" width="92" height="30"/><text class="diagram-label" text-anchor="middle" x="361" y="19">SLOPE</text>
-  <rect class="criterion" x="420" width="92" height="30"/><text class="diagram-label" text-anchor="middle" x="466" y="19">MARKET</text>
-</g>
-<text class="diagram-micro" fill="#5C5E54" text-anchor="middle" x="310" y="249">SCHEMA-DRIVEN SCORE · TRACEABLE INPUTS · NO SERVER-SIDE BLACK BOX</text>
-
-<path class="plate-flow" d="M310 260V278" marker-end="url(#dssArrow)"/>
-
-<text class="diagram-kicker" x="22" y="298">03 / NEIGHBORHOOD PLAN</text>
-<rect class="plan-row plan-row--one" x="22" y="309" width="174" height="25"/><text class="diagram-label" x="34" y="326">01 · OLIVE</text><text class="diagram-micro" text-anchor="end" x="184" y="326">HIGH FIT</text>
-<rect class="plan-row plan-row--two" x="210" y="309" width="174" height="25"/><text class="diagram-label" x="222" y="326">02 · CITRUS</text><text class="diagram-micro" text-anchor="end" x="372" y="326">FIELD CHECK</text>
-<rect class="plan-row plan-row--three" x="398" y="309" width="200" height="25"/><text class="diagram-label" x="410" y="326">A4 ACTION PLAN</text><text class="diagram-micro" text-anchor="end" x="586" y="326">PRINT / SHARE</text>
-</svg>
-</div>
-<div class="project-footer"><div class="project-links"><a href="https://tarimsalkoridor.online" rel="noopener" target="_blank">Live app ↗</a><a href="https://github.com/muend/agri-dss" rel="noopener" target="_blank">Repository ↗</a></div><span class="project-index mono">04</span></div>
-</article>
-<article class="project-card amber founder-showcase reveal">
-<div class="project-header">
-<span class="project-type mono">Applied simulation · Browser game</span>
-<div class="badges"><span class="badge game mono">published</span></div>
-</div>
-<div class="project-copy">
-<h3>FOUNDER.EXE</h3>
-<p>A startup simulation that encodes taxes, incorporation, grants, investors, regulation, runway pressure, bankruptcy, and exit logic for Türkiye and the USA.</p>
-<ul class="project-points">
-<li>Idea-aware sector and market assumptions.</li>
-<li>Optional AI advisor through player-owned API keys.</li>
-<li>Static, browser-native release with local saves.</li>
-</ul>
-</div>
-<div class="project-visual project-visual--founder" data-figure="FIG. 05 / RULE-DRIVEN OPERATING MODEL">
-<svg aria-label="Founder.exe operating model showing country rules, runway, ownership, compliance and decision outcomes" class="founder-flow-v2" preserveAspectRatio="xMidYMid meet" role="img" viewBox="0 0 900 330">
-<defs><marker id="founderArrow" markerHeight="8" markerWidth="8" orient="auto" refX="7" refY="4"><path d="M0 0 8 4 0 8Z" fill="#EBA93F"/></marker></defs>
-<text class="diagram-title" x="24" y="25">FOUNDER.EXE / RULE-DRIVEN OPERATING MODEL</text>
-<text class="diagram-micro" fill="#6B6D64" text-anchor="end" x="876" y="25">TÜRKİYE · USA · LOCAL SAVE</text>
-<line class="diagram-rule" x1="24" x2="876" y1="38" y2="38"/>
-
-<rect class="founder-column founder-column--dark" x="24" y="58" width="188" height="222"/>
-<text class="diagram-kicker" fill="#EBA93F" x="42" y="82">01 / RULESET</text>
-<text class="diagram-label diagram-label--large" fill="#fff" x="42" y="108">COUNTRY + COMPANY TYPE</text>
-<text class="diagram-micro" fill="#BFC2B7" x="42" y="131">TAX · GRANTS · REGULATION</text>
-<line x1="42" x2="194" y1="148" y2="148" stroke="rgba(255,255,255,.2)"/>
-<text class="diagram-label" fill="#fff" x="42" y="174">MONTH 08</text>
-<text class="diagram-micro" fill="#BFC2B7" x="42" y="195">IDEA-AWARE SECTOR PATH</text>
-<text class="diagram-micro" fill="#BFC2B7" x="42" y="215">SCRIPTED OFFLINE FALLBACK</text>
-<rect x="42" y="238" width="124" height="24" fill="#EBA93F"/><text class="diagram-label" text-anchor="middle" x="104" y="255">ADVANCE MONTH</text>
-
-<path class="founder-link" d="M212 169H236" marker-end="url(#founderArrow)"/>
-
-<rect class="founder-column" x="236" y="58" width="398" height="222"/>
-<text class="diagram-kicker" x="254" y="82">02 / OPERATING STATE</text>
-<text class="diagram-label diagram-label--large" x="254" y="108">RUNWAY / CASH</text>
-<text class="diagram-micro" fill="#6B6D64" text-anchor="end" x="616" y="108">5.2 MONTHS</text>
-<line x1="254" x2="616" y1="190" y2="190" stroke="#D6D6CC"/>
-<path d="M254 132C295 135 321 142 351 151S405 164 445 171S520 181 616 187" fill="none" stroke="#B83C2C" stroke-width="3"/>
-<g fill="#13140F"><circle cx="254" cy="132" r="3"/><circle cx="351" cy="151" r="3"/><circle cx="445" cy="171" r="3"/><circle cx="616" cy="187" r="3"/></g>
-<text class="diagram-micro" fill="#6B6D64" x="254" y="209">BURN ↑ · REVENUE → · TAX DUE 18D</text>
-<line x1="254" x2="616" y1="224" y2="224" stroke="#D6D6CC"/>
-<text class="diagram-label" x="254" y="246">CAP TABLE</text>
-<rect x="339" y="234" width="156" height="15" fill="#0A7D32"/><rect x="495" y="234" width="76" height="15" fill="#2C67A0"/><rect x="571" y="234" width="45" height="15" fill="#EBA93F"/>
-<text class="diagram-micro" x="339" y="269">FOUNDER 58% · INVESTOR 28% · OPTION POOL 14%</text>
-
-<path class="founder-link" d="M634 169H658" marker-end="url(#founderArrow)"/>
-
-<rect class="founder-column" x="658" y="58" width="218" height="222"/>
-<text class="diagram-kicker" x="676" y="82">03 / DECISION + CONSEQUENCE</text>
-<rect class="decision-chip decision-chip--amber" x="676" y="101" width="84" height="28"/><text class="diagram-label" text-anchor="middle" x="718" y="119">HIRE</text>
-<rect class="decision-chip decision-chip--green" x="770" y="101" width="84" height="28"/><text class="diagram-label" text-anchor="middle" x="812" y="119">PIVOT</text>
-<rect class="risk-box" x="676" y="145" width="178" height="58"/>
-<text class="diagram-label" fill="#7C261B" x="690" y="167">COMPLIANCE DEADLINE</text>
-<text class="diagram-micro" fill="#7C261B" x="690" y="186">REGISTER · PAY · ACCEPT RISK</text>
-<text class="diagram-label" x="676" y="229">OUTCOME ENGINE</text>
-<text class="diagram-micro" fill="#6B6D64" x="676" y="249">SURVIVE · FAIL · FUND · EXIT</text>
-<line x1="676" x2="854" y1="264" y2="264" stroke="#13140F"/>
-</svg>
-</div>
-<div class="project-footer"><div class="project-links"><a href="https://muend.itch.io/founderexe" rel="noopener" target="_blank">Play on itch.io ↗</a></div><span class="project-index mono">05</span></div>
-</article>
-</div>
-<p class="mono" style="color:var(--muted);margin-top:16px">* Published routing metrics apply to the frozen 17-skill, 120-case Claude Code / Claude Sonnet suite; they are not claims about general answer quality.</p>
-</div>
-</section>
-<section aria-labelledby="proof-title" class="proof-section" id="proof">
-<div class="wrap">
-<div class="sec-head reveal" data-section="02">
-<span class="idx mono">02</span>
-<h2 id="proof-title">Evidence, Not Claims</h2>
-<span class="rule"></span>
-<span class="section-count mono">auditable outputs</span>
-</div>
-<p class="section-intro reveal">The portfolio is built around artifacts that can be inspected: packages, deterministic evaluations, validation scripts, DOI-backed releases, live products, and explicit limitations.</p>
-<div class="proof-dashboard reveal">
-<article class="score-panel">
-<div class="score-head"><div><span class="mono" style="color:#F5D89D">Routing benchmark</span><p>Strict full-route accuracy on the published frozen suite.</p></div><span class="mono" style="color:#85887D">v1 / evidence</span></div>
-<div aria-label="92.5 percent full-route accuracy" class="score-gauge">
-<svg aria-hidden="true" viewbox="0 0 120 120"><circle class="score-ring-bg" cx="60" cy="60" r="48"></circle><circle class="score-ring" cx="60" cy="60" r="48"></circle></svg>
-<div class="score-center"><strong>92.5%</strong><span class="mono">full route</span></div>
-</div>
-<div class="score-foot"><div><strong>120</strong><span class="mono">frozen cases</span></div><div><strong>17</strong><span class="mono">benchmarked skills</span></div></div>
-</article>
-<article class="evidence-panel">
-<div class="evidence-top"><div><span class="mono" style="color:var(--green)">Published result card</span><h3>Measured routing behavior</h3><p>Deterministic scoring from recorded activations, with an enabled/disabled control and explicit scope limitations.</p></div><a class="btn ghost" href="https://github.com/muend/geoai-skills/blob/main/BENCHMARK.md" rel="noopener" target="_blank"><span>Open evidence</span></a></div>
-<div aria-label="Routing benchmark metrics" class="benchmark-table">
-<div class="benchmark-row"><span class="metric">Precision</span><div class="bar"><i style="--value:100%"></i></div><strong>100%</strong></div>
-<div class="benchmark-row"><span class="metric">Recall</span><div class="bar"><i style="--value:92.86%"></i></div><strong>92.86%</strong></div>
-<div class="benchmark-row"><span class="metric">Route accuracy</span><div class="bar"><i style="--value:92.5%"></i></div><strong>92.5%</strong></div>
-</div>
-<div class="evidence-notes">
-<div class="evidence-note"><strong>PyPI × 2</strong><span class="mono">installable research / infrastructure packages</span></div>
-<div class="evidence-note"><strong>Zenodo DOI</strong><span class="mono">citable Sentinel-2 pipeline artifact</span></div>
-<div class="evidence-note"><strong>Live systems</strong><span class="mono">DSS and simulation shipped in browser</span></div>
-</div>
-</article>
-</div>
-<div class="principles">
-<article class="principle reveal"><span class="number mono">01 / Spatial rigor</span><h3>CRS and units are explicit</h3><p>Area, distance, raster alignment, scale, and geometry assumptions are checked before methods are trusted.</p></article>
-<article class="principle reveal" data-delay="1"><span class="number mono">02 / Honest validation</span><h3>Leakage is treated as a risk</h3><p>Spatially dependent data requires blocked splits, appropriate baselines, and validation designs that reflect deployment.</p></article>
-<article class="principle reveal" data-delay="2"><span class="number mono">03 / Reproducibility</span><h3>Evidence is versioned</h3><p>Typed contracts, CI, immutable benchmark packages, test harnesses, and DOI-backed releases keep work reviewable.</p></article>
-<article class="principle reveal" data-delay="3"><span class="number mono">04 / Product utility</span><h3>Methods become usable systems</h3><p>Analysis is translated into interfaces, reports, local automation, or playable simulations rather than left as notebooks.</p></article>
-</div>
-</div>
-</section>
-<section aria-labelledby="research-title" id="research">
-<div class="wrap">
-<div class="sec-head reveal" data-section="03"><span class="idx mono">03</span><h2 id="research-title">Academic &amp; Research</h2><span class="rule"></span><span class="section-count mono">03 studies</span></div>
-<p class="section-intro reveal">Research work focused on remote-sensing segmentation, spatial econometrics, and composite territorial indicators.</p>
-<div class="research-list">
-<a class="research-row reveal" href="https://github.com/muend/agri-unet" rel="noopener" target="_blank"><span class="research-no mono">R / 01</span><div class="research-title"><h3>agri-unet</h3><span class="mono">Deep learning · Earth observation</span></div><p class="research-desc">Downstream agricultural pattern identification from satellite imagery, separated from the reusable data-preparation layer so experiments remain auditable.</p><span aria-hidden="true" class="research-arrow">↗</span></a>
-<a class="research-row reveal" href="https://github.com/muend/turkiye-housing-prices-pandemic" rel="noopener" target="_blank"><span class="research-no mono">R / 02</span><div class="research-title"><h3>turkiye-housing-prices-pandemic</h3><span class="mono">Spatial econometrics</span></div><p class="research-desc">Inflation-adjusted housing-price analysis with regional comparisons and local spatial statistics for significant clusters and outliers.</p><span aria-hidden="true" class="research-arrow">↗</span></a>
-<a class="research-row reveal" href="https://github.com/muend/kutri-resilience-index" rel="noopener" target="_blank"><span class="research-no mono">R / 03</span><div class="research-title"><h3>kutri-resilience-index</h3><span class="mono">Composite indicators · Urban resilience</span></div><p class="research-desc">A reproducible five-pillar territorial resilience index prototype with transparent normalization, weighting, figures, and methodology.</p><span aria-hidden="true" class="research-arrow">↗</span></a>
-</div>
-</div>
-</section>
-<section aria-labelledby="method-title" class="method-section" id="method">
-<div class="wrap">
-<div class="sec-head reveal" data-section="04"><span class="idx mono">04</span><h2 id="method-title">How I Build</h2><span class="rule"></span><span class="section-count mono">four-stage discipline</span></div>
-<p class="section-intro reveal">The same sequence governs infrastructure, research software, decision systems, and simulations.</p>
-<div class="method-track">
-<article class="method-step reveal"><div aria-hidden="true" class="method-node"></div><span class="phase mono">Phase 01</span><h3>Define invariants</h3><p>Make CRS, units, data contracts, safety boundaries, and success criteria explicit before implementation.</p></article>
-<article class="method-step reveal" data-delay="1"><div aria-hidden="true" class="method-node"></div><span class="phase mono">Phase 02</span><h3>Build the pipeline</h3><p>Separate components, isolate risky runtimes, preserve provenance, and make intermediate states inspectable.</p></article>
-<article class="method-step reveal" data-delay="2"><div aria-hidden="true" class="method-node"></div><span class="phase mono">Phase 03</span><h3>Stress the failure modes</h3><p>Test negative cases, leakage, invalid paths, ambiguous routing, missing data, and operational boundaries.</p></article>
-<article class="method-step reveal" data-delay="3"><div aria-hidden="true" class="method-node"></div><span class="phase mono">Phase 04</span><h3>Ship a usable artifact</h3><p>Deliver a package, live interface, citable release, benchmark, print output, or deployment-ready system.</p></article>
-</div>
-</div>
-</section>
-<section aria-labelledby="stack-title" class="skills-section" id="stack">
-<div class="wrap">
-<div class="sec-head reveal" data-section="05"><span class="idx mono">05</span><h2 id="stack-title">Technical Core</h2><span class="rule"></span><span class="section-count mono">capability matrix</span></div>
-<p class="section-intro reveal">A spatial-first stack spanning research methods, agent infrastructure, production engineering, and browser-native product work.</p>
-<div class="capability-layout reveal">
-<div aria-label="Technical capability categories" class="capability-nav" role="tablist">
-<button aria-controls="panel-spatial" aria-selected="true" class="capability-tab mono" data-panel="spatial" id="tab-spatial" role="tab"><span>Spatial / EO</span><span class="count">10</span></button>
-<button aria-controls="panel-agents" aria-selected="false" class="capability-tab mono" data-panel="agents" id="tab-agents" role="tab"><span>Agents / Eval</span><span class="count">08</span></button>
-<button aria-controls="panel-ml" aria-selected="false" class="capability-tab mono" data-panel="ml" id="tab-ml" role="tab"><span>AI / ML</span><span class="count">07</span></button>
-<button aria-controls="panel-systems" aria-selected="false" class="capability-tab mono" data-panel="systems" id="tab-systems" role="tab"><span>Systems / Product</span><span class="count">10</span></button>
-</div>
-<div class="capability-panels">
-<article aria-labelledby="tab-spatial" class="capability-panel active" id="panel-spatial" role="tabpanel">
-<div><span class="mono" style="color:var(--green)">Spatial / remote sensing</span><h3>Geospatial methods with operational discipline.</h3><p>Vector, raster, EO, spatial statistics, cartography, and proprietary GIS workflows handled with explicit projections, scale, validation, and output checks.</p><div class="capability-proof"><div><span>Primary domain</span><strong>GeoAI</strong></div><div><span>Core failure mode</span><strong>Silent spatial error</strong></div><div><span>Delivery</span><strong>Package · map · DSS</strong></div></div></div>
-<div class="chip-cloud"><span>GeoPandas</span><span>Shapely</span><span>ArcPy</span><span>Rasterio</span><span>PySAL</span><span>QGIS</span><span>Sentinel-2</span><span>CDSE</span><span>STAC</span><span>PostGIS</span></div>
-</article>
-<article aria-labelledby="tab-agents" class="capability-panel" hidden="" id="panel-agents" role="tabpanel">
-<div><span class="mono" style="color:var(--green)">Agents / evaluation</span><h3>Tool-using agents that route, execute, and fail safely.</h3><p>Agent Skills, MCP, runtime isolation, typed evaluation contracts, blind request preparation, deterministic scoring, and evidence-aware benchmark publication.</p><div class="capability-proof"><div><span>Primary domain</span><strong>Agentic GIS</strong></div><div><span>Core failure mode</span><strong>Unsafe / wrong routing</strong></div><div><span>Delivery</span><strong>Plugin · MCP · benchmark</strong></div></div></div>
-<div class="chip-cloud"><span>Agent Skills</span><span>MCP</span><span>JSON-RPC</span><span>JSON Schema</span><span>Routing Evals</span><span>Behavior Evals</span><span>Guarded Execution</span><span>Benchmark Harnesses</span></div>
-</article>
-<article aria-labelledby="tab-ml" class="capability-panel" hidden="" id="panel-ml" role="tabpanel">
-<div><span class="mono" style="color:var(--green)">AI / ML / data</span><h3>Models built on defensible data and evaluation.</h3><p>Deep-learning and classical ML workflows with spatial splitting, class-imbalance handling, reproducible preprocessing, and georeferencing-preserving inference.</p><div class="capability-proof"><div><span>Primary domain</span><strong>Spatial ML</strong></div><div><span>Core failure mode</span><strong>Leakage / false confidence</strong></div><div><span>Delivery</span><strong>Dataset · model · report</strong></div></div></div>
-<div class="chip-cloud"><span>Python</span><span>PyTorch</span><span>TensorFlow</span><span>scikit-learn</span><span>NumPy</span><span>pandas</span><span>SciPy</span></div>
-</article>
-<article aria-labelledby="tab-systems" class="capability-panel" hidden="" id="panel-systems" role="tabpanel">
-<div><span class="mono" style="color:var(--green)">Systems / product</span><h3>Research logic translated into software people can operate.</h3><p>Typed Python services, static web products, CI, testing, distribution, browser-native interfaces, local persistence, and low-maintenance deployment architectures.</p><div class="capability-proof"><div><span>Primary domain</span><strong>Product engineering</strong></div><div><span>Core failure mode</span><strong>Unmaintainable delivery</strong></div><div><span>Delivery</span><strong>PyPI · web · game</strong></div></div></div>
-<div class="chip-cloud"><span>FastAPI</span><span>Pydantic v2</span><span>Docker</span><span>Pytest</span><span>Ruff</span><span>Mypy</span><span>GitHub Actions</span><span>Vanilla JS</span><span>HTML/CSS</span><span>localStorage</span></div>
-</article>
-</div>
-</div>
-</div>
-</section>
-<section aria-labelledby="work-map-title" class="work-map">
-<div class="wrap">
-<div class="sec-head reveal" data-section="06"><span class="idx mono">06</span><h2 id="work-map-title">System Map</h2><span class="rule"></span><span class="section-count mono">one connected practice</span></div>
-<p class="section-intro reveal">The work compounds: methods inform infrastructure, infrastructure enables execution, and both feed products that can be used outside a research notebook.</p>
-<div class="system-map reveal">
-<svg aria-hidden="true" class="map-lines" preserveaspectratio="none" viewbox="0 0 1200 620">
-<defs>
-<marker id="mapArrow" markerheight="8" markerwidth="8" orient="auto" refx="7" refy="4"><path d="M0 0 8 4 0 8Z" fill="#0A7D32"></path></marker>
-<marker id="mapArrowAmber" markerheight="8" markerwidth="8" orient="auto" refx="7" refy="4"><path d="M0 0 8 4 0 8Z" fill="#EBA93F"></path></marker>
-</defs>
-<text class="diagram-micro" fill="#6B6D64" x="32" y="32">SYSTEM ATLAS / KNOWLEDGE → EXECUTION → ARTIFACT</text>
-<text class="diagram-micro" fill="#6B6D64" text-anchor="end" x="1168" y="32">REV. 03 / 2026</text>
-<line class="diagram-rule" x1="32" x2="1168" y1="45" y2="45"></line>
-<path class="map-path hot route-active" d="M220 145H480V310H600" marker-end="url(#mapArrowAmber)"></path>
-<path class="map-path" d="M980 145H720V310H600" marker-end="url(#mapArrow)"></path>
-<path class="map-path" d="M220 485H480V310H600" marker-end="url(#mapArrow)"></path>
-<path class="map-path" d="M980 485H720V310H600" marker-end="url(#mapArrow)"></path>
-<path d="M600 238V382" stroke="#EBA93F" stroke-dasharray="5 5" stroke-width="1.5"></path>
-<circle class="packet" fill="#EBA93F" r="5"></circle>
-<text class="diagram-micro" fill="#6B6D64" text-anchor="middle" x="346" y="133">ROUTING / INVARIANTS</text>
-<text class="diagram-micro" fill="#6B6D64" text-anchor="middle" x="852" y="133">GUARDED EXECUTION</text>
-<text class="diagram-micro" fill="#6B6D64" text-anchor="middle" x="346" y="505">DATA / MODEL EVIDENCE</text>
-<text class="diagram-micro" fill="#6B6D64" text-anchor="middle" x="852" y="505">PUBLIC PRODUCT DELIVERY</text>
-</svg>
-<article class="map-module m1" data-node="N-01"><span class="mono">Knowledge layer</span><h3>geoai-skills</h3><p>Routes spatial work and encodes methodological invariants.</p></article>
-<article class="map-module m2" data-node="N-02"><span class="mono">Execution layer</span><h3>arcgis-mcp-bridge</h3><p>Executes licensed ArcGIS operations behind guarded boundaries.</p></article>
-<article class="map-module center" data-node="CORE"><span class="mono">Core practice</span><h3>Reliable spatial systems</h3><p>Research rigor, engineering discipline, and product delivery in one workflow.</p></article>
-<article class="map-module m3" data-node="N-03"><span class="mono">Data / model layer</span><h3>Sentinel pipeline + U-Net</h3><p>Prepares reproducible EO datasets and downstream segmentation work.</p></article>
-<article class="map-module m4" data-node="N-04"><span class="mono">Product layer</span><h3>agri-dss + FOUNDER.EXE</h3><p>Turns spatial or institutional rules into usable interactive systems.</p></article>
-</div>
-</div>
-</section>
-<section aria-labelledby="contact-title" class="contact" id="contact">
-<div class="wrap">
-<span class="kicker mono reveal">Open to collaboration</span>
-<h2 class="reveal" data-delay="1" id="contact-title">Build spatial systems<br/>that hold up.</h2>
-<p class="reveal" data-delay="2">Available for collaboration around GeoAI agent systems, production-grade spatial data science, remote-sensing ML pipelines, GIS automation, decision-support products, and applied simulations.</p>
-<div class="cta reveal" data-delay="3">
-<a class="btn solid" href="mailto:edcoders@gmail.com"><span>edcoders@gmail.com</span></a>
-<a class="btn ghost" href="https://github.com/muend" rel="noopener" target="_blank"><span aria-hidden="true" class="dot"></span><span>github.com/muend</span></a>
-<a class="btn amber" href="https://pypi.org/user/muend/" rel="noopener" target="_blank"><span>PyPI profile</span></a>
-</div>
-<p class="contact-note reveal">Based in Türkiye · Open-source, research, and production collaboration welcome.</p>
-</div>
-</section>
-</main>
-<footer>
-<div class="wrap">
-<a class="brand" href="#top" style="color:#fff">muend<b>.</b></a>
-<div class="footer-links"><a href="https://github.com/muend/geoai-skills" rel="noopener" target="_blank">GeoAI Skills</a><a href="https://github.com/muend" rel="noopener" target="_blank">GitHub</a><a href="mailto:edcoders@gmail.com">Email</a></div>
-<span class="mono">© <span id="yr"></span> Muhammed Enes Duran · HTML / CSS / JS</span>
-</div>
-</footer>
-
-
-<script id="exhibition-interactions">
-(() => {
-  'use strict';
-  const root = document.documentElement;
-  const body = document.body;
-  const reduceMotion = matchMedia('(prefers-reduced-motion: reduce)').matches;
-  const finePointer = matchMedia('(pointer:fine) and (min-width: 980px)').matches;
-
-  const year = document.getElementById('yr');
-  if (year) year.textContent = new Date().getFullYear();
-
-  // Scroll progress: one DOM write per animation frame, never per raw scroll event.
-  const progress = document.getElementById('scroll-progress');
-  let scrollFrame = 0;
-  const paintProgress = () => {
-    scrollFrame = 0;
-    if (!progress) return;
-    const max = Math.max(1, root.scrollHeight - innerHeight);
-    progress.style.transform = `scaleX(${Math.min(1, Math.max(0, scrollY / max))})`;
-  };
-  if (progress) {
-    progress.style.width = '100%';
-    progress.style.transformOrigin = 'left';
-    addEventListener('scroll', () => {
-      if (!scrollFrame) scrollFrame = requestAnimationFrame(paintProgress);
-    }, {passive:true});
-    addEventListener('resize', () => {
-      if (!scrollFrame) scrollFrame = requestAnimationFrame(paintProgress);
-    });
-    paintProgress();
-  }
-
-  // Never gate content visibility on JavaScript or viewport timing.
-  document.querySelectorAll('.reveal').forEach(el => el.classList.add('is-visible'));
-
-  // Active section navigation.
-  const navLinks = [...document.querySelectorAll('.navlinks a[href^="#"]')];
-  const sections = navLinks.map(link => document.querySelector(link.getAttribute('href'))).filter(Boolean);
-  if ('IntersectionObserver' in window && sections.length) {
-    const navObserver = new IntersectionObserver(entries => {
-      const visible = entries.filter(e => e.isIntersecting).sort((a,b) => b.intersectionRatio - a.intersectionRatio)[0];
-      if (!visible) return;
-      navLinks.forEach(link => {
-        const active = link.getAttribute('href') === `#${visible.target.id}`;
-        link.toggleAttribute('aria-current', active);
-        if (active) link.setAttribute('aria-current','true');
-      });
-    }, {rootMargin:'-24% 0px -62% 0px', threshold:[.05,.2,.45]});
-    sections.forEach(section => navObserver.observe(section));
-  }
-
-  // Accessible capability tabs.
-  const tabs = [...document.querySelectorAll('.capability-tab')];
-  const panels = [...document.querySelectorAll('.capability-panel')];
-  const activateTab = tab => {
-    tabs.forEach(item => item.setAttribute('aria-selected', String(item === tab)));
-    panels.forEach(panel => {
-      const active = panel.id === `panel-${tab.dataset.panel}`;
-      panel.classList.toggle('active', active);
-      panel.hidden = !active;
-    });
-  };
-  tabs.forEach((tab,index) => {
-    tab.addEventListener('click', () => activateTab(tab));
-    tab.addEventListener('keydown', event => {
-      const keys = ['ArrowDown','ArrowRight','ArrowUp','ArrowLeft','Home','End'];
-      if (!keys.includes(event.key)) return;
-      event.preventDefault();
-      let next = index;
-      if (event.key === 'ArrowDown' || event.key === 'ArrowRight') next = (index + 1) % tabs.length;
-      if (event.key === 'ArrowUp' || event.key === 'ArrowLeft') next = (index - 1 + tabs.length) % tabs.length;
-      if (event.key === 'Home') next = 0;
-      if (event.key === 'End') next = tabs.length - 1;
-      tabs[next].focus();
-      activateTab(tabs[next]);
-    });
-  });
-
-  // Event-delegated, demand-driven exhibition cursor. The RAF stops when settled.
-  if (!reduceMotion && finePointer) {
-    const dot = document.querySelector('.cursor-dot');
-    const ring = document.querySelector('.cursor-ring');
-    const caption = document.getElementById('cursor-caption');
-    if (dot && ring) {
-      body.classList.add('custom-cursor-enabled');
-      let targetX = innerWidth / 2, targetY = innerHeight / 2;
-      let ringX = targetX, ringY = targetY;
-      let cursorFrame = 0;
-      let currentLabel = '';
-
-      const paintCursor = () => {
-        cursorFrame = 0;
-        ringX += (targetX - ringX) * .24;
-        ringY += (targetY - ringY) * .24;
-        dot.style.transform = `translate3d(${targetX - 2.5}px,${targetY - 2.5}px,0)`;
-        ring.style.transform = `translate3d(${ringX - ring.offsetWidth/2}px,${ringY - ring.offsetHeight/2}px,0)`;
-        if (caption) caption.style.transform = `translate3d(${targetX + 18}px,${targetY + 18}px,0)`;
-        if (Math.abs(targetX-ringX) > .35 || Math.abs(targetY-ringY) > .35) cursorFrame = requestAnimationFrame(paintCursor);
-      };
-      const requestCursorPaint = () => { if (!cursorFrame) cursorFrame = requestAnimationFrame(paintCursor); };
-
-      addEventListener('pointermove', event => {
-        targetX = event.clientX; targetY = event.clientY;
-        body.classList.add('cursor-visible');
-        const item = event.target.closest('a,button,[role="tab"],.project-card,.research-row,.map-module');
-        const label = item ? (item.dataset.cursor || (item.matches('a') ? 'OPEN' : item.matches('[role="tab"]') ? 'VIEW' : item.matches('.project-card') ? 'INSPECT' : 'EXPLORE')) : '';
-        body.classList.toggle('cursor-active', Boolean(item));
-        if (caption && label !== currentLabel) { caption.textContent = label; currentLabel = label; }
-        requestCursorPaint();
-      }, {passive:true});
-      addEventListener('pointerdown', () => body.classList.add('cursor-down'), {passive:true});
-      addEventListener('pointerup', () => body.classList.remove('cursor-down'), {passive:true});
-      document.addEventListener('mouseleave', () => body.classList.remove('cursor-visible'));
-      addEventListener('blur', () => body.classList.remove('cursor-visible'));
-    }
-  }
-})();
-</script>
+    <section id="contact">
+      <div class="container contact-grid">
+        <div><p class="section-label">Contact</p><h2>Open to focused collaboration.</h2><p class="note">I am interested in work around GeoAI, evaluation infrastructure, spatial machine learning, local GIS automation, and reproducible research software.</p></div>
+        <div class="contact-links"><a href="mailto:edcoders@gmail.com">edcoders@gmail.com</a><a href="https://github.com/muend">github.com/muend</a><a href="https://pypi.org/user/muend/">pypi.org/user/muend</a></div>
+      </div>
+    </section>
+  </main>
+  <footer><div class="container"><span>© 2026 Muhammed Enes Duran</span><span>Last updated August 2026</span></div></footer>
 </body>
 </html>
+
