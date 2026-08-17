@@ -1,18 +1,18 @@
 # muend.github.io
 
-Personal portfolio of Muhammed Enes Duran, focused on GeoAI, evaluation systems, spatial software, and remote-sensing pipelines.
+Personal website of **Muhammed Enes Duran** — Data Scientist & ML Engineer specializing in
+Spatial Data Science, GeoAI infrastructure, computer vision for remote sensing, and automated
+MLOps pipelines.
 
-Live site: [muend.github.io](https://muend.github.io)
+🔗 Live: https://muend.github.io
 
-## Structure
+## About this repo
 
-The site is a single static `index.html` file served by GitHub Pages. It has no build step, JavaScript application code, external font dependency, or analytics script.
-
-## Local preview
-
-Open `index.html` directly in a browser or serve the repository with any static file server.
+A single, self-contained static landing page (`index.html`) served via GitHub Pages. No build
+step, no dependencies — just HTML and CSS (fonts loaded from Google Fonts).
 
 ## Contact
 
-[edcoders@gmail.com](mailto:edcoders@gmail.com)
+- Email: edcoders@gmail.com
+- GitHub: https://github.com/muend
 
