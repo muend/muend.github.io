@@ -15,11 +15,38 @@ index.html              landing — hero, project index, contact
 research.html           academic work
 practice.html           method, capability matrix, system map
 projects/*.html         one page per flagship system (6)
+tr/                     the same nine pages in Turkish
 assets/site.css         the whole design system, one file
 assets/site.js          reveal choreography, tabs, diagram dialog, cursor
 assets/brand/           favicon set and web manifest
 build/                  the generator that emits every page
 ```
+
+## Languages
+
+English lives at the root, Turkish under `/tr/` with an identical tree, so every page has a
+shareable URL in both languages and `hreflang` can point search engines at the right one. The
+switcher in the header links to the current page's counterpart, not to the homepage.
+
+Diagram labels stay in English on purpose: most are proper nouns (PathGuard, ArcPy, NDVI) or
+terms used in English inside Turkish technical writing, and keeping one set of SVGs means the
+two languages cannot drift apart. Everything around them — headings, captions, notes, prose —
+is translated.
+
+Structure lives once in `build/`; only the strings are paired as `(en, tr)`.
+
+## Publishing
+
+`deploy.ps1` takes a delivered bundle, extracts it over the working copy, shows what changed,
+asks once, then commits and pushes:
+
+```powershell
+.\deploy.ps1                 # newest muend-site-*.zip in Downloads
+.\deploy.ps1 -Zip path.zip -Message "Update diagrams"
+```
+
+It also pins the commit identity to the GitHub noreply address, since pushes that expose a
+private address are rejected with GH007.
 
 ## Build
 
@@ -48,7 +75,7 @@ just re-run the generator afterwards or your change will be overwritten.
 - **Motion** — staggered scroll reveals, one-shot diagram draw-in, and a reticle cursor on fine
   pointers. All of it is disabled under `prefers-reduced-motion`.
 
-Verified at 1440 / 820 / 390px across all nine pages: no console errors, no horizontal
+Verified at 1440 / 820 / 390px across all eighteen pages: no console errors, no horizontal
 overflow, no broken internal links, and zero WCAG AA contrast failures.
 
 ## Systems

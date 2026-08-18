@@ -190,6 +190,18 @@ p{text-wrap:pretty}
 @media(max-width:1024px){.navlinks{display:none}}
 @media(max-width:520px){.status-pill span{display:none}}
 
+
+/* Language switch — a pair, not a dropdown; there are only two. */
+.langsw{display:inline-flex;align-items:center;gap:6px;color:var(--ink-mute);font-size:11px}
+.lang-opt{
+  padding:5px 7px;color:var(--ink-mute);border:1px solid transparent;
+  transition:color .25s var(--out),border-color .25s var(--out),background .25s var(--out);
+}
+.lang-opt:hover{color:var(--ink);border-color:var(--line-strong)}
+.lang-opt.is-on{color:var(--ink);background:var(--paper-sunk);border-color:var(--line-strong);font-weight:600}
+@media(max-width:1024px){.langsw{margin-left:auto}}
+@media(max-width:420px){.langsw{gap:2px}.lang-opt{padding:5px 5px}}
+
 /* ============================================================
    BUTTONS
    ============================================================ */

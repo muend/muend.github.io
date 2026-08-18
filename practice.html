@@ -10,6 +10,9 @@
 <link rel="apple-touch-icon" href="assets/brand/favicon-180.png">
 <link rel="manifest" href="assets/brand/site.webmanifest">
 <link rel="canonical" href="https://muend.github.io/practice.html">
+<link rel="alternate" hreflang="en" href="https://muend.github.io/practice.html">
+<link rel="alternate" hreflang="tr" href="https://muend.github.io/tr/practice.html">
+<link rel="alternate" hreflang="x-default" href="https://muend.github.io/practice.html">
 <title>Practice — how I build spatial systems</title>
 <meta name="description" content="A four-stage method for building GeoAI infrastructure, research software and decision systems, plus the full capability matrix and system map.">
 <meta name="theme-color" content="#F7F7F1">
@@ -47,6 +50,7 @@
         <a href="practice.html" data-nav="practice">Practice</a>
         <a href="index.html#contact" data-nav="contact">Contact</a>
       </nav>
+      <div class="langsw mono" role="group" aria-label="Change language"><span class="lang-opt is-on" aria-current="true">EN</span><span aria-hidden="true">/</span><a class="lang-opt" href="tr/practice.html" hreflang="tr" lang="tr">TR</a></div>
       <span class="status-pill mono"><i aria-hidden="true"></i><span>Open source · active</span></span>
     </div>
   </div>
@@ -65,9 +69,7 @@
     <div>
       <span class="kind mono rv">How I build</span>
       <h1 class="rv" style="--d:60ms">Practice</h1>
-      <p class="deck rv" style="--d:120ms">The same sequence governs infrastructure, research
-        software, decision systems and simulations. It is ordered so that the expensive mistakes are
-        made cheap.</p>
+      <p class="deck rv" style="--d:120ms">The same sequence governs infrastructure, research software, decision systems and simulations. It is ordered so that the expensive mistakes are made cheap.</p>
     </div>
     <div class="phead-side rv" style="--d:160ms">
       <div class="spec">
@@ -97,7 +99,7 @@
     <span class="rule" aria-hidden="true"></span>
   </div>
   <div class="principles">
-    <article class="principle rv"><span class="n mono">01 / Spatial rigor</span><h3>CRS and units are explicit</h3><p>Area, distance, raster alignment, scale and geometry assumptions are checked before methods are trusted.</p></article>
+    <article class="principle rv" style="--d:0ms"><span class="n mono">01 / Spatial rigor</span><h3>CRS and units are explicit</h3><p>Area, distance, raster alignment, scale and geometry assumptions are checked before methods are trusted.</p></article>
     <article class="principle rv" style="--d:80ms"><span class="n mono">02 / Honest validation</span><h3>Leakage is treated as a risk</h3><p>Spatially dependent data requires blocked splits, appropriate baselines and validation designs that reflect deployment.</p></article>
     <article class="principle rv" style="--d:160ms"><span class="n mono">03 / Reproducibility</span><h3>Evidence is versioned</h3><p>Typed contracts, CI, immutable benchmark packages, test harnesses and DOI-backed releases keep work reviewable.</p></article>
     <article class="principle rv" style="--d:240ms"><span class="n mono">04 / Product utility</span><h3>Methods become usable systems</h3><p>Analysis is translated into interfaces, reports, local automation or playable simulations rather than left as notebooks.</p></article>
@@ -110,14 +112,13 @@
     <h3>Technical core</h3>
     <span class="rule" aria-hidden="true"></span>
   </div>
-  <p>A spatial-first stack spanning research methods, agent infrastructure, production engineering and
-  browser-native product work.</p>
+  <p>A spatial-first stack spanning research methods, agent infrastructure, production engineering and browser-native product work.</p>
   <div class="cap rv">
     <div class="cap-nav" role="tablist" aria-label="Technical capability categories">
       <button class="cap-tab mono" role="tab" id="tab-spatial" aria-controls="panel-spatial" aria-selected="true" data-panel="spatial"><span>Spatial / EO</span><span class="c">10</span></button>
-      <button class="cap-tab mono" role="tab" id="tab-agents"  aria-controls="panel-agents"  aria-selected="false" tabindex="-1" data-panel="agents"><span>Agents / Eval</span><span class="c">08</span></button>
-      <button class="cap-tab mono" role="tab" id="tab-ml"      aria-controls="panel-ml"      aria-selected="false" tabindex="-1" data-panel="ml"><span>AI / ML</span><span class="c">07</span></button>
-      <button class="cap-tab mono" role="tab" id="tab-systems" aria-controls="panel-systems" aria-selected="false" tabindex="-1" data-panel="systems"><span>Systems / Product</span><span class="c">10</span></button>
+      <button class="cap-tab mono" role="tab" id="tab-agents" aria-controls="panel-agents" aria-selected="false" tabindex=-1 data-panel="agents"><span>Agents / Eval</span><span class="c">08</span></button>
+      <button class="cap-tab mono" role="tab" id="tab-ml" aria-controls="panel-ml" aria-selected="false" tabindex=-1 data-panel="ml"><span>AI / ML</span><span class="c">07</span></button>
+      <button class="cap-tab mono" role="tab" id="tab-systems" aria-controls="panel-systems" aria-selected="false" tabindex=-1 data-panel="systems"><span>Systems / Product</span><span class="c">10</span></button>
       <div class="cap-fill" aria-hidden="true"></div>
     </div>
     <div class="cap-panels">
@@ -126,11 +127,7 @@
           <span class="mono field">Spatial / remote sensing</span>
           <h3>Geospatial methods with operational discipline.</h3>
           <p>Vector, raster, EO, spatial statistics, cartography and proprietary GIS workflows handled with explicit projections, scale, validation and output checks.</p>
-          <div class="cap-proof">
-            <div><span>Primary domain</span><strong>GeoAI</strong></div>
-            <div><span>Core failure mode</span><strong>Silent spatial error</strong></div>
-            <div><span>Delivery</span><strong>Package · map · DSS</strong></div>
-          </div>
+          <div class="cap-proof"><div><span>Primary domain</span><strong>GeoAI</strong></div><div><span>Core failure mode</span><strong>Silent spatial error</strong></div><div><span>Delivery</span><strong>Package · map · DSS</strong></div></div>
         </div>
         <div class="chip-box">
           <span class="mono">Working set<span>10</span></span>
@@ -142,11 +139,7 @@
           <span class="mono field">Agents / evaluation</span>
           <h3>Tool-using agents that route, execute and fail safely.</h3>
           <p>Agent Skills, MCP, runtime isolation, typed evaluation contracts, blind request preparation, deterministic scoring and evidence-aware benchmark publication.</p>
-          <div class="cap-proof">
-            <div><span>Primary domain</span><strong>Agentic GIS</strong></div>
-            <div><span>Core failure mode</span><strong>Unsafe or wrong routing</strong></div>
-            <div><span>Delivery</span><strong>Plugin · MCP · benchmark</strong></div>
-          </div>
+          <div class="cap-proof"><div><span>Primary domain</span><strong>Agentic GIS</strong></div><div><span>Core failure mode</span><strong>Unsafe or wrong routing</strong></div><div><span>Delivery</span><strong>Plugin · MCP · benchmark</strong></div></div>
         </div>
         <div class="chip-box">
           <span class="mono">Working set<span>08</span></span>
@@ -158,11 +151,7 @@
           <span class="mono field">AI / ML / data</span>
           <h3>Models built on defensible data and evaluation.</h3>
           <p>Deep-learning and classical ML workflows with spatial splitting, class-imbalance handling, reproducible preprocessing and georeferencing-preserving inference.</p>
-          <div class="cap-proof">
-            <div><span>Primary domain</span><strong>Spatial ML</strong></div>
-            <div><span>Core failure mode</span><strong>Leakage / false confidence</strong></div>
-            <div><span>Delivery</span><strong>Dataset · model · report</strong></div>
-          </div>
+          <div class="cap-proof"><div><span>Primary domain</span><strong>Spatial ML</strong></div><div><span>Core failure mode</span><strong>Leakage / false confidence</strong></div><div><span>Delivery</span><strong>Dataset · model · report</strong></div></div>
         </div>
         <div class="chip-box">
           <span class="mono">Working set<span>07</span></span>
@@ -174,11 +163,7 @@
           <span class="mono field">Systems / product</span>
           <h3>Research logic translated into software people can operate.</h3>
           <p>Typed Python services, static web products, CI, testing, distribution, browser-native interfaces, local persistence and low-maintenance deployment architectures.</p>
-          <div class="cap-proof">
-            <div><span>Primary domain</span><strong>Product engineering</strong></div>
-            <div><span>Core failure mode</span><strong>Unmaintainable delivery</strong></div>
-            <div><span>Delivery</span><strong>PyPI · web · game</strong></div>
-          </div>
+          <div class="cap-proof"><div><span>Primary domain</span><strong>Product engineering</strong></div><div><span>Core failure mode</span><strong>Unmaintainable delivery</strong></div><div><span>Delivery</span><strong>PyPI · web · game</strong></div></div>
         </div>
         <div class="chip-box">
           <span class="mono">Working set<span>10</span></span>
@@ -275,7 +260,8 @@
         <h2 class="rv" style="--d:60ms">Build spatial systems that hold up.</h2>
         <div class="cta rv" style="--d:140ms">
           <a class="btn btn--solid" href="mailto:nsduraan@gmail.com"><span>nsduraan@gmail.com</span></a>
-          <a class="btn btn--ghost" href="index.html#projects"><span class="dot" aria-hidden="true"></span><span>All projects</span></a>
+          <a class="btn btn--ghost" href="https://www.linkedin.com/in/muhammed-enes-duran/" target="_blank" rel="noopener"><span class="dot" aria-hidden="true"></span><span>LinkedIn</span></a>
+          <a class="btn btn--ghost" href="index.html#projects"><span>All projects</span></a>
         </div>
       </div>
     </div>

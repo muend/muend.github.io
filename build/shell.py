@@ -1,12 +1,20 @@
-"""Shared page shell: head, topbar, footer, and the small reusable snippets.
+"""Shared page shell: head, topbar, footer and the reusable snippets.
 
-Every page in the site is emitted through these helpers so the chrome can never
-drift between files. `depth` is 0 for pages at the repo root and 1 for anything
-under projects/.
+Every page is emitted through these helpers so the chrome cannot drift between
+files or between languages.
+
+English lives at the site root, Turkish under /tr/ with the same tree. A page is
+identified by its site-relative path ("projects/benchfck.html"), which is all we
+need to compute both the asset prefix and the link to its counterpart.
 """
 
 SITE = "https://muend.github.io"
 EMAIL = "nsduraan@gmail.com"
+LINKEDIN = "https://www.linkedin.com/in/muhammed-enes-duran/"
+GITHUB = "https://github.com/muend"
+PYPI = "https://pypi.org/user/muend/"
+ITCH = "https://muend.itch.io"
+LANGS = ("en", "tr")
 
 ARROW = ('<svg viewBox="0 0 16 16" aria-hidden="true">'
          '<path d="M3 13 13 3M6 3h7v7" fill="none" stroke="currentColor" stroke-width="1.7"/></svg>')
@@ -14,23 +22,72 @@ EXPAND_ICON = ('<svg viewBox="0 0 16 16" aria-hidden="true">'
                '<path d="M2 6V2h4M14 10v4h-4M2 2l5 5M14 14l-5-5" fill="none" '
                'stroke="currentColor" stroke-width="1.7"/></svg>')
 
-NAV = [
-    ("projects", "Projects", "index.html#projects"),
-    ("research", "Research", "research.html"),
-    ("practice", "Practice", "practice.html"),
-    ("contact",  "Contact",  "index.html#contact"),
+# Active language, set by the builder before each page is emitted.
+LANG = "en"
+
+
+def T(en, tr):
+    """Pick the string for the language currently being emitted."""
+    return tr if LANG == "tr" else en
+
+
+UI = {
+    "nav": {
+        "projects": ("Projects", "Projeler"),
+        "research": ("Research", "Araştırma"),
+        "practice": ("Practice", "Yöntem"),
+        "contact":  ("Contact",  "İletişim"),
+    },
+    "skip":      ("Skip to content", "İçeriğe geç"),
+    "status":    ("Open source · active", "Açık kaynak · aktif"),
+    "expand":    ("Expand", "Büyüt"),
+    "close":     ("Close", "Kapat"),
+    "dlg_title": ("Technical diagram", "Teknik diyagram"),
+    "home_aria": ("Muhammed Enes Duran — home", "Muhammed Enes Duran — ana sayfa"),
+    "nav_aria":  ("Primary", "Ana"),
+    "crumb_aria":("Breadcrumb", "Sayfa yolu"),
+    "lang_aria": ("Change language", "Dili değiştir"),
+    "more_aria": ("More projects", "Diğer projeler"),
+    "home":      ("Home", "Ana sayfa"),
+    "prev":      ("previous", "önceki"),
+    "next":      ("next", "sonraki"),
+}
+
+
+def u(key):
+    en, tr = UI[key]
+    return T(en, tr)
+
+
+NAV_ORDER = [
+    ("projects", "index.html#projects"),
+    ("research", "research.html"),
+    ("practice", "practice.html"),
+    ("contact",  "index.html#contact"),
 ]
 
 
-def rel(depth):
-    return "../" * depth
+def _depth(page_path, lang):
+    """How many directory levels below the site root this file sits."""
+    return page_path.count("/") + (1 if lang == "tr" else 0)
 
 
-def head(title, description, page, depth=0, canonical=""):
-    r = rel(depth)
-    canon = f"{SITE}/{canonical}" if canonical else f"{SITE}/"
+def rel(page_path, lang):
+    return "../" * _depth(page_path, lang)
+
+
+def _lang_root(lang):
+    return "tr/" if lang == "tr" else ""
+
+
+def head(title, description, page, page_path, person=False):
+    lang = LANG
+    r = rel(page_path, lang)
+    here = f"{SITE}/{_lang_root(lang)}{page_path}".replace("/index.html", "/")
+    alt_en = f"{SITE}/{page_path}".replace("/index.html", "/")
+    alt_tr = f"{SITE}/tr/{page_path}".replace("/index.html", "/")
     return f"""<!DOCTYPE html>
-<html lang="en" data-page="{page}">
+<html lang="{lang}" data-page="{page}">
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
@@ -40,7 +97,10 @@ def head(title, description, page, depth=0, canonical=""):
 <link rel="icon" type="image/png" sizes="32x32" href="{r}assets/brand/favicon-32.png">
 <link rel="apple-touch-icon" href="{r}assets/brand/favicon-180.png">
 <link rel="manifest" href="{r}assets/brand/site.webmanifest">
-<link rel="canonical" href="{canon}">
+<link rel="canonical" href="{here}">
+<link rel="alternate" hreflang="en" href="{alt_en}">
+<link rel="alternate" hreflang="tr" href="{alt_tr}">
+<link rel="alternate" hreflang="x-default" href="{alt_en}">
 <title>{title}</title>
 <meta name="description" content="{description}">
 <meta name="theme-color" content="#F7F7F1">
@@ -51,9 +111,9 @@ def head(title, description, page, depth=0, canonical=""):
 <meta property="og:title" content="{title}">
 <meta property="og:description" content="{description}">
 <meta property="og:type" content="website">
-<meta property="og:url" content="{canon}">
+<meta property="og:url" content="{here}">
 <meta property="og:site_name" content="Muhammed Enes Duran">
-<meta property="og:locale" content="en_US">
+<meta property="og:locale" content="{'tr_TR' if lang == 'tr' else 'en_US'}">
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:title" content="{title}">
 <meta name="twitter:description" content="{description}">
@@ -61,74 +121,164 @@ def head(title, description, page, depth=0, canonical=""):
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wdth,wght@12..96,75..100,400..800&family=IBM+Plex+Mono:wght@400;500;600&family=Instrument+Sans:ital,wght@0,400..700;1,400..600&display=swap">
 <link rel="stylesheet" href="{r}assets/site.css">
-</head>
+{person_ld(person)}</head>
 <body>
-<a class="skip-link" href="#main">Skip to content</a>
+<a class="skip-link" href="#main">{u('skip')}</a>
 <div class="progress" id="progress" aria-hidden="true"></div>
 <div class="cur cur-ring" id="cur-ring" aria-hidden="true"></div>
 <div class="cur cur-dot" id="cur-dot" aria-hidden="true"></div>
 <div class="cur cur-cap" id="cur-cap" aria-hidden="true"></div>
-{topbar(depth)}
+{topbar(page_path)}
 """
 
 
-def topbar(depth):
-    r = rel(depth)
+
+
+def person_ld(enabled):
+    """Person schema, emitted on the two homepages only."""
+    if not enabled:
+        return ""
+    return """<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Person",
+  "name": "Muhammed Enes Duran",
+  "url": "%s/",
+  "email": "mailto:%s",
+  "jobTitle": "GeoAI and spatial systems engineer",
+  "sameAs": [
+    "%s",
+    "%s",
+    "%s",
+    "%s"
+  ],
+  "knowsAbout": [
+    "GeoAI",
+    "Spatial Data Science",
+    "Remote Sensing",
+    "Model Context Protocol",
+    "ArcGIS Pro Automation",
+    "Spatial Machine Learning",
+    "Decision Support Systems",
+    "Agent Skills Evaluation"
+  ]
+}
+</script>
+""" % (SITE, EMAIL, LINKEDIN, GITHUB, PYPI, ITCH)
+
+def lang_switch(page_path):
+    """Link to the same page in the other language."""
+    lang = LANG
+    r = rel(page_path, lang)
+    other = "tr" if lang == "en" else "en"
+    href = r + ("tr/" if lang == "en" else "") + page_path
+    labels = {"en": "EN", "tr": "TR"}
+    items = []
+    for code in LANGS:
+        if code == lang:
+            items.append(f'<span class="lang-opt is-on" aria-current="true">{labels[code]}</span>')
+        else:
+            items.append(f'<a class="lang-opt" href="{href}" hreflang="{other}" '
+                         f'lang="{other}">{labels[code]}</a>')
+    return (f'<div class="langsw mono" role="group" aria-label="{u("lang_aria")}">'
+            + '<span aria-hidden="true">/</span>'.join(items) + '</div>')
+
+
+def topbar(page_path):
+    r = rel(page_path, LANG)
     links = "\n        ".join(
-        f'<a href="{r}{href}" data-nav="{key}">{label}</a>' for key, label, href in NAV
+        f'<a href="{r}{_lang_root(LANG)}{href}" data-nav="{key}">{T(*UI["nav"][key])}</a>'
+        for key, href in NAV_ORDER
     )
     return f"""<div class="topbar" id="topbar">
   <div class="wrap">
-    <a class="brand" href="{r}index.html" aria-label="Muhammed Enes Duran — home">muend<b>.</b></a>
+    <a class="brand" href="{r}{_lang_root(LANG)}index.html" aria-label="{u('home_aria')}">muend<b>.</b></a>
     <div class="nav-area">
-      <nav class="navlinks mono" aria-label="Primary">
+      <nav class="navlinks mono" aria-label="{u('nav_aria')}">
         {links}
       </nav>
-      <span class="status-pill mono"><i aria-hidden="true"></i><span>Open source · active</span></span>
+      {lang_switch(page_path)}
+      <span class="status-pill mono"><i aria-hidden="true"></i><span>{u('status')}</span></span>
     </div>
   </div>
 </div>
 """
 
 
-def footer(depth=0, contact=False):
-    r = rel(depth)
-    block = ""
+CONTACT_COPY = {
+    "kicker":  ("Open to collaboration", "İş birliğine açık"),
+    "title":   ("Build spatial systems that hold up.", "Sağlam duran mekânsal sistemler kuralım."),
+    "body":    ("Available for collaboration around GeoAI agent systems, production-grade spatial "
+                "data science, remote-sensing ML pipelines, GIS automation, decision-support "
+                "products and applied simulations.",
+                "GeoAI ajan sistemleri, üretim düzeyinde mekânsal veri bilimi, uzaktan algılama ML "
+                "hatları, CBS otomasyonu, karar destek ürünleri ve uygulamalı simülasyonlar "
+                "konularında iş birliğine açığım."),
+    "note":    ("Based in Türkiye · Open-source, research and production collaboration welcome.",
+                "Türkiye merkezli · Açık kaynak, araştırma ve üretim iş birliklerine açık."),
+    "eng":     ("Engagement", "Çalışma alanları"),
+    "open":    ("2026 / open", "2026 / açık"),
+    "e1":      ("Agent skill systems and evaluation harnesses",
+                "Ajan skill sistemleri ve değerlendirme koşumları"),
+    "e2":      ("Guarded GIS automation and MCP infrastructure",
+                "Korumalı CBS otomasyonu ve MCP altyapısı"),
+    "e3":      ("Reproducible remote-sensing pipelines",
+                "Yeniden üretilebilir uzaktan algılama hatları"),
+    "e4":      ("Spatial decision-support products",
+                "Mekânsal karar destek ürünleri"),
+    "e5":      ("Research software and citable releases",
+                "Araştırma yazılımı ve atıf verilebilir sürümler"),
+    "efoot":   ("Written briefs preferred. Every engagement starts with explicit invariants, data "
+                "contracts and success criteria.",
+                "Yazılı brief tercih edilir. Her iş, açıkça tanımlanmış değişmezler, veri "
+                "sözleşmeleri ve başarı ölçütleriyle başlar."),
+    "allproj": ("All projects", "Tüm projeler"),
+    "set_in":  ("Set in Bricolage Grotesque, Instrument Sans &amp; IBM Plex Mono",
+                "Bricolage Grotesque, Instrument Sans ve IBM Plex Mono ile dizildi"),
+    "static":  ("Static site · no trackers", "Statik site · izleyici yok"),
+}
+
+
+def c(key):
+    return T(*CONTACT_COPY[key])
+
+
+def footer(page_path, contact=False):
+    r = rel(page_path, LANG)
+    home = f"{r}{_lang_root(LANG)}index.html"
     if contact:
         block = f"""
 <section class="contact" id="contact" aria-labelledby="contact-title">
   <div class="wrap">
     <div class="contact-grid">
       <div>
-        <span class="kicker mono rv">Open to collaboration</span>
-        <h2 id="contact-title" class="rv" style="--d:60ms">Build spatial systems that hold up.</h2>
-        <p class="rv" style="--d:120ms">
-          Available for collaboration around GeoAI agent systems, production-grade spatial data science,
-          remote-sensing ML pipelines, GIS automation, decision-support products, and applied simulations.
-        </p>
+        <span class="kicker mono rv">{c('kicker')}</span>
+        <h2 id="contact-title" class="rv" style="--d:60ms">{c('title')}</h2>
+        <p class="rv" style="--d:120ms">{c('body')}</p>
         <div class="cta rv" style="--d:180ms">
           <a class="btn btn--solid" href="mailto:{EMAIL}"><span>{EMAIL}</span></a>
-          <a class="btn btn--ghost" href="https://github.com/muend" target="_blank" rel="noopener"><span class="dot" aria-hidden="true"></span><span>github.com/muend</span></a>
-          <a class="btn btn--accent" href="https://pypi.org/user/muend/" target="_blank" rel="noopener"><span>PyPI profile</span></a>
+          <a class="btn btn--ghost" href="{LINKEDIN}" target="_blank" rel="noopener"><span class="dot" aria-hidden="true"></span><span>LinkedIn</span></a>
+          <a class="btn btn--ghost" href="{GITHUB}" target="_blank" rel="noopener"><span class="dot" aria-hidden="true"></span><span>GitHub</span></a>
+          <a class="btn btn--accent" href="{PYPI}" target="_blank" rel="noopener"><span>PyPI</span></a>
         </div>
-        <p class="contact-note rv" style="--d:240ms">Based in Türkiye · Open-source, research, and production collaboration welcome.</p>
+        <p class="contact-note rv" style="--d:240ms">{c('note')}</p>
       </div>
-      <aside class="avail rv" style="--d:200ms" aria-label="Engagement types">
-        <div class="avail-head mono"><strong>Engagement</strong><span>2026 / open</span></div>
+      <aside class="avail rv" style="--d:200ms">
+        <div class="avail-head mono"><strong>{c('eng')}</strong><span>{c('open')}</span></div>
         <ul>
-          <li><i aria-hidden="true"></i>Agent skill systems and evaluation harnesses</li>
-          <li><i aria-hidden="true"></i>Guarded GIS automation and MCP infrastructure</li>
-          <li><i aria-hidden="true"></i>Reproducible remote-sensing pipelines</li>
-          <li><i aria-hidden="true"></i>Spatial decision-support products</li>
-          <li><i aria-hidden="true"></i>Research software and citable releases</li>
+          <li><i aria-hidden="true"></i>{c('e1')}</li>
+          <li><i aria-hidden="true"></i>{c('e2')}</li>
+          <li><i aria-hidden="true"></i>{c('e3')}</li>
+          <li><i aria-hidden="true"></i>{c('e4')}</li>
+          <li><i aria-hidden="true"></i>{c('e5')}</li>
         </ul>
-        <div class="avail-foot">Written briefs preferred. Every engagement starts with explicit invariants, data contracts, and success criteria.</div>
+        <div class="avail-foot">{c('efoot')}</div>
       </aside>
     </div>
     <div class="colophon mono">
       <span>© 2026 Muhammed Enes Duran</span>
-      <span>Set in Bricolage Grotesque, Instrument Sans &amp; IBM Plex Mono</span>
-      <span>Static site · no trackers</span>
+      <span>{c('set_in')}</span>
+      <span>{c('static')}</span>
     </div>
   </div>
 </section>
@@ -139,17 +289,18 @@ def footer(depth=0, contact=False):
   <div class="wrap">
     <div class="contact-grid">
       <div>
-        <span class="kicker mono rv">Open to collaboration</span>
-        <h2 class="rv" style="--d:60ms">Build spatial systems that hold up.</h2>
+        <span class="kicker mono rv">{c('kicker')}</span>
+        <h2 class="rv" style="--d:60ms">{c('title')}</h2>
         <div class="cta rv" style="--d:140ms">
           <a class="btn btn--solid" href="mailto:{EMAIL}"><span>{EMAIL}</span></a>
-          <a class="btn btn--ghost" href="{r}index.html#projects"><span class="dot" aria-hidden="true"></span><span>All projects</span></a>
+          <a class="btn btn--ghost" href="{LINKEDIN}" target="_blank" rel="noopener"><span class="dot" aria-hidden="true"></span><span>LinkedIn</span></a>
+          <a class="btn btn--ghost" href="{home}#projects"><span>{c('allproj')}</span></a>
         </div>
       </div>
     </div>
     <div class="colophon mono">
       <span>© 2026 Muhammed Enes Duran</span>
-      <span>Static site · no trackers</span>
+      <span>{c('static')}</span>
     </div>
   </div>
 </section>
@@ -159,8 +310,8 @@ def footer(depth=0, contact=False):
 
 <dialog class="dlg" id="dlg" aria-labelledby="dlg-title">
   <div class="dlg-head">
-    <strong id="dlg-title">Technical diagram</strong>
-    <button class="dlg-close" type="button" data-close>Close</button>
+    <strong id="dlg-title">{u('dlg_title')}</strong>
+    <button class="dlg-close" type="button" data-close>{u('close')}</button>
   </div>
   <div class="dlg-body" id="dlg-body"></div>
 </dialog>
@@ -175,21 +326,19 @@ def footer(depth=0, contact=False):
 
 def link(href, label, external=True):
     ext = ' target="_blank" rel="noopener"' if external else ""
-    return (f'<a href="{href}"{ext}><span class="u">{label}</span>{ARROW}</a>')
+    return f'<a href="{href}"{ext}><span class="u">{label}</span>{ARROW}</a>'
 
 
 def btn(href, label, kind="ghost", external=True, icon=True):
     ext = ' target="_blank" rel="noopener"' if external else ""
-    ic = ARROW if icon else ""
-    return f'<a class="btn btn--{kind}" href="{href}"{ext}><span>{label}</span>{ic}</a>'
+    return f'<a class="btn btn--{kind}" href="{href}"{ext}><span>{label}</span>{ARROW if icon else ""}</a>'
 
 
 def plate(fig_no, title, svg, note=""):
-    """A diagram plate with its own expand control."""
     note_html = f'\n  <p class="fig-note">{note}</p>' if note else ""
     return f"""<div class="plate rv" data-plate data-title="{fig_no} — {title}">
   <div class="plate-bar"><strong>{fig_no} / {title}</strong>
-    <button class="expand" type="button" data-expand>Expand{EXPAND_ICON}</button>
+    <button class="expand" type="button" data-expand>{u('expand')}{EXPAND_ICON}</button>
   </div>
 {svg}
 </div>{note_html}"""
