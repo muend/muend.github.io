@@ -35,6 +35,19 @@ is translated.
 
 Structure lives once in `build/`; only the strings are paired as `(en, tr)`.
 
+## Publishing
+
+`deploy.ps1` takes a delivered bundle, extracts it over the working copy, shows what changed,
+asks once, then commits and pushes:
+
+```powershell
+.\deploy.ps1                 # newest muend-site-*.zip in Downloads
+.\deploy.ps1 -Zip path.zip -Message "Update diagrams"
+```
+
+It also pins the commit identity to the GitHub noreply address, since pushes that expose a
+private address are rejected with GH007.
+
 ## Build
 
 Pages share one shell, so the chrome can never drift between files. Regenerate after editing

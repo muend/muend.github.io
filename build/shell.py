@@ -123,6 +123,7 @@ def head(title, description, page, page_path):
 <div class="progress" id="progress" aria-hidden="true"></div>
 <div class="cur cur-ring" id="cur-ring" aria-hidden="true"></div>
 <div class="cur cur-dot" id="cur-dot" aria-hidden="true"></div>
+<div class="cur cur-cap" id="cur-cap" aria-hidden="true"></div>
 {topbar(page_path)}
 """
 
