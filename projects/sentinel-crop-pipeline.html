@@ -1,0 +1,292 @@
+<!DOCTYPE html>
+<html lang="en" data-page="projects">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+<script>document.documentElement.classList.add('js');</script>
+<link rel="icon" type="image/svg+xml" href="../assets/brand/favicon.svg">
+<link rel="icon" sizes="any" href="../assets/brand/favicon.ico">
+<link rel="icon" type="image/png" sizes="32x32" href="../assets/brand/favicon-32.png">
+<link rel="apple-touch-icon" href="../assets/brand/favicon-180.png">
+<link rel="manifest" href="../assets/brand/site.webmanifest">
+<link rel="canonical" href="https://muend.github.io/projects/sentinel-crop-pipeline.html">
+<link rel="alternate" hreflang="en" href="https://muend.github.io/projects/sentinel-crop-pipeline.html">
+<link rel="alternate" hreflang="tr" href="https://muend.github.io/tr/projects/sentinel-crop-pipeline.html">
+<link rel="alternate" hreflang="x-default" href="https://muend.github.io/projects/sentinel-crop-pipeline.html">
+<title>sentinel-crop-pipeline — reproducible Sentinel-2 data preparation</title>
+<meta name="description" content="A five-stage Sentinel-2 L2A preparation pipeline for crop classification, with SCL masking, spatially blocked splits and a full accounting trail.">
+<meta name="theme-color" content="#F7F7F1">
+<meta name="color-scheme" content="light">
+<meta name="referrer" content="strict-origin-when-cross-origin">
+<meta name="robots" content="index,follow,max-image-preview:large">
+<meta name="author" content="Muhammed Enes Duran">
+<meta property="og:title" content="sentinel-crop-pipeline — reproducible Sentinel-2 data preparation">
+<meta property="og:description" content="A five-stage Sentinel-2 L2A preparation pipeline for crop classification, with SCL masking, spatially blocked splits and a full accounting trail.">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://muend.github.io/projects/sentinel-crop-pipeline.html">
+<meta property="og:site_name" content="Muhammed Enes Duran">
+<meta property="og:locale" content="en_US">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="sentinel-crop-pipeline — reproducible Sentinel-2 data preparation">
+<meta name="twitter:description" content="A five-stage Sentinel-2 L2A preparation pipeline for crop classification, with SCL masking, spatially blocked splits and a full accounting trail.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wdth,wght@12..96,75..100,400..800&family=IBM+Plex+Mono:wght@400;500;600&family=Instrument+Sans:ital,wght@0,400..700;1,400..600&display=swap">
+<link rel="stylesheet" href="../assets/site.css">
+</head>
+<body>
+<a class="skip-link" href="#main">Skip to content</a>
+<div class="progress" id="progress" aria-hidden="true"></div>
+<div class="cur cur-ring" id="cur-ring" aria-hidden="true"></div>
+<div class="cur cur-dot" id="cur-dot" aria-hidden="true"></div>
+<div class="topbar" id="topbar">
+  <div class="wrap">
+    <a class="brand" href="../index.html" aria-label="Muhammed Enes Duran — home">muend<b>.</b></a>
+    <div class="nav-area">
+      <nav class="navlinks mono" aria-label="Primary">
+        <a href="../index.html#projects" data-nav="projects">Projects</a>
+        <a href="../research.html" data-nav="research">Research</a>
+        <a href="../practice.html" data-nav="practice">Practice</a>
+        <a href="../index.html#contact" data-nav="contact">Contact</a>
+      </nav>
+      <div class="langsw mono" role="group" aria-label="Change language"><span class="lang-opt is-on" aria-current="true">EN</span><span aria-hidden="true">/</span><a class="lang-opt" href="../tr/projects/sentinel-crop-pipeline.html" hreflang="tr" lang="tr">TR</a></div>
+      <span class="status-pill mono"><i aria-hidden="true"></i><span>Open source · active</span></span>
+    </div>
+  </div>
+</div>
+
+<main id="main">
+
+<div class="wrap">
+  <nav class="crumb mono" aria-label="Breadcrumb">
+    <a href="../index.html#projects">Projects</a><span>/</span><span>03 · sentinel-crop-pipeline</span>
+  </nav>
+</div>
+
+<header class="phead">
+  <div class="wrap phead-grid">
+    <div>
+      <span class="kind mono rv">Remote sensing · Reproducible data pipeline</span>
+      <h1 class="rv" style="--d:60ms">sentinel-crop-pipeline</h1>
+      <p class="deck rv" style="--d:120ms">A reproducible Sentinel-2 data preparation pipeline for crop-classification research, where every discarded pixel is accounted for.</p>
+    </div>
+    <div class="phead-side rv" style="--d:160ms">
+      <div class="ptags"><span class="tag-chip tag-chip--pkg">Zenodo DOI</span><span class="tag-chip">Apache-2.0</span><span class="tag-chip ">Beta</span><span class="tag-chip ">CDSE</span></div>
+      <div class="spec">
+  <div><span class="k">License</span><span class="v">Apache-2.0</span></div>
+  <div><span class="k">Package</span><span class="v"><code>pip install sentinel-crop-pipeline</code></span></div>
+  <div><span class="k">DOI</span><span class="v">10.5281/zenodo.21284444</span></div>
+  <div><span class="k">Status</span><span class="v">Beta research software</span></div>
+  <div><span class="k">Source</span><span class="v">Copernicus Data Space Ecosystem · Sentinel-2 L2A</span></div>
+  <div><span class="k">Bands</span><span class="v">B02, B03, B04, B08 + derived MASK</span></div>
+  <div><span class="k">Config</span><span class="v">YAML, one file per run</span></div>
+</div>
+      <div class="plinks">
+          <a class="btn btn--solid" href="https://github.com/muend/sentinel-crop-pipeline" target="_blank" rel="noopener"><span>Repository</span><svg viewBox="0 0 16 16" aria-hidden="true"><path d="M3 13 13 3M6 3h7v7" fill="none" stroke="currentColor" stroke-width="1.7"/></svg></a>
+          <a class="btn btn--ghost" href="https://pypi.org/project/sentinel-crop-pipeline/" target="_blank" rel="noopener"><span>PyPI</span><svg viewBox="0 0 16 16" aria-hidden="true"><path d="M3 13 13 3M6 3h7v7" fill="none" stroke="currentColor" stroke-width="1.7"/></svg></a>
+          <a class="btn btn--ghost" href="https://doi.org/10.5281/zenodo.21284444" target="_blank" rel="noopener"><span>Zenodo DOI</span><svg viewBox="0 0 16 16" aria-hidden="true"><path d="M3 13 13 3M6 3h7v7" fill="none" stroke="currentColor" stroke-width="1.7"/></svg></a>
+      </div>
+    </div>
+  </div>
+</header>
+
+<div class="wrap">
+
+<section class="prose rv">
+  <span class="mono">Why</span>
+  <div>
+    <h3>The dataset is the experiment</h3>
+    <p>Most of the reproducibility problem in remote-sensing machine learning sits upstream of the model. Which scenes were selected and why, how many pixels the cloud mask removed, whether two patches from the same field ended up on opposite sides of the split — these decisions determine the result, and they are usually undocumented.</p><p>This pipeline treats them as first-class outputs. Every stage writes a timestamped JSON summary, and the patch manifest records the split assignment and invalid-pixel percentage of every patch.</p>
+  </div>
+</section>
+
+<section class="fig">
+  <div class="fig-head">
+    <span class="n">Fig. 01</span>
+    <h3>Five stages, each one auditable</h3>
+    <span class="rule" aria-hidden="true"></span>
+  </div>
+  <p>Stages run individually or as <code>sentinel-crop run-all</code>. The illustrations show what each stage does to the data, not what it is called.</p>
+<div class="plate rv" data-plate data-title="Fig. 01 — Sentinel-2 data lineage">
+  <div class="plate-bar"><strong>Fig. 01 / Sentinel-2 data lineage</strong>
+    <button class="expand" type="button" data-expand>Expand<svg viewBox="0 0 16 16" aria-hidden="true"><path d="M2 6V2h4M14 10v4h-4M2 2l5 5M14 14l-5-5" fill="none" stroke="currentColor" stroke-width="1.7"/></svg></button>
+  </div>
+<svg viewBox="0 0 1140 312" role="img" preserveAspectRatio="xMidYMid meet"
+               aria-label="Sentinel-2 lineage in five stages: acquire a CDSE scene cropped to the area of interest, apply an SCL quality mask for cloud shadow and snow, derive spectral indices, split into spatially blocked train validation and test patches, and export a versioned training artifact.">
+            <defs>
+              <marker id="eA" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto"><path d="M0 0 7 3.5 0 7Z" fill="var(--green)"/></marker>
+              <clipPath id="sceneClip"><rect x="20" y="70" width="204" height="100"/></clipPath>
+            </defs>
+            <text class="d-title" x="20" y="26">SENTINEL-2 / REPRODUCIBLE DATA LINEAGE</text>
+            <text class="d-micro" x="1120" y="26" text-anchor="end">SHEET C-03 · L2A · AOI-CROPPED</text>
+            <path class="d-rule" d="M20 36H1120"/>
+
+            <text class="d-micro" x="20"  y="60">01 / ACQUIRE</text>
+            <text class="d-micro" x="244" y="60">02 / MASK</text>
+            <text class="d-micro" x="468" y="60">03 / DERIVE</text>
+            <text class="d-micro" x="692" y="60">04 / SPLIT</text>
+            <text class="d-micro" x="916" y="60">05 / EXPORT</text>
+
+            <!-- 01 scene -->
+            <g class="d-pop">
+              <rect x="20" y="70" width="204" height="100" fill="var(--green-wash)" stroke="var(--green-edge)"/>
+              <g clip-path="url(#sceneClip)" opacity=".85">
+                <path d="M-10 150 60 60 150 118 250 40" fill="none" stroke="var(--green)" stroke-width="14" opacity=".28"/>
+                <path d="M-10 108 74 172 168 92 260 158" fill="none" stroke="var(--green-deep)" stroke-width="10" opacity=".22"/>
+              </g>
+              <path d="M62 92 168 82 178 146 76 154Z" fill="none" stroke="var(--amber-deep)" stroke-width="1.6"/>
+              <text class="d-sub" x="122" y="186" text-anchor="middle">AOI FOOTPRINT</text>
+            </g>
+
+            <!-- 02 mask grid -->
+            <g class="d-pop" style="--dly:90ms">
+              <rect x="244" y="70" width="204" height="100" class="d-box"/>
+              <g class="sw">
+                <rect x="258" y="80" width="42" height="26" fill="var(--green)" opacity=".72"/>
+                <rect x="304" y="80" width="42" height="26" fill="var(--green)" opacity=".45"/>
+                <rect x="350" y="80" width="42" height="26" fill="var(--paper-deep)"/>
+                <rect x="396" y="80" width="38" height="26" fill="var(--green)" opacity=".62"/>
+                <rect x="258" y="110" width="42" height="26" fill="var(--paper-deep)"/>
+                <rect x="304" y="110" width="42" height="26" fill="var(--risk)" opacity=".55"/>
+                <rect x="350" y="110" width="42" height="26" fill="var(--green)" opacity=".55"/>
+                <rect x="396" y="110" width="38" height="26" fill="var(--green)" opacity=".38"/>
+              </g>
+              <rect x="258" y="80" width="176" height="56" fill="none" stroke="var(--line-strong)"/>
+              <g>
+                <rect x="258" y="148" width="8" height="8" fill="var(--green)" opacity=".7"/><text class="d-sub" x="270" y="155">VALID</text>
+                <rect x="316" y="148" width="8" height="8" fill="var(--paper-deep)" stroke="var(--line-strong)"/><text class="d-sub" x="328" y="155">CLOUD</text>
+                <rect x="376" y="148" width="8" height="8" fill="var(--risk)" opacity=".55"/><text class="d-sub" x="388" y="155">SHADOW</text>
+              </g>
+            </g>
+
+            <!-- 03 index curve -->
+            <g class="d-pop" style="--dly:180ms">
+              <rect x="468" y="70" width="204" height="100" class="d-box"/>
+              <path class="d-hair" d="M484 150h172M484 150V86"/>
+              <path d="M484 142 520 128 556 96 592 92 628 112 656 132" fill="none" stroke="var(--green)" stroke-width="2"/>
+              <path d="M484 148 520 142 556 124 592 118 628 132 656 144" fill="none" stroke="var(--data)" stroke-width="1.4" stroke-dasharray="4 3"/>
+              <text class="d-sub" x="484" y="82">REFLECTANCE → INDEX</text>
+              <g>
+                <rect x="484" y="158" width="8" height="8" fill="var(--green)"/><text class="d-sub" x="496" y="165">NDVI</text>
+                <rect x="546" y="158" width="8" height="8" fill="var(--data)"/><text class="d-sub" x="558" y="165">NDRE</text>
+              </g>
+            </g>
+
+            <!-- 04 blocked split -->
+            <g class="d-pop" style="--dly:270ms">
+              <rect x="692" y="70" width="204" height="100" class="d-box"/>
+              <g class="sw">
+                <rect x="706" y="80" width="56" height="26" fill="var(--green)" opacity=".62"/>
+                <rect x="766" y="80" width="56" height="26" fill="var(--green)" opacity=".62"/>
+                <rect x="826" y="80" width="56" height="26" fill="var(--amber)" opacity=".68"/>
+                <rect x="706" y="110" width="56" height="26" fill="var(--data)" opacity=".5"/>
+                <rect x="766" y="110" width="56" height="26" fill="var(--green)" opacity=".62"/>
+                <rect x="826" y="110" width="56" height="26" fill="var(--green)" opacity=".62"/>
+              </g>
+              <rect x="706" y="80" width="176" height="56" fill="none" stroke="var(--line-strong)"/>
+              <g>
+                <rect x="706" y="148" width="8" height="8" fill="var(--green)" opacity=".62"/><text class="d-sub" x="718" y="155">TRAIN</text>
+                <rect x="764" y="148" width="8" height="8" fill="var(--amber)" opacity=".68"/><text class="d-sub" x="776" y="155">VALID</text>
+                <rect x="822" y="148" width="8" height="8" fill="var(--data)" opacity=".5"/><text class="d-sub" x="834" y="155">TEST</text>
+              </g>
+            </g>
+
+            <!-- 05 artifact -->
+            <g class="d-pop" style="--dly:360ms">
+              <rect x="916" y="70" width="204" height="100" class="d-box d-box--ink"/>
+              <text class="d-node d-inv" x="1018" y="94" text-anchor="middle">TRAINING ARTIFACT</text>
+              <rect x="936" y="104" width="164" height="18" fill="none" stroke="var(--paper-deep)" opacity=".55"/>
+              <text class="d-sub d-inv" x="1018" y="117" text-anchor="middle">COG / TIFF</text>
+              <rect x="936" y="126" width="164" height="18" fill="var(--amber)"/>
+              <text class="d-sub" x="1018" y="139" text-anchor="middle" fill="oklch(28% .05 62)">NPY</text>
+              <rect x="936" y="148" width="164" height="18" fill="var(--data)"/>
+              <text class="d-sub d-inv" x="1018" y="161" text-anchor="middle">TFRECORD</text>
+            </g>
+
+            <!-- stage boxes -->
+            <g class="d-pop" style="--dly:420ms">
+              <rect class="d-box" x="20"  y="196" width="204" height="46"/><text class="d-node" x="122"  y="217" text-anchor="middle">CDSE + AOI CROP</text><text class="d-sub" x="122" y="232" text-anchor="middle">SAFE · L2A SCENE</text>
+              <rect class="d-box" x="244" y="196" width="204" height="46"/><text class="d-node" x="346"  y="217" text-anchor="middle">SCL QUALITY MASK</text><text class="d-sub" x="346" y="232" text-anchor="middle">CLOUD · SHADOW · SNOW</text>
+              <rect class="d-box" x="468" y="196" width="204" height="46"/><text class="d-node" x="570"  y="217" text-anchor="middle">SPECTRAL INDICES</text><text class="d-sub" x="570" y="232" text-anchor="middle">NDVI · NDRE · STACK</text>
+              <rect class="d-box" x="692" y="196" width="204" height="46"/><text class="d-node" x="794"  y="217" text-anchor="middle">SPATIAL BLOCKING</text><text class="d-sub" x="794" y="232" text-anchor="middle">LEAKAGE-AWARE SPLIT</text>
+              <rect class="d-box" x="916" y="196" width="204" height="46"/><text class="d-node" x="1018" y="217" text-anchor="middle">VERSIONED EXPORT</text><text class="d-sub" x="1018" y="232" text-anchor="middle">COG · NPY · TFRECORD</text>
+            </g>
+            <path class="d-flow" d="M224 219h14" marker-end="url(#eA)"/>
+            <path class="d-flow" d="M448 219h14" marker-end="url(#eA)"/>
+            <path class="d-flow" d="M672 219h14" marker-end="url(#eA)"/>
+            <path class="d-flow" d="M896 219h14" marker-end="url(#eA)"/>
+
+            <path class="d-hair" d="M20 266H1120"/>
+            <text class="d-micro" x="20" y="288">ACCOUNTING REPORT / DISCOVERED → DOWNLOADED → MASKED → PATCHED → SPLIT · EVERY LOSS IS COUNTED</text>
+          </svg>
+</div>
+</section>
+
+<section class="fig">
+  <div class="fig-head">
+    <span class="n">Stages</span>
+    <h3>What each command produces</h3>
+    <span class="rule" aria-hidden="true"></span>
+  </div>
+<div class="catalog rv">
+  <div><div class="c"><strong>discover</strong><span class="n">01</span></div><p>STAC search with deterministic scene selection; writes per-scene accept and reject decisions.</p></div>
+  <div><div class="c"><strong>download</strong><span class="n">02</span></div><p>AOI-cropped retrieval through the CDSE Process API rather than whole tiles.</p></div>
+  <div><div class="c"><strong>preprocess</strong><span class="n">03</span></div><p>SCL masking, reflectance normalisation, NDVI / NDRE / NDWI where bands allow.</p></div>
+  <div><div class="c"><strong>patch</strong><span class="n">04</span></div><p>Fixed-size patches with spatially blocked train, validation and test assignment.</p></div>
+  <div><div class="c"><strong>label</strong><span class="n">05</span></div><p>Rasterises externally prepared ground-truth polygons into uint8 masks.</p></div>
+</div>
+  <p class="fig-note">Whole grid blocks are assigned to a single split, which reduces the spatial autocorrelation that makes random splits flatter the model.</p>
+</section>
+
+<section class="prose rv">
+  <span class="mono">Outputs</span>
+  <div>
+    <h3>The audit trail is part of the deliverable</h3>
+    <ul><li><code>logs/run_&lt;stage&gt;_&lt;timestamp&gt;.json</code> — per-stage summaries.</li><li><code>logs/selection_results.json</code> — why each scene was kept or dropped.</li><li><code>data/patches/index.csv</code> — the patch manifest: split, paths, invalid percentage.</li><li><code>data/patches/cog/</code> — georeferenced GeoTIFFs you can open and look at.</li><li>Training exports as COG/TIFF, NPY, and optional TFRecord.</li></ul><p>A validated live run over an Urla area of interest produced 990 training patches from 9 Sentinel-2 L2A scenes in June 2025.</p>
+  </div>
+</section>
+
+<div class="note"><span class="mono">Limitations</span><p>The interim Urla AOI is a rectangle, not an official boundary. Spatial blocks reduce leakage but do not eliminate it where fields cross block edges. The label stage requires externally prepared ground-truth polygons; nothing is downloaded automatically. And the pipeline prepares data — <strong>it makes no claim about downstream model accuracy</strong>.</p></div>
+
+</div>
+
+<div class="wrap">
+  <nav class="pager" aria-label="More projects">
+    <a href="arcgis-mcp-bridge.html"><span class="mono">← 02 · previous</span><strong>arcgis-mcp-bridge</strong></a>
+    <a href="agri-dss.html"><span class="mono">04 · next →</span><strong>agri-dss</strong></a>
+  </nav>
+</div>
+
+
+<section class="contact">
+  <div class="wrap">
+    <div class="contact-grid">
+      <div>
+        <span class="kicker mono rv">Open to collaboration</span>
+        <h2 class="rv" style="--d:60ms">Build spatial systems that hold up.</h2>
+        <div class="cta rv" style="--d:140ms">
+          <a class="btn btn--solid" href="mailto:nsduraan@gmail.com"><span>nsduraan@gmail.com</span></a>
+          <a class="btn btn--ghost" href="../index.html#projects"><span class="dot" aria-hidden="true"></span><span>All projects</span></a>
+        </div>
+      </div>
+    </div>
+    <div class="colophon mono">
+      <span>© 2026 Muhammed Enes Duran</span>
+      <span>Static site · no trackers</span>
+    </div>
+  </div>
+</section>
+
+</main>
+
+<dialog class="dlg" id="dlg" aria-labelledby="dlg-title">
+  <div class="dlg-head">
+    <strong id="dlg-title">Technical diagram</strong>
+    <button class="dlg-close" type="button" data-close>Close</button>
+  </div>
+  <div class="dlg-body" id="dlg-body"></div>
+</dialog>
+
+<script src="../assets/site.js" defer></script>
+</body>
+</html>

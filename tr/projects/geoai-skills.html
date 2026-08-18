@@ -1,0 +1,291 @@
+<!DOCTYPE html>
+<html lang="tr" data-page="projects">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+<script>document.documentElement.classList.add('js');</script>
+<link rel="icon" type="image/svg+xml" href="../../assets/brand/favicon.svg">
+<link rel="icon" sizes="any" href="../../assets/brand/favicon.ico">
+<link rel="icon" type="image/png" sizes="32x32" href="../../assets/brand/favicon-32.png">
+<link rel="apple-touch-icon" href="../../assets/brand/favicon-180.png">
+<link rel="manifest" href="../../assets/brand/site.webmanifest">
+<link rel="canonical" href="https://muend.github.io/tr/projects/geoai-skills.html">
+<link rel="alternate" hreflang="en" href="https://muend.github.io/projects/geoai-skills.html">
+<link rel="alternate" hreflang="tr" href="https://muend.github.io/tr/projects/geoai-skills.html">
+<link rel="alternate" hreflang="x-default" href="https://muend.github.io/projects/geoai-skills.html">
+<title>geoai-skills — yapay zekâ ajanları için GeoAI disiplin katmanı</title>
+<meta name="description" content="Tüm mekânsal yaşam döngüsünü kapsayan, sağlayıcıdan bağımsız on sekiz Agent Skill; dondurulmuş 167 vakalık yönlendirme kıyaslaması ve açık/kapalı kontrol koşuluyla.">
+<meta name="theme-color" content="#F7F7F1">
+<meta name="color-scheme" content="light">
+<meta name="referrer" content="strict-origin-when-cross-origin">
+<meta name="robots" content="index,follow,max-image-preview:large">
+<meta name="author" content="Muhammed Enes Duran">
+<meta property="og:title" content="geoai-skills — yapay zekâ ajanları için GeoAI disiplin katmanı">
+<meta property="og:description" content="Tüm mekânsal yaşam döngüsünü kapsayan, sağlayıcıdan bağımsız on sekiz Agent Skill; dondurulmuş 167 vakalık yönlendirme kıyaslaması ve açık/kapalı kontrol koşuluyla.">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://muend.github.io/tr/projects/geoai-skills.html">
+<meta property="og:site_name" content="Muhammed Enes Duran">
+<meta property="og:locale" content="tr_TR">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="geoai-skills — yapay zekâ ajanları için GeoAI disiplin katmanı">
+<meta name="twitter:description" content="Tüm mekânsal yaşam döngüsünü kapsayan, sağlayıcıdan bağımsız on sekiz Agent Skill; dondurulmuş 167 vakalık yönlendirme kıyaslaması ve açık/kapalı kontrol koşuluyla.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wdth,wght@12..96,75..100,400..800&family=IBM+Plex+Mono:wght@400;500;600&family=Instrument+Sans:ital,wght@0,400..700;1,400..600&display=swap">
+<link rel="stylesheet" href="../../assets/site.css">
+</head>
+<body>
+<a class="skip-link" href="#main">İçeriğe geç</a>
+<div class="progress" id="progress" aria-hidden="true"></div>
+<div class="cur cur-ring" id="cur-ring" aria-hidden="true"></div>
+<div class="cur cur-dot" id="cur-dot" aria-hidden="true"></div>
+<div class="topbar" id="topbar">
+  <div class="wrap">
+    <a class="brand" href="../../tr/index.html" aria-label="Muhammed Enes Duran — ana sayfa">muend<b>.</b></a>
+    <div class="nav-area">
+      <nav class="navlinks mono" aria-label="Ana">
+        <a href="../../tr/index.html#projects" data-nav="projects">Projeler</a>
+        <a href="../../tr/research.html" data-nav="research">Araştırma</a>
+        <a href="../../tr/practice.html" data-nav="practice">Yöntem</a>
+        <a href="../../tr/index.html#contact" data-nav="contact">İletişim</a>
+      </nav>
+      <div class="langsw mono" role="group" aria-label="Dili değiştir"><a class="lang-opt" href="../../projects/geoai-skills.html" hreflang="en" lang="en">EN</a><span aria-hidden="true">/</span><span class="lang-opt is-on" aria-current="true">TR</span></div>
+      <span class="status-pill mono"><i aria-hidden="true"></i><span>Açık kaynak · aktif</span></span>
+    </div>
+  </div>
+</div>
+
+<main id="main">
+
+<div class="wrap">
+  <nav class="crumb mono" aria-label="Sayfa yolu">
+    <a href="../../tr/index.html#projects">Projeler</a><span>/</span><span>01 · geoai-skills</span>
+  </nav>
+</div>
+
+<header class="phead">
+  <div class="wrap phead-grid">
+    <div>
+      <span class="kind mono rv">Ajan skill'leri · GeoAI bilgi altyapısı</span>
+      <h1 class="rv" style="--d:60ms">geoai-skills</h1>
+      <p class="deck rv" style="--d:120ms">Sessiz CRS, mekânsal sızıntı, geçerlilik, birim ve belirsizlik hatalarını yayına çıkmadan durdurur.</p>
+    </div>
+    <div class="phead-side rv" style="--d:160ms">
+      <div class="ptags"><span class="tag-chip tag-chip--live">Aktif</span><span class="tag-chip">v0.2.0</span><span class="tag-chip">MIT</span><span class="tag-chip ">18 skill</span></div>
+      <div class="spec">
+  <div><span class="k">Sürüm</span><span class="v">0.2.0</span></div>
+  <div><span class="k">Lisans</span><span class="v">MIT</span></div>
+  <div><span class="k">Skill sayısı</span><span class="v">18, beş yaşam döngüsü aşamasına ayrılmış</span></div>
+  <div><span class="k">Claude Code</span><span class="v"><code>claude plugin marketplace add muend/geoai-skills</code></span></div>
+  <div><span class="k">Codex</span><span class="v"><code>npx skills add muend/geoai-skills --skill '*' -a codex</code></span></div>
+  <div><span class="k">Değerlendirme</span><span class="v">167 yerel vaka + 5 dış vaka</span></div>
+</div>
+      <div class="plinks">
+          <a class="btn btn--solid" href="https://github.com/muend/geoai-skills" target="_blank" rel="noopener"><span>Depo</span><svg viewBox="0 0 16 16" aria-hidden="true"><path d="M3 13 13 3M6 3h7v7" fill="none" stroke="currentColor" stroke-width="1.7"/></svg></a>
+          <a class="btn btn--ghost" href="https://github.com/muend/geoai-skills/blob/main/BENCHMARK.md" target="_blank" rel="noopener"><span>Kıyaslama</span><svg viewBox="0 0 16 16" aria-hidden="true"><path d="M3 13 13 3M6 3h7v7" fill="none" stroke="currentColor" stroke-width="1.7"/></svg></a>
+      </div>
+    </div>
+  </div>
+</header>
+
+<div class="wrap">
+
+<section class="prose rv">
+  <span class="mono">Neden</span>
+  <div>
+    <h3>Mekânsal iş sessizce bozulur</h3>
+    <p>Yanlış bir projeksiyon istisna fırlatmaz. Aynı tarlanın iki tarafta birden yer almasına izin veren bir eğitim/test ayrımı da, derece cinsinden hesaplanmış bir alan da, belirsizliği belirtilmemiş kendinden emin bir sayı da fırlatmaz. Analiz tamamlanır, harita çizilir ve hata yayına çıkar.</p><p>Bu on sekiz skill, genel amaçlı bir ajana mekânsal uzmanın reflekslerini kazandırır: bir mesafeye güvenmeden önce CRS'i kontrol et, mekânsal otokorelasyonu varsayılan kabul et ve kanıtın desteklemediği bir sonucu söylemeyi reddet.</p>
+  </div>
+</section>
+
+<section class="fig">
+  <div class="fig-head">
+    <span class="n">Şekil 01</span>
+    <h3>Tek bir yaşam döngüsünde on sekiz skill</h3>
+    <span class="rule" aria-hidden="true"></span>
+  </div>
+  <p>Orkestratör isteği parçalara ayırır ve beş aşama boyunca yönlendirir. Skill'ler dar tetiklenecek biçimde yazılmıştır: takımdaki negatif ve çakışma vakaları özellikle aşırı tetiklenmeyi sınar.</p>
+<div class="plate rv" data-plate data-title="Şekil 01 — Yaşam döngüsü yönlendirme atlası">
+  <div class="plate-bar"><strong>Şekil 01 / Yaşam döngüsü yönlendirme atlası</strong>
+    <button class="expand" type="button" data-expand>Büyüt<svg viewBox="0 0 16 16" aria-hidden="true"><path d="M2 6V2h4M14 10v4h-4M2 2l5 5M14 14l-5-5" fill="none" stroke="currentColor" stroke-width="1.7"/></svg></button>
+  </div>
+<svg viewBox="0 0 1140 470" role="img" preserveAspectRatio="xMidYMid meet"
+               aria-label="GeoAI skills routing atlas: the geoai-orchestrator routes work across five lifecycle groups holding the remaining seventeen specialist skills, under cross-cutting invariants, ending in guarded local ArcPy execution.">
+            <defs>
+              <marker id="sA" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto"><path d="M0 0 7 3.5 0 7Z" fill="var(--amber-deep)"/></marker>
+            </defs>
+            <text class="d-title" x="20" y="26">GEOAI SKILLS / LIFECYCLE ROUTING ATLAS</text>
+            <text class="d-micro" x="1120" y="26" text-anchor="end">18 SKILLS · v0.2.0 · MIT</text>
+            <path class="d-rule" d="M20 36H1120"/>
+
+            <g class="d-pop">
+              <rect class="d-box d-box--a" x="20" y="52" width="1100" height="44"/>
+              <text class="d-name" x="570" y="72" text-anchor="middle" style="font-size:12px">00 · geoai-orchestrator</text>
+              <text class="d-sub"  x="570" y="87" text-anchor="middle">PIPELINE DESIGN · ROUTING · MODULE-WIDE INVARIANTS</text>
+            </g>
+            <path class="d-flow--a" d="M126 96v18" marker-end="url(#sA)"/>
+            <path class="d-flow--a" d="M348 96v18" marker-end="url(#sA)"/>
+            <path class="d-flow--a" d="M570 96v18" marker-end="url(#sA)"/>
+            <path class="d-flow--a" d="M792 96v18" marker-end="url(#sA)"/>
+            <path class="d-flow--a" d="M1014 96v18" marker-end="url(#sA)"/>
+
+            <text class="d-micro" x="20"   y="132">01 / ROUTE + ACQUIRE</text>
+            <text class="d-micro" x="242"  y="132">02 / SENSE + PREPARE</text>
+            <text class="d-micro" x="464"  y="132">03 / MODEL + DETECT</text>
+            <text class="d-micro" x="686"  y="132">04 / ANALYZE + DECIDE</text>
+            <text class="d-micro" x="908"  y="132">05 / DELIVER + OPERATE</text>
+
+            <g class="d-pop" style="--dly:120ms">
+              <rect class="d-box d-box--g" x="20" y="140" width="212" height="44"/><text class="d-name" x="32" y="160">geo-data-engineering</text><text class="d-tag" x="32" y="175">STAC · OSM · FORMATS</text>
+              <rect class="d-box d-box--g" x="20" y="193" width="212" height="44"/><text class="d-name" x="32" y="213">google-earth-engine</text><text class="d-tag" x="32" y="228">COMPOSITE · REDUCE · EXPORT</text>
+
+              <rect class="d-box d-box--g" x="242" y="140" width="212" height="44"/><text class="d-name" x="254" y="160">remote-sensing-analysis</text><text class="d-tag" x="254" y="175">L1/L2 · MASK · INDEX</text>
+              <rect class="d-box d-box--g" x="242" y="193" width="212" height="44"/><text class="d-name" x="254" y="213">point-cloud-lidar</text><text class="d-tag" x="254" y="228">PDAL · DTM · CHM</text>
+              <rect class="d-box d-box--g" x="242" y="246" width="212" height="44"/><text class="d-name" x="254" y="266">terrain-hydrology</text><text class="d-tag" x="254" y="281">SLOPE · FLOW · BASIN</text>
+              <rect class="d-box d-box--g" x="242" y="299" width="212" height="44"/><text class="d-name" x="254" y="319">movement-trajectory</text><text class="d-tag" x="254" y="334">TRACKS · STOPS · OD</text>
+
+              <rect class="d-box d-box--d" x="464" y="140" width="212" height="44"/><text class="d-name" x="476" y="160">geo-deep-learning</text><text class="d-tag" x="476" y="175">U-NET · DETECT · INFER</text>
+              <rect class="d-box d-box--d" x="464" y="193" width="212" height="44"/><text class="d-name" x="476" y="213">change-detection</text><text class="d-tag" x="476" y="228">CO-REG · BREAKS · AREA</text>
+              <rect class="d-box d-box--d" x="464" y="246" width="212" height="44"/><text class="d-name" x="476" y="266">ml-experiment-standards</text><text class="d-tag" x="476" y="281">LEAKAGE · METRICS · REPRO</text>
+
+              <rect class="d-box d-box--a" x="686" y="140" width="212" height="44"/><text class="d-name" x="698" y="160">spatial-statistics</text><text class="d-tag" x="698" y="175">MORAN · LISA · GWR</text>
+              <rect class="d-box d-box--a" x="686" y="193" width="212" height="44"/><text class="d-name" x="698" y="213">geostatistics-interpolation</text><text class="d-tag" x="698" y="228">VARIOGRAM · KRIGING</text>
+              <rect class="d-box d-box--a" x="686" y="246" width="212" height="44"/><text class="d-name" x="698" y="266">mcda-suitability-analysis</text><text class="d-tag" x="698" y="281">AHP · WLC · SENSITIVITY</text>
+              <rect class="d-box d-box--a" x="686" y="299" width="212" height="44"/><text class="d-name" x="698" y="319">network-accessibility-analysis</text><text class="d-tag" x="698" y="334">OD · ISOCHRONE · 2SFCA</text>
+              <rect class="d-box d-box--a" x="686" y="352" width="212" height="44"/><text class="d-name" x="698" y="372">postgis-spatial-sql</text><text class="d-tag" x="698" y="387">INDEX · SCALE · SPATIAL SQL</text>
+
+              <rect class="d-box d-box--a" x="908" y="140" width="212" height="44"/><text class="d-name" x="920" y="160">cartography-geoviz</text><text class="d-tag" x="920" y="175">CLASSIFY · COLOR · MAP</text>
+              <rect class="d-box d-box--a" x="908" y="193" width="212" height="44"/><text class="d-name" x="920" y="213">swe-devops-standards</text><text class="d-tag" x="920" y="228">TEST · CI · PIN · AUDIT</text>
+              <rect class="d-box d-box--a" x="908" y="246" width="212" height="44"/><text class="d-name" x="920" y="266">arcgis-pro-automation</text><text class="d-tag" x="920" y="281">GUARDED LOCAL EXECUTION</text>
+            </g>
+
+            <text class="d-micro" x="20"   y="420">CROSS-CUTTING INVARIANTS IN EVERY SKILL · CRS / UNITS / GEOMETRY · UNCERTAINTY · LEAKAGE · VERIFY</text>
+            <text class="d-micro" x="1120" y="420" text-anchor="end">FAIL LOUD, NEVER SILENT</text>
+            <path class="d-hair" d="M20 428H1120"/>
+
+            <rect class="d-zone" x="20" y="436" width="1100" height="28"/>
+            <text class="d-node" x="570" y="454" text-anchor="middle">PROPRIETARY EXECUTION → ARCGIS-MCP-BRIDGE → GUARDED LOCAL ARCPY</text>
+          </svg>
+</div>
+</section>
+
+<section class="fig">
+  <div class="fig-head">
+    <span class="n">Şekil 02</span>
+    <h3>Ölçülen yönlendirme davranışı</h3>
+    <span class="rule" aria-hidden="true"></span>
+  </div>
+  <p>Dondurulmuş bir takıma karşı kaydedilmiş aktivasyonlardan deterministik puanlama ve açık/kapalı kontrol koşulu. Asıl önemli olan kontrol: skill'ler kapalıyken aynı model aynı vakalarda hiçbir şey tetiklemiyor.</p>
+<div class="evidence rv" data-measure>
+      <article class="gauge-panel">
+        <div class="gauge-head">
+          <div>
+            <span class="mono">Yönlendirme kıyaslaması</span>
+            <p>Dondurulmuş 18 skill takımında katı tam rota doğruluğu: 124 pozitif, 43 negatif vaka.</p>
+          </div>
+          <span class="mono v">v0.2.0 / 2026-08-05</span>
+        </div>
+        <div class="gauge" role="img" aria-label="96.41 percent full-route accuracy">
+          <svg viewBox="0 0 120 120" aria-hidden="true">
+            <circle class="bg" cx="60" cy="60" r="48"/>
+            <circle class="fg" cx="60" cy="60" r="48"/>
+          </svg>
+          <div class="gauge-center">
+            <strong>96.41%</strong>
+            <span class="mono">tam rota</span>
+          </div>
+        </div>
+        <div class="gauge-foot">
+          <div><strong>167</strong><span class="mono">Dondurulmuş vaka</span></div>
+          <div><strong>62</strong><span class="mono">Ayrılmış vaka</span></div>
+        </div>
+      </article>
+
+      <article class="result-panel">
+        <div class="result-top">
+          <div>
+            <span class="mono">Yayımlanan sonuç kartı</span>
+            <h3>Ölçülen yönlendirme davranışı</h3>
+            <p>Claude Code 2.1.214 ve claude-sonnet-5 üzerinde kaydedilmiş aktivasyonlardan deterministik
+              puanlama; açık/kapalı kontrol koşuluyla ve kapsam sınırları açıkça belirtilerek.</p>
+          </div>
+          <a class="btn btn--ghost" href="https://github.com/muend/geoai-skills/blob/main/BENCHMARK.md" target="_blank" rel="noopener">
+            <span>Kanıtı aç</span>
+            <svg viewBox="0 0 16 16" aria-hidden="true"><path d="M3 13 13 3M6 3h7v7" fill="none" stroke="currentColor" stroke-width="1.7"/></svg>
+          </a>
+        </div>
+
+        <div class="bench" aria-label="Yönlendirme kıyaslaması metrics">
+          <div class="bench-row"><span class="m">Kesinlik</span><div class="track"><i style="--v:99.17%;--d:0ms"></i></div><strong class="tnum">99.17%</strong></div>
+          <div class="bench-row"><span class="m">Duyarlılık</span><div class="track"><i style="--v:96.77%;--d:110ms;--fill:var(--data)"></i></div><strong class="tnum">96.77%</strong></div>
+          <div class="bench-row"><span class="m">Doğruluk</span><div class="track"><i style="--v:97.01%;--d:220ms;--fill:var(--green-lift)"></i></div><strong class="tnum">97.01%</strong></div>
+          <div class="bench-row"><span class="m">Rota doğruluğu</span><div class="track"><i style="--v:96.41%;--d:330ms;--fill:var(--amber)"></i></div><strong class="tnum">96.41%</strong></div>
+        </div>
+
+        <div class="control-strip">
+          <span class="mono">Kontrol · skill'ler kapalı</span>
+          <p><strong>0 aktivasyon</strong> across all 167 cases. Duyarlılık 0%, route accuracy 0%, overall accuracy
+            25.75%. The lift is attributable to the skills, not to the base model.</p>
+        </div>
+
+        <div class="result-notes">
+          <div><strong>PyPI × 2</strong><span class="mono">Kurulabilir araştırma ve altyapı paketleri</span></div>
+          <div><strong>Zenodo DOI</strong><span class="mono">Atıf verilebilir Sentinel-2 hattı çıktısı</span></div>
+          <div><strong>Ayrılmış küme</strong><span class="mono">62 görülmemiş vaka · %100 kesinlik · %95,16 rota doğruluğu</span></div>
+        </div>
+      </article>
+    
+</section>
+
+<section class="prose rv">
+  <span class="mono">Değişmezler</span>
+  <div>
+    <h3>Her skill'in, görevden bağımsız olarak dayattığı kurallar</h3>
+    <ul><li>Herhangi bir ölçüme güvenilmeden önce CRS ve birimler açıkça belirtilir.</li><li>Mekânsal sızıntı uç durum değil, varsayılan risktir.</li><li>Her aşama bir doğrulama adımıyla biter.</li><li>Belirsizlik ve duyarlılık dipnot değil, çıktıdır.</li><li>Eksik kanıt iddiayı daraltır ya da engeller.</li></ul>
+  </div>
+</section>
+
+<div class="note"><span class="mono">Kapsam</span><p>Yayımlanan metrikler <strong>yönlendirme davranışını</strong> tanımlar: doğru istek için doğru skill'in tetiklenip tetiklenmediğini, Claude Code 2.1.214 ve claude-sonnet-5 üzerinde, 2026-08-05 tarihinde ölçülmüş. Bu skill'lerin ürettiği cevapların kalitesi hakkında hiçbir şey söylemezler. Ayrılmış küme önceki bir koşuda kullanılmıştı; bu da iyileşmeyi doğrulama gücünü sınırlar.</p></div>
+
+</div>
+
+<div class="wrap">
+  <nav class="pager" aria-label="Diğer projeler">
+    <a href="benchfck.html"><span class="mono">← 00 · önceki</span><strong>benchfck</strong></a>
+    <a href="arcgis-mcp-bridge.html"><span class="mono">02 · sonraki →</span><strong>arcgis-mcp-bridge</strong></a>
+  </nav>
+</div>
+
+
+<section class="contact">
+  <div class="wrap">
+    <div class="contact-grid">
+      <div>
+        <span class="kicker mono rv">İş birliğine açık</span>
+        <h2 class="rv" style="--d:60ms">Sağlam duran mekânsal sistemler kuralım.</h2>
+        <div class="cta rv" style="--d:140ms">
+          <a class="btn btn--solid" href="mailto:nsduraan@gmail.com"><span>nsduraan@gmail.com</span></a>
+          <a class="btn btn--ghost" href="../../tr/index.html#projects"><span class="dot" aria-hidden="true"></span><span>Tüm projeler</span></a>
+        </div>
+      </div>
+    </div>
+    <div class="colophon mono">
+      <span>© 2026 Muhammed Enes Duran</span>
+      <span>Statik site · izleyici yok</span>
+    </div>
+  </div>
+</section>
+
+</main>
+
+<dialog class="dlg" id="dlg" aria-labelledby="dlg-title">
+  <div class="dlg-head">
+    <strong id="dlg-title">Teknik diyagram</strong>
+    <button class="dlg-close" type="button" data-close>Kapat</button>
+  </div>
+  <div class="dlg-body" id="dlg-body"></div>
+</dialog>
+
+<script src="../../assets/site.js" defer></script>
+</body>
+</html>

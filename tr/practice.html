@@ -1,0 +1,285 @@
+<!DOCTYPE html>
+<html lang="tr" data-page="practice">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+<script>document.documentElement.classList.add('js');</script>
+<link rel="icon" type="image/svg+xml" href="../assets/brand/favicon.svg">
+<link rel="icon" sizes="any" href="../assets/brand/favicon.ico">
+<link rel="icon" type="image/png" sizes="32x32" href="../assets/brand/favicon-32.png">
+<link rel="apple-touch-icon" href="../assets/brand/favicon-180.png">
+<link rel="manifest" href="../assets/brand/site.webmanifest">
+<link rel="canonical" href="https://muend.github.io/tr/practice.html">
+<link rel="alternate" hreflang="en" href="https://muend.github.io/practice.html">
+<link rel="alternate" hreflang="tr" href="https://muend.github.io/tr/practice.html">
+<link rel="alternate" hreflang="x-default" href="https://muend.github.io/practice.html">
+<title>Yöntem — mekânsal sistemleri nasıl inşa ediyorum</title>
+<meta name="description" content="GeoAI altyapısı, araştırma yazılımı ve karar sistemleri kurmak için dört aşamalı bir yöntem; ayrıca tam yetkinlik matrisi ve sistem haritası.">
+<meta name="theme-color" content="#F7F7F1">
+<meta name="color-scheme" content="light">
+<meta name="referrer" content="strict-origin-when-cross-origin">
+<meta name="robots" content="index,follow,max-image-preview:large">
+<meta name="author" content="Muhammed Enes Duran">
+<meta property="og:title" content="Yöntem — mekânsal sistemleri nasıl inşa ediyorum">
+<meta property="og:description" content="GeoAI altyapısı, araştırma yazılımı ve karar sistemleri kurmak için dört aşamalı bir yöntem; ayrıca tam yetkinlik matrisi ve sistem haritası.">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://muend.github.io/tr/practice.html">
+<meta property="og:site_name" content="Muhammed Enes Duran">
+<meta property="og:locale" content="tr_TR">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Yöntem — mekânsal sistemleri nasıl inşa ediyorum">
+<meta name="twitter:description" content="GeoAI altyapısı, araştırma yazılımı ve karar sistemleri kurmak için dört aşamalı bir yöntem; ayrıca tam yetkinlik matrisi ve sistem haritası.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wdth,wght@12..96,75..100,400..800&family=IBM+Plex+Mono:wght@400;500;600&family=Instrument+Sans:ital,wght@0,400..700;1,400..600&display=swap">
+<link rel="stylesheet" href="../assets/site.css">
+</head>
+<body>
+<a class="skip-link" href="#main">İçeriğe geç</a>
+<div class="progress" id="progress" aria-hidden="true"></div>
+<div class="cur cur-ring" id="cur-ring" aria-hidden="true"></div>
+<div class="cur cur-dot" id="cur-dot" aria-hidden="true"></div>
+<div class="topbar" id="topbar">
+  <div class="wrap">
+    <a class="brand" href="../tr/index.html" aria-label="Muhammed Enes Duran — ana sayfa">muend<b>.</b></a>
+    <div class="nav-area">
+      <nav class="navlinks mono" aria-label="Ana">
+        <a href="../tr/index.html#projects" data-nav="projects">Projeler</a>
+        <a href="../tr/research.html" data-nav="research">Araştırma</a>
+        <a href="../tr/practice.html" data-nav="practice">Yöntem</a>
+        <a href="../tr/index.html#contact" data-nav="contact">İletişim</a>
+      </nav>
+      <div class="langsw mono" role="group" aria-label="Dili değiştir"><a class="lang-opt" href="../practice.html" hreflang="en" lang="en">EN</a><span aria-hidden="true">/</span><span class="lang-opt is-on" aria-current="true">TR</span></div>
+      <span class="status-pill mono"><i aria-hidden="true"></i><span>Açık kaynak · aktif</span></span>
+    </div>
+  </div>
+</div>
+
+<main id="main">
+
+<div class="wrap">
+  <nav class="crumb mono" aria-label="Sayfa yolu">
+    <a href="index.html">Ana sayfa</a><span>/</span><span>Yöntem</span>
+  </nav>
+</div>
+
+<header class="phead">
+  <div class="wrap phead-grid">
+    <div>
+      <span class="kind mono rv">Nasıl inşa ediyorum</span>
+      <h1 class="rv" style="--d:60ms">Yöntem</h1>
+      <p class="deck rv" style="--d:120ms">Aynı sıra altyapıyı, araştırma yazılımını, karar sistemlerini ve simülasyonları yönetir. Sıralama, pahalı hataların ucuza yapılabilmesi için böyle kurulmuştur.</p>
+    </div>
+    <div class="phead-side rv" style="--d:160ms">
+      <div class="spec">
+        <div><span class="k">Aşama</span><span class="v">Dört, her zaman sırayla</span></div>
+        <div><span class="k">Ana alan</span><span class="v">GeoAI ve mekânsal veri bilimi</span></div>
+        <div><span class="k">Hata kipi</span><span class="v">Sessiz mekânsal hata</span></div>
+      </div>
+    </div>
+  </div>
+</header>
+
+<div class="wrap">
+
+<section class="page-sec">
+  <div class="method-track" data-track>
+    <article class="mstep" style="--d:0ms"><span class="phase mono">Aşama 01</span><h3>Değişmezleri tanımla</h3><p>CRS'i, birimleri, veri sözleşmelerini, güvenlik sınırlarını ve başarı ölçütlerini uygulamadan önce açıkça belirle.</p></article>
+    <article class="mstep" style="--d:180ms"><span class="phase mono">Aşama 02</span><h3>Hattı kur</h3><p>Bileşenleri ayır, riskli çalışma zamanlarını yalıt, kaynağı koru ve ara durumları incelenebilir yap.</p></article>
+    <article class="mstep" style="--d:360ms"><span class="phase mono">Aşama 03</span><h3>Hata kiplerini zorla</h3><p>Negatif vakaları, sızıntıyı, geçersiz yolları, belirsiz yönlendirmeyi, eksik veriyi ve operasyonel sınırları sına.</p></article>
+    <article class="mstep" style="--d:540ms"><span class="phase mono">Aşama 04</span><h3>Kullanılabilir bir çıktı teslim et</h3><p>Bir paket, canlı arayüz, atıf verilebilir sürüm, kıyaslama, baskı çıktısı ya da dağıtıma hazır sistem teslim et.</p></article>
+  </div>
+</section>
+
+<section class="fig">
+  <div class="fig-head">
+    <span class="n">İlkeler</span>
+    <h3>Bu sıra neye karşı koruyor</h3>
+    <span class="rule" aria-hidden="true"></span>
+  </div>
+  <div class="principles">
+    <article class="principle rv" style="--d:0ms"><span class="n mono">01 / Mekânsal titizlik</span><h3>CRS ve birimler açıktır</h3><p>Alan, mesafe, raster hizalaması, ölçek ve geometri varsayımları, yöntemlere güvenilmeden önce denetlenir.</p></article>
+    <article class="principle rv" style="--d:80ms"><span class="n mono">02 / Dürüst doğrulama</span><h3>Sızıntı bir risk olarak ele alınır</h3><p>Mekânsal bağımlı veri; bloklu ayrımlar, uygun temel çizgiler ve dağıtımı yansıtan doğrulama tasarımları gerektirir.</p></article>
+    <article class="principle rv" style="--d:160ms"><span class="n mono">03 / Yeniden üretilebilirlik</span><h3>Kanıt sürümlenir</h3><p>Tipli sözleşmeler, CI, değişmez kıyaslama paketleri, test koşumları ve DOI destekli sürümler işi incelenebilir tutar.</p></article>
+    <article class="principle rv" style="--d:240ms"><span class="n mono">04 / Ürün faydası</span><h3>Yöntemler kullanılabilir sistemlere dönüşür</h3><p>Analiz, not defteri olarak bırakılmak yerine arayüzlere, raporlara, yerel otomasyona ya da oynanabilir simülasyonlara çevrilir.</p></article>
+  </div>
+</section>
+
+<section class="fig">
+  <div class="fig-head">
+    <span class="n">Yığın</span>
+    <h3>Teknik çekirdek</h3>
+    <span class="rule" aria-hidden="true"></span>
+  </div>
+  <p>Araştırma yöntemleri, ajan altyapısı, üretim mühendisliği ve tarayıcı yerlisi ürün işini kapsayan, mekân öncelikli bir yığın.</p>
+  <div class="cap rv">
+    <div class="cap-nav" role="tablist" aria-label="Teknik yetkinlik kategorileri">
+      <button class="cap-tab mono" role="tab" id="tab-spatial" aria-controls="panel-spatial" aria-selected="true" data-panel="spatial"><span>Mekânsal / EO</span><span class="c">10</span></button>
+      <button class="cap-tab mono" role="tab" id="tab-agents" aria-controls="panel-agents" aria-selected="false" tabindex=-1 data-panel="agents"><span>Ajanlar / Değerlendirme</span><span class="c">08</span></button>
+      <button class="cap-tab mono" role="tab" id="tab-ml" aria-controls="panel-ml" aria-selected="false" tabindex=-1 data-panel="ml"><span>YZ / ML</span><span class="c">07</span></button>
+      <button class="cap-tab mono" role="tab" id="tab-systems" aria-controls="panel-systems" aria-selected="false" tabindex=-1 data-panel="systems"><span>Sistemler / Ürün</span><span class="c">10</span></button>
+      <div class="cap-fill" aria-hidden="true"></div>
+    </div>
+    <div class="cap-panels">
+      <article class="cap-panel" role="tabpanel" id="panel-spatial" aria-labelledby="tab-spatial" tabindex="0">
+        <div>
+          <span class="mono field">Mekânsal / uzaktan algılama</span>
+          <h3>Operasyonel disiplinle mekânsal yöntemler.</h3>
+          <p>Vektör, raster, EO, mekânsal istatistik, kartografya ve tescilli CBS iş akışları; açık projeksiyon, ölçek, doğrulama ve çıktı denetimleriyle ele alınır.</p>
+          <div class="cap-proof"><div><span>Ana alan</span><strong>GeoAI</strong></div><div><span>Temel hata kipi</span><strong>Sessiz mekânsal hata</strong></div><div><span>Teslimat</span><strong>Paket · harita · KDS</strong></div></div>
+        </div>
+        <div class="chip-box">
+          <span class="mono">Çalışma kümesi<span>10</span></span>
+          <div class="chips"><span>GeoPandas</span><span>Shapely</span><span>ArcPy</span><span>Rasterio</span><span>PySAL</span><span>QGIS</span><span>Sentinel-2</span><span>CDSE</span><span>STAC</span><span>PostGIS</span></div>
+        </div>
+      </article>
+      <article class="cap-panel" role="tabpanel" id="panel-agents" aria-labelledby="tab-agents" tabindex="0" hidden>
+        <div>
+          <span class="mono field">Ajanlar / değerlendirme</span>
+          <h3>Yönlendiren, yürüten ve güvenle hata veren araç kullanan ajanlar.</h3>
+          <p>Agent Skills, MCP, çalışma zamanı yalıtımı, tipli değerlendirme sözleşmeleri, kör istek hazırlığı, deterministik puanlama ve kanıt bilinçli kıyaslama yayını.</p>
+          <div class="cap-proof"><div><span>Ana alan</span><strong>Ajan tabanlı CBS</strong></div><div><span>Temel hata kipi</span><strong>Güvensiz ya da yanlış yönlendirme</strong></div><div><span>Teslimat</span><strong>Eklenti · MCP · kıyaslama</strong></div></div>
+        </div>
+        <div class="chip-box">
+          <span class="mono">Çalışma kümesi<span>08</span></span>
+          <div class="chips"><span>Agent Skills</span><span>MCP</span><span>JSON-RPC</span><span>JSON Schema</span><span>Routing evals</span><span>Behavior evals</span><span>Guarded execution</span><span>Benchmark harnesses</span></div>
+        </div>
+      </article>
+      <article class="cap-panel" role="tabpanel" id="panel-ml" aria-labelledby="tab-ml" tabindex="0" hidden>
+        <div>
+          <span class="mono field">YZ / ML / veri</span>
+          <h3>Savunulabilir veri ve değerlendirme üzerine kurulu modeller.</h3>
+          <p>Mekânsal ayrım, sınıf dengesizliği yönetimi, yeniden üretilebilir ön işleme ve coğrafi referansı koruyan çıkarımla derin öğrenme ve klasik ML iş akışları.</p>
+          <div class="cap-proof"><div><span>Ana alan</span><strong>Mekânsal ML</strong></div><div><span>Temel hata kipi</span><strong>Sızıntı / yanlış güven</strong></div><div><span>Teslimat</span><strong>Veri seti · model · rapor</strong></div></div>
+        </div>
+        <div class="chip-box">
+          <span class="mono">Çalışma kümesi<span>07</span></span>
+          <div class="chips"><span>Python</span><span>PyTorch</span><span>TensorFlow</span><span>scikit-learn</span><span>NumPy</span><span>pandas</span><span>SciPy</span></div>
+        </div>
+      </article>
+      <article class="cap-panel" role="tabpanel" id="panel-systems" aria-labelledby="tab-systems" tabindex="0" hidden>
+        <div>
+          <span class="mono field">Sistemler / ürün</span>
+          <h3>Araştırma mantığının, insanların çalıştırabileceği yazılıma çevrilmesi.</h3>
+          <p>Tipli Python servisleri, statik web ürünleri, CI, test, dağıtım, tarayıcı yerlisi arayüzler, yerel saklama ve düşük bakımlı dağıtım mimarileri.</p>
+          <div class="cap-proof"><div><span>Ana alan</span><strong>Ürün mühendisliği</strong></div><div><span>Temel hata kipi</span><strong>Sürdürülemez teslimat</strong></div><div><span>Teslimat</span><strong>PyPI · web · oyun</strong></div></div>
+        </div>
+        <div class="chip-box">
+          <span class="mono">Çalışma kümesi<span>10</span></span>
+          <div class="chips"><span>FastAPI</span><span>Pydantic v2</span><span>Docker</span><span>Pytest</span><span>Ruff</span><span>Mypy</span><span>GitHub Actions</span><span>Vanilla JS</span><span>HTML/CSS</span><span>Web storage</span></div>
+        </div>
+      </article>
+    </div>
+  </div>
+</section>
+
+<section class="fig">
+  <div class="fig-head">
+    <span class="n">Şekil 01</span>
+    <h3>Projeler birbirini nasıl besliyor</h3>
+    <span class="rule" aria-hidden="true"></span>
+  </div>
+  <p>İş birikimlidir: yöntemler altyapıyı biçimlendirir, altyapı yürütmeyi mümkün kılar ve ikisi de bir araştırma not defterinin dışında kullanılabilen ürünleri besler.</p>
+<div class="plate rv" data-plate data-title="Şekil 01 — Sistem atlası">
+  <div class="plate-bar"><strong>Şekil 01 / Sistem atlası</strong>
+    <button class="expand" type="button" data-expand>Büyüt<svg viewBox="0 0 16 16" aria-hidden="true"><path d="M2 6V2h4M14 10v4h-4M2 2l5 5M14 14l-5-5" fill="none" stroke="currentColor" stroke-width="1.7"/></svg></button>
+  </div>
+<svg viewBox="0 0 1140 528" role="img" preserveAspectRatio="xMidYMid meet"
+           aria-label="System atlas: an evaluation and knowledge layer and a data and model layer feed a core practice of reliable spatial systems, which is served by a guarded execution layer and delivered through a product layer.">
+        <defs>
+          <marker id="pA" markerWidth="8" markerHeight="8" refX="7" refY="4" orient="auto"><path d="M0 0 8 4 0 8Z" fill="var(--green)"/></marker>
+          <marker id="pAa" markerWidth="8" markerHeight="8" refX="7" refY="4" orient="auto"><path d="M0 0 8 4 0 8Z" fill="var(--amber-deep)"/></marker>
+        </defs>
+        <text class="d-title" x="20" y="26">SYSTEM ATLAS / KNOWLEDGE → EXECUTION → ARTIFACT</text>
+        <text class="d-micro" x="1120" y="26" text-anchor="end">REV. 04 / 2026</text>
+        <path class="d-rule" d="M20 36H1120"/>
+
+        <!-- connectors -->
+        <path class="d-flow--a" d="M340 128H400V236H428" marker-end="url(#pAa)"/>
+        <path class="d-flow"    d="M800 128H740V236H712" marker-end="url(#pA)"/>
+        <path class="d-flow"    d="M340 448H400V294H428" marker-end="url(#pA)"/>
+        <path class="d-flow"    d="M800 448H740V294H712" marker-end="url(#pA)"/>
+        <text class="d-micro" x="408" y="180">ROUTING / INVARIANTS</text>
+        <text class="d-micro" x="732" y="180" text-anchor="end">GUARDED EXECUTION</text>
+        <text class="d-micro" x="408" y="360">DATA / MODEL EVIDENCE</text>
+        <text class="d-micro" x="732" y="360" text-anchor="end">PUBLIC DELIVERY</text>
+
+        <!-- core -->
+        <g class="d-pop" style="--dly:320ms">
+          <rect class="d-box d-box--ink" x="428" y="206" width="284" height="118"/>
+          <text class="d-micro d-inv" x="570" y="236" text-anchor="middle" opacity=".72">CORE PRACTICE</text>
+          <text class="d-h d-inv" x="570" y="266" text-anchor="middle">Reliable spatial systems</text>
+          <text class="d-sub d-inv" x="570" y="290" text-anchor="middle" opacity=".8">RESEARCH RIGOR · ENGINEERING · DELIVERY</text>
+          <path d="M508 308h124" stroke="var(--amber)" stroke-width="2"/>
+        </g>
+
+        <!-- N-01 -->
+        <g class="d-pop">
+          <rect class="d-box" x="40" y="70" width="300" height="116"/>
+          <text class="d-micro d-accent" x="58" y="96">N-01 / EVALUATION + KNOWLEDGE</text>
+          <text class="d-h" x="58" y="124">benchfck + geoai-skills</text>
+          <text class="d-note" x="58" y="148">Measures controlled reasoning and routes</text>
+          <text class="d-note" x="58" y="164">spatial work with explicit invariants.</text>
+        </g>
+        <!-- N-02 -->
+        <g class="d-pop" style="--dly:100ms">
+          <rect class="d-box" x="800" y="70" width="300" height="116"/>
+          <text class="d-micro d-accent" x="818" y="96">N-02 / EXECUTION LAYER</text>
+          <text class="d-h" x="818" y="124">arcgis-mcp-bridge</text>
+          <text class="d-note" x="818" y="148">Runs licensed ArcGIS operations behind</text>
+          <text class="d-note" x="818" y="164">guarded process boundaries.</text>
+        </g>
+        <!-- N-03 -->
+        <g class="d-pop" style="--dly:200ms">
+          <rect class="d-box" x="40" y="390" width="300" height="116"/>
+          <text class="d-micro d-accent" x="58" y="416">N-03 / DATA + MODEL LAYER</text>
+          <text class="d-h" x="58" y="444">Sentinel pipeline + U-Net</text>
+          <text class="d-note" x="58" y="468">Prepares reproducible EO datasets and</text>
+          <text class="d-note" x="58" y="484">downstream segmentation work.</text>
+        </g>
+        <!-- N-04 -->
+        <g class="d-pop" style="--dly:300ms">
+          <rect class="d-box" x="800" y="390" width="300" height="116"/>
+          <text class="d-micro d-accent" x="818" y="416">N-04 / PRODUCT LAYER</text>
+          <text class="d-h" x="818" y="444">agri-dss · FOUNDER.EXE</text>
+          <text class="d-note" x="818" y="468">Turns spatial and institutional knowledge</text>
+          <text class="d-note" x="818" y="484">into usable interactive systems.</text>
+        </g>
+      </svg>
+</div>
+</section>
+
+</div>
+
+<section class="contact">
+  <div class="wrap">
+    <div class="contact-grid">
+      <div>
+        <span class="kicker mono rv">İş birliğine açık</span>
+        <h2 class="rv" style="--d:60ms">Sağlam duran mekânsal sistemler kuralım.</h2>
+        <div class="cta rv" style="--d:140ms">
+          <a class="btn btn--solid" href="mailto:nsduraan@gmail.com"><span>nsduraan@gmail.com</span></a>
+          <a class="btn btn--ghost" href="../tr/index.html#projects"><span class="dot" aria-hidden="true"></span><span>Tüm projeler</span></a>
+        </div>
+      </div>
+    </div>
+    <div class="colophon mono">
+      <span>© 2026 Muhammed Enes Duran</span>
+      <span>Statik site · izleyici yok</span>
+    </div>
+  </div>
+</section>
+
+</main>
+
+<dialog class="dlg" id="dlg" aria-labelledby="dlg-title">
+  <div class="dlg-head">
+    <strong id="dlg-title">Teknik diyagram</strong>
+    <button class="dlg-close" type="button" data-close>Kapat</button>
+  </div>
+  <div class="dlg-body" id="dlg-body"></div>
+</dialog>
+
+<script src="../assets/site.js" defer></script>
+</body>
+</html>

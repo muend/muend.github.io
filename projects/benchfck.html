@@ -1,0 +1,278 @@
+<!DOCTYPE html>
+<html lang="en" data-page="projects">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+<script>document.documentElement.classList.add('js');</script>
+<link rel="icon" type="image/svg+xml" href="../assets/brand/favicon.svg">
+<link rel="icon" sizes="any" href="../assets/brand/favicon.ico">
+<link rel="icon" type="image/png" sizes="32x32" href="../assets/brand/favicon-32.png">
+<link rel="apple-touch-icon" href="../assets/brand/favicon-180.png">
+<link rel="manifest" href="../assets/brand/site.webmanifest">
+<link rel="canonical" href="https://muend.github.io/projects/benchfck.html">
+<link rel="alternate" hreflang="en" href="https://muend.github.io/projects/benchfck.html">
+<link rel="alternate" hreflang="tr" href="https://muend.github.io/tr/projects/benchfck.html">
+<link rel="alternate" hreflang="x-default" href="https://muend.github.io/projects/benchfck.html">
+<title>benchfck — exact machine-state benchmark harness</title>
+<meta name="description" content="A Brainfuck-based generator and exact Rust harness that produces, validates and scores machine-state tasks across four controlled instruction encodings.">
+<meta name="theme-color" content="#F7F7F1">
+<meta name="color-scheme" content="light">
+<meta name="referrer" content="strict-origin-when-cross-origin">
+<meta name="robots" content="index,follow,max-image-preview:large">
+<meta name="author" content="Muhammed Enes Duran">
+<meta property="og:title" content="benchfck — exact machine-state benchmark harness">
+<meta property="og:description" content="A Brainfuck-based generator and exact Rust harness that produces, validates and scores machine-state tasks across four controlled instruction encodings.">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://muend.github.io/projects/benchfck.html">
+<meta property="og:site_name" content="Muhammed Enes Duran">
+<meta property="og:locale" content="en_US">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="benchfck — exact machine-state benchmark harness">
+<meta name="twitter:description" content="A Brainfuck-based generator and exact Rust harness that produces, validates and scores machine-state tasks across four controlled instruction encodings.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wdth,wght@12..96,75..100,400..800&family=IBM+Plex+Mono:wght@400;500;600&family=Instrument+Sans:ital,wght@0,400..700;1,400..600&display=swap">
+<link rel="stylesheet" href="../assets/site.css">
+</head>
+<body>
+<a class="skip-link" href="#main">Skip to content</a>
+<div class="progress" id="progress" aria-hidden="true"></div>
+<div class="cur cur-ring" id="cur-ring" aria-hidden="true"></div>
+<div class="cur cur-dot" id="cur-dot" aria-hidden="true"></div>
+<div class="topbar" id="topbar">
+  <div class="wrap">
+    <a class="brand" href="../index.html" aria-label="Muhammed Enes Duran — home">muend<b>.</b></a>
+    <div class="nav-area">
+      <nav class="navlinks mono" aria-label="Primary">
+        <a href="../index.html#projects" data-nav="projects">Projects</a>
+        <a href="../research.html" data-nav="research">Research</a>
+        <a href="../practice.html" data-nav="practice">Practice</a>
+        <a href="../index.html#contact" data-nav="contact">Contact</a>
+      </nav>
+      <div class="langsw mono" role="group" aria-label="Change language"><span class="lang-opt is-on" aria-current="true">EN</span><span aria-hidden="true">/</span><a class="lang-opt" href="../tr/projects/benchfck.html" hreflang="tr" lang="tr">TR</a></div>
+      <span class="status-pill mono"><i aria-hidden="true"></i><span>Open source · active</span></span>
+    </div>
+  </div>
+</div>
+
+<main id="main">
+
+<div class="wrap">
+  <nav class="crumb mono" aria-label="Breadcrumb">
+    <a href="../index.html#projects">Projects</a><span>/</span><span>00 · benchfck</span>
+  </nav>
+</div>
+
+<header class="phead">
+  <div class="wrap phead-grid">
+    <div>
+      <span class="kind mono rv">Deterministic evaluation · Exact Rust harness</span>
+      <h1 class="rv" style="--d:60ms">benchfck</h1>
+      <p class="deck rv" style="--d:120ms">A generator and exact harness for machine-state tasks, built so that nothing in the scoring path depends on a learned judge.</p>
+    </div>
+    <div class="phead-side rv" style="--d:160ms">
+      <div class="ptags"><span class="tag-chip tag-chip--new">v0.4.0-alpha</span><span class="tag-chip">Apache-2.0</span><span class="tag-chip">Rust</span></div>
+      <div class="spec">
+  <div><span class="k">Version</span><span class="v">0.4.0-alpha · engineering candidate</span></div>
+  <div><span class="k">License</span><span class="v">Apache-2.0 (code) · CC BY 4.0 (future datasets)</span></div>
+  <div><span class="k">Language</span><span class="v">Rust, 2024 edition</span></div>
+  <div><span class="k">Machine</span><span class="v">30,000 cells · 8-bit wrapping · 8,000,000 step cap</span></div>
+  <div><span class="k">Tokenizer</span><span class="v"><code>cl100k_base</code> for BPE measurement</span></div>
+  <div><span class="k">Model runs</span><span class="v">0 published · 0 leaderboards</span></div>
+</div>
+      <div class="plinks">
+          <a class="btn btn--solid" href="https://github.com/muend/benchfck" target="_blank" rel="noopener"><span>Repository</span><svg viewBox="0 0 16 16" aria-hidden="true"><path d="M3 13 13 3M6 3h7v7" fill="none" stroke="currentColor" stroke-width="1.7"/></svg></a>
+          <a class="btn btn--ghost" href="https://github.com/muend/benchfck/blob/main/VALIDITY.md" target="_blank" rel="noopener"><span>Validity contract</span><svg viewBox="0 0 16 16" aria-hidden="true"><path d="M3 13 13 3M6 3h7v7" fill="none" stroke="currentColor" stroke-width="1.7"/></svg></a>
+      </div>
+    </div>
+  </div>
+</header>
+
+<div class="wrap">
+
+<section class="prose rv">
+  <span class="mono">Why</span>
+  <div>
+    <h3>A benchmark that cannot be gamed by its own judge</h3>
+    <p>Most reasoning benchmarks ship a fixed dataset and score answers with another model. Both choices leak: the dataset ages into the training corpus, and the judge brings its own errors. benchfck removes both. It generates every item from a seed, and every step from execution to scoring is exact arithmetic on a pinned virtual machine.</p><p>The cost of that choice is scope. It measures controlled machine-state reasoning, and nothing else. It does not claim to measure general capability.</p>
+  </div>
+</section>
+
+<section class="fig">
+  <div class="fig-head">
+    <span class="n">Fig. 01</span>
+    <h3>From seed to score</h3>
+    <span class="rule" aria-hidden="true"></span>
+  </div>
+  <p>A candidate program is only accepted if the typed intermediate representation and the encodings agree on every one of the 256 possible input bindings. Anything that disagrees is discarded before a model ever sees it.</p>
+<div class="plate rv" data-plate data-title="Fig. 01 — Generation and verification chain">
+  <div class="plate-bar"><strong>Fig. 01 / Generation and verification chain</strong>
+    <button class="expand" type="button" data-expand>Expand<svg viewBox="0 0 16 16" aria-hidden="true"><path d="M2 6V2h4M14 10v4h-4M2 2l5 5M14 14l-5-5" fill="none" stroke="currentColor" stroke-width="1.7"/></svg></button>
+  </div>
+<svg viewBox="0 0 1180 512" role="img" preserveAspectRatio="xMidYMid meet"
+     aria-label="benchfck chain: a seeded public constructor produces a typed intermediate representation, which a Brainfuck compiler renders into four instruction encodings; an independent parser and an exact equivalence check over all 256 inputs gate acceptance; accepted programs become three task families scored by a restricted verifier with no learned judge.">
+  <defs>
+    <marker id="bkA" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto"><path d="M0 0 7 3.5 0 7Z" fill="var(--green)"/></marker>
+    <marker id="bkB" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto"><path d="M0 0 7 3.5 0 7Z" fill="var(--amber-deep)"/></marker>
+  </defs>
+
+  <text class="d-title" x="20" y="26">GENERATION → ENCODING → EQUIVALENCE → SCORING</text>
+  <text class="d-micro" x="1160" y="26" text-anchor="end">SHEET B-00 · v0.4.0-ALPHA</text>
+  <path class="d-rule" d="M20 36H1160"/>
+
+  <!-- 01 generation -->
+  <text class="d-micro" x="20" y="58">01 / DETERMINISTIC GENERATION</text>
+  <g class="d-pop">
+    <rect class="d-box d-box--g" x="20" y="66" width="364" height="48"/>
+    <text class="d-node" x="202" y="88" text-anchor="middle">SEED + PUBLIC CONSTRUCTOR</text>
+    <text class="d-sub"  x="202" y="103" text-anchor="middle">8 CONSTRUCTORS · 4 STRUCTURAL FAMILIES</text>
+
+    <rect class="d-box d-box--g" x="408" y="66" width="364" height="48"/>
+    <text class="d-node" x="590" y="88" text-anchor="middle">TYPED INTERMEDIATE REPRESENTATION</text>
+    <text class="d-sub"  x="590" y="103" text-anchor="middle">SEMANTICS FIXED BEFORE SYNTAX</text>
+
+    <rect class="d-box d-box--g" x="796" y="66" width="364" height="48"/>
+    <text class="d-node" x="978" y="88" text-anchor="middle">BRAINFUCK COMPILER</text>
+    <text class="d-sub"  x="978" y="103" text-anchor="middle">30,000 CELLS · 8-BIT WRAP · 8M STEP CAP</text>
+  </g>
+  <path class="d-flow" d="M384 90h16" marker-end="url(#bkA)"/>
+  <path class="d-flow" d="M772 90h16" marker-end="url(#bkA)"/>
+
+  <!-- 02 encodings -->
+  <text class="d-micro" x="20"   y="146">02 / INSTRUCTION ENCODINGS</text>
+  <text class="d-micro" x="1160" y="146" text-anchor="end">BPE MEASURED WITH cl100k_base</text>
+  <g class="d-pop" style="--dly:110ms">
+    <rect class="d-box" x="20" y="154" width="270" height="52"/>
+    <text class="d-node" x="155" y="176" text-anchor="middle">E0 · CANONICAL BF</text>
+    <text class="d-sub"  x="155" y="192" text-anchor="middle">IMPLICIT POINTER-RELATIVE</text>
+
+    <rect class="d-box" x="310" y="154" width="270" height="52"/>
+    <text class="d-node" x="445" y="176" text-anchor="middle">E1 · PERMUTED SYMBOLS</text>
+    <text class="d-sub"  x="445" y="192" text-anchor="middle">PER-ITEM LEGEND</text>
+
+    <rect class="d-box d-box--d" x="600" y="154" width="270" height="52"/>
+    <text class="d-node" x="735" y="176" text-anchor="middle">E2 · COMPACT EXPLICIT</text>
+    <text class="d-sub"  x="735" y="192" text-anchor="middle">RLE CARRIER · 3.356× BPE</text>
+
+    <rect class="d-box d-box--d" x="890" y="154" width="270" height="52"/>
+    <text class="d-node" x="1025" y="176" text-anchor="middle">E3 · VERBOSE EXPLICIT</text>
+    <text class="d-sub"  x="1025" y="192" text-anchor="middle">RLE CARRIER · 7.072× BPE</text>
+  </g>
+  <path class="d-flow" d="M155 206v14M445 206v14M735 206v14M1025 206v14"/>
+  <path class="d-flow" d="M155 220h870"/>
+  <path class="d-flow" d="M590 220v22" marker-end="url(#bkA)"/>
+
+  <!-- 03 acceptance gate -->
+  <text class="d-micro" x="20"   y="256">03 / ACCEPTANCE GATE</text>
+  <text class="d-micro" x="1160" y="256" text-anchor="end">COMPLETE INPUT DOMAIN</text>
+  <rect class="d-zone" x="20" y="264" width="1140" height="80"/>
+  <g class="d-pop" style="--dly:210ms">
+    <rect class="d-box" x="34" y="278" width="546" height="36"/>
+    <text class="d-node" x="307" y="301" text-anchor="middle">INDEPENDENT PARSER VALIDATION</text>
+
+    <rect class="d-box" x="600" y="278" width="546" height="36"/>
+    <text class="d-node" x="873" y="301" text-anchor="middle">IR ≡ E0 ≡ E2 ≡ E3 OVER 256 BINDINGS</text>
+  </g>
+  <text class="d-micro" x="590" y="333" text-anchor="middle">A CANDIDATE IS ACCEPTED ONLY IF EVERY REPRESENTATION AGREES ON EVERY INPUT</text>
+  <path class="d-flow" d="M590 344v20" marker-end="url(#bkA)"/>
+
+  <!-- 04 task families -->
+  <text class="d-micro" x="20" y="378">04 / TASK FAMILIES</text>
+  <g class="d-pop" style="--dly:300ms">
+    <rect class="d-box d-box--a" x="20" y="386" width="366" height="52"/>
+    <text class="d-node" x="203" y="408" text-anchor="middle">T1 · STATE TRACKING</text>
+    <text class="d-sub"  x="203" y="424" text-anchor="middle">MACHINE STATE AT INTERIOR STEPS</text>
+
+    <rect class="d-box d-box--a" x="406" y="386" width="366" height="52"/>
+    <text class="d-node" x="589" y="408" text-anchor="middle">T2 · COMPUTATION COMPRESSION</text>
+    <text class="d-sub"  x="589" y="424" text-anchor="middle">EXPRESSION MATCHING BEHAVIOUR</text>
+
+    <rect class="d-box d-box--a" x="792" y="386" width="366" height="52"/>
+    <text class="d-node" x="975" y="408" text-anchor="middle">T3 · CAUSAL MUTATION</text>
+    <text class="d-sub"  x="975" y="424" text-anchor="middle">OUTPUT AFTER A PROGRAM EDIT</text>
+  </g>
+  <path class="d-flow--a" d="M203 438v12M589 438v12M975 438v12"/>
+  <path class="d-flow--a" d="M203 450h772"/>
+  <path class="d-flow--a" d="M590 450v14" marker-end="url(#bkB)"/>
+
+  <rect class="d-box d-box--ink" x="20" y="464" width="1140" height="36"/>
+  <text class="d-node d-inv" x="590" y="487" text-anchor="middle">RESTRICTED VERIFIER · EXACT SCORING · NO LEARNED JUDGE · NO FIXED DATASET</text>
+</svg>
+</div>
+</section>
+
+<section class="prose rv">
+  <span class="mono">Encodings</span>
+  <div>
+    <h3>Four rungs of the same program</h3>
+    <p>Each accepted program is rendered into four instruction encodings. They describe identical behaviour with very different surface forms, which separates a model that reasons about machine state from one that pattern-matches familiar Brainfuck idioms.</p><ul><li><strong>E0</strong> — canonical Brainfuck with implicit pointer-relative addressing.</li><li><strong>E1</strong> — per-item symbol permutation plus an operational legend, so memorised glyphs stop helping.</li><li><strong>E2</strong> — compact explicit operations with a run-length carrier, 3.356× the token count of E0.</li><li><strong>E3</strong> — verbose explicit operations, 7.072× E0.</li></ul>
+  </div>
+</section>
+
+<section class="fig">
+  <div class="fig-head">
+    <span class="n">Gates</span>
+    <h3>What a generated item has to clear</h3>
+    <span class="rule" aria-hidden="true"></span>
+  </div>
+  <p>Population-level gates are published before any model is run, so the acceptance criteria cannot be tuned after seeing results.</p>
+<div class="catalog rv">
+  <div><div class="c"><strong>Trace semantic density</strong><span class="n">≥ 0.30</span></div><p>Execution has to actually do work, not idle through steps.</p></div>
+  <div><div class="c"><strong>Avalanche score</strong><span class="n">≥ 0.60</span></div><p>Small input changes must propagate into the machine state.</p></div>
+  <div><div class="c"><strong>Canonical-idiom rate</strong><span class="n">&lt; 0.08</span></div><p>Programs that collapse into memorised idioms are rejected.</p></div>
+  <div><div class="c"><strong>Constructor breadth</strong><span class="n">1,730</span></div><p>Unique semantic functions identified across 51 coarse profile buckets.</p></div>
+</div>
+</section>
+
+<section class="prose rv">
+  <span class="mono">Testing</span>
+  <div>
+    <h3>Property tests over a 10,000-program population</h3>
+    <p>Four balanced, non-overlapping CI jobs partition a 10,000-program population, so a regression in one structural family cannot hide behind the others. GitHub Actions runs CI and CodeQL; local control scripts reproduce the same checks offline.</p>
+  </div>
+</section>
+
+<div class="note note--warn"><span class="mono">Scope</span><p>This is a <strong>v0.4.0-alpha engineering candidate</strong>. No model results have been produced and no leaderboard exists. The release scope is arity 1, with arity 2 deferred to v0.5. The public generator reveals its constructor family by design, so the eight public constructors are a narrow subset of the identified space, and the private scoring epoch has not been activated.</p></div>
+
+</div>
+
+<div class="wrap">
+  <nav class="pager" aria-label="More projects">
+    <a href="founder-exe.html"><span class="mono">← 05 · previous</span><strong>FOUNDER.EXE</strong></a>
+    <a href="geoai-skills.html"><span class="mono">01 · next →</span><strong>geoai-skills</strong></a>
+  </nav>
+</div>
+
+
+<section class="contact">
+  <div class="wrap">
+    <div class="contact-grid">
+      <div>
+        <span class="kicker mono rv">Open to collaboration</span>
+        <h2 class="rv" style="--d:60ms">Build spatial systems that hold up.</h2>
+        <div class="cta rv" style="--d:140ms">
+          <a class="btn btn--solid" href="mailto:nsduraan@gmail.com"><span>nsduraan@gmail.com</span></a>
+          <a class="btn btn--ghost" href="../index.html#projects"><span class="dot" aria-hidden="true"></span><span>All projects</span></a>
+        </div>
+      </div>
+    </div>
+    <div class="colophon mono">
+      <span>© 2026 Muhammed Enes Duran</span>
+      <span>Static site · no trackers</span>
+    </div>
+  </div>
+</section>
+
+</main>
+
+<dialog class="dlg" id="dlg" aria-labelledby="dlg-title">
+  <div class="dlg-head">
+    <strong id="dlg-title">Technical diagram</strong>
+    <button class="dlg-close" type="button" data-close>Close</button>
+  </div>
+  <div class="dlg-body" id="dlg-body"></div>
+</dialog>
+
+<script src="../assets/site.js" defer></script>
+</body>
+</html>

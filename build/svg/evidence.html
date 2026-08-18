@@ -1,0 +1,59 @@
+<div class="evidence rv" data-measure>
+      <article class="gauge-panel">
+        <div class="gauge-head">
+          <div>
+            <span class="mono">Routing benchmark</span>
+            <p>Strict full-route accuracy on the frozen 18-skill suite: 124 positive and 43 negative cases.</p>
+          </div>
+          <span class="mono v">v0.2.0 / 2026-08-05</span>
+        </div>
+        <div class="gauge" role="img" aria-label="96.41 percent full-route accuracy">
+          <svg viewBox="0 0 120 120" aria-hidden="true">
+            <circle class="bg" cx="60" cy="60" r="48"/>
+            <circle class="fg" cx="60" cy="60" r="48"/>
+          </svg>
+          <div class="gauge-center">
+            <strong>96.41%</strong>
+            <span class="mono">full route</span>
+          </div>
+        </div>
+        <div class="gauge-foot">
+          <div><strong>167</strong><span class="mono">Frozen cases</span></div>
+          <div><strong>62</strong><span class="mono">Held-out cases</span></div>
+        </div>
+      </article>
+
+      <article class="result-panel">
+        <div class="result-top">
+          <div>
+            <span class="mono">Published result card</span>
+            <h3>Measured routing behavior</h3>
+            <p>Deterministic scoring from recorded activations on Claude Code 2.1.214 with claude-sonnet-5,
+              run against an enabled/disabled control with explicit scope limitations.</p>
+          </div>
+          <a class="btn btn--ghost" href="https://github.com/muend/geoai-skills/blob/main/BENCHMARK.md" target="_blank" rel="noopener">
+            <span>Open evidence</span>
+            <svg viewBox="0 0 16 16" aria-hidden="true"><path d="M3 13 13 3M6 3h7v7" fill="none" stroke="currentColor" stroke-width="1.7"/></svg>
+          </a>
+        </div>
+
+        <div class="bench" aria-label="Routing benchmark metrics">
+          <div class="bench-row"><span class="m">Precision</span><div class="track"><i style="--v:99.17%;--d:0ms"></i></div><strong class="tnum">99.17%</strong></div>
+          <div class="bench-row"><span class="m">Recall</span><div class="track"><i style="--v:96.77%;--d:110ms;--fill:var(--data)"></i></div><strong class="tnum">96.77%</strong></div>
+          <div class="bench-row"><span class="m">Accuracy</span><div class="track"><i style="--v:97.01%;--d:220ms;--fill:var(--green-lift)"></i></div><strong class="tnum">97.01%</strong></div>
+          <div class="bench-row"><span class="m">Route accuracy</span><div class="track"><i style="--v:96.41%;--d:330ms;--fill:var(--amber)"></i></div><strong class="tnum">96.41%</strong></div>
+        </div>
+
+        <div class="control-strip">
+          <span class="mono">Control · skills disabled</span>
+          <p><strong>0 activations</strong> across all 167 cases. Recall 0%, route accuracy 0%, overall accuracy
+            25.75%. The lift is attributable to the skills, not to the base model.</p>
+        </div>
+
+        <div class="result-notes">
+          <div><strong>PyPI × 2</strong><span class="mono">Installable research and infrastructure packages</span></div>
+          <div><strong>Zenodo DOI</strong><span class="mono">Citable Sentinel-2 pipeline artifact</span></div>
+          <div><strong>Held-out split</strong><span class="mono">62 unseen cases · 100% precision · 95.16% route accuracy</span></div>
+        </div>
+      </article>
+    

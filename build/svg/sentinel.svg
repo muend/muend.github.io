@@ -1,0 +1,108 @@
+<svg viewBox="0 0 1140 312" role="img" preserveAspectRatio="xMidYMid meet"
+               aria-label="Sentinel-2 lineage in five stages: acquire a CDSE scene cropped to the area of interest, apply an SCL quality mask for cloud shadow and snow, derive spectral indices, split into spatially blocked train validation and test patches, and export a versioned training artifact.">
+            <defs>
+              <marker id="eA" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto"><path d="M0 0 7 3.5 0 7Z" fill="var(--green)"/></marker>
+              <clipPath id="sceneClip"><rect x="20" y="70" width="204" height="100"/></clipPath>
+            </defs>
+            <text class="d-title" x="20" y="26">SENTINEL-2 / REPRODUCIBLE DATA LINEAGE</text>
+            <text class="d-micro" x="1120" y="26" text-anchor="end">SHEET C-03 · L2A · AOI-CROPPED</text>
+            <path class="d-rule" d="M20 36H1120"/>
+
+            <text class="d-micro" x="20"  y="60">01 / ACQUIRE</text>
+            <text class="d-micro" x="244" y="60">02 / MASK</text>
+            <text class="d-micro" x="468" y="60">03 / DERIVE</text>
+            <text class="d-micro" x="692" y="60">04 / SPLIT</text>
+            <text class="d-micro" x="916" y="60">05 / EXPORT</text>
+
+            <!-- 01 scene -->
+            <g class="d-pop">
+              <rect x="20" y="70" width="204" height="100" fill="var(--green-wash)" stroke="var(--green-edge)"/>
+              <g clip-path="url(#sceneClip)" opacity=".85">
+                <path d="M-10 150 60 60 150 118 250 40" fill="none" stroke="var(--green)" stroke-width="14" opacity=".28"/>
+                <path d="M-10 108 74 172 168 92 260 158" fill="none" stroke="var(--green-deep)" stroke-width="10" opacity=".22"/>
+              </g>
+              <path d="M62 92 168 82 178 146 76 154Z" fill="none" stroke="var(--amber-deep)" stroke-width="1.6"/>
+              <text class="d-sub" x="122" y="186" text-anchor="middle">AOI FOOTPRINT</text>
+            </g>
+
+            <!-- 02 mask grid -->
+            <g class="d-pop" style="--dly:90ms">
+              <rect x="244" y="70" width="204" height="100" class="d-box"/>
+              <g class="sw">
+                <rect x="258" y="80" width="42" height="26" fill="var(--green)" opacity=".72"/>
+                <rect x="304" y="80" width="42" height="26" fill="var(--green)" opacity=".45"/>
+                <rect x="350" y="80" width="42" height="26" fill="var(--paper-deep)"/>
+                <rect x="396" y="80" width="38" height="26" fill="var(--green)" opacity=".62"/>
+                <rect x="258" y="110" width="42" height="26" fill="var(--paper-deep)"/>
+                <rect x="304" y="110" width="42" height="26" fill="var(--risk)" opacity=".55"/>
+                <rect x="350" y="110" width="42" height="26" fill="var(--green)" opacity=".55"/>
+                <rect x="396" y="110" width="38" height="26" fill="var(--green)" opacity=".38"/>
+              </g>
+              <rect x="258" y="80" width="176" height="56" fill="none" stroke="var(--line-strong)"/>
+              <g>
+                <rect x="258" y="148" width="8" height="8" fill="var(--green)" opacity=".7"/><text class="d-sub" x="270" y="155">VALID</text>
+                <rect x="316" y="148" width="8" height="8" fill="var(--paper-deep)" stroke="var(--line-strong)"/><text class="d-sub" x="328" y="155">CLOUD</text>
+                <rect x="376" y="148" width="8" height="8" fill="var(--risk)" opacity=".55"/><text class="d-sub" x="388" y="155">SHADOW</text>
+              </g>
+            </g>
+
+            <!-- 03 index curve -->
+            <g class="d-pop" style="--dly:180ms">
+              <rect x="468" y="70" width="204" height="100" class="d-box"/>
+              <path class="d-hair" d="M484 150h172M484 150V86"/>
+              <path d="M484 142 520 128 556 96 592 92 628 112 656 132" fill="none" stroke="var(--green)" stroke-width="2"/>
+              <path d="M484 148 520 142 556 124 592 118 628 132 656 144" fill="none" stroke="var(--data)" stroke-width="1.4" stroke-dasharray="4 3"/>
+              <text class="d-sub" x="484" y="82">REFLECTANCE → INDEX</text>
+              <g>
+                <rect x="484" y="158" width="8" height="8" fill="var(--green)"/><text class="d-sub" x="496" y="165">NDVI</text>
+                <rect x="546" y="158" width="8" height="8" fill="var(--data)"/><text class="d-sub" x="558" y="165">NDRE</text>
+              </g>
+            </g>
+
+            <!-- 04 blocked split -->
+            <g class="d-pop" style="--dly:270ms">
+              <rect x="692" y="70" width="204" height="100" class="d-box"/>
+              <g class="sw">
+                <rect x="706" y="80" width="56" height="26" fill="var(--green)" opacity=".62"/>
+                <rect x="766" y="80" width="56" height="26" fill="var(--green)" opacity=".62"/>
+                <rect x="826" y="80" width="56" height="26" fill="var(--amber)" opacity=".68"/>
+                <rect x="706" y="110" width="56" height="26" fill="var(--data)" opacity=".5"/>
+                <rect x="766" y="110" width="56" height="26" fill="var(--green)" opacity=".62"/>
+                <rect x="826" y="110" width="56" height="26" fill="var(--green)" opacity=".62"/>
+              </g>
+              <rect x="706" y="80" width="176" height="56" fill="none" stroke="var(--line-strong)"/>
+              <g>
+                <rect x="706" y="148" width="8" height="8" fill="var(--green)" opacity=".62"/><text class="d-sub" x="718" y="155">TRAIN</text>
+                <rect x="764" y="148" width="8" height="8" fill="var(--amber)" opacity=".68"/><text class="d-sub" x="776" y="155">VALID</text>
+                <rect x="822" y="148" width="8" height="8" fill="var(--data)" opacity=".5"/><text class="d-sub" x="834" y="155">TEST</text>
+              </g>
+            </g>
+
+            <!-- 05 artifact -->
+            <g class="d-pop" style="--dly:360ms">
+              <rect x="916" y="70" width="204" height="100" class="d-box d-box--ink"/>
+              <text class="d-node d-inv" x="1018" y="94" text-anchor="middle">TRAINING ARTIFACT</text>
+              <rect x="936" y="104" width="164" height="18" fill="none" stroke="var(--paper-deep)" opacity=".55"/>
+              <text class="d-sub d-inv" x="1018" y="117" text-anchor="middle">COG / TIFF</text>
+              <rect x="936" y="126" width="164" height="18" fill="var(--amber)"/>
+              <text class="d-sub" x="1018" y="139" text-anchor="middle" fill="oklch(28% .05 62)">NPY</text>
+              <rect x="936" y="148" width="164" height="18" fill="var(--data)"/>
+              <text class="d-sub d-inv" x="1018" y="161" text-anchor="middle">TFRECORD</text>
+            </g>
+
+            <!-- stage boxes -->
+            <g class="d-pop" style="--dly:420ms">
+              <rect class="d-box" x="20"  y="196" width="204" height="46"/><text class="d-node" x="122"  y="217" text-anchor="middle">CDSE + AOI CROP</text><text class="d-sub" x="122" y="232" text-anchor="middle">SAFE · L2A SCENE</text>
+              <rect class="d-box" x="244" y="196" width="204" height="46"/><text class="d-node" x="346"  y="217" text-anchor="middle">SCL QUALITY MASK</text><text class="d-sub" x="346" y="232" text-anchor="middle">CLOUD · SHADOW · SNOW</text>
+              <rect class="d-box" x="468" y="196" width="204" height="46"/><text class="d-node" x="570"  y="217" text-anchor="middle">SPECTRAL INDICES</text><text class="d-sub" x="570" y="232" text-anchor="middle">NDVI · NDRE · STACK</text>
+              <rect class="d-box" x="692" y="196" width="204" height="46"/><text class="d-node" x="794"  y="217" text-anchor="middle">SPATIAL BLOCKING</text><text class="d-sub" x="794" y="232" text-anchor="middle">LEAKAGE-AWARE SPLIT</text>
+              <rect class="d-box" x="916" y="196" width="204" height="46"/><text class="d-node" x="1018" y="217" text-anchor="middle">VERSIONED EXPORT</text><text class="d-sub" x="1018" y="232" text-anchor="middle">COG · NPY · TFRECORD</text>
+            </g>
+            <path class="d-flow" d="M224 219h14" marker-end="url(#eA)"/>
+            <path class="d-flow" d="M448 219h14" marker-end="url(#eA)"/>
+            <path class="d-flow" d="M672 219h14" marker-end="url(#eA)"/>
+            <path class="d-flow" d="M896 219h14" marker-end="url(#eA)"/>
+
+            <path class="d-hair" d="M20 266H1120"/>
+            <text class="d-micro" x="20" y="288">ACCOUNTING REPORT / DISCOVERED → DOWNLOADED → MASKED → PATCHED → SPLIT · EVERY LOSS IS COUNTED</text>
+          </svg>

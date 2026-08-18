@@ -1,0 +1,75 @@
+<svg viewBox="0 0 1180 446" role="img" preserveAspectRatio="xMidYMid meet"
+     aria-label="FOUNDER.EXE operating model: a Türkiye or USA jurisdiction ruleset drives a monthly tick over cash, compliance, product and people; decisions and financing events including SAFE negotiation alter the cap table; consequences surface later as churn and technical debt before the outcome engine resolves survive, fail, fund or exit.">
+  <defs>
+    <marker id="fnA" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto"><path d="M0 0 7 3.5 0 7Z" fill="var(--amber-deep)"/></marker>
+  </defs>
+
+  <text class="d-title" x="20" y="26">FOUNDER.EXE / RULE-DRIVEN OPERATING MODEL</text>
+  <text class="d-micro" x="1160" y="26" text-anchor="end">WINDOWS X64 · EN / TR</text>
+  <path class="d-rule" d="M20 36H1160"/>
+
+  <!-- 01 jurisdiction -->
+  <text class="d-micro" x="20" y="58">01 / JURISDICTION RULESET</text>
+  <g class="d-pop">
+    <rect class="d-box d-box--a" x="20" y="66" width="560" height="46"/>
+    <text class="d-node" x="300" y="88" text-anchor="middle">TÜRKİYE</text>
+    <text class="d-sub"  x="300" y="104" text-anchor="middle">INSTITUTIONS · TAX RULES · COMPANY STRUCTURES</text>
+
+    <rect class="d-box d-box--a" x="600" y="66" width="560" height="46"/>
+    <text class="d-node" x="880" y="88" text-anchor="middle">USA</text>
+    <text class="d-sub"  x="880" y="104" text-anchor="middle">INSTITUTIONS · TAX RULES · COMPANY STRUCTURES</text>
+  </g>
+  <path class="d-flow--a" d="M300 112v12H590"/>
+  <path class="d-flow--a" d="M880 112v12H590"/>
+  <path class="d-flow--a" d="M590 124v18" marker-end="url(#fnA)"/>
+
+  <!-- 02 monthly tick -->
+  <text class="d-micro" x="20"   y="160">02 / OPERATING STATE — MONTHLY TICK</text>
+  <text class="d-micro" x="1160" y="160" text-anchor="end">FOUR COUPLED DIMENSIONS</text>
+  <g class="d-pop" style="--dly:110ms">
+    <rect class="d-box" x="20" y="168" width="270" height="56"/>
+    <text class="d-node" x="155" y="192" text-anchor="middle">CASH &amp; RUNWAY</text>
+    <text class="d-sub"  x="155" y="208" text-anchor="middle">BURN · REVENUE · PAYROLL</text>
+
+    <rect class="d-box" x="310" y="168" width="270" height="56"/>
+    <text class="d-node" x="445" y="192" text-anchor="middle">COMPLIANCE</text>
+    <text class="d-sub"  x="445" y="208" text-anchor="middle">TAX DEADLINES · REGISTRATION</text>
+
+    <rect class="d-box" x="600" y="168" width="270" height="56"/>
+    <text class="d-node" x="735" y="192" text-anchor="middle">PRODUCT</text>
+    <text class="d-sub"  x="735" y="208" text-anchor="middle">QUALITY VS TECHNICAL DEBT</text>
+
+    <rect class="d-box" x="890" y="168" width="270" height="56"/>
+    <text class="d-node" x="1025" y="192" text-anchor="middle">PEOPLE</text>
+    <text class="d-sub"  x="1025" y="208" text-anchor="middle">HIRING · CHURN · MORALE</text>
+  </g>
+  <path class="d-hair" d="M155 232v10h870v-10"/>
+  <path class="d-hair" d="M590 242v12"/>
+
+  <!-- 03 decisions -->
+  <text class="d-micro" x="20" y="268">03 / DECISIONS + FINANCING</text>
+  <g class="d-pop" style="--dly:210ms">
+    <rect class="d-box d-box--g" x="20" y="276" width="366" height="52"/>
+    <text class="d-node" x="203" y="298" text-anchor="middle">OPERATE</text>
+    <text class="d-sub"  x="203" y="314" text-anchor="middle">HIRE · PIVOT · SHIP · CUT</text>
+
+    <rect class="d-box d-box--d" x="406" y="276" width="366" height="52"/>
+    <text class="d-node" x="589" y="298" text-anchor="middle">SAFE NEGOTIATION</text>
+    <text class="d-sub"  x="589" y="314" text-anchor="middle">CAP TABLE DILUTION</text>
+
+    <rect class="d-box d-box--d" x="792" y="276" width="366" height="52"/>
+    <text class="d-node" x="975" y="298" text-anchor="middle">GRANTS &amp; INVESTORS</text>
+    <text class="d-sub"  x="975" y="314" text-anchor="middle">REGIME-SPECIFIC INSTRUMENTS</text>
+  </g>
+
+  <!-- 04 delayed consequence -->
+  <text class="d-micro" x="20" y="356">04 / DELAYED CONSEQUENCE</text>
+  <g class="d-pop" style="--dly:290ms">
+    <rect class="d-box d-box--r" x="20" y="364" width="1140" height="34"/>
+    <text class="d-node" x="590" y="386" text-anchor="middle">GROWTH CAN HIDE A WEAK PRODUCT · CHURN AND TECHNICAL DEBT SURFACE LATER</text>
+  </g>
+  <path class="d-flow--a" d="M590 398v10" marker-end="url(#fnA)"/>
+
+  <rect class="d-box d-box--ink" x="20" y="408" width="1140" height="34"/>
+  <text class="d-node d-inv" x="590" y="430" text-anchor="middle">OUTCOME ENGINE · SURVIVE / FAIL / FUND / EXIT</text>
+</svg>

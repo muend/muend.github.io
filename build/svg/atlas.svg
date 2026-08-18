@@ -1,0 +1,57 @@
+<svg viewBox="0 0 1140 470" role="img" preserveAspectRatio="xMidYMid meet"
+               aria-label="GeoAI skills routing atlas: the geoai-orchestrator routes work across five lifecycle groups holding the remaining seventeen specialist skills, under cross-cutting invariants, ending in guarded local ArcPy execution.">
+            <defs>
+              <marker id="sA" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto"><path d="M0 0 7 3.5 0 7Z" fill="var(--amber-deep)"/></marker>
+            </defs>
+            <text class="d-title" x="20" y="26">GEOAI SKILLS / LIFECYCLE ROUTING ATLAS</text>
+            <text class="d-micro" x="1120" y="26" text-anchor="end">18 SKILLS · v0.2.0 · MIT</text>
+            <path class="d-rule" d="M20 36H1120"/>
+
+            <g class="d-pop">
+              <rect class="d-box d-box--a" x="20" y="52" width="1100" height="44"/>
+              <text class="d-name" x="570" y="72" text-anchor="middle" style="font-size:12px">00 · geoai-orchestrator</text>
+              <text class="d-sub"  x="570" y="87" text-anchor="middle">PIPELINE DESIGN · ROUTING · MODULE-WIDE INVARIANTS</text>
+            </g>
+            <path class="d-flow--a" d="M126 96v18" marker-end="url(#sA)"/>
+            <path class="d-flow--a" d="M348 96v18" marker-end="url(#sA)"/>
+            <path class="d-flow--a" d="M570 96v18" marker-end="url(#sA)"/>
+            <path class="d-flow--a" d="M792 96v18" marker-end="url(#sA)"/>
+            <path class="d-flow--a" d="M1014 96v18" marker-end="url(#sA)"/>
+
+            <text class="d-micro" x="20"   y="132">01 / ROUTE + ACQUIRE</text>
+            <text class="d-micro" x="242"  y="132">02 / SENSE + PREPARE</text>
+            <text class="d-micro" x="464"  y="132">03 / MODEL + DETECT</text>
+            <text class="d-micro" x="686"  y="132">04 / ANALYZE + DECIDE</text>
+            <text class="d-micro" x="908"  y="132">05 / DELIVER + OPERATE</text>
+
+            <g class="d-pop" style="--dly:120ms">
+              <rect class="d-box d-box--g" x="20" y="140" width="212" height="44"/><text class="d-name" x="32" y="160">geo-data-engineering</text><text class="d-tag" x="32" y="175">STAC · OSM · FORMATS</text>
+              <rect class="d-box d-box--g" x="20" y="193" width="212" height="44"/><text class="d-name" x="32" y="213">google-earth-engine</text><text class="d-tag" x="32" y="228">COMPOSITE · REDUCE · EXPORT</text>
+
+              <rect class="d-box d-box--g" x="242" y="140" width="212" height="44"/><text class="d-name" x="254" y="160">remote-sensing-analysis</text><text class="d-tag" x="254" y="175">L1/L2 · MASK · INDEX</text>
+              <rect class="d-box d-box--g" x="242" y="193" width="212" height="44"/><text class="d-name" x="254" y="213">point-cloud-lidar</text><text class="d-tag" x="254" y="228">PDAL · DTM · CHM</text>
+              <rect class="d-box d-box--g" x="242" y="246" width="212" height="44"/><text class="d-name" x="254" y="266">terrain-hydrology</text><text class="d-tag" x="254" y="281">SLOPE · FLOW · BASIN</text>
+              <rect class="d-box d-box--g" x="242" y="299" width="212" height="44"/><text class="d-name" x="254" y="319">movement-trajectory</text><text class="d-tag" x="254" y="334">TRACKS · STOPS · OD</text>
+
+              <rect class="d-box d-box--d" x="464" y="140" width="212" height="44"/><text class="d-name" x="476" y="160">geo-deep-learning</text><text class="d-tag" x="476" y="175">U-NET · DETECT · INFER</text>
+              <rect class="d-box d-box--d" x="464" y="193" width="212" height="44"/><text class="d-name" x="476" y="213">change-detection</text><text class="d-tag" x="476" y="228">CO-REG · BREAKS · AREA</text>
+              <rect class="d-box d-box--d" x="464" y="246" width="212" height="44"/><text class="d-name" x="476" y="266">ml-experiment-standards</text><text class="d-tag" x="476" y="281">LEAKAGE · METRICS · REPRO</text>
+
+              <rect class="d-box d-box--a" x="686" y="140" width="212" height="44"/><text class="d-name" x="698" y="160">spatial-statistics</text><text class="d-tag" x="698" y="175">MORAN · LISA · GWR</text>
+              <rect class="d-box d-box--a" x="686" y="193" width="212" height="44"/><text class="d-name" x="698" y="213">geostatistics-interpolation</text><text class="d-tag" x="698" y="228">VARIOGRAM · KRIGING</text>
+              <rect class="d-box d-box--a" x="686" y="246" width="212" height="44"/><text class="d-name" x="698" y="266">mcda-suitability-analysis</text><text class="d-tag" x="698" y="281">AHP · WLC · SENSITIVITY</text>
+              <rect class="d-box d-box--a" x="686" y="299" width="212" height="44"/><text class="d-name" x="698" y="319">network-accessibility-analysis</text><text class="d-tag" x="698" y="334">OD · ISOCHRONE · 2SFCA</text>
+              <rect class="d-box d-box--a" x="686" y="352" width="212" height="44"/><text class="d-name" x="698" y="372">postgis-spatial-sql</text><text class="d-tag" x="698" y="387">INDEX · SCALE · SPATIAL SQL</text>
+
+              <rect class="d-box d-box--a" x="908" y="140" width="212" height="44"/><text class="d-name" x="920" y="160">cartography-geoviz</text><text class="d-tag" x="920" y="175">CLASSIFY · COLOR · MAP</text>
+              <rect class="d-box d-box--a" x="908" y="193" width="212" height="44"/><text class="d-name" x="920" y="213">swe-devops-standards</text><text class="d-tag" x="920" y="228">TEST · CI · PIN · AUDIT</text>
+              <rect class="d-box d-box--a" x="908" y="246" width="212" height="44"/><text class="d-name" x="920" y="266">arcgis-pro-automation</text><text class="d-tag" x="920" y="281">GUARDED LOCAL EXECUTION</text>
+            </g>
+
+            <text class="d-micro" x="20"   y="420">CROSS-CUTTING INVARIANTS IN EVERY SKILL · CRS / UNITS / GEOMETRY · UNCERTAINTY · LEAKAGE · VERIFY</text>
+            <text class="d-micro" x="1120" y="420" text-anchor="end">FAIL LOUD, NEVER SILENT</text>
+            <path class="d-hair" d="M20 428H1120"/>
+
+            <rect class="d-zone" x="20" y="436" width="1100" height="28"/>
+            <text class="d-node" x="570" y="454" text-anchor="middle">PROPRIETARY EXECUTION → ARCGIS-MCP-BRIDGE → GUARDED LOCAL ARCPY</text>
+          </svg>

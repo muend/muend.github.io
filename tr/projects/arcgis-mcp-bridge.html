@@ -1,0 +1,237 @@
+<!DOCTYPE html>
+<html lang="tr" data-page="projects">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+<script>document.documentElement.classList.add('js');</script>
+<link rel="icon" type="image/svg+xml" href="../../assets/brand/favicon.svg">
+<link rel="icon" sizes="any" href="../../assets/brand/favicon.ico">
+<link rel="icon" type="image/png" sizes="32x32" href="../../assets/brand/favicon-32.png">
+<link rel="apple-touch-icon" href="../../assets/brand/favicon-180.png">
+<link rel="manifest" href="../../assets/brand/site.webmanifest">
+<link rel="canonical" href="https://muend.github.io/tr/projects/arcgis-mcp-bridge.html">
+<link rel="alternate" hreflang="en" href="https://muend.github.io/projects/arcgis-mcp-bridge.html">
+<link rel="alternate" hreflang="tr" href="https://muend.github.io/tr/projects/arcgis-mcp-bridge.html">
+<link rel="alternate" hreflang="x-default" href="https://muend.github.io/projects/arcgis-mcp-bridge.html">
+<title>arcgis-mcp-bridge — ArcGIS Pro için yerel öncelikli MCP sunucusu</title>
+<meta name="description" content="MCP üzerinden açılan 100 bildirimsel ArcGIS Pro coğrafi işlem aracı; PathGuard iki yalıtılmış süreçte bağımsız olarak uygulanır.">
+<meta name="theme-color" content="#F7F7F1">
+<meta name="color-scheme" content="light">
+<meta name="referrer" content="strict-origin-when-cross-origin">
+<meta name="robots" content="index,follow,max-image-preview:large">
+<meta name="author" content="Muhammed Enes Duran">
+<meta property="og:title" content="arcgis-mcp-bridge — ArcGIS Pro için yerel öncelikli MCP sunucusu">
+<meta property="og:description" content="MCP üzerinden açılan 100 bildirimsel ArcGIS Pro coğrafi işlem aracı; PathGuard iki yalıtılmış süreçte bağımsız olarak uygulanır.">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://muend.github.io/tr/projects/arcgis-mcp-bridge.html">
+<meta property="og:site_name" content="Muhammed Enes Duran">
+<meta property="og:locale" content="tr_TR">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="arcgis-mcp-bridge — ArcGIS Pro için yerel öncelikli MCP sunucusu">
+<meta name="twitter:description" content="MCP üzerinden açılan 100 bildirimsel ArcGIS Pro coğrafi işlem aracı; PathGuard iki yalıtılmış süreçte bağımsız olarak uygulanır.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wdth,wght@12..96,75..100,400..800&family=IBM+Plex+Mono:wght@400;500;600&family=Instrument+Sans:ital,wght@0,400..700;1,400..600&display=swap">
+<link rel="stylesheet" href="../../assets/site.css">
+</head>
+<body>
+<a class="skip-link" href="#main">İçeriğe geç</a>
+<div class="progress" id="progress" aria-hidden="true"></div>
+<div class="cur cur-ring" id="cur-ring" aria-hidden="true"></div>
+<div class="cur cur-dot" id="cur-dot" aria-hidden="true"></div>
+<div class="topbar" id="topbar">
+  <div class="wrap">
+    <a class="brand" href="../../tr/index.html" aria-label="Muhammed Enes Duran — ana sayfa">muend<b>.</b></a>
+    <div class="nav-area">
+      <nav class="navlinks mono" aria-label="Ana">
+        <a href="../../tr/index.html#projects" data-nav="projects">Projeler</a>
+        <a href="../../tr/research.html" data-nav="research">Araştırma</a>
+        <a href="../../tr/practice.html" data-nav="practice">Yöntem</a>
+        <a href="../../tr/index.html#contact" data-nav="contact">İletişim</a>
+      </nav>
+      <div class="langsw mono" role="group" aria-label="Dili değiştir"><a class="lang-opt" href="../../projects/arcgis-mcp-bridge.html" hreflang="en" lang="en">EN</a><span aria-hidden="true">/</span><span class="lang-opt is-on" aria-current="true">TR</span></div>
+      <span class="status-pill mono"><i aria-hidden="true"></i><span>Açık kaynak · aktif</span></span>
+    </div>
+  </div>
+</div>
+
+<main id="main">
+
+<div class="wrap">
+  <nav class="crumb mono" aria-label="Sayfa yolu">
+    <a href="../../tr/index.html#projects">Projeler</a><span>/</span><span>02 · arcgis-mcp-bridge</span>
+  </nav>
+</div>
+
+<header class="phead">
+  <div class="wrap phead-grid">
+    <div>
+      <span class="kind mono rv">MCP · Güvenli CBS yürütme</span>
+      <h1 class="rv" style="--d:60ms">arcgis-mcp-bridge</h1>
+      <p class="deck rv" style="--d:120ms">100 bildirimsel coğrafi işlem aracı. İki yalıtılmış süreç. Tek güvenlik tabanı.</p>
+    </div>
+    <div class="phead-side rv" style="--d:160ms">
+      <div class="ptags"><span class="tag-chip tag-chip--pkg">PyPI</span><span class="tag-chip">Apache-2.0</span><span class="tag-chip ">100 araç</span><span class="tag-chip ">Windows</span></div>
+      <div class="spec">
+  <div><span class="k">Lisans</span><span class="v">Apache-2.0</span></div>
+  <div><span class="k">Paket</span><span class="v"><code>pip install arcgis-mcp-bridge</code></span></div>
+  <div><span class="k">Araçlar</span><span class="v">10 dikeyde 100 araç</span></div>
+  <div><span class="k">Gereksinim</span><span class="v">Python 3.11+ · ArcGIS Pro 3.1–3.3 test edildi</span></div>
+  <div><span class="k">Platform</span><span class="v">Windows, lisanslı ArcGIS Pro kurulumuyla</span></div>
+  <div><span class="k">Testler</span><span class="v">86 çevrimdışı test, ArcPy taklit edilmiş</span></div>
+</div>
+      <div class="plinks">
+          <a class="btn btn--solid" href="https://github.com/muend/arcgis-mcp-bridge" target="_blank" rel="noopener"><span>Depo</span><svg viewBox="0 0 16 16" aria-hidden="true"><path d="M3 13 13 3M6 3h7v7" fill="none" stroke="currentColor" stroke-width="1.7"/></svg></a>
+          <a class="btn btn--ghost" href="https://pypi.org/project/arcgis-mcp-bridge/" target="_blank" rel="noopener"><span>PyPI</span><svg viewBox="0 0 16 16" aria-hidden="true"><path d="M3 13 13 3M6 3h7v7" fill="none" stroke="currentColor" stroke-width="1.7"/></svg></a>
+          <a class="btn btn--ghost" href="https://smithery.ai/server/muend/arcgis-mcp-bridge" target="_blank" rel="noopener"><span>Smithery</span><svg viewBox="0 0 16 16" aria-hidden="true"><path d="M3 13 13 3M6 3h7v7" fill="none" stroke="currentColor" stroke-width="1.7"/></svg></a>
+          <a class="btn btn--ghost" href="https://glama.ai/mcp/servers/muend/arcgis-mcp-bridge" target="_blank" rel="noopener"><span>Glama</span><svg viewBox="0 0 16 16" aria-hidden="true"><path d="M3 13 13 3M6 3h7v7" fill="none" stroke="currentColor" stroke-width="1.7"/></svg></a>
+          <a class="btn btn--ghost" href="https://www.pulsemcp.com/servers/muend-arcgis-bridge" target="_blank" rel="noopener"><span>PulseMCP</span><svg viewBox="0 0 16 16" aria-hidden="true"><path d="M3 13 13 3M6 3h7v7" fill="none" stroke="currentColor" stroke-width="1.7"/></svg></a>
+          <a class="btn btn--ghost" href="https://dev.to/muend/building-a-secure-mcp-bridge-for-arcgis-pro-and-arcpy-511g" target="_blank" rel="noopener"><span>Yazı</span><svg viewBox="0 0 16 16" aria-hidden="true"><path d="M3 13 13 3M6 3h7v7" fill="none" stroke="currentColor" stroke-width="1.7"/></svg></a>
+      </div>
+    </div>
+  </div>
+</header>
+
+<div class="wrap">
+
+<section class="prose rv">
+  <span class="mono">Neden</span>
+  <div>
+    <h3>Güvenilmeyen argümanlar, lisanslı çalışma zamanı</h3>
+    <p>Bir MCP araç çağrısı, dil modelinden JSON olarak gelir. Bunu doğrudan ArcPy'ye vermek, üretilmiş metnin lisanslı ArcGIS Pro kurulu bir makinenin dosya sistemine erişmesine izin vermek demektir. İlginç olan sorun coğrafi işlemi açmak değil; modeli yalıtılmamış bir yerel kabuğa dönüştürmeden açmaktır.</p><p>Buradaki cevap, birbirine güvenmeyen iki süreç ve sınırın her iki tarafında bağımsız olarak uygulanan aynı yol doğrulamasıdır.</p>
+  </div>
+</section>
+
+<section class="fig">
+  <div class="fig-head">
+    <span class="n">Şekil 01</span>
+    <h3>İki süreç, tek güvenlik tabanı</h3>
+    <span class="rule" aria-hidden="true"></span>
+  </div>
+  <p>A Katmanı ArcPy'yi hiç içe aktarmaz; bu yüzden bir çökme ya da kötü niyetli bir yol, sunucu süreci üzerinden lisanslı çalışma zamanına asla ulaşmaz. PathGuard hem gönderimden önce hem de işçi sürecinin içinde çalışır: atlatmak için ikisini birden aşmak gerekir.</p>
+<div class="plate plate--narrow rv" data-plate data-title="Şekil 01 — İki süreçli mimari">
+  <div class="plate-bar"><strong>Şekil 01 / İki süreçli mimari</strong>
+    <button class="expand" type="button" data-expand>Büyüt<svg viewBox="0 0 16 16" aria-hidden="true"><path d="M2 6V2h4M14 10v4h-4M2 2l5 5M14 14l-5-5" fill="none" stroke="currentColor" stroke-width="1.7"/></svg></button>
+  </div>
+<svg viewBox="0 0 560 424" role="img" preserveAspectRatio="xMidYMid meet"
+               aria-label="Two-process architecture: an MCP host sends JSON-RPC over stdio to Layer A, the bridge interpreter with FastMCP server, typed contract registry and a first PathGuard; a per-job subprocess boundary separates it from Layer B, the licensed ArcGIS Pro interpreter, where PathGuard re-validates before the ArcPy runtime and a structured NDJSON result frame.">
+            <defs>
+              <marker id="mA" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto"><path d="M0 0 7 3.5 0 7Z" fill="var(--green)"/></marker>
+            </defs>
+            <text class="d-title" x="20" y="24">LOCAL-FIRST MCP / TWO PROCESSES</text>
+            <text class="d-micro" x="540" y="24" text-anchor="end">SHEET B-02</text>
+            <path class="d-rule" d="M20 34H540"/>
+
+            <text class="d-micro" x="20" y="52">01 / MCP HOST</text>
+            <g class="d-pop">
+              <rect class="d-box" x="20" y="60" width="520" height="44"/>
+              <text class="d-node" x="280" y="80" text-anchor="middle">CLAUDE DESKTOP · CURSOR · MCP HOSTS</text>
+              <text class="d-sub"  x="280" y="95" text-anchor="middle">UNTRUSTED TOOL ARGUMENTS ENTER HERE</text>
+            </g>
+            <path class="d-flow" d="M280 104v20" marker-end="url(#mA)"/>
+            <text class="d-micro" x="292" y="119">JSON-RPC 2.0 / STDIO</text>
+
+            <text class="d-micro" x="20"  y="146">LAYER A / BRIDGE INTERPRETER</text>
+            <text class="d-micro" x="540" y="146" text-anchor="end">server.py</text>
+            <rect class="d-zone" x="20" y="154" width="520" height="88"/>
+            <g class="d-pop" style="--dly:110ms">
+              <rect class="d-box d-box--g" x="26"  y="168" width="160" height="42"/><text class="d-node" x="106" y="188" text-anchor="middle">FASTMCP SERVER</text><text class="d-sub" x="106" y="203" text-anchor="middle">ASYNC · NO ARCPY</text>
+              <rect class="d-box"         x="200" y="168" width="160" height="42"/><text class="d-node" x="280" y="188" text-anchor="middle">CONTRACT REGISTRY</text><text class="d-sub" x="280" y="203" text-anchor="middle">PYDANTIC V2 · 100 TOOLS</text>
+              <rect class="d-box d-box--a" x="374" y="168" width="160" height="42"/><text class="d-node" x="454" y="188" text-anchor="middle">PATHGUARD A</text><text class="d-sub" x="454" y="203" text-anchor="middle">PRE-CHECK · CONFIRM</text>
+            </g>
+            <text class="d-micro" x="280" y="230" text-anchor="middle">NOTHING LICENSED IS TOUCHED IN THIS PROCESS</text>
+
+            <path class="d-flow" d="M280 242v40" marker-end="url(#mA)"/>
+            <rect class="d-box" x="170" y="252" width="220" height="22"/>
+            <text class="d-sub" x="280" y="267" text-anchor="middle">SUBPROCESS BOUNDARY · PER JOB</text>
+
+            <text class="d-micro" x="20"  y="300">LAYER B / LICENSED ARCGIS PRO</text>
+            <text class="d-micro" x="540" y="300" text-anchor="end">worker.py · WINDOWS ONLY</text>
+            <rect class="d-zone d-zone--a" x="20" y="308" width="520" height="80"/>
+            <g class="d-pop" style="--dly:220ms">
+              <rect class="d-box d-box--a" x="26"  y="320" width="150" height="42"/><text class="d-node" x="101" y="340" text-anchor="middle">PATHGUARD B</text><text class="d-sub" x="101" y="355" text-anchor="middle">RE-VALIDATE</text>
+              <rect class="d-box"         x="205" y="320" width="150" height="42"/><text class="d-node" x="280" y="340" text-anchor="middle">ARCPY RUNTIME</text><text class="d-sub" x="280" y="355" text-anchor="middle">.APRX · .GDB · RASTER</text>
+              <rect class="d-box d-box--g" x="384" y="320" width="150" height="42"/><text class="d-node" x="459" y="340" text-anchor="middle">RESULT FRAME</text><text class="d-sub" x="459" y="355" text-anchor="middle">STRUCTURED NDJSON</text>
+            </g>
+            <path class="d-flow" d="M176 341h20" marker-end="url(#mA)"/>
+            <path class="d-flow" d="M355 341h20" marker-end="url(#mA)"/>
+            <text class="d-micro" x="280" y="378" text-anchor="middle">PYTHON 3.11+ · ARCGIS PRO 3.1–3.3 · 86-TEST OFFLINE GATE</text>
+
+            <rect class="d-box d-box--d" x="20" y="398" width="520" height="26"/>
+            <text class="d-node" x="280" y="415" text-anchor="middle">VALIDATION · SECURITY · LICENSE · GEOPROCESSING</text>
+          </svg>
+</div>
+</section>
+
+<section class="fig">
+  <div class="fig-head">
+    <span class="n">Katalog</span>
+    <h3>On dikeyde 100 araç</h3>
+    <span class="rule" aria-hidden="true"></span>
+  </div>
+  <p>Her araç bildirimseldir: girişte tipli bir Pydantic v2 sözleşmesi, çıkışta yapılandırılmış bir NDJSON sonuç çerçevesi. Hatalar yığın izi değil, değerdir.</p>
+<div class="catalog rv">
+  <div><div class="c"><strong>Geometri analizi</strong><span class="n">23</span></div><p>Bindirme, tampon, birleştirme, yakınlık ve topoloji duyarlı işlemler.</p></div>
+  <div><div class="c"><strong>Veri yönetimi</strong><span class="n">22</span></div><p>Öznitelik sınıfları, alanlar, coğrafi veritabanları, dönüşüm, ekleme.</p></div>
+  <div><div class="c"><strong>Raster işlemleri</strong><span class="n">15</span></div><p>Kırpma, mozaik, yeniden örnekleme, projeksiyon, maskeyle çıkarma, bölgesel istatistik.</p></div>
+  <div><div class="c"><strong>Harita katmanı yönetimi</strong><span class="n">10</span></div><p>Projede katman ekleme, sıralama, sembolleştirme, açma-kapama ve yakınlaştırma.</p></div>
+  <div><div class="c"><strong>Dışa aktarma ve düzen</strong><span class="n">9</span></div><p>Düzenin PDF ve PNG dışa aktarımı, lejant ve metin ögesi güncellemeleri.</p></div>
+  <div><div class="c"><strong>Düzenleme ve topoloji</strong><span class="n">7</span></div><p>Geometri onarma, parça eleme, topoloji saptama ve denetleme.</p></div>
+  <div><div class="c"><strong>Mekânsal istatistik</strong><span class="n">5</span></div><p>Sıcak noktalar, otokorelasyon, ortalama merkez, yönsel dağılım.</p></div>
+  <div><div class="c"><strong>Ağ analizi</strong><span class="n">4</span></div><p>Rota, servis alanı, en yakın tesis, OD maliyet matrisi.</p></div>
+  <div><div class="c"><strong>Koordinat ve projeksiyon</strong><span class="n">4</span></div><p>Mekânsal referansları tanımlama, dönüştürme, betimleme ve doğrulama.</p></div>
+  <div><div class="c"><strong>Görüntü analitiği</strong><span class="n">1</span></div><p>Krokiden CBS'ye: HSV segmentasyonuyla ORB + RANSAC çakıştırma.</p></div>
+</div>
+  <p class="fig-note">Görüntü aracı, fotoğraflanmış el çizimi bir parsel sınırını, krokiyi bir referans çerçeveye çakıştırıp çizilen çizgileri HSV uzayında ayırarak coğrafi veritabanı nesnelerine dönüştürür.</p>
+</section>
+
+<section class="prose rv">
+  <span class="mono">Güvenlik</span>
+  <div>
+    <h3>PathGuard tam olarak ne yapar</h3>
+    <p>Yol içeren her argüman gönderimden önce normalleştirilir ve izin verilen kök dizine karşı denetlenir; ardından lisansı tutan işçi sürecinin içinde yeniden doğrulanır. Yıkıcı işlemler, modelin kendi başına ayarlayabileceği bir bayrağın değil, açık bir onay kapısının arkasındadır.</p><p>86 testlik takım ArcPy taklit edilerek çalışır; böylece Windows lisansı olmayan katkıcılar da doğrulama, güvenlik, lisans işleme ve coğrafi işlem sözleşmelerini çevrimdışı sınayabilir.</p>
+  </div>
+</section>
+
+</div>
+
+<div class="wrap">
+  <nav class="pager" aria-label="Diğer projeler">
+    <a href="geoai-skills.html"><span class="mono">← 01 · önceki</span><strong>geoai-skills</strong></a>
+    <a href="sentinel-crop-pipeline.html"><span class="mono">03 · sonraki →</span><strong>sentinel-crop-pipeline</strong></a>
+  </nav>
+</div>
+
+
+<section class="contact">
+  <div class="wrap">
+    <div class="contact-grid">
+      <div>
+        <span class="kicker mono rv">İş birliğine açık</span>
+        <h2 class="rv" style="--d:60ms">Sağlam duran mekânsal sistemler kuralım.</h2>
+        <div class="cta rv" style="--d:140ms">
+          <a class="btn btn--solid" href="mailto:nsduraan@gmail.com"><span>nsduraan@gmail.com</span></a>
+          <a class="btn btn--ghost" href="../../tr/index.html#projects"><span class="dot" aria-hidden="true"></span><span>Tüm projeler</span></a>
+        </div>
+      </div>
+    </div>
+    <div class="colophon mono">
+      <span>© 2026 Muhammed Enes Duran</span>
+      <span>Statik site · izleyici yok</span>
+    </div>
+  </div>
+</section>
+
+</main>
+
+<dialog class="dlg" id="dlg" aria-labelledby="dlg-title">
+  <div class="dlg-head">
+    <strong id="dlg-title">Teknik diyagram</strong>
+    <button class="dlg-close" type="button" data-close>Kapat</button>
+  </div>
+  <div class="dlg-body" id="dlg-body"></div>
+</dialog>
+
+<script src="../../assets/site.js" defer></script>
+</body>
+</html>

@@ -1,0 +1,237 @@
+<!DOCTYPE html>
+<html lang="en" data-page="projects">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+<script>document.documentElement.classList.add('js');</script>
+<link rel="icon" type="image/svg+xml" href="../assets/brand/favicon.svg">
+<link rel="icon" sizes="any" href="../assets/brand/favicon.ico">
+<link rel="icon" type="image/png" sizes="32x32" href="../assets/brand/favicon-32.png">
+<link rel="apple-touch-icon" href="../assets/brand/favicon-180.png">
+<link rel="manifest" href="../assets/brand/site.webmanifest">
+<link rel="canonical" href="https://muend.github.io/projects/arcgis-mcp-bridge.html">
+<link rel="alternate" hreflang="en" href="https://muend.github.io/projects/arcgis-mcp-bridge.html">
+<link rel="alternate" hreflang="tr" href="https://muend.github.io/tr/projects/arcgis-mcp-bridge.html">
+<link rel="alternate" hreflang="x-default" href="https://muend.github.io/projects/arcgis-mcp-bridge.html">
+<title>arcgis-mcp-bridge — a local-first MCP server for ArcGIS Pro</title>
+<meta name="description" content="100 declarative ArcGIS Pro geoprocessing tools exposed over MCP, with PathGuard enforced independently in two isolated processes.">
+<meta name="theme-color" content="#F7F7F1">
+<meta name="color-scheme" content="light">
+<meta name="referrer" content="strict-origin-when-cross-origin">
+<meta name="robots" content="index,follow,max-image-preview:large">
+<meta name="author" content="Muhammed Enes Duran">
+<meta property="og:title" content="arcgis-mcp-bridge — a local-first MCP server for ArcGIS Pro">
+<meta property="og:description" content="100 declarative ArcGIS Pro geoprocessing tools exposed over MCP, with PathGuard enforced independently in two isolated processes.">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://muend.github.io/projects/arcgis-mcp-bridge.html">
+<meta property="og:site_name" content="Muhammed Enes Duran">
+<meta property="og:locale" content="en_US">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="arcgis-mcp-bridge — a local-first MCP server for ArcGIS Pro">
+<meta name="twitter:description" content="100 declarative ArcGIS Pro geoprocessing tools exposed over MCP, with PathGuard enforced independently in two isolated processes.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wdth,wght@12..96,75..100,400..800&family=IBM+Plex+Mono:wght@400;500;600&family=Instrument+Sans:ital,wght@0,400..700;1,400..600&display=swap">
+<link rel="stylesheet" href="../assets/site.css">
+</head>
+<body>
+<a class="skip-link" href="#main">Skip to content</a>
+<div class="progress" id="progress" aria-hidden="true"></div>
+<div class="cur cur-ring" id="cur-ring" aria-hidden="true"></div>
+<div class="cur cur-dot" id="cur-dot" aria-hidden="true"></div>
+<div class="topbar" id="topbar">
+  <div class="wrap">
+    <a class="brand" href="../index.html" aria-label="Muhammed Enes Duran — home">muend<b>.</b></a>
+    <div class="nav-area">
+      <nav class="navlinks mono" aria-label="Primary">
+        <a href="../index.html#projects" data-nav="projects">Projects</a>
+        <a href="../research.html" data-nav="research">Research</a>
+        <a href="../practice.html" data-nav="practice">Practice</a>
+        <a href="../index.html#contact" data-nav="contact">Contact</a>
+      </nav>
+      <div class="langsw mono" role="group" aria-label="Change language"><span class="lang-opt is-on" aria-current="true">EN</span><span aria-hidden="true">/</span><a class="lang-opt" href="../tr/projects/arcgis-mcp-bridge.html" hreflang="tr" lang="tr">TR</a></div>
+      <span class="status-pill mono"><i aria-hidden="true"></i><span>Open source · active</span></span>
+    </div>
+  </div>
+</div>
+
+<main id="main">
+
+<div class="wrap">
+  <nav class="crumb mono" aria-label="Breadcrumb">
+    <a href="../index.html#projects">Projects</a><span>/</span><span>02 · arcgis-mcp-bridge</span>
+  </nav>
+</div>
+
+<header class="phead">
+  <div class="wrap phead-grid">
+    <div>
+      <span class="kind mono rv">MCP · Secure GIS execution</span>
+      <h1 class="rv" style="--d:60ms">arcgis-mcp-bridge</h1>
+      <p class="deck rv" style="--d:120ms">100 declarative geoprocessing tools. Two isolated processes. One security floor.</p>
+    </div>
+    <div class="phead-side rv" style="--d:160ms">
+      <div class="ptags"><span class="tag-chip tag-chip--pkg">PyPI</span><span class="tag-chip">Apache-2.0</span><span class="tag-chip ">100 tools</span><span class="tag-chip ">Windows</span></div>
+      <div class="spec">
+  <div><span class="k">License</span><span class="v">Apache-2.0</span></div>
+  <div><span class="k">Package</span><span class="v"><code>pip install arcgis-mcp-bridge</code></span></div>
+  <div><span class="k">Tools</span><span class="v">100 across 10 verticals</span></div>
+  <div><span class="k">Requires</span><span class="v">Python 3.11+ · ArcGIS Pro 3.1–3.3 tested</span></div>
+  <div><span class="k">Platform</span><span class="v">Windows, with a licensed ArcGIS Pro install</span></div>
+  <div><span class="k">Tests</span><span class="v">86 offline, ArcPy mocked</span></div>
+</div>
+      <div class="plinks">
+          <a class="btn btn--solid" href="https://github.com/muend/arcgis-mcp-bridge" target="_blank" rel="noopener"><span>Repository</span><svg viewBox="0 0 16 16" aria-hidden="true"><path d="M3 13 13 3M6 3h7v7" fill="none" stroke="currentColor" stroke-width="1.7"/></svg></a>
+          <a class="btn btn--ghost" href="https://pypi.org/project/arcgis-mcp-bridge/" target="_blank" rel="noopener"><span>PyPI</span><svg viewBox="0 0 16 16" aria-hidden="true"><path d="M3 13 13 3M6 3h7v7" fill="none" stroke="currentColor" stroke-width="1.7"/></svg></a>
+          <a class="btn btn--ghost" href="https://smithery.ai/server/muend/arcgis-mcp-bridge" target="_blank" rel="noopener"><span>Smithery</span><svg viewBox="0 0 16 16" aria-hidden="true"><path d="M3 13 13 3M6 3h7v7" fill="none" stroke="currentColor" stroke-width="1.7"/></svg></a>
+          <a class="btn btn--ghost" href="https://glama.ai/mcp/servers/muend/arcgis-mcp-bridge" target="_blank" rel="noopener"><span>Glama</span><svg viewBox="0 0 16 16" aria-hidden="true"><path d="M3 13 13 3M6 3h7v7" fill="none" stroke="currentColor" stroke-width="1.7"/></svg></a>
+          <a class="btn btn--ghost" href="https://www.pulsemcp.com/servers/muend-arcgis-bridge" target="_blank" rel="noopener"><span>PulseMCP</span><svg viewBox="0 0 16 16" aria-hidden="true"><path d="M3 13 13 3M6 3h7v7" fill="none" stroke="currentColor" stroke-width="1.7"/></svg></a>
+          <a class="btn btn--ghost" href="https://dev.to/muend/building-a-secure-mcp-bridge-for-arcgis-pro-and-arcpy-511g" target="_blank" rel="noopener"><span>Write-up</span><svg viewBox="0 0 16 16" aria-hidden="true"><path d="M3 13 13 3M6 3h7v7" fill="none" stroke="currentColor" stroke-width="1.7"/></svg></a>
+      </div>
+    </div>
+  </div>
+</header>
+
+<div class="wrap">
+
+<section class="prose rv">
+  <span class="mono">Why</span>
+  <div>
+    <h3>Untrusted arguments, licensed runtime</h3>
+    <p>An MCP tool call arrives as JSON from a language model. Handing that straight to ArcPy means letting generated text address the filesystem of a machine with a licensed ArcGIS Pro install on it. The interesting problem is not exposing geoprocessing; it is exposing it without turning the model into an unsandboxed local shell.</p><p>The answer here is two processes that do not trust each other, with the same path validation implemented independently on both sides of the boundary.</p>
+  </div>
+</section>
+
+<section class="fig">
+  <div class="fig-head">
+    <span class="n">Fig. 01</span>
+    <h3>Two processes, one security floor</h3>
+    <span class="rule" aria-hidden="true"></span>
+  </div>
+  <p>Layer A never imports ArcPy, so a crash or a hostile path never reaches the licensed runtime through the server process. PathGuard runs before dispatch and again inside the worker: a bypass requires defeating both.</p>
+<div class="plate plate--narrow rv" data-plate data-title="Fig. 01 — Two-process architecture">
+  <div class="plate-bar"><strong>Fig. 01 / Two-process architecture</strong>
+    <button class="expand" type="button" data-expand>Expand<svg viewBox="0 0 16 16" aria-hidden="true"><path d="M2 6V2h4M14 10v4h-4M2 2l5 5M14 14l-5-5" fill="none" stroke="currentColor" stroke-width="1.7"/></svg></button>
+  </div>
+<svg viewBox="0 0 560 424" role="img" preserveAspectRatio="xMidYMid meet"
+               aria-label="Two-process architecture: an MCP host sends JSON-RPC over stdio to Layer A, the bridge interpreter with FastMCP server, typed contract registry and a first PathGuard; a per-job subprocess boundary separates it from Layer B, the licensed ArcGIS Pro interpreter, where PathGuard re-validates before the ArcPy runtime and a structured NDJSON result frame.">
+            <defs>
+              <marker id="mA" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto"><path d="M0 0 7 3.5 0 7Z" fill="var(--green)"/></marker>
+            </defs>
+            <text class="d-title" x="20" y="24">LOCAL-FIRST MCP / TWO PROCESSES</text>
+            <text class="d-micro" x="540" y="24" text-anchor="end">SHEET B-02</text>
+            <path class="d-rule" d="M20 34H540"/>
+
+            <text class="d-micro" x="20" y="52">01 / MCP HOST</text>
+            <g class="d-pop">
+              <rect class="d-box" x="20" y="60" width="520" height="44"/>
+              <text class="d-node" x="280" y="80" text-anchor="middle">CLAUDE DESKTOP · CURSOR · MCP HOSTS</text>
+              <text class="d-sub"  x="280" y="95" text-anchor="middle">UNTRUSTED TOOL ARGUMENTS ENTER HERE</text>
+            </g>
+            <path class="d-flow" d="M280 104v20" marker-end="url(#mA)"/>
+            <text class="d-micro" x="292" y="119">JSON-RPC 2.0 / STDIO</text>
+
+            <text class="d-micro" x="20"  y="146">LAYER A / BRIDGE INTERPRETER</text>
+            <text class="d-micro" x="540" y="146" text-anchor="end">server.py</text>
+            <rect class="d-zone" x="20" y="154" width="520" height="88"/>
+            <g class="d-pop" style="--dly:110ms">
+              <rect class="d-box d-box--g" x="26"  y="168" width="160" height="42"/><text class="d-node" x="106" y="188" text-anchor="middle">FASTMCP SERVER</text><text class="d-sub" x="106" y="203" text-anchor="middle">ASYNC · NO ARCPY</text>
+              <rect class="d-box"         x="200" y="168" width="160" height="42"/><text class="d-node" x="280" y="188" text-anchor="middle">CONTRACT REGISTRY</text><text class="d-sub" x="280" y="203" text-anchor="middle">PYDANTIC V2 · 100 TOOLS</text>
+              <rect class="d-box d-box--a" x="374" y="168" width="160" height="42"/><text class="d-node" x="454" y="188" text-anchor="middle">PATHGUARD A</text><text class="d-sub" x="454" y="203" text-anchor="middle">PRE-CHECK · CONFIRM</text>
+            </g>
+            <text class="d-micro" x="280" y="230" text-anchor="middle">NOTHING LICENSED IS TOUCHED IN THIS PROCESS</text>
+
+            <path class="d-flow" d="M280 242v40" marker-end="url(#mA)"/>
+            <rect class="d-box" x="170" y="252" width="220" height="22"/>
+            <text class="d-sub" x="280" y="267" text-anchor="middle">SUBPROCESS BOUNDARY · PER JOB</text>
+
+            <text class="d-micro" x="20"  y="300">LAYER B / LICENSED ARCGIS PRO</text>
+            <text class="d-micro" x="540" y="300" text-anchor="end">worker.py · WINDOWS ONLY</text>
+            <rect class="d-zone d-zone--a" x="20" y="308" width="520" height="80"/>
+            <g class="d-pop" style="--dly:220ms">
+              <rect class="d-box d-box--a" x="26"  y="320" width="150" height="42"/><text class="d-node" x="101" y="340" text-anchor="middle">PATHGUARD B</text><text class="d-sub" x="101" y="355" text-anchor="middle">RE-VALIDATE</text>
+              <rect class="d-box"         x="205" y="320" width="150" height="42"/><text class="d-node" x="280" y="340" text-anchor="middle">ARCPY RUNTIME</text><text class="d-sub" x="280" y="355" text-anchor="middle">.APRX · .GDB · RASTER</text>
+              <rect class="d-box d-box--g" x="384" y="320" width="150" height="42"/><text class="d-node" x="459" y="340" text-anchor="middle">RESULT FRAME</text><text class="d-sub" x="459" y="355" text-anchor="middle">STRUCTURED NDJSON</text>
+            </g>
+            <path class="d-flow" d="M176 341h20" marker-end="url(#mA)"/>
+            <path class="d-flow" d="M355 341h20" marker-end="url(#mA)"/>
+            <text class="d-micro" x="280" y="378" text-anchor="middle">PYTHON 3.11+ · ARCGIS PRO 3.1–3.3 · 86-TEST OFFLINE GATE</text>
+
+            <rect class="d-box d-box--d" x="20" y="398" width="520" height="26"/>
+            <text class="d-node" x="280" y="415" text-anchor="middle">VALIDATION · SECURITY · LICENSE · GEOPROCESSING</text>
+          </svg>
+</div>
+</section>
+
+<section class="fig">
+  <div class="fig-head">
+    <span class="n">Catalog</span>
+    <h3>100 tools across ten verticals</h3>
+    <span class="rule" aria-hidden="true"></span>
+  </div>
+  <p>Every tool is declarative: a typed Pydantic v2 contract in, a structured NDJSON result frame out. Failures are values, not stack traces.</p>
+<div class="catalog rv">
+  <div><div class="c"><strong>Geometry analysis</strong><span class="n">23</span></div><p>Overlay, buffer, dissolve, proximity, topology-aware operations.</p></div>
+  <div><div class="c"><strong>Data management</strong><span class="n">22</span></div><p>Feature classes, fields, geodatabases, conversion, append.</p></div>
+  <div><div class="c"><strong>Raster operations</strong><span class="n">15</span></div><p>Clip, mosaic, resample, project, extract by mask, zonal statistics.</p></div>
+  <div><div class="c"><strong>Map layer management</strong><span class="n">10</span></div><p>Add, order, symbolise, toggle and zoom layers in a project.</p></div>
+  <div><div class="c"><strong>Export &amp; layout</strong><span class="n">9</span></div><p>Layout PDF and PNG export, legend and text element updates.</p></div>
+  <div><div class="c"><strong>Editing &amp; topology</strong><span class="n">7</span></div><p>Repair geometry, eliminate parts, detect and check topology.</p></div>
+  <div><div class="c"><strong>Spatial statistics</strong><span class="n">5</span></div><p>Hot spots, autocorrelation, mean centre, directional distribution.</p></div>
+  <div><div class="c"><strong>Network analysis</strong><span class="n">4</span></div><p>Route, service area, closest facility, OD cost matrix.</p></div>
+  <div><div class="c"><strong>Coordinate &amp; projection</strong><span class="n">4</span></div><p>Define, project, describe and validate spatial references.</p></div>
+  <div><div class="c"><strong>Vision analytics</strong><span class="n">1</span></div><p>Sketch-to-GIS: ORB + RANSAC registration with HSV segmentation.</p></div>
+</div>
+  <p class="fig-note">The vision tool turns a photographed hand-drawn parcel boundary into geodatabase features by registering the sketch against a reference frame, then segmenting the drawn lines in HSV space.</p>
+</section>
+
+<section class="prose rv">
+  <span class="mono">Safety</span>
+  <div>
+    <h3>What PathGuard actually does</h3>
+    <p>Every path-bearing argument is normalised and checked against an allowed root before dispatch, then re-validated inside the worker that holds the licence. Destructive operations sit behind an explicit confirmation gate rather than a flag a model can set on its own.</p><p>The 86-test suite runs with ArcPy mocked, so contributors without a Windows licence can still verify validation, security, licence handling and geoprocessing contracts offline.</p>
+  </div>
+</section>
+
+</div>
+
+<div class="wrap">
+  <nav class="pager" aria-label="More projects">
+    <a href="geoai-skills.html"><span class="mono">← 01 · previous</span><strong>geoai-skills</strong></a>
+    <a href="sentinel-crop-pipeline.html"><span class="mono">03 · next →</span><strong>sentinel-crop-pipeline</strong></a>
+  </nav>
+</div>
+
+
+<section class="contact">
+  <div class="wrap">
+    <div class="contact-grid">
+      <div>
+        <span class="kicker mono rv">Open to collaboration</span>
+        <h2 class="rv" style="--d:60ms">Build spatial systems that hold up.</h2>
+        <div class="cta rv" style="--d:140ms">
+          <a class="btn btn--solid" href="mailto:nsduraan@gmail.com"><span>nsduraan@gmail.com</span></a>
+          <a class="btn btn--ghost" href="../index.html#projects"><span class="dot" aria-hidden="true"></span><span>All projects</span></a>
+        </div>
+      </div>
+    </div>
+    <div class="colophon mono">
+      <span>© 2026 Muhammed Enes Duran</span>
+      <span>Static site · no trackers</span>
+    </div>
+  </div>
+</section>
+
+</main>
+
+<dialog class="dlg" id="dlg" aria-labelledby="dlg-title">
+  <div class="dlg-head">
+    <strong id="dlg-title">Technical diagram</strong>
+    <button class="dlg-close" type="button" data-close>Close</button>
+  </div>
+  <div class="dlg-body" id="dlg-body"></div>
+</dialog>
+
+<script src="../assets/site.js" defer></script>
+</body>
+</html>

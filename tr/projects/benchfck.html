@@ -1,0 +1,278 @@
+<!DOCTYPE html>
+<html lang="tr" data-page="projects">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+<script>document.documentElement.classList.add('js');</script>
+<link rel="icon" type="image/svg+xml" href="../../assets/brand/favicon.svg">
+<link rel="icon" sizes="any" href="../../assets/brand/favicon.ico">
+<link rel="icon" type="image/png" sizes="32x32" href="../../assets/brand/favicon-32.png">
+<link rel="apple-touch-icon" href="../../assets/brand/favicon-180.png">
+<link rel="manifest" href="../../assets/brand/site.webmanifest">
+<link rel="canonical" href="https://muend.github.io/tr/projects/benchfck.html">
+<link rel="alternate" hreflang="en" href="https://muend.github.io/projects/benchfck.html">
+<link rel="alternate" hreflang="tr" href="https://muend.github.io/tr/projects/benchfck.html">
+<link rel="alternate" hreflang="x-default" href="https://muend.github.io/projects/benchfck.html">
+<title>benchfck — kesin makine-durumu değerlendirme koşumu</title>
+<meta name="description" content="Dört kontrollü komut kodlaması üzerinde makine-durumu görevleri üreten, doğrulayan ve puanlayan Brainfuck tabanlı üreteç ve kesin Rust koşumu.">
+<meta name="theme-color" content="#F7F7F1">
+<meta name="color-scheme" content="light">
+<meta name="referrer" content="strict-origin-when-cross-origin">
+<meta name="robots" content="index,follow,max-image-preview:large">
+<meta name="author" content="Muhammed Enes Duran">
+<meta property="og:title" content="benchfck — kesin makine-durumu değerlendirme koşumu">
+<meta property="og:description" content="Dört kontrollü komut kodlaması üzerinde makine-durumu görevleri üreten, doğrulayan ve puanlayan Brainfuck tabanlı üreteç ve kesin Rust koşumu.">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://muend.github.io/tr/projects/benchfck.html">
+<meta property="og:site_name" content="Muhammed Enes Duran">
+<meta property="og:locale" content="tr_TR">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="benchfck — kesin makine-durumu değerlendirme koşumu">
+<meta name="twitter:description" content="Dört kontrollü komut kodlaması üzerinde makine-durumu görevleri üreten, doğrulayan ve puanlayan Brainfuck tabanlı üreteç ve kesin Rust koşumu.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wdth,wght@12..96,75..100,400..800&family=IBM+Plex+Mono:wght@400;500;600&family=Instrument+Sans:ital,wght@0,400..700;1,400..600&display=swap">
+<link rel="stylesheet" href="../../assets/site.css">
+</head>
+<body>
+<a class="skip-link" href="#main">İçeriğe geç</a>
+<div class="progress" id="progress" aria-hidden="true"></div>
+<div class="cur cur-ring" id="cur-ring" aria-hidden="true"></div>
+<div class="cur cur-dot" id="cur-dot" aria-hidden="true"></div>
+<div class="topbar" id="topbar">
+  <div class="wrap">
+    <a class="brand" href="../../tr/index.html" aria-label="Muhammed Enes Duran — ana sayfa">muend<b>.</b></a>
+    <div class="nav-area">
+      <nav class="navlinks mono" aria-label="Ana">
+        <a href="../../tr/index.html#projects" data-nav="projects">Projeler</a>
+        <a href="../../tr/research.html" data-nav="research">Araştırma</a>
+        <a href="../../tr/practice.html" data-nav="practice">Yöntem</a>
+        <a href="../../tr/index.html#contact" data-nav="contact">İletişim</a>
+      </nav>
+      <div class="langsw mono" role="group" aria-label="Dili değiştir"><a class="lang-opt" href="../../projects/benchfck.html" hreflang="en" lang="en">EN</a><span aria-hidden="true">/</span><span class="lang-opt is-on" aria-current="true">TR</span></div>
+      <span class="status-pill mono"><i aria-hidden="true"></i><span>Açık kaynak · aktif</span></span>
+    </div>
+  </div>
+</div>
+
+<main id="main">
+
+<div class="wrap">
+  <nav class="crumb mono" aria-label="Sayfa yolu">
+    <a href="../../tr/index.html#projects">Projeler</a><span>/</span><span>00 · benchfck</span>
+  </nav>
+</div>
+
+<header class="phead">
+  <div class="wrap phead-grid">
+    <div>
+      <span class="kind mono rv">Deterministik değerlendirme · Kesin Rust koşumu</span>
+      <h1 class="rv" style="--d:60ms">benchfck</h1>
+      <p class="deck rv" style="--d:120ms">Makine-durumu görevleri için bir üreteç ve kesin koşum: puanlama yolundaki hiçbir adım öğrenilmiş bir hakeme bağlı değil.</p>
+    </div>
+    <div class="phead-side rv" style="--d:160ms">
+      <div class="ptags"><span class="tag-chip tag-chip--new">v0.4.0-alfa</span><span class="tag-chip">Apache-2.0</span><span class="tag-chip">Rust</span></div>
+      <div class="spec">
+  <div><span class="k">Sürüm</span><span class="v">0.4.0-alfa · mühendislik adayı</span></div>
+  <div><span class="k">Lisans</span><span class="v">Apache-2.0 (kod) · CC BY 4.0 (gelecek veri setleri)</span></div>
+  <div><span class="k">Dil</span><span class="v">Rust, 2024 sürümü</span></div>
+  <div><span class="k">Makine</span><span class="v">30.000 hücre · 8-bit döngü · 8.000.000 adım sınırı</span></div>
+  <div><span class="k">Tokenleştirici</span><span class="v">BPE ölçümü için <code>cl100k_base</code></span></div>
+  <div><span class="k">Model koşusu</span><span class="v">0 yayımlanmış · 0 liderlik tablosu</span></div>
+</div>
+      <div class="plinks">
+          <a class="btn btn--solid" href="https://github.com/muend/benchfck" target="_blank" rel="noopener"><span>Depo</span><svg viewBox="0 0 16 16" aria-hidden="true"><path d="M3 13 13 3M6 3h7v7" fill="none" stroke="currentColor" stroke-width="1.7"/></svg></a>
+          <a class="btn btn--ghost" href="https://github.com/muend/benchfck/blob/main/VALIDITY.md" target="_blank" rel="noopener"><span>Geçerlilik sözleşmesi</span><svg viewBox="0 0 16 16" aria-hidden="true"><path d="M3 13 13 3M6 3h7v7" fill="none" stroke="currentColor" stroke-width="1.7"/></svg></a>
+      </div>
+    </div>
+  </div>
+</header>
+
+<div class="wrap">
+
+<section class="prose rv">
+  <span class="mono">Neden</span>
+  <div>
+    <h3>Kendi hakemiyle oynanamayan bir kıyaslama</h3>
+    <p>Akıl yürütme kıyaslamalarının çoğu sabit bir veri seti yayımlar ve cevapları başka bir modelle puanlar. İki tercih de sızdırır: veri seti zamanla eğitim külliyatına karışır, hakem ise kendi hatalarını getirir. benchfck ikisini de kaldırır. Her öğeyi bir tohumdan üretir; yürütmeden puanlamaya kadar her adım, sabitlenmiş bir sanal makine üzerinde kesin aritmetiktir.</p><p>Bu tercihin bedeli kapsamdır. Kontrollü makine-durumu akıl yürütmesini ölçer, başka bir şeyi değil. Genel yetenek ölçtüğü iddiasında değildir.</p>
+  </div>
+</section>
+
+<section class="fig">
+  <div class="fig-head">
+    <span class="n">Şekil 01</span>
+    <h3>Tohumdan puana</h3>
+    <span class="rule" aria-hidden="true"></span>
+  </div>
+  <p>Bir aday program, ancak tipli ara temsil ile kodlamalar 256 olası girdi bağlamasının her birinde aynı sonucu verirse kabul edilir. Uyuşmayan her şey, bir model görmeden önce elenir.</p>
+<div class="plate rv" data-plate data-title="Şekil 01 — Üretim ve doğrulama zinciri">
+  <div class="plate-bar"><strong>Şekil 01 / Üretim ve doğrulama zinciri</strong>
+    <button class="expand" type="button" data-expand>Büyüt<svg viewBox="0 0 16 16" aria-hidden="true"><path d="M2 6V2h4M14 10v4h-4M2 2l5 5M14 14l-5-5" fill="none" stroke="currentColor" stroke-width="1.7"/></svg></button>
+  </div>
+<svg viewBox="0 0 1180 512" role="img" preserveAspectRatio="xMidYMid meet"
+     aria-label="benchfck chain: a seeded public constructor produces a typed intermediate representation, which a Brainfuck compiler renders into four instruction encodings; an independent parser and an exact equivalence check over all 256 inputs gate acceptance; accepted programs become three task families scored by a restricted verifier with no learned judge.">
+  <defs>
+    <marker id="bkA" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto"><path d="M0 0 7 3.5 0 7Z" fill="var(--green)"/></marker>
+    <marker id="bkB" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto"><path d="M0 0 7 3.5 0 7Z" fill="var(--amber-deep)"/></marker>
+  </defs>
+
+  <text class="d-title" x="20" y="26">GENERATION → ENCODING → EQUIVALENCE → SCORING</text>
+  <text class="d-micro" x="1160" y="26" text-anchor="end">SHEET B-00 · v0.4.0-ALPHA</text>
+  <path class="d-rule" d="M20 36H1160"/>
+
+  <!-- 01 generation -->
+  <text class="d-micro" x="20" y="58">01 / DETERMINISTIC GENERATION</text>
+  <g class="d-pop">
+    <rect class="d-box d-box--g" x="20" y="66" width="364" height="48"/>
+    <text class="d-node" x="202" y="88" text-anchor="middle">SEED + PUBLIC CONSTRUCTOR</text>
+    <text class="d-sub"  x="202" y="103" text-anchor="middle">8 CONSTRUCTORS · 4 STRUCTURAL FAMILIES</text>
+
+    <rect class="d-box d-box--g" x="408" y="66" width="364" height="48"/>
+    <text class="d-node" x="590" y="88" text-anchor="middle">TYPED INTERMEDIATE REPRESENTATION</text>
+    <text class="d-sub"  x="590" y="103" text-anchor="middle">SEMANTICS FIXED BEFORE SYNTAX</text>
+
+    <rect class="d-box d-box--g" x="796" y="66" width="364" height="48"/>
+    <text class="d-node" x="978" y="88" text-anchor="middle">BRAINFUCK COMPILER</text>
+    <text class="d-sub"  x="978" y="103" text-anchor="middle">30,000 CELLS · 8-BIT WRAP · 8M STEP CAP</text>
+  </g>
+  <path class="d-flow" d="M384 90h16" marker-end="url(#bkA)"/>
+  <path class="d-flow" d="M772 90h16" marker-end="url(#bkA)"/>
+
+  <!-- 02 encodings -->
+  <text class="d-micro" x="20"   y="146">02 / INSTRUCTION ENCODINGS</text>
+  <text class="d-micro" x="1160" y="146" text-anchor="end">BPE MEASURED WITH cl100k_base</text>
+  <g class="d-pop" style="--dly:110ms">
+    <rect class="d-box" x="20" y="154" width="270" height="52"/>
+    <text class="d-node" x="155" y="176" text-anchor="middle">E0 · CANONICAL BF</text>
+    <text class="d-sub"  x="155" y="192" text-anchor="middle">IMPLICIT POINTER-RELATIVE</text>
+
+    <rect class="d-box" x="310" y="154" width="270" height="52"/>
+    <text class="d-node" x="445" y="176" text-anchor="middle">E1 · PERMUTED SYMBOLS</text>
+    <text class="d-sub"  x="445" y="192" text-anchor="middle">PER-ITEM LEGEND</text>
+
+    <rect class="d-box d-box--d" x="600" y="154" width="270" height="52"/>
+    <text class="d-node" x="735" y="176" text-anchor="middle">E2 · COMPACT EXPLICIT</text>
+    <text class="d-sub"  x="735" y="192" text-anchor="middle">RLE CARRIER · 3.356× BPE</text>
+
+    <rect class="d-box d-box--d" x="890" y="154" width="270" height="52"/>
+    <text class="d-node" x="1025" y="176" text-anchor="middle">E3 · VERBOSE EXPLICIT</text>
+    <text class="d-sub"  x="1025" y="192" text-anchor="middle">RLE CARRIER · 7.072× BPE</text>
+  </g>
+  <path class="d-flow" d="M155 206v14M445 206v14M735 206v14M1025 206v14"/>
+  <path class="d-flow" d="M155 220h870"/>
+  <path class="d-flow" d="M590 220v22" marker-end="url(#bkA)"/>
+
+  <!-- 03 acceptance gate -->
+  <text class="d-micro" x="20"   y="256">03 / ACCEPTANCE GATE</text>
+  <text class="d-micro" x="1160" y="256" text-anchor="end">COMPLETE INPUT DOMAIN</text>
+  <rect class="d-zone" x="20" y="264" width="1140" height="80"/>
+  <g class="d-pop" style="--dly:210ms">
+    <rect class="d-box" x="34" y="278" width="546" height="36"/>
+    <text class="d-node" x="307" y="301" text-anchor="middle">INDEPENDENT PARSER VALIDATION</text>
+
+    <rect class="d-box" x="600" y="278" width="546" height="36"/>
+    <text class="d-node" x="873" y="301" text-anchor="middle">IR ≡ E0 ≡ E2 ≡ E3 OVER 256 BINDINGS</text>
+  </g>
+  <text class="d-micro" x="590" y="333" text-anchor="middle">A CANDIDATE IS ACCEPTED ONLY IF EVERY REPRESENTATION AGREES ON EVERY INPUT</text>
+  <path class="d-flow" d="M590 344v20" marker-end="url(#bkA)"/>
+
+  <!-- 04 task families -->
+  <text class="d-micro" x="20" y="378">04 / TASK FAMILIES</text>
+  <g class="d-pop" style="--dly:300ms">
+    <rect class="d-box d-box--a" x="20" y="386" width="366" height="52"/>
+    <text class="d-node" x="203" y="408" text-anchor="middle">T1 · STATE TRACKING</text>
+    <text class="d-sub"  x="203" y="424" text-anchor="middle">MACHINE STATE AT INTERIOR STEPS</text>
+
+    <rect class="d-box d-box--a" x="406" y="386" width="366" height="52"/>
+    <text class="d-node" x="589" y="408" text-anchor="middle">T2 · COMPUTATION COMPRESSION</text>
+    <text class="d-sub"  x="589" y="424" text-anchor="middle">EXPRESSION MATCHING BEHAVIOUR</text>
+
+    <rect class="d-box d-box--a" x="792" y="386" width="366" height="52"/>
+    <text class="d-node" x="975" y="408" text-anchor="middle">T3 · CAUSAL MUTATION</text>
+    <text class="d-sub"  x="975" y="424" text-anchor="middle">OUTPUT AFTER A PROGRAM EDIT</text>
+  </g>
+  <path class="d-flow--a" d="M203 438v12M589 438v12M975 438v12"/>
+  <path class="d-flow--a" d="M203 450h772"/>
+  <path class="d-flow--a" d="M590 450v14" marker-end="url(#bkB)"/>
+
+  <rect class="d-box d-box--ink" x="20" y="464" width="1140" height="36"/>
+  <text class="d-node d-inv" x="590" y="487" text-anchor="middle">RESTRICTED VERIFIER · EXACT SCORING · NO LEARNED JUDGE · NO FIXED DATASET</text>
+</svg>
+</div>
+</section>
+
+<section class="prose rv">
+  <span class="mono">Kodlamalar</span>
+  <div>
+    <h3>Aynı programın dört basamağı</h3>
+    <p>Kabul edilen her program dört komut kodlamasına dönüştürülür. Hepsi aynı davranışı çok farklı yüzey biçimleriyle anlatır; bu da makine durumu üzerine akıl yürüten bir modeli, tanıdık Brainfuck kalıplarını eşleştiren bir modelden ayırır.</p><ul><li><strong>E0</strong> — örtük işaretçi-göreli adreslemeli kanonik Brainfuck.</li><li><strong>E1</strong> — öğe başına sembol permütasyonu ve işlem açıklaması; ezberlenmiş simgeler işe yaramaz hale gelir.</li><li><strong>E2</strong> — koşu uzunluğu taşıyıcılı, sıkışık açık işlemler; E0'ın 3,356 katı token.</li><li><strong>E3</strong> — ayrıntılı açık işlemler; E0'ın 7,072 katı.</li></ul>
+  </div>
+</section>
+
+<section class="fig">
+  <div class="fig-head">
+    <span class="n">Eşikler</span>
+    <h3>Üretilen bir öğenin geçmesi gerekenler</h3>
+    <span class="rule" aria-hidden="true"></span>
+  </div>
+  <p>Popülasyon düzeyindeki eşikler herhangi bir model çalıştırılmadan önce yayımlanır; böylece kabul ölçütleri sonuçlar görüldükten sonra ayarlanamaz.</p>
+<div class="catalog rv">
+  <div><div class="c"><strong>İz anlamsal yoğunluğu</strong><span class="n">≥ 0.30</span></div><p>Yürütme gerçekten iş yapmalı, adımları boşa geçmemeli.</p></div>
+  <div><div class="c"><strong>Çığ skoru</strong><span class="n">≥ 0.60</span></div><p>Küçük girdi değişimleri makine durumuna yayılmalı.</p></div>
+  <div><div class="c"><strong>Kanonik kalıp oranı</strong><span class="n">&lt; 0.08</span></div><p>Ezberlenmiş kalıplara indirgenen programlar reddedilir.</p></div>
+  <div><div class="c"><strong>Kurucu genişliği</strong><span class="n">1,730</span></div><p>51 kaba profil kovasında saptanan benzersiz anlamsal fonksiyon.</p></div>
+</div>
+</section>
+
+<section class="prose rv">
+  <span class="mono">Test</span>
+  <div>
+    <h3>10.000 programlık popülasyon üzerinde özellik testleri</h3>
+    <p>Dört dengeli ve örtüşmeyen CI işi, 10.000 programlık popülasyonu böler; böylece bir yapısal ailedeki gerileme diğerlerinin arkasına saklanamaz. GitHub Actions CI ve CodeQL çalıştırır; yerel kontrol betikleri aynı denetimleri çevrimdışı tekrarlar.</p>
+  </div>
+</section>
+
+<div class="note note--warn"><span class="mono">Kapsam</span><p>Bu bir <strong>v0.4.0-alfa mühendislik adayı</strong>. Hiçbir model sonucu üretilmedi ve bir liderlik tablosu yok. Sürüm kapsamı arity 1; arity 2 v0.5'e ertelendi. Genel üreteç, tasarım gereği kurucu ailesini açığa vurur; bu yüzden sekiz genel kurucu, saptanan uzayın dar bir alt kümesidir ve özel puanlama dönemi henüz başlatılmadı.</p></div>
+
+</div>
+
+<div class="wrap">
+  <nav class="pager" aria-label="Diğer projeler">
+    <a href="founder-exe.html"><span class="mono">← 05 · önceki</span><strong>FOUNDER.EXE</strong></a>
+    <a href="geoai-skills.html"><span class="mono">01 · sonraki →</span><strong>geoai-skills</strong></a>
+  </nav>
+</div>
+
+
+<section class="contact">
+  <div class="wrap">
+    <div class="contact-grid">
+      <div>
+        <span class="kicker mono rv">İş birliğine açık</span>
+        <h2 class="rv" style="--d:60ms">Sağlam duran mekânsal sistemler kuralım.</h2>
+        <div class="cta rv" style="--d:140ms">
+          <a class="btn btn--solid" href="mailto:nsduraan@gmail.com"><span>nsduraan@gmail.com</span></a>
+          <a class="btn btn--ghost" href="../../tr/index.html#projects"><span class="dot" aria-hidden="true"></span><span>Tüm projeler</span></a>
+        </div>
+      </div>
+    </div>
+    <div class="colophon mono">
+      <span>© 2026 Muhammed Enes Duran</span>
+      <span>Statik site · izleyici yok</span>
+    </div>
+  </div>
+</section>
+
+</main>
+
+<dialog class="dlg" id="dlg" aria-labelledby="dlg-title">
+  <div class="dlg-head">
+    <strong id="dlg-title">Teknik diyagram</strong>
+    <button class="dlg-close" type="button" data-close>Kapat</button>
+  </div>
+  <div class="dlg-body" id="dlg-body"></div>
+</dialog>
+
+<script src="../../assets/site.js" defer></script>
+</body>
+</html>

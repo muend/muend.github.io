@@ -1,0 +1,89 @@
+<svg viewBox="0 0 1180 512" role="img" preserveAspectRatio="xMidYMid meet"
+     aria-label="benchfck chain: a seeded public constructor produces a typed intermediate representation, which a Brainfuck compiler renders into four instruction encodings; an independent parser and an exact equivalence check over all 256 inputs gate acceptance; accepted programs become three task families scored by a restricted verifier with no learned judge.">
+  <defs>
+    <marker id="bkA" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto"><path d="M0 0 7 3.5 0 7Z" fill="var(--green)"/></marker>
+    <marker id="bkB" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto"><path d="M0 0 7 3.5 0 7Z" fill="var(--amber-deep)"/></marker>
+  </defs>
+
+  <text class="d-title" x="20" y="26">GENERATION → ENCODING → EQUIVALENCE → SCORING</text>
+  <text class="d-micro" x="1160" y="26" text-anchor="end">SHEET B-00 · v0.4.0-ALPHA</text>
+  <path class="d-rule" d="M20 36H1160"/>
+
+  <!-- 01 generation -->
+  <text class="d-micro" x="20" y="58">01 / DETERMINISTIC GENERATION</text>
+  <g class="d-pop">
+    <rect class="d-box d-box--g" x="20" y="66" width="364" height="48"/>
+    <text class="d-node" x="202" y="88" text-anchor="middle">SEED + PUBLIC CONSTRUCTOR</text>
+    <text class="d-sub"  x="202" y="103" text-anchor="middle">8 CONSTRUCTORS · 4 STRUCTURAL FAMILIES</text>
+
+    <rect class="d-box d-box--g" x="408" y="66" width="364" height="48"/>
+    <text class="d-node" x="590" y="88" text-anchor="middle">TYPED INTERMEDIATE REPRESENTATION</text>
+    <text class="d-sub"  x="590" y="103" text-anchor="middle">SEMANTICS FIXED BEFORE SYNTAX</text>
+
+    <rect class="d-box d-box--g" x="796" y="66" width="364" height="48"/>
+    <text class="d-node" x="978" y="88" text-anchor="middle">BRAINFUCK COMPILER</text>
+    <text class="d-sub"  x="978" y="103" text-anchor="middle">30,000 CELLS · 8-BIT WRAP · 8M STEP CAP</text>
+  </g>
+  <path class="d-flow" d="M384 90h16" marker-end="url(#bkA)"/>
+  <path class="d-flow" d="M772 90h16" marker-end="url(#bkA)"/>
+
+  <!-- 02 encodings -->
+  <text class="d-micro" x="20"   y="146">02 / INSTRUCTION ENCODINGS</text>
+  <text class="d-micro" x="1160" y="146" text-anchor="end">BPE MEASURED WITH cl100k_base</text>
+  <g class="d-pop" style="--dly:110ms">
+    <rect class="d-box" x="20" y="154" width="270" height="52"/>
+    <text class="d-node" x="155" y="176" text-anchor="middle">E0 · CANONICAL BF</text>
+    <text class="d-sub"  x="155" y="192" text-anchor="middle">IMPLICIT POINTER-RELATIVE</text>
+
+    <rect class="d-box" x="310" y="154" width="270" height="52"/>
+    <text class="d-node" x="445" y="176" text-anchor="middle">E1 · PERMUTED SYMBOLS</text>
+    <text class="d-sub"  x="445" y="192" text-anchor="middle">PER-ITEM LEGEND</text>
+
+    <rect class="d-box d-box--d" x="600" y="154" width="270" height="52"/>
+    <text class="d-node" x="735" y="176" text-anchor="middle">E2 · COMPACT EXPLICIT</text>
+    <text class="d-sub"  x="735" y="192" text-anchor="middle">RLE CARRIER · 3.356× BPE</text>
+
+    <rect class="d-box d-box--d" x="890" y="154" width="270" height="52"/>
+    <text class="d-node" x="1025" y="176" text-anchor="middle">E3 · VERBOSE EXPLICIT</text>
+    <text class="d-sub"  x="1025" y="192" text-anchor="middle">RLE CARRIER · 7.072× BPE</text>
+  </g>
+  <path class="d-flow" d="M155 206v14M445 206v14M735 206v14M1025 206v14"/>
+  <path class="d-flow" d="M155 220h870"/>
+  <path class="d-flow" d="M590 220v22" marker-end="url(#bkA)"/>
+
+  <!-- 03 acceptance gate -->
+  <text class="d-micro" x="20"   y="256">03 / ACCEPTANCE GATE</text>
+  <text class="d-micro" x="1160" y="256" text-anchor="end">COMPLETE INPUT DOMAIN</text>
+  <rect class="d-zone" x="20" y="264" width="1140" height="80"/>
+  <g class="d-pop" style="--dly:210ms">
+    <rect class="d-box" x="34" y="278" width="546" height="36"/>
+    <text class="d-node" x="307" y="301" text-anchor="middle">INDEPENDENT PARSER VALIDATION</text>
+
+    <rect class="d-box" x="600" y="278" width="546" height="36"/>
+    <text class="d-node" x="873" y="301" text-anchor="middle">IR ≡ E0 ≡ E2 ≡ E3 OVER 256 BINDINGS</text>
+  </g>
+  <text class="d-micro" x="590" y="333" text-anchor="middle">A CANDIDATE IS ACCEPTED ONLY IF EVERY REPRESENTATION AGREES ON EVERY INPUT</text>
+  <path class="d-flow" d="M590 344v20" marker-end="url(#bkA)"/>
+
+  <!-- 04 task families -->
+  <text class="d-micro" x="20" y="378">04 / TASK FAMILIES</text>
+  <g class="d-pop" style="--dly:300ms">
+    <rect class="d-box d-box--a" x="20" y="386" width="366" height="52"/>
+    <text class="d-node" x="203" y="408" text-anchor="middle">T1 · STATE TRACKING</text>
+    <text class="d-sub"  x="203" y="424" text-anchor="middle">MACHINE STATE AT INTERIOR STEPS</text>
+
+    <rect class="d-box d-box--a" x="406" y="386" width="366" height="52"/>
+    <text class="d-node" x="589" y="408" text-anchor="middle">T2 · COMPUTATION COMPRESSION</text>
+    <text class="d-sub"  x="589" y="424" text-anchor="middle">EXPRESSION MATCHING BEHAVIOUR</text>
+
+    <rect class="d-box d-box--a" x="792" y="386" width="366" height="52"/>
+    <text class="d-node" x="975" y="408" text-anchor="middle">T3 · CAUSAL MUTATION</text>
+    <text class="d-sub"  x="975" y="424" text-anchor="middle">OUTPUT AFTER A PROGRAM EDIT</text>
+  </g>
+  <path class="d-flow--a" d="M203 438v12M589 438v12M975 438v12"/>
+  <path class="d-flow--a" d="M203 450h772"/>
+  <path class="d-flow--a" d="M590 450v14" marker-end="url(#bkB)"/>
+
+  <rect class="d-box d-box--ink" x="20" y="464" width="1140" height="36"/>
+  <text class="d-node d-inv" x="590" y="487" text-anchor="middle">RESTRICTED VERIFIER · EXACT SCORING · NO LEARNED JUDGE · NO FIXED DATASET</text>
+</svg>

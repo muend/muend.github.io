@@ -1,0 +1,43 @@
+<svg viewBox="0 0 560 412" role="img" preserveAspectRatio="xMidYMid meet"
+               aria-label="Decision chain: a versioned territorial index of five districts feeds five suitability criteria — climate, water, soil, slope and market — producing a ranked neighbourhood plan and a printable A4 action plan, delivered as a zero-backend static application.">
+            <defs>
+              <marker id="dA" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto"><path d="M0 0 7 3.5 0 7Z" fill="var(--green)"/></marker>
+            </defs>
+            <text class="d-title" x="20" y="24">WESTERN ANTALYA / DECISION CHAIN</text>
+            <text class="d-micro" x="540" y="24" text-anchor="end">5 DISTRICTS · 147 AREAS</text>
+            <path class="d-rule" d="M20 34H540"/>
+
+            <text class="d-micro" x="20" y="56">01 / TERRITORIAL INDEX</text>
+            <g class="d-pop">
+              <rect class="d-box d-box--g" x="20" y="64" width="520" height="48"/>
+              <text class="d-node" x="280" y="86" text-anchor="middle">DEMRE · FİNİKE · KAŞ · KEMER · KUMLUCA</text>
+              <text class="d-sub"  x="280" y="102" text-anchor="middle">VERSIONED REGION + CROP DATA CONTRACT</text>
+            </g>
+            <path class="d-flow" d="M280 112v20" marker-end="url(#dA)"/>
+
+            <text class="d-micro" x="20" y="150">02 / SUITABILITY CRITERIA</text>
+            <rect class="d-zone" x="20" y="158" width="520" height="72"/>
+            <g class="d-pop" style="--dly:110ms">
+              <rect class="d-box" x="30"  y="172" width="95" height="32"/><text class="d-node" x="77.5"  y="192" text-anchor="middle">CLIMATE</text>
+              <rect class="d-box" x="133" y="172" width="95" height="32"/><text class="d-node" x="180.5" y="192" text-anchor="middle">WATER</text>
+              <rect class="d-box" x="236" y="172" width="95" height="32"/><text class="d-node" x="283.5" y="192" text-anchor="middle">SOIL</text>
+              <rect class="d-box" x="339" y="172" width="95" height="32"/><text class="d-node" x="386.5" y="192" text-anchor="middle">SLOPE</text>
+              <rect class="d-box" x="442" y="172" width="88" height="32"/><text class="d-node" x="486"   y="192" text-anchor="middle">MARKET</text>
+            </g>
+            <text class="d-micro" x="280" y="220" text-anchor="middle">SCHEMA-DRIVEN SCORE · TRACEABLE INPUTS · NO SERVER-SIDE BLACK BOX</text>
+            <path class="d-flow" d="M280 230v20" marker-end="url(#dA)"/>
+
+            <text class="d-micro" x="20" y="268">03 / NEIGHBOURHOOD PLAN</text>
+            <g class="d-pop" style="--dly:210ms">
+              <rect class="d-box d-box--g" x="20"  y="276" width="164" height="44"/><text class="d-node" x="102" y="298" text-anchor="middle">01 · OLIVE</text><text class="d-sub" x="102" y="313" text-anchor="middle">HIGH FIT</text>
+              <rect class="d-box d-box--a" x="198" y="276" width="164" height="44"/><text class="d-node" x="280" y="298" text-anchor="middle">02 · CITRUS</text><text class="d-sub" x="280" y="313" text-anchor="middle">FIELD CHECK</text>
+              <rect class="d-box"          x="376" y="276" width="164" height="44"/><text class="d-node" x="458" y="298" text-anchor="middle">A4 ACTION PLAN</text><text class="d-sub" x="458" y="313" text-anchor="middle">PRINT / SHARE</text>
+            </g>
+
+            <text class="d-micro" x="20" y="352">04 / DELIVERY</text>
+            <g class="d-pop" style="--dly:290ms">
+              <rect class="d-box" x="20" y="360" width="520" height="42"/>
+              <text class="d-node" x="280" y="380" text-anchor="middle">ZERO-BACKEND STATIC DEPLOYMENT</text>
+              <text class="d-sub"  x="280" y="395" text-anchor="middle">LOCAL PERSISTENCE · PRINTABLE FIELD OUTPUT</text>
+            </g>
+          </svg>
