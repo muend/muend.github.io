@@ -60,7 +60,7 @@ PROJECTS = [
             ("https://github.com/muend/geoai-skills/blob/main/BENCHMARK.md",
              ("Benchmark", "Kıyaslama")),
         ],
-        tags=[("live", ("Active", "Aktif")), "v0.2.0", "MIT",
+        tags=[("live", ("Active", "Aktif")), "v0.4.0", "MIT",
               ("", ("18 skills", "18 skill"))],
     ),
     dict(

@@ -179,7 +179,7 @@ def build():
     project_page(
         "geoai-skills",
         spec_rows=[
-            (_("Version", "Sürüm"), "0.2.0"),
+            (_("Version", "Sürüm"), "0.4.0"),
             (_("License", "Lisans"), "MIT"),
             (_("Skills", "Skill sayısı"), _("18, grouped into five lifecycle stages",
                                             "18, beş yaşam döngüsü aşamasına ayrılmış")),
