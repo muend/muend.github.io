@@ -10,9 +10,6 @@
 <link rel="apple-touch-icon" href="../assets/brand/favicon-180.png">
 <link rel="manifest" href="../assets/brand/site.webmanifest">
 <link rel="canonical" href="https://muend.github.io/projects/arcgis-mcp-bridge.html">
-<link rel="alternate" hreflang="en" href="https://muend.github.io/projects/arcgis-mcp-bridge.html">
-<link rel="alternate" hreflang="tr" href="https://muend.github.io/tr/projects/arcgis-mcp-bridge.html">
-<link rel="alternate" hreflang="x-default" href="https://muend.github.io/projects/arcgis-mcp-bridge.html">
 <title>arcgis-mcp-bridge — a local-first MCP server for ArcGIS Pro</title>
 <meta name="description" content="100 declarative ArcGIS Pro geoprocessing tools exposed over MCP, with PathGuard enforced independently in two isolated processes.">
 <meta name="theme-color" content="#F7F7F1">
@@ -50,7 +47,6 @@
         <a href="../practice.html" data-nav="practice">Practice</a>
         <a href="../index.html#contact" data-nav="contact">Contact</a>
       </nav>
-      <div class="langsw mono" role="group" aria-label="Change language"><span class="lang-opt is-on" aria-current="true">EN</span><span aria-hidden="true">/</span><a class="lang-opt" href="../tr/projects/arcgis-mcp-bridge.html" hreflang="tr" lang="tr">TR</a></div>
       <span class="status-pill mono"><i aria-hidden="true"></i><span>Open source · active</span></span>
     </div>
   </div>
@@ -72,7 +68,7 @@
       <p class="deck rv" style="--d:120ms">100 declarative geoprocessing tools. Two isolated processes. One security floor.</p>
     </div>
     <div class="phead-side rv" style="--d:160ms">
-      <div class="ptags"><span class="tag-chip tag-chip--pkg">PyPI</span><span class="tag-chip">Apache-2.0</span><span class="tag-chip ">100 tools</span><span class="tag-chip ">Windows</span></div>
+      <div class="ptags"><span class="tag-chip">Apache-2.0</span><span class="tag-chip">100 tools</span><span class="tag-chip">Windows</span></div>
       <div class="spec">
   <div><span class="k">License</span><span class="v">Apache-2.0</span></div>
   <div><span class="k">Package</span><span class="v"><code>pip install arcgis-mcp-bridge</code></span></div>
@@ -170,7 +166,8 @@
     <h3>100 tools across ten verticals</h3>
     <span class="rule" aria-hidden="true"></span>
   </div>
-  <p>Every tool is declarative: a typed Pydantic v2 contract in, a structured NDJSON result frame out. Failures are values, not stack traces.</p>
+  <p>Every tool is declarative: a typed Pydantic v2 contract in, a structured NDJSON result frame out.
+  Failures are values, not stack traces.</p>
 <div class="catalog rv">
   <div><div class="c"><strong>Geometry analysis</strong><span class="n">23</span></div><p>Overlay, buffer, dissolve, proximity, topology-aware operations.</p></div>
   <div><div class="c"><strong>Data management</strong><span class="n">22</span></div><p>Feature classes, fields, geodatabases, conversion, append.</p></div>
@@ -183,7 +180,9 @@
   <div><div class="c"><strong>Coordinate &amp; projection</strong><span class="n">4</span></div><p>Define, project, describe and validate spatial references.</p></div>
   <div><div class="c"><strong>Vision analytics</strong><span class="n">1</span></div><p>Sketch-to-GIS: ORB + RANSAC registration with HSV segmentation.</p></div>
 </div>
-  <p class="fig-note">The vision tool turns a photographed hand-drawn parcel boundary into geodatabase features by registering the sketch against a reference frame, then segmenting the drawn lines in HSV space.</p>
+  <p class="fig-note">The vision tool turns a photographed hand-drawn parcel boundary into
+  geodatabase features by registering the sketch against a reference frame, then segmenting the drawn
+  lines in HSV space.</p>
 </section>
 
 <section class="prose rv">

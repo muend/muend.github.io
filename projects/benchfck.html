@@ -10,9 +10,6 @@
 <link rel="apple-touch-icon" href="../assets/brand/favicon-180.png">
 <link rel="manifest" href="../assets/brand/site.webmanifest">
 <link rel="canonical" href="https://muend.github.io/projects/benchfck.html">
-<link rel="alternate" hreflang="en" href="https://muend.github.io/projects/benchfck.html">
-<link rel="alternate" hreflang="tr" href="https://muend.github.io/tr/projects/benchfck.html">
-<link rel="alternate" hreflang="x-default" href="https://muend.github.io/projects/benchfck.html">
 <title>benchfck — exact machine-state benchmark harness</title>
 <meta name="description" content="A Brainfuck-based generator and exact Rust harness that produces, validates and scores machine-state tasks across four controlled instruction encodings.">
 <meta name="theme-color" content="#F7F7F1">
@@ -50,7 +47,6 @@
         <a href="../practice.html" data-nav="practice">Practice</a>
         <a href="../index.html#contact" data-nav="contact">Contact</a>
       </nav>
-      <div class="langsw mono" role="group" aria-label="Change language"><span class="lang-opt is-on" aria-current="true">EN</span><span aria-hidden="true">/</span><a class="lang-opt" href="../tr/projects/benchfck.html" hreflang="tr" lang="tr">TR</a></div>
       <span class="status-pill mono"><i aria-hidden="true"></i><span>Open source · active</span></span>
     </div>
   </div>
@@ -72,7 +68,7 @@
       <p class="deck rv" style="--d:120ms">A generator and exact harness for machine-state tasks, built so that nothing in the scoring path depends on a learned judge.</p>
     </div>
     <div class="phead-side rv" style="--d:160ms">
-      <div class="ptags"><span class="tag-chip tag-chip--new">v0.4.0-alpha</span><span class="tag-chip">Apache-2.0</span><span class="tag-chip">Rust</span></div>
+      <div class="ptags"><span class="tag-chip">v0.4.0-alpha</span><span class="tag-chip">Apache-2.0</span><span class="tag-chip">Rust</span></div>
       <div class="spec">
   <div><span class="k">Version</span><span class="v">0.4.0-alpha · engineering candidate</span></div>
   <div><span class="k">License</span><span class="v">Apache-2.0 (code) · CC BY 4.0 (future datasets)</span></div>
@@ -105,7 +101,7 @@
     <h3>From seed to score</h3>
     <span class="rule" aria-hidden="true"></span>
   </div>
-  <p>A candidate program is only accepted if the typed intermediate representation and the encodings agree on every one of the 256 possible input bindings. Anything that disagrees is discarded before a model ever sees it.</p>
+  <p>A candidate program is only accepted if the typed intermediate representation and three of the four encodings agree on every one of the 256 possible input bindings. Anything that disagrees is discarded before a model ever sees it.</p>
 <div class="plate rv" data-plate data-title="Fig. 01 — Generation and verification chain">
   <div class="plate-bar"><strong>Fig. 01 / Generation and verification chain</strong>
     <button class="expand" type="button" data-expand>Expand<svg viewBox="0 0 16 16" aria-hidden="true"><path d="M2 6V2h4M14 10v4h-4M2 2l5 5M14 14l-5-5" fill="none" stroke="currentColor" stroke-width="1.7"/></svg></button>
@@ -216,7 +212,8 @@
     <h3>What a generated item has to clear</h3>
     <span class="rule" aria-hidden="true"></span>
   </div>
-  <p>Population-level gates are published before any model is run, so the acceptance criteria cannot be tuned after seeing results.</p>
+  <p>Population-level gates are published before any model is run, so the acceptance criteria cannot
+  be tuned after seeing results.</p>
 <div class="catalog rv">
   <div><div class="c"><strong>Trace semantic density</strong><span class="n">≥ 0.30</span></div><p>Execution has to actually do work, not idle through steps.</p></div>
   <div><div class="c"><strong>Avalanche score</strong><span class="n">≥ 0.60</span></div><p>Small input changes must propagate into the machine state.</p></div>

@@ -10,9 +10,6 @@
 <link rel="apple-touch-icon" href="assets/brand/favicon-180.png">
 <link rel="manifest" href="assets/brand/site.webmanifest">
 <link rel="canonical" href="https://muend.github.io/research.html">
-<link rel="alternate" hreflang="en" href="https://muend.github.io/research.html">
-<link rel="alternate" hreflang="tr" href="https://muend.github.io/tr/research.html">
-<link rel="alternate" hreflang="x-default" href="https://muend.github.io/research.html">
 <title>Research — spatial econometrics, resilience indicators, remote sensing</title>
 <meta name="description" content="Reproducible studies on Türkiye housing prices, urban-territorial resilience indicators and agricultural segmentation, with methods and limitations stated.">
 <meta name="theme-color" content="#F7F7F1">
@@ -50,7 +47,6 @@
         <a href="practice.html" data-nav="practice">Practice</a>
         <a href="index.html#contact" data-nav="contact">Contact</a>
       </nav>
-      <div class="langsw mono" role="group" aria-label="Change language"><span class="lang-opt is-on" aria-current="true">EN</span><span aria-hidden="true">/</span><a class="lang-opt" href="tr/research.html" hreflang="tr" lang="tr">TR</a></div>
       <span class="status-pill mono"><i aria-hidden="true"></i><span>Open source · active</span></span>
     </div>
   </div>
@@ -69,7 +65,9 @@
     <div>
       <span class="kind mono rv">Academic &amp; research</span>
       <h1 class="rv" style="--d:60ms">Research</h1>
-      <p class="deck rv" style="--d:120ms">Studies spanning spatial econometrics, composite territorial indicators and remote-sensing segmentation — with the methods and the limits stated in the same breath.</p>
+      <p class="deck rv" style="--d:120ms">Studies spanning spatial econometrics, composite
+        territorial indicators and remote-sensing segmentation — with the methods and the limits
+        stated in the same breath.</p>
     </div>
     <div class="phead-side rv" style="--d:160ms">
       <div class="spec">
@@ -89,14 +87,18 @@
     <h3>turkiye-housing-prices-pandemic</h3>
     <span class="rule" aria-hidden="true"></span>
   </div>
-  <p>A reproducible, region-level analysis separating real inflation-adjusted house price growth from inflation itself, across 150 months of Türkiye's housing market.</p>
+  <p>A reproducible, region-level analysis separating real inflation-adjusted house price growth from
+  inflation itself, across 150 months of Türkiye's housing market.</p>
 <div class="catalog rv">
   <div><div class="c"><strong>Period</strong><span class="n">150</span></div><p>Months, November 2013 to April 2026.</p></div>
   <div><div class="c"><strong>Pre-pandemic</strong><span class="n">−2%</span></div><p>Real growth 2014–2019, against +84% nominal.</p></div>
   <div><div class="c"><strong>Post-pandemic</strong><span class="n">+106%</span></div><p>Real growth 2020–2025, against +1521% nominal.</p></div>
   <div><div class="c"><strong>Regional spread</strong><span class="n">141%</span></div><p>Ankara's real growth, against İstanbul's 91%.</p></div>
 </div>
-  <p class="fig-note">Method: real index construction from the TCMB residential property price index deflated by headline CPI, with CAGR, Fisher identity validation and alternative deflator comparison. Spatial structure tested with global Moran's I and LISA. Data from TCMB EVDS and TÜİK; province boundaries derived from OpenStreetMap.</p>
+  <p class="fig-note">Method: real index construction from the TCMB residential property price index
+  deflated by headline CPI, with CAGR, Fisher identity validation and alternative deflator
+  comparison. Spatial structure tested with global Moran's I and LISA. Data from TCMB EVDS and TÜİK;
+  province boundaries derived from OpenStreetMap.</p>
 <div class="note"><span class="mono">Limitations</span><p>Maps are simplified rather than cartometric. LISA has limited power at 19 spatial units. The analysis is <strong>descriptive, not causal</strong>, and no multiple-comparison correction is applied.</p></div>
   <div class="plinks"><a class="btn btn--solid" href="https://github.com/muend/turkiye-housing-prices-pandemic" target="_blank" rel="noopener"><span>Repository</span><svg viewBox="0 0 16 16" aria-hidden="true"><path d="M3 13 13 3M6 3h7v7" fill="none" stroke="currentColor" stroke-width="1.7"/></svg></a></div>
 </section>
@@ -107,14 +109,18 @@
     <h3>kutri-resilience-index</h3>
     <span class="rule" aria-hidden="true"></span>
   </div>
-  <p>The Kaş Urban-Territorial Resilience Index: a reproducible five-pillar composite indicator prototype for the Kaş/Bayındır planning area in Antalya.</p>
+  <p>The Kaş Urban-Territorial Resilience Index: a reproducible five-pillar composite indicator
+  prototype for the Kaş/Bayındır planning area in Antalya.</p>
 <div class="catalog rv">
   <div><div class="c"><strong>Indicators</strong><span class="n">40</span></div><p>Distributed 7 / 7 / 8 / 10 / 8 across the five pillars.</p></div>
   <div><div class="c"><strong>Pillars</strong><span class="n">5</span></div><p>Hazard, socio-demographic, economic, infrastructure, environmental-cultural.</p></div>
   <div><div class="c"><strong>Normalisation</strong><span class="n">0–1</span></div><p>Directional logic per indicator, positive or negative.</p></div>
   <div><div class="c"><strong>Aggregation</strong><span class="n">AHP</span></div><p>Arithmetic mean within pillars, weighted geometric mean across them.</p></div>
 </div>
-  <p class="fig-note">Pillars: Natural Hazard &amp; Physical Vulnerability; Socio-Demographic Adaptive Capacity; Economic Resilience; Infrastructure &amp; Service Continuity; Environmental &amp; Cultural Capital. Weights come from an Analytic Hierarchy Process eigenvector, with nominal policy weights tested as an alternative. MIT licence covers the source; raw data is not redistributed.</p>
+  <p class="fig-note">Pillars: Natural Hazard &amp; Physical Vulnerability; Socio-Demographic Adaptive
+  Capacity; Economic Resilience; Infrastructure &amp; Service Continuity; Environmental &amp; Cultural
+  Capital. Weights come from an Analytic Hierarchy Process eigenvector, with nominal policy weights
+  tested as an alternative. MIT licence covers the source; raw data is not redistributed.</p>
 <div class="note"><span class="mono">Limitations</span><p>Explicitly <strong>not a universal or fully validated resilience model</strong>. It is a case-specific evidence base for planning decisions in one district.</p></div>
   <div class="plinks"><a class="btn btn--solid" href="https://github.com/muend/kutri-resilience-index" target="_blank" rel="noopener"><span>Repository</span><svg viewBox="0 0 16 16" aria-hidden="true"><path d="M3 13 13 3M6 3h7v7" fill="none" stroke="currentColor" stroke-width="1.7"/></svg></a></div>
 </section>
@@ -125,7 +131,9 @@
     <h3>agri-unet</h3>
     <span class="rule" aria-hidden="true"></span>
   </div>
-  <p>Downstream agricultural pattern identification from satellite imagery, kept separate from the reusable data-preparation layer so that experiments stay auditable and the dataset work can be cited on its own.</p>
+  <p>Downstream agricultural pattern identification from satellite imagery, kept separate from the
+  reusable data-preparation layer so that experiments stay auditable and the dataset work can be
+  cited on its own.</p>
 <div class="note"><span class="mono">Status</span><p>Segmentation work sits downstream of <a href='projects/sentinel-crop-pipeline.html' style='text-decoration:underline'>sentinel-crop-pipeline</a>, which supplies the spatially blocked patches and aligned label masks. The repository is not yet populated, so there are no published metrics or trained weights to report here.</p></div>
 </section>
 

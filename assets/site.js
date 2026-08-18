@@ -222,31 +222,13 @@
     var running = false, idleTimer = 0;
 
     /* What the reticle says when it locks onto something. */
-    var TR = document.documentElement.lang === 'tr';
-    var LABELS = TR ? [
-      ['[data-expand]',            'incele'],
-      ['.cap-tab',                 'değiştir'],
-      ['a[href^="mailto:"]',       'yaz'],
-      ['.lang-opt',                'dil'],
-      ['.prow',                    'projeyi aç'],
-      ['.teaser',                  'oku'],
-      ['.pager a',                 'geç'],
-      ['.plinks a',                'aç'],
-      ['.btn',                     'git'],
-      ['.navlinks a',              'atla'],
-      ['.brand',                   'başa dön'],
-      ['.dlg-close',               'kapat'],
-      ['[data-plate]',             'diyagram'],
-      ['a',                        'aç']
-    ] : [
+    var LABELS = [
       ['[data-expand]',            'inspect'],
       ['.cap-tab',                 'switch'],
       ['a[href^="mailto:"]',       'write'],
-      ['.lang-opt',                'language'],
-      ['.prow',                    'open project'],
-      ['.teaser',                  'read'],
-      ['.pager a',                 'go'],
-      ['.plinks a',                'open'],
+      ['.rrow',                    'open study'],
+      ['.sheet-body h3 a',         'open repo'],
+      ['.sheet-links a',           'open'],
       ['.btn',                     'go'],
       ['.navlinks a',              'jump'],
       ['.brand',                   'top'],
