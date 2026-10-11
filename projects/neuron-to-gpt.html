@@ -1,0 +1,275 @@
+<!DOCTYPE html>
+<html lang="en" data-page="projects">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+<script>document.documentElement.classList.add('js');</script>
+<link rel="icon" type="image/svg+xml" href="../assets/brand/favicon.svg">
+<link rel="icon" sizes="any" href="../assets/brand/favicon.ico">
+<link rel="icon" type="image/png" sizes="32x32" href="../assets/brand/favicon-32.png">
+<link rel="apple-touch-icon" href="../assets/brand/favicon-180.png">
+<link rel="manifest" href="../assets/brand/site.webmanifest">
+<link rel="canonical" href="https://muend.github.io/projects/neuron-to-gpt.html">
+<link rel="alternate" hreflang="en" href="https://muend.github.io/projects/neuron-to-gpt.html">
+<link rel="alternate" hreflang="tr" href="https://muend.github.io/tr/projects/neuron-to-gpt.html">
+<link rel="alternate" hreflang="x-default" href="https://muend.github.io/projects/neuron-to-gpt.html">
+<title>neuron-to-gpt — a character-level GPT built from one neuron up</title>
+<meta name="description" content="A learning journal from a single neuron to a character-level GPT: autograd without libraries, a six-stage measured comparison and a 4.8M-parameter model trained on an A100.">
+<meta name="theme-color" content="#F7F7F1">
+<meta name="color-scheme" content="light">
+<meta name="referrer" content="strict-origin-when-cross-origin">
+<meta name="robots" content="index,follow,max-image-preview:large">
+<meta name="author" content="Muhammed Enes Duran">
+<meta property="og:title" content="neuron-to-gpt — a character-level GPT built from one neuron up">
+<meta property="og:description" content="A learning journal from a single neuron to a character-level GPT: autograd without libraries, a six-stage measured comparison and a 4.8M-parameter model trained on an A100.">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://muend.github.io/projects/neuron-to-gpt.html">
+<meta property="og:site_name" content="Muhammed Enes Duran">
+<meta property="og:locale" content="en_US">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="neuron-to-gpt — a character-level GPT built from one neuron up">
+<meta name="twitter:description" content="A learning journal from a single neuron to a character-level GPT: autograd without libraries, a six-stage measured comparison and a 4.8M-parameter model trained on an A100.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wdth,wght@12..96,75..100,400..800&family=IBM+Plex+Mono:wght@400;500;600&family=Instrument+Sans:ital,wght@0,400..700;1,400..600&display=swap">
+<link rel="stylesheet" href="../assets/site.css">
+</head>
+<body>
+<a class="skip-link" href="#main">Skip to content</a>
+<div class="progress" id="progress" aria-hidden="true"></div>
+<div class="cur cur-ring" id="cur-ring" aria-hidden="true"></div>
+<div class="cur cur-dot" id="cur-dot" aria-hidden="true"></div>
+<div class="cur cur-cap" id="cur-cap" aria-hidden="true"></div>
+<div class="topbar" id="topbar">
+  <div class="wrap">
+    <a class="brand" href="../index.html" aria-label="Muhammed Enes Duran — home">muend<b>.</b></a>
+    <div class="nav-area">
+      <nav class="navlinks mono" aria-label="Primary">
+        <a href="../index.html#projects" data-nav="projects">Projects</a>
+        <a href="../research.html" data-nav="research">Research</a>
+        <a href="../practice.html" data-nav="practice">Practice</a>
+        <a href="../index.html#contact" data-nav="contact">Contact</a>
+      </nav>
+      <div class="langsw mono" role="group" aria-label="Change language"><span class="lang-opt is-on" aria-current="true">EN</span><span aria-hidden="true">/</span><a class="lang-opt" href="../tr/projects/neuron-to-gpt.html" hreflang="tr" lang="tr">TR</a></div>
+      <span class="status-pill mono"><i aria-hidden="true"></i><span>Open source · active</span></span>
+    </div>
+  </div>
+</div>
+
+<main id="main">
+
+<div class="wrap">
+  <nav class="crumb mono" aria-label="Breadcrumb">
+    <a href="../index.html#projects">Projects</a><span>/</span><span>07 · neuron-to-gpt</span>
+  </nav>
+</div>
+
+<header class="phead">
+  <div class="wrap phead-grid">
+    <div>
+      <span class="kind mono rv">LLM fundamentals · Built from scratch</span>
+      <h1 class="rv" style="--d:60ms">neuron-to-gpt</h1>
+      <p class="deck rv" style="--d:120ms">A learning journal that starts at one neuron and ends at a trained character-level GPT, with the architecture's gains measured stage by stage.</p>
+    </div>
+    <div class="phead-side rv" style="--d:160ms">
+      <div class="ptags"><span class="tag-chip tag-chip--live">Public</span><span class="tag-chip">PyTorch</span><span class="tag-chip ">A100-trained</span><span class="tag-chip ">31 tests</span></div>
+      <div class="spec">
+  <div><span class="k">Scope</span><span class="v">8 weeks, one runnable directory each</span></div>
+  <div><span class="k">Model</span><span class="v">6 blocks · 8 heads · width 256 · context 256</span></div>
+  <div><span class="k">Parameters</span><span class="v">4,833,345 English · 4,860,534 Turkish</span></div>
+  <div><span class="k">Training</span><span class="v">5,000 updates · BF16 · NVIDIA A100 · ≈7.3 min per model</span></div>
+  <div><span class="k">Validation NLL</span><span class="v">1.4723 Shakespeare · 1.6239 Turkish</span></div>
+  <div><span class="k">Tests</span><span class="v">31, incl. exact checkpoint continuation</span></div>
+</div>
+      <div class="plinks">
+          <a class="btn btn--solid" href="https://github.com/muend/neuron-to-gpt" target="_blank" rel="noopener"><span>Repository</span><svg viewBox="0 0 16 16" aria-hidden="true"><path d="M3 13 13 3M6 3h7v7" fill="none" stroke="currentColor" stroke-width="1.7"/></svg></a>
+          <a class="btn btn--ghost" href="https://github.com/muend/neuron-to-gpt/tree/main/week08" target="_blank" rel="noopener"><span>Week 8 results</span><svg viewBox="0 0 16 16" aria-hidden="true"><path d="M3 13 13 3M6 3h7v7" fill="none" stroke="currentColor" stroke-width="1.7"/></svg></a>
+      </div>
+    </div>
+  </div>
+</header>
+
+<div class="wrap">
+
+<section class="prose rv">
+  <span class="mono">Why</span>
+  <div>
+    <h3>Know the machine you evaluate</h3>
+    <p>Evaluating language models for a living without ever having built one leaves a gap. This journal closes it the slow way: a neuron, a loss, a gradient, then an autograd engine written with nothing but the standard library, and only then PyTorch.</p><p>From week three each new layer is rebuilt by hand before the framework version is trusted: the bigram counts before the neural bigram, manual backpropagation before <code>backward()</code>, a custom BatchNorm before LayerNorm, causal averaging before attention. The Week 8 model was written before the finished reference was consulted.</p>
+  </div>
+</section>
+
+<section class="fig">
+  <div class="fig-head">
+    <span class="n">Fig. 01</span>
+    <h3>Eight weeks, then a measured comparison</h3>
+    <span class="rule" aria-hidden="true"></span>
+  </div>
+  <p>The six-stage comparison holds the corpus, split, seed and iteration budget fixed and adds one idea at a time. Each step improved in this run; the repository says plainly that improvement is not guaranteed for every configuration.</p>
+<div class="plate rv" data-plate data-title="Fig. 01 — Path and measured stages">
+  <div class="plate-bar"><strong>Fig. 01 / Path and measured stages</strong>
+    <button class="expand" type="button" data-expand>Expand<svg viewBox="0 0 16 16" aria-hidden="true"><path d="M2 6V2h4M14 10v4h-4M2 2l5 5M14 14l-5-5" fill="none" stroke="currentColor" stroke-width="1.7"/></svg></button>
+  </div>
+<svg viewBox="0 0 1180 520" role="img" preserveAspectRatio="xMidYMid meet"
+     aria-label="neuron-to-gpt: eight weekly stages from a single neuron through autograd, a bigram model, an MLP language model, manual backpropagation, a WaveNet-style hierarchy and causal attention to a character-level GPT; weeks one and two use no machine-learning library. A six-stage comparison at a fixed budget lowers validation loss from 2.4942 for a bigram model to 1.8673 with LayerNorm. The scaled model has 4,833,345 parameters and reaches validation loss 1.4723 on Shakespeare after 5,000 updates on an A100.">
+  <text class="d-title" x="20" y="26">ONE NEURON → CHARACTER-LEVEL GPT</text>
+  <text class="d-micro" x="1160" y="26" text-anchor="end">8 WEEKS · 31 TESTS · PUBLIC</text>
+  <path class="d-rule" d="M20 36H1160"/>
+
+  <!-- 01 eight weeks -->
+  <text class="d-micro" x="20"   y="58">01 / EIGHT WEEKS, ONE DEPENDENCY CHAIN</text>
+  <text class="d-micro" x="1160" y="58" text-anchor="end">EACH LAYER IS REBUILT BEFORE IT IS USED</text>
+  <g class="d-pop">
+    <rect class="d-box d-box--a" x="20" y="66" width="132" height="58"/>
+    <text class="d-node" x="86" y="90" text-anchor="middle">W1 · NEURON</text>
+    <text class="d-sub"  x="86" y="107" text-anchor="middle">LOSS · GRADIENT</text>
+
+    <rect class="d-box d-box--a" x="164" y="66" width="132" height="58"/>
+    <text class="d-node" x="230" y="90" text-anchor="middle">W2 · AUTOGRAD</text>
+    <text class="d-sub"  x="230" y="107" text-anchor="middle">VALUE · BACKWARD()</text>
+
+    <rect class="d-box d-box--g" x="308" y="66" width="132" height="58"/>
+    <text class="d-node" x="374" y="90" text-anchor="middle">W3 · BIGRAM</text>
+    <text class="d-sub"  x="374" y="107" text-anchor="middle">COUNTS · NLL</text>
+
+    <rect class="d-box d-box--g" x="452" y="66" width="132" height="58"/>
+    <text class="d-node" x="518" y="90" text-anchor="middle">W4 · MLP LM</text>
+    <text class="d-sub"  x="518" y="107" text-anchor="middle">EMBED · BATCHNORM</text>
+
+    <rect class="d-box d-box--g" x="596" y="66" width="132" height="58"/>
+    <text class="d-node" x="662" y="90" text-anchor="middle">W5 · BACKPROP</text>
+    <text class="d-sub"  x="662" y="107" text-anchor="middle">DERIVED BY HAND</text>
+
+    <rect class="d-box d-box--g" x="740" y="66" width="132" height="58"/>
+    <text class="d-node" x="806" y="90" text-anchor="middle">W6 · HIERARCHY</text>
+    <text class="d-sub"  x="806" y="107" text-anchor="middle">WAVENET-STYLE</text>
+
+    <rect class="d-box d-box--g" x="884" y="66" width="132" height="58"/>
+    <text class="d-node" x="950" y="90" text-anchor="middle">W7 · ATTENTION</text>
+    <text class="d-sub"  x="950" y="107" text-anchor="middle">CAUSAL · ONE HEAD</text>
+
+    <rect class="d-box d-box--ink" x="1028" y="66" width="132" height="58"/>
+    <text class="d-node d-inv" x="1094" y="90" text-anchor="middle">W8 · GPT</text>
+    <text class="d-sub d-inv"  x="1094" y="107" text-anchor="middle">BLOCKS · A100</text>
+  </g>
+  <path class="d-flow" d="M152 95h12M296 95h12M440 95h12M584 95h12M728 95h12M872 95h12M1016 95h12"/>
+  <path class="d-hair" d="M20 134h276"/>
+  <text class="d-micro d-amber" x="20" y="150">WEEKS 1–2 · STANDARD LIBRARY ONLY</text>
+  <path class="d-hair" d="M308 134h852"/>
+  <text class="d-micro d-accent" x="308" y="150">WEEKS 3–8 · PYTORCH</text>
+
+  <!-- 02 six-stage comparison -->
+  <text class="d-micro" x="20"   y="186">02 / SIX-STAGE COMPARISON — VALIDATION NLL, LOWER IS BETTER</text>
+  <text class="d-micro" x="1160" y="186" text-anchor="end">SAME CORPUS · SEED · 4,000 ITERATIONS ON CPU</text>
+  <path class="d-hair" d="M250 196v188"/>
+  <g class="d-pop" style="--dly:140ms">
+    <text class="d-name" x="20" y="216">BIGRAM</text>
+    <rect class="d-box" x="250" y="202" width="748" height="20"/>
+    <text class="d-name" x="1006" y="216">2.4942</text>
+    <text class="d-tag"  x="1160" y="216" text-anchor="end">4,225 PARAMS</text>
+
+    <text class="d-name" x="20" y="246">SINGLE HEAD</text>
+    <rect class="d-box" x="250" y="232" width="646" height="20"/>
+    <text class="d-name" x="904" y="246">2.3457</text>
+    <text class="d-tag"  x="1160" y="246" text-anchor="end">22,721 PARAMS</text>
+
+    <text class="d-name" x="20" y="276">MULTI-HEAD</text>
+    <rect class="d-box d-box--g" x="250" y="262" width="500" height="20"/>
+    <text class="d-name" x="758" y="276">2.1314</text>
+    <text class="d-tag"  x="1160" y="276" text-anchor="end">26,881 PARAMS</text>
+
+    <text class="d-name" x="20" y="306">+ FEEDFORWARD</text>
+    <rect class="d-box d-box--g" x="250" y="292" width="370" height="20"/>
+    <text class="d-name" x="628" y="306">1.9422</text>
+    <text class="d-tag"  x="1160" y="306" text-anchor="end">59,969 PARAMS</text>
+
+    <text class="d-name" x="20" y="336">+ RESIDUAL PATHS</text>
+    <rect class="d-box d-box--g" x="250" y="322" width="331" height="20"/>
+    <text class="d-name" x="589" y="336">1.8846</text>
+    <text class="d-tag"  x="1160" y="336" text-anchor="end">59,969 PARAMS</text>
+
+    <text class="d-name" x="20" y="366">+ PRE-LAYERNORM</text>
+    <rect class="d-box d-box--g" x="250" y="352" width="319" height="20"/>
+    <text class="d-name" x="577" y="366">1.8673</text>
+    <text class="d-tag"  x="1160" y="366" text-anchor="end">60,353 PARAMS</text>
+  </g>
+  <text class="d-micro" x="250" y="402">BAR LENGTH = NLL ABOVE 1.40 NATS PER CHARACTER · PARAMETER COUNTS RISE, SO THIS IS NOT PARAMETER-MATCHED</text>
+
+  <!-- 03 scaled model -->
+  <text class="d-micro" x="20"   y="436">03 / SCALED MODEL</text>
+  <text class="d-micro" x="1160" y="436" text-anchor="end">WIDTH, DEPTH, CONTEXT AND BUDGET CHANGE TOGETHER: NOT AN ABLATION</text>
+  <rect class="d-box d-box--ink" x="20" y="444" width="1140" height="52"/>
+  <text class="d-node d-inv" x="590" y="466" text-anchor="middle">6 BLOCKS · 8 HEADS · WIDTH 256 · CONTEXT 256 · 4,833,345 PARAMETERS</text>
+  <text class="d-sub d-inv"  x="590" y="483" text-anchor="middle">5,000 UPDATES ON AN A100 · VALIDATION NLL 1.4723 SHAKESPEARE · 1.6239 TURKISH</text>
+</svg>
+</div>
+</section>
+
+<section class="fig">
+  <div class="fig-head">
+    <span class="n">Results</span>
+    <h3>What the trained models reached</h3>
+    <span class="rule" aria-hidden="true"></span>
+  </div>
+<div class="catalog rv">
+  <div><div class="c"><strong>Architecture gain</strong><span class="n">−0.627</span></div><p>Nats per character from bigram to the completed block, at a fixed CPU budget.</p></div>
+  <div><div class="c"><strong>Shakespeare</strong><span class="n">1.4723</span></div><p>Final validation NLL after 5,000 updates; best sampled checkpoint 1.4657 at step 4,500.</p></div>
+  <div><div class="c"><strong>Turkish corpus</strong><span class="n">1.6239</span></div><p>A 1.9M-character Nâzım Hikmet collection with a 118-character vocabulary. Not a ranking against English.</p></div>
+  <div><div class="c"><strong>Live inference</strong><span class="n">Gradio</span></div><p>An optional panel loads the trained checkpoints and generates text next to the recorded evidence.</p></div>
+</div>
+  <p class="fig-note">The Turkish corpus was prepared from three user-selected PDFs with layout-aware extraction and OCR recovery of 243 pages. Raw texts, PDFs and checkpoints stay out of Git; only metrics, loss histories, plots and samples are published.</p>
+</section>
+
+<section class="prose rv">
+  <span class="mono">Sample</span>
+  <div>
+    <h3>What 4.8 million parameters can and cannot do</h3>
+    <p>An unedited excerpt generated by the Shakespeare model, not a quotation:</p><p><code>KING RICHARD II: Shall I, be made to be exceeding?</code><br><code>QUEEN ELIZABETH: My hard will I be?</code></p><p>The model has learned speaker labels, line structure and plausible vocabulary. It has not learned meaning. A low character loss does not guarantee coherent writing, and the repository states that next to the samples.</p>
+  </div>
+</section>
+
+<div class="note"><span class="mono">Limitations</span><p>Educational scale, and stated as such. The larger runs change width, depth, context, training budget and precision together, so they are <strong>not an ablation</strong>; the six-stage CPU table is the controlled comparison, and it is not parameter-matched. The reported GPU losses were validated for internal consistency against the returned histories, not re-evaluated independently. The sequence follows Andrej Karpathy's lecture series.</p></div>
+
+</div>
+
+<div class="wrap">
+  <nav class="pager" aria-label="More projects">
+    <a href="placetwin.html"><span class="mono">← 06 · previous</span><strong>PlaceTwin</strong></a>
+    <a href="pixel-llm.html"><span class="mono">08 · next →</span><strong>Pixel LLM</strong></a>
+  </nav>
+</div>
+
+
+<section class="contact">
+  <div class="wrap">
+    <div class="contact-grid">
+      <div>
+        <span class="kicker mono rv">Open to collaboration</span>
+        <h2 class="rv" style="--d:60ms">Build spatial systems that hold up.</h2>
+        <div class="cta rv" style="--d:140ms">
+          <a class="btn btn--solid" href="mailto:nsduraan@gmail.com"><span>nsduraan@gmail.com</span></a>
+          <a class="btn btn--ghost" href="https://www.linkedin.com/in/muhammed-enes-duran/" target="_blank" rel="noopener"><span class="dot" aria-hidden="true"></span><span>LinkedIn</span></a>
+          <a class="btn btn--ghost" href="../index.html#projects"><span>All projects</span></a>
+        </div>
+      </div>
+    </div>
+    <div class="colophon mono">
+      <span>© 2026 Muhammed Enes Duran</span>
+      <span>Static site · no trackers</span>
+    </div>
+  </div>
+</section>
+
+</main>
+
+<dialog class="dlg" id="dlg" aria-labelledby="dlg-title">
+  <div class="dlg-head">
+    <strong id="dlg-title">Technical diagram</strong>
+    <button class="dlg-close" type="button" data-close>Close</button>
+  </div>
+  <div class="dlg-body" id="dlg-body"></div>
+</dialog>
+
+<script src="../assets/site.js" defer></script>
+</body>
+</html>

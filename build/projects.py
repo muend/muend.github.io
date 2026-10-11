@@ -7,8 +7,38 @@ visitor-facing string carries both languages as (en, tr).
 
 PROJECTS = [
     dict(
-        slug="benchfck",
+        slug="eatbetter",
         no="00",
+        name="EatBetter",
+        kind=("Client work · LLM evaluation and data quality",
+              "Müşteri işi · LLM değerlendirme ve veri kalitesi"),
+        blurb=("Twenty-five days as the AI engineer on a nutrition app: a measurement platform, a "
+               "cleaned food catalogue and a safer assistant, each change earned by evidence.",
+               "Bir beslenme uygulamasında yapay zekâ mühendisi olarak yirmi beş gün: bir ölçüm "
+               "platformu, temizlenmiş bir yemek kataloğu ve daha güvenli bir asistan; her "
+               "değişiklik kanıtla hak edildi."),
+        fig=("923", ("benchmark cases", "kıyaslama vakası")),
+        title=("EatBetter — production LLM evaluation and data quality",
+               "EatBetter — üretimde LLM değerlendirme ve veri kalitesi"),
+        desc=("Contract AI engineering on a nutrition app: a 923-case evaluation platform with "
+              "human-adjudicated labels, a guarded cleanup of a live PostgreSQL catalogue and a "
+              "measured safety fix for the in-app assistant.",
+              "Bir beslenme uygulamasında sözleşmeli yapay zekâ mühendisliği: insan hakemli "
+              "etiketlere sahip 923 vakalık değerlendirme platformu, canlı bir PostgreSQL "
+              "kataloğunun korumalı temizliği ve uygulama içi asistan için ölçülmüş bir güvenlik "
+              "düzeltmesi."),
+        deck=("Twenty-five days of contract AI engineering on a nutrition app, where every change to "
+              "the model, the catalogue or the assistant had to be earned by a measurement.",
+              "Bir beslenme uygulamasında yirmi beş günlük sözleşmeli yapay zekâ mühendisliği; "
+              "modele, kataloğa ya da asistana yapılan her değişiklik bir ölçümle hak edildi."),
+        links=[],
+        tags=[("live", ("Shipped to production", "Üretime alındı")),
+              ("", ("Contract · Sep 2026", "Sözleşmeli · Eyl 2026")),
+              ("", ("Private repositories", "Özel depolar"))],
+    ),
+    dict(
+        slug="benchfck",
+        no="01",
         name="benchfck",
         kind=("Deterministic evaluation · Exact Rust harness",
               "Deterministik değerlendirme · Kesin Rust koşumu"),
@@ -36,7 +66,7 @@ PROJECTS = [
     ),
     dict(
         slug="geoai-skills",
-        no="01",
+        no="02",
         name="geoai-skills",
         kind=("Agent skills · GeoAI knowledge infrastructure",
               "Ajan skill'leri · GeoAI bilgi altyapısı"),
@@ -65,7 +95,7 @@ PROJECTS = [
     ),
     dict(
         slug="arcgis-mcp-bridge",
-        no="02",
+        no="03",
         name="arcgis-mcp-bridge",
         kind=("MCP · Secure GIS execution", "MCP · Güvenli CBS yürütme"),
         blurb=("Exposes ArcGIS Pro geoprocessing to AI agents while keeping the licensed ArcPy "
@@ -95,7 +125,7 @@ PROJECTS = [
     ),
     dict(
         slug="sentinel-crop-pipeline",
-        no="03",
+        no="04",
         name="sentinel-crop-pipeline",
         kind=("Remote sensing · Reproducible data pipeline",
               "Uzaktan algılama · Yeniden üretilebilir veri hattı"),
@@ -124,7 +154,7 @@ PROJECTS = [
     ),
     dict(
         slug="agri-dss",
-        no="04",
+        no="05",
         name="agri-dss",
         kind=("Spatial DSS · Public-facing product", "Mekânsal KDS · Kamuya açık ürün"),
         blurb=("Turns regional agricultural data for 147 neighbourhoods into a crop plan a "
@@ -150,8 +180,90 @@ PROJECTS = [
               ("", ("5 districts", "5 ilçe")), ("", ("No backend", "Sunucusuz"))],
     ),
     dict(
+        slug="placetwin",
+        no="06",
+        name="PlaceTwin",
+        kind=("Urban digital twin · Studio platform", "Kentsel dijital ikiz · Stüdyo platformu"),
+        blurb=("A 3D digital twin of two urban-design study areas in Ayvalık, where every figure "
+               "carries its source and confidence class and an assistant answers from that data.",
+               "Ayvalık'taki iki kentsel tasarım çalışma alanının 3B dijital ikizi; her sayı "
+               "kaynağını ve güven sınıfını taşır, asistan da bu veriden yanıt verir."),
+        fig=("696", ("buildings modelled", "modellenen bina")),
+        title=("PlaceTwin — an urban digital twin that states its confidence",
+               "PlaceTwin — güvenini belirten bir kentsel dijital ikiz"),
+        desc=("A 3D digital twin and studio workspace for two urban-design sites in Ayvalık: 696 "
+              "buildings with source and confidence class, analysis and field tools, and a "
+              "tool-calling assistant grounded in the twin's data.",
+              "Ayvalık'taki iki kentsel tasarım alanı için 3B dijital ikiz ve stüdyo çalışma alanı: "
+              "kaynak ve güven sınıfı taşıyan 696 bina, analiz ve saha araçları ve ikizin verisine "
+              "dayanan, araç çağıran bir asistan."),
+        deck=("A 3D digital twin and studio workspace for two urban-design sites in Ayvalık, built "
+              "so that every number says where it came from and how far to trust it.",
+              "Ayvalık'taki iki kentsel tasarım alanı için 3B dijital ikiz ve stüdyo çalışma alanı; "
+              "her sayı nereden geldiğini ve ne kadar güvenilir olduğunu söyler."),
+        links=[],
+        tags=[("live", ("In studio use", "Stüdyoda kullanımda")),
+              ("", ("Private repository", "Özel depo")),
+              ("", ("TR / EN outputs", "TR / EN çıktı"))],
+    ),
+    dict(
+        slug="neuron-to-gpt",
+        no="07",
+        name="neuron-to-gpt",
+        kind=("LLM fundamentals · Built from scratch", "LLM temelleri · Sıfırdan inşa"),
+        blurb=("Eight weeks from a single neuron to a trained character-level GPT, with each "
+               "architectural step measured rather than assumed.",
+               "Tek bir nörondan eğitilmiş, karakter düzeyinde bir GPT'ye sekiz hafta; her mimari "
+               "adım varsayılmadı, ölçüldü."),
+        fig=("8", ("weeks, neuron to GPT", "hafta, nörondan GPT'ye")),
+        title=("neuron-to-gpt — a character-level GPT built from one neuron up",
+               "neuron-to-gpt — tek nörondan kurulan karakter düzeyinde GPT"),
+        desc=("A learning journal from a single neuron to a character-level GPT: autograd without "
+              "libraries, a six-stage measured comparison and a 4.8M-parameter model trained on an "
+              "A100.",
+              "Tek bir nörondan karakter düzeyinde bir GPT'ye uzanan öğrenme günlüğü: kütüphanesiz "
+              "otomatik türev, altı aşamalı ölçülmüş karşılaştırma ve A100'de eğitilen 4,8 milyon "
+              "parametreli bir model."),
+        deck=("A learning journal that starts at one neuron and ends at a trained character-level "
+              "GPT, with the architecture's gains measured stage by stage.",
+              "Tek bir nöronla başlayıp eğitilmiş, karakter düzeyinde bir GPT ile biten öğrenme "
+              "günlüğü; mimarinin kazançları aşama aşama ölçüldü."),
+        links=[
+            ("https://github.com/muend/neuron-to-gpt", ("Repository", "Depo")),
+            ("https://github.com/muend/neuron-to-gpt/tree/main/week08",
+             ("Week 8 results", "8. hafta sonuçları")),
+        ],
+        tags=[("live", ("Public", "Açık")), "PyTorch",
+              ("", ("A100-trained", "A100'de eğitildi")), ("", ("31 tests", "31 test"))],
+    ),
+    dict(
+        slug="pixel-llm",
+        no="08",
+        name="Pixel LLM",
+        kind=("Applied simulation · LLM development game",
+              "Uygulamalı simülasyon · LLM geliştirme oyunu"),
+        blurb=("A run-based game where each run trains one language model through ten stages, and "
+               "every shortcut taken upstream shows up in the final model card.",
+               "Her koşunun on aşamada bir dil modeli eğittiği, koşu tabanlı bir oyun; yukarı "
+               "akışta alınan her kestirme final model kartında ortaya çıkar."),
+        fig=("10", ("stages, data to launch", "aşama, veriden lansmana")),
+        title=("Pixel LLM — a game about building a language model",
+               "Pixel LLM — dil modeli inşa etmek üzerine bir oyun"),
+        desc=("A Godot game that turns the LLM pipeline into ten playable stages, from data "
+              "collection to launch, across three difficulty tiers and ending in a model card.",
+              "LLM hattını veri toplamadan lansmana on oynanabilir aşamaya çeviren bir Godot oyunu; "
+              "üç zorluk kademesi var ve koşu bir model kartıyla biter."),
+        deck=("A game about building a language model: ten stages from data collection to launch, "
+              "where upstream decisions carry through to a final model card.",
+              "Dil modeli inşa etmek üzerine bir oyun: veri toplamadan lansmana on aşama; yukarı "
+              "akıştaki kararlar final model kartına kadar taşınır."),
+        links=[],
+        tags=[("new", ("In development", "Geliştiriliyor")), "Godot 4.7.1",
+              ("", ("EN / TR", "EN / TR")), ("", ("Working title", "Geçici ad"))],
+    ),
+    dict(
         slug="founder-exe",
-        no="05",
+        no="09",
         name="FOUNDER.EXE",
         kind=("Applied simulation · Desktop game", "Uygulamalı simülasyon · Masaüstü oyunu"),
         blurb=("A startup simulation where cash, compliance, product and people interact under two "

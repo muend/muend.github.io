@@ -69,7 +69,58 @@ FOUNDER = """<svg class="glyph" viewBox="0 0 64 64" aria-hidden="true">
   <path class="gk" d="M11 49h42" opacity=".5"/>
 </svg>"""
 
+EATBETTER = """<svg class="glyph" viewBox="0 0 64 64" aria-hidden="true">
+  <path class="ga" d="M42 8v40"/>
+  <path class="gk" d="M10 16h24M8 28h20M20 40h28"/>
+  <rect class="gf" x="19" y="13" width="6" height="6"/>
+  <rect class="gf" x="15" y="25" width="6" height="6"/>
+  <rect class="gaf" x="31" y="37" width="6" height="6"/>
+  <path class="gk" d="M6 54h52"/>
+  <path class="gk" d="M12 54v4M27 54v4M42 54v4M57 54v4"/>
+</svg>"""
+
+PLACETWIN = """<svg class="glyph" viewBox="0 0 64 64" aria-hidden="true">
+  <rect class="gk" x="8"  y="26" width="11" height="18"/>
+  <rect class="gk" x="21" y="15" width="12" height="29"/>
+  <rect class="gaf" x="36" y="30" width="9" height="14"/>
+  <rect class="gk" x="47" y="21" width="9" height="23"/>
+  <path class="gk" d="M4 44h56"/>
+  <path class="ga" d="M40.5 13v13"/>
+  <circle class="gaf" cx="40.5" cy="10" r="2.6"/>
+  <path class="gg" d="M4 53q7-5 14 0t14 0 14 0 14 0"/>
+  <path class="gg" d="M4 59q7-5 14 0t14 0 14 0 14 0" opacity=".45"/>
+</svg>"""
+
+NEURON = """<svg class="glyph" viewBox="0 0 64 64" aria-hidden="true">
+  <path class="gk" d="M4 19l7 8M4 32h5M4 45l7-8"/>
+  <circle class="gk" cx="15" cy="32" r="6"/>
+  <path class="ga" d="M21 32h9"/>
+  <rect class="gk" x="30" y="8"  width="28" height="11"/>
+  <rect class="gk" x="30" y="26.5" width="28" height="11"/>
+  <rect class="gk" x="30" y="45" width="28" height="11"/>
+  <path class="gk" d="M44 19v7.5M44 37.5v7.5"/>
+  <rect class="gaf" x="35" y="30" width="9" height="4"/>
+</svg>"""
+
+PIXEL = """<svg class="glyph" viewBox="0 0 64 64" aria-hidden="true">
+  <rect class="gf" x="6"  y="8"  width="8" height="8" opacity=".22"/>
+  <rect class="gf" x="18" y="20" width="8" height="8" opacity=".4"/>
+  <rect class="gf" x="6"  y="32" width="8" height="8" opacity=".3"/>
+  <rect class="gf" x="18" y="44" width="8" height="8" opacity=".18"/>
+  <rect class="gf" x="30" y="8"  width="8" height="8" opacity=".3"/>
+  <rect class="gf" x="30" y="32" width="8" height="8" opacity=".5"/>
+  <rect class="gaf" x="42" y="20" width="8" height="8"/>
+  <rect class="gaf" x="42" y="32" width="8" height="8"/>
+  <rect class="gaf" x="42" y="44" width="8" height="8"/>
+  <rect class="gk" x="40" y="6" width="18" height="52"/>
+  <path class="gk" d="M4 58h32" opacity=".5"/>
+</svg>"""
+
 BY_SLUG = {
+    "eatbetter": EATBETTER,
+    "placetwin": PLACETWIN,
+    "neuron-to-gpt": NEURON,
+    "pixel-llm": PIXEL,
     "benchfck": BENCHFCK,
     "geoai-skills": GEOAI_SKILLS,
     "arcgis-mcp-bridge": ARCGIS_MCP,

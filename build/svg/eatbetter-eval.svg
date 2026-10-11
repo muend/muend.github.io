@@ -1,0 +1,93 @@
+<svg viewBox="0 0 1180 548" role="img" preserveAspectRatio="xMidYMid meet"
+     aria-label="EatBetter evaluation platform: a read-only, de-identified production sample is labelled by a three-model proposal panel and settled by human adjudication; the resulting benchmark has 923 cases, a sealed 277-case holdout, 16 deterministic metrics and 742 automated tests; candidates are compared on the same cases with a user-clustered bootstrap and pass a three-part release gate; three model decisions were made from those measurements.">
+  <defs>
+    <marker id="ebA" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto"><path d="M0 0 7 3.5 0 7Z" fill="var(--green)"/></marker>
+    <marker id="ebB" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto"><path d="M0 0 7 3.5 0 7Z" fill="var(--amber-deep)"/></marker>
+  </defs>
+
+  <text class="d-title" x="20" y="26">GROUND TRUTH → BENCHMARK → COMPARISON → DECISION</text>
+  <text class="d-micro" x="1160" y="26" text-anchor="end">CLIENT WORK · SEP 2026</text>
+  <path class="d-rule" d="M20 36H1160"/>
+
+  <!-- 01 ground truth -->
+  <text class="d-micro" x="20"   y="58">01 / GROUND TRUTH</text>
+  <text class="d-micro" x="1160" y="58" text-anchor="end">A MODEL THAT PROPOSES LABELS CANNOT BE A CANDIDATE</text>
+  <g class="d-pop">
+    <rect class="d-box d-box--g" x="20" y="66" width="364" height="48"/>
+    <text class="d-node" x="202" y="88" text-anchor="middle">READ-ONLY PRODUCTION SAMPLE</text>
+    <text class="d-sub"  x="202" y="103" text-anchor="middle">DE-IDENTIFIED · PSEUDONYMISED</text>
+
+    <rect class="d-box d-box--g" x="408" y="66" width="364" height="48"/>
+    <text class="d-node" x="590" y="88" text-anchor="middle">THREE-MODEL PROPOSAL PANEL</text>
+    <text class="d-sub"  x="590" y="103" text-anchor="middle">MODEL OUTPUT IS NEVER TREATED AS TRUTH</text>
+
+    <rect class="d-box d-box--g" x="796" y="66" width="364" height="48"/>
+    <text class="d-node" x="978" y="88" text-anchor="middle">HUMAN ADJUDICATION</text>
+    <text class="d-sub"  x="978" y="103" text-anchor="middle">FINAL CALL · 569 GOLD LABELS</text>
+  </g>
+  <path class="d-flow" d="M384 90h16" marker-end="url(#ebA)"/>
+  <path class="d-flow" d="M772 90h16" marker-end="url(#ebA)"/>
+  <path class="d-flow" d="M978 114v12H590v14" marker-end="url(#ebA)"/>
+
+  <!-- 02 benchmark -->
+  <text class="d-micro" x="20"   y="158">02 / BENCHMARK</text>
+  <text class="d-micro" x="1160" y="158" text-anchor="end">RUNNABLE BY ANYONE WITH THE REPOSITORY</text>
+  <g class="d-pop" style="--dly:110ms">
+    <rect class="d-box" x="20" y="166" width="270" height="52"/>
+    <text class="d-node" x="155" y="188" text-anchor="middle">923 CASES</text>
+    <text class="d-sub"  x="155" y="204" text-anchor="middle">631 DEV · 292 CALIBRATION</text>
+
+    <rect class="d-box d-box--d" x="310" y="166" width="270" height="52"/>
+    <text class="d-node" x="445" y="188" text-anchor="middle">SEALED HOLDOUT</text>
+    <text class="d-sub"  x="445" y="204" text-anchor="middle">277 CASES · NEVER READ, NEVER TUNED ON</text>
+
+    <rect class="d-box" x="600" y="166" width="270" height="52"/>
+    <text class="d-node" x="735" y="188" text-anchor="middle">16 DETERMINISTIC METRICS</text>
+    <text class="d-sub"  x="735" y="204" text-anchor="middle">MISSING = NOT MEASURED, NEVER ZERO</text>
+
+    <rect class="d-box" x="890" y="166" width="270" height="52"/>
+    <text class="d-node" x="1025" y="188" text-anchor="middle">742 AUTOMATED TESTS</text>
+    <text class="d-sub"  x="1025" y="204" text-anchor="middle">WINDOWS + LINUX CI</text>
+  </g>
+  <path class="d-flow" d="M155 218v14M735 218v14M1025 218v14"/>
+  <path class="d-flow" d="M155 232h870"/>
+  <path class="d-flow" d="M590 232v22" marker-end="url(#ebA)"/>
+
+  <!-- 03 comparison + gate -->
+  <text class="d-micro" x="20"   y="268">03 / COMPARISON AND GATE</text>
+  <text class="d-micro" x="1160" y="268" text-anchor="end">SAME CASES, BOTH ARMS</text>
+  <rect class="d-zone" x="20" y="276" width="1140" height="84"/>
+  <g class="d-pop" style="--dly:210ms">
+    <rect class="d-box" x="34" y="290" width="546" height="40"/>
+    <text class="d-node" x="307" y="308" text-anchor="middle">PAIRED COMPARISON</text>
+    <text class="d-sub"  x="307" y="322" text-anchor="middle">USER-CLUSTERED BOOTSTRAP · 95% INTERVAL</text>
+
+    <rect class="d-box" x="600" y="290" width="546" height="40"/>
+    <text class="d-node" x="873" y="308" text-anchor="middle">THREE-PART RELEASE GATE</text>
+    <text class="d-sub"  x="873" y="322" text-anchor="middle">MISSING EVIDENCE BLOCKS A RELEASE, IT NEVER PASSES ONE</text>
+  </g>
+  <text class="d-micro" x="590" y="349" text-anchor="middle">ONE USER'S CASES ARE NOT INDEPENDENT · A HIGHER SCORE IS NOT A BETTER SYSTEM UNTIL THE INTERVAL SAYS SO</text>
+  <path class="d-flow--a" d="M590 360v20" marker-end="url(#ebB)"/>
+
+  <!-- 04 decisions -->
+  <text class="d-micro" x="20" y="394">04 / DECISIONS MADE BY MEASUREMENT</text>
+  <g class="d-pop" style="--dly:300ms">
+    <rect class="d-box d-box--a" x="20" y="402" width="366" height="56"/>
+    <text class="d-node" x="203" y="425" text-anchor="middle">COSTLIER MODEL RETIRED</text>
+    <text class="d-sub"  x="203" y="442" text-anchor="middle">ΔF1 −0.006 [−0.023, +0.012] · 7× THE PRICE</text>
+
+    <rect class="d-box d-box--a" x="406" y="402" width="366" height="56"/>
+    <text class="d-node" x="589" y="425" text-anchor="middle">CANDIDATE PIPELINE SHUT DOWN</text>
+    <text class="d-sub"  x="589" y="442" text-anchor="middle">LOST 4 OF 4 · 12× COST · 7× LATENCY</text>
+
+    <rect class="d-box d-box--a" x="792" y="402" width="366" height="56"/>
+    <text class="d-node" x="975" y="425" text-anchor="middle">PROMPT GAIN RE-READ</text>
+    <text class="d-sub"  x="975" y="442" text-anchor="middle">67% WAS LABEL GRANULARITY, NOT VISION</text>
+  </g>
+  <path class="d-flow--a" d="M203 458v12M589 458v12M975 458v12"/>
+  <path class="d-flow--a" d="M203 470h772"/>
+  <path class="d-flow--a" d="M590 470v14" marker-end="url(#ebB)"/>
+
+  <rect class="d-box d-box--ink" x="20" y="484" width="1140" height="36"/>
+  <text class="d-node d-inv" x="590" y="507" text-anchor="middle">EVERY NUMBER NAMES THE ARTEFACT IT CAME FROM · NO RESULT, NO CLAIM</text>
+</svg>

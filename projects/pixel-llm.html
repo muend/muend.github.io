@@ -1,0 +1,294 @@
+<!DOCTYPE html>
+<html lang="en" data-page="projects">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+<script>document.documentElement.classList.add('js');</script>
+<link rel="icon" type="image/svg+xml" href="../assets/brand/favicon.svg">
+<link rel="icon" sizes="any" href="../assets/brand/favicon.ico">
+<link rel="icon" type="image/png" sizes="32x32" href="../assets/brand/favicon-32.png">
+<link rel="apple-touch-icon" href="../assets/brand/favicon-180.png">
+<link rel="manifest" href="../assets/brand/site.webmanifest">
+<link rel="canonical" href="https://muend.github.io/projects/pixel-llm.html">
+<link rel="alternate" hreflang="en" href="https://muend.github.io/projects/pixel-llm.html">
+<link rel="alternate" hreflang="tr" href="https://muend.github.io/tr/projects/pixel-llm.html">
+<link rel="alternate" hreflang="x-default" href="https://muend.github.io/projects/pixel-llm.html">
+<title>Pixel LLM — a game about building a language model</title>
+<meta name="description" content="A Godot game that turns the LLM pipeline into ten playable stages, from data collection to launch, across three difficulty tiers and ending in a model card.">
+<meta name="theme-color" content="#F7F7F1">
+<meta name="color-scheme" content="light">
+<meta name="referrer" content="strict-origin-when-cross-origin">
+<meta name="robots" content="index,follow,max-image-preview:large">
+<meta name="author" content="Muhammed Enes Duran">
+<meta property="og:title" content="Pixel LLM — a game about building a language model">
+<meta property="og:description" content="A Godot game that turns the LLM pipeline into ten playable stages, from data collection to launch, across three difficulty tiers and ending in a model card.">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://muend.github.io/projects/pixel-llm.html">
+<meta property="og:site_name" content="Muhammed Enes Duran">
+<meta property="og:locale" content="en_US">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Pixel LLM — a game about building a language model">
+<meta name="twitter:description" content="A Godot game that turns the LLM pipeline into ten playable stages, from data collection to launch, across three difficulty tiers and ending in a model card.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wdth,wght@12..96,75..100,400..800&family=IBM+Plex+Mono:wght@400;500;600&family=Instrument+Sans:ital,wght@0,400..700;1,400..600&display=swap">
+<link rel="stylesheet" href="../assets/site.css">
+</head>
+<body>
+<a class="skip-link" href="#main">Skip to content</a>
+<div class="progress" id="progress" aria-hidden="true"></div>
+<div class="cur cur-ring" id="cur-ring" aria-hidden="true"></div>
+<div class="cur cur-dot" id="cur-dot" aria-hidden="true"></div>
+<div class="cur cur-cap" id="cur-cap" aria-hidden="true"></div>
+<div class="topbar" id="topbar">
+  <div class="wrap">
+    <a class="brand" href="../index.html" aria-label="Muhammed Enes Duran — home">muend<b>.</b></a>
+    <div class="nav-area">
+      <nav class="navlinks mono" aria-label="Primary">
+        <a href="../index.html#projects" data-nav="projects">Projects</a>
+        <a href="../research.html" data-nav="research">Research</a>
+        <a href="../practice.html" data-nav="practice">Practice</a>
+        <a href="../index.html#contact" data-nav="contact">Contact</a>
+      </nav>
+      <div class="langsw mono" role="group" aria-label="Change language"><span class="lang-opt is-on" aria-current="true">EN</span><span aria-hidden="true">/</span><a class="lang-opt" href="../tr/projects/pixel-llm.html" hreflang="tr" lang="tr">TR</a></div>
+      <span class="status-pill mono"><i aria-hidden="true"></i><span>Open source · active</span></span>
+    </div>
+  </div>
+</div>
+
+<main id="main">
+
+<div class="wrap">
+  <nav class="crumb mono" aria-label="Breadcrumb">
+    <a href="../index.html#projects">Projects</a><span>/</span><span>08 · Pixel LLM</span>
+  </nav>
+</div>
+
+<header class="phead">
+  <div class="wrap phead-grid">
+    <div>
+      <span class="kind mono rv">Applied simulation · LLM development game</span>
+      <h1 class="rv" style="--d:60ms">Pixel LLM</h1>
+      <p class="deck rv" style="--d:120ms">A game about building a language model: ten stages from data collection to launch, where upstream decisions carry through to a final model card.</p>
+    </div>
+    <div class="phead-side rv" style="--d:160ms">
+      <div class="ptags"><span class="tag-chip tag-chip--new">In development</span><span class="tag-chip">Godot 4.7.1</span><span class="tag-chip ">EN / TR</span><span class="tag-chip ">Working title</span></div>
+      <div class="spec">
+  <div><span class="k">Engine</span><span class="v">Godot 4.7.1 · GDScript</span></div>
+  <div><span class="k">Structure</span><span class="v">One run = one model, ten stages</span></div>
+  <div><span class="k">Tiers</span><span class="v">Intern ≈15 min · Researcher ≈25 min · Frontier ≈35 min</span></div>
+  <div><span class="k">Languages</span><span class="v">English and Turkish</span></div>
+  <div><span class="k">Targets</span><span class="v">Web demo first, then desktop</span></div>
+  <div><span class="k">Status</span><span class="v">In development · internal builds 0.2.0 · not yet released</span></div>
+</div>
+    </div>
+  </div>
+</header>
+
+<div class="wrap">
+
+<section class="prose rv">
+  <span class="mono">Why</span>
+  <div>
+    <h3>The pipeline is the game</h3>
+    <p>Most people meet a language model as a chat box. Everything that decides how it behaves happened earlier: which data was collected, what was filtered out, how text was cut into tokens, how large the network is, what it was rewarded for.</p><p>Pixel LLM makes those ten stages playable and, more importantly, makes them depend on each other. A corpus cleaned carelessly in stage two produces noisier patterns in pre-training and a blurred view of the questions at evaluation. A small corpus cannot feed a large architecture. The player learns the pipeline by living with its consequences.</p>
+  </div>
+</section>
+
+<section class="fig">
+  <div class="fig-head">
+    <span class="n">Fig. 01</span>
+    <h3>Ten stages, one model card</h3>
+    <span class="rule" aria-hidden="true"></span>
+  </div>
+  <p>Stages do not know about each other. Each receives the model's profile, returns a validated result, and the run controller applies it. That contract is what lets a decision in stage one still matter in stage ten.</p>
+<div class="plate rv" data-plate data-title="Fig. 01 — Run structure and carry-over">
+  <div class="plate-bar"><strong>Fig. 01 / Run structure and carry-over</strong>
+    <button class="expand" type="button" data-expand>Expand<svg viewBox="0 0 16 16" aria-hidden="true"><path d="M2 6V2h4M14 10v4h-4M2 2l5 5M14 14l-5-5" fill="none" stroke="currentColor" stroke-width="1.7"/></svg></button>
+  </div>
+<svg viewBox="0 0 1180 500" role="img" preserveAspectRatio="xMidYMid meet"
+     aria-label="Pixel LLM run structure: ten stages from archive, cleaning, tokeniser, architecture and pre-training to evaluation, supervised fine-tuning, preference training, red teaming and launch; corpus quality and corpus volume carry forward into later stages; every stage updates a feature vector of stats and traits across three difficulty tiers, and the run ends in a procedurally generated model card.">
+  <defs>
+    <marker id="pxA" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto"><path d="M0 0 7 3.5 0 7Z" fill="var(--green)"/></marker>
+    <marker id="pxB" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto"><path d="M0 0 7 3.5 0 7Z" fill="var(--amber-deep)"/></marker>
+  </defs>
+
+  <text class="d-title" x="20" y="26">PIXEL LLM / ONE RUN, ONE MODEL</text>
+  <text class="d-micro" x="1160" y="26" text-anchor="end">GODOT 4.7.1 · EN / TR · WORKING TITLE</text>
+  <path class="d-rule" d="M20 36H1160"/>
+
+  <!-- 01 ten stages -->
+  <text class="d-micro" x="20"   y="58">01 / TEN STAGES</text>
+  <text class="d-micro" x="1160" y="58" text-anchor="end">EACH STAGE: A STRATEGY CHOICE, THEN A MINI-GAME</text>
+  <g class="d-pop">
+    <rect class="d-box d-box--g" x="20" y="66" width="216" height="52"/>
+    <text class="d-node" x="128" y="88" text-anchor="middle">01 · ARCHIVE</text>
+    <text class="d-sub"  x="128" y="104" text-anchor="middle">DATA COLLECTION</text>
+
+    <rect class="d-box d-box--g" x="251" y="66" width="216" height="52"/>
+    <text class="d-node" x="359" y="88" text-anchor="middle">02 · CLEANING</text>
+    <text class="d-sub"  x="359" y="104" text-anchor="middle">DEDUP · QUALITY FILTER</text>
+
+    <rect class="d-box" x="482" y="66" width="216" height="52"/>
+    <text class="d-node" x="590" y="88" text-anchor="middle">03 · TOKENISER</text>
+    <text class="d-sub"  x="590" y="104" text-anchor="middle">VOCABULARY SIZE</text>
+
+    <rect class="d-box" x="713" y="66" width="216" height="52"/>
+    <text class="d-node" x="821" y="88" text-anchor="middle">04 · ARCHITECTURE</text>
+    <text class="d-sub"  x="821" y="104" text-anchor="middle">LAYERS · HEADS · PARAMETERS</text>
+
+    <rect class="d-box" x="944" y="66" width="216" height="52"/>
+    <text class="d-node" x="1052" y="88" text-anchor="middle">05 · PRE-TRAINING</text>
+    <text class="d-sub"  x="1052" y="104" text-anchor="middle">COMPUTE · LOSS</text>
+  </g>
+  <path class="d-flow" d="M236 92h15M467 92h15M698 92h15M929 92h15"/>
+  <path class="d-flow" d="M1052 118v13H128v13" marker-end="url(#pxA)"/>
+  <g class="d-pop" style="--dly:110ms">
+    <rect class="d-box" x="20" y="146" width="216" height="52"/>
+    <text class="d-node" x="128" y="168" text-anchor="middle">06 · EVALUATION</text>
+    <text class="d-sub"  x="128" y="184" text-anchor="middle">BENCHMARKS · WEAK SPOTS</text>
+
+    <rect class="d-box d-box--d" x="251" y="146" width="216" height="52"/>
+    <text class="d-node" x="359" y="168" text-anchor="middle">07 · SFT</text>
+    <text class="d-sub"  x="359" y="184" text-anchor="middle">ASSISTANT BEHAVIOUR</text>
+
+    <rect class="d-box d-box--d" x="482" y="146" width="216" height="52"/>
+    <text class="d-node" x="590" y="168" text-anchor="middle">08 · RLHF</text>
+    <text class="d-sub"  x="590" y="184" text-anchor="middle">PREFERENCES · PERSONA</text>
+
+    <rect class="d-box d-box--r" x="713" y="146" width="216" height="52"/>
+    <text class="d-node" x="821" y="168" text-anchor="middle">09 · RED TEAM</text>
+    <text class="d-sub"  x="821" y="184" text-anchor="middle">JAILBREAK DEFENCE</text>
+
+    <rect class="d-box d-box--a" x="944" y="146" width="216" height="52"/>
+    <text class="d-node" x="1052" y="168" text-anchor="middle">10 · LAUNCH</text>
+    <text class="d-sub"  x="1052" y="184" text-anchor="middle">QUANTISE · API · WEEK ONE</text>
+  </g>
+  <path class="d-flow" d="M236 172h15M467 172h15M698 172h15M929 172h15"/>
+
+  <!-- 02 what carries over -->
+  <text class="d-micro" x="20"   y="232">02 / WHAT CARRIES OVER</text>
+  <text class="d-micro" x="1160" y="232" text-anchor="end">UPSTREAM SHORTCUTS SURFACE DOWNSTREAM</text>
+  <g class="d-pop" style="--dly:210ms">
+    <rect class="d-box d-box--a" x="20" y="240" width="560" height="52"/>
+    <text class="d-node" x="300" y="262" text-anchor="middle">DIRTY CORPUS → NOISY PATTERNS, BLURRED EVALUATION</text>
+    <text class="d-sub"  x="300" y="278" text-anchor="middle">STAGES 01–02 SHAPE WHAT 05 LEARNS AND WHAT 06 CAN SEE</text>
+
+    <rect class="d-box d-box--a" x="600" y="240" width="560" height="52"/>
+    <text class="d-node" x="880" y="262" text-anchor="middle">SMALL CORPUS → AN OVERSIZED MODEL STARVES</text>
+    <text class="d-sub"  x="880" y="278" text-anchor="middle">CORPUS VOLUME SETS THE PARAMETER BUDGET IN 04</text>
+  </g>
+  <path class="d-hair" d="M300 300v10h580v-10"/>
+  <path class="d-flow--a" d="M590 310v18" marker-end="url(#pxB)"/>
+
+  <!-- 03 state -->
+  <text class="d-micro" x="20" y="342">03 / STATE</text>
+  <g class="d-pop" style="--dly:300ms">
+    <rect class="d-box d-box--d" x="20" y="350" width="746" height="56"/>
+    <text class="d-node" x="393" y="373" text-anchor="middle">FEATURE VECTOR</text>
+    <text class="d-sub"  x="393" y="390" text-anchor="middle">STATS + TRAITS UPDATED BY EVERY STAGE · EACH RESULT VALIDATED AT ITS BOUNDARY</text>
+
+    <rect class="d-box" x="786" y="350" width="374" height="56"/>
+    <text class="d-node" x="973" y="373" text-anchor="middle">THREE TIERS</text>
+    <text class="d-sub"  x="973" y="390" text-anchor="middle">INTERN · RESEARCHER · FRONTIER</text>
+  </g>
+  <path class="d-flow--a" d="M393 406v12M973 406v12"/>
+  <path class="d-flow--a" d="M393 418h580"/>
+  <path class="d-flow--a" d="M590 418v14" marker-end="url(#pxB)"/>
+
+  <rect class="d-box d-box--ink" x="20" y="432" width="1140" height="40"/>
+  <text class="d-node d-inv" x="590" y="457" text-anchor="middle">MODEL CARD · GENERATED FROM STATS + TRAITS · A NEW RUN BUILDS A DIFFERENT MODEL</text>
+</svg>
+</div>
+</section>
+
+<section class="fig">
+  <div class="fig-head">
+    <span class="n">Design</span>
+    <h3>How a run is shaped</h3>
+    <span class="rule" aria-hidden="true"></span>
+  </div>
+<div class="catalog rv">
+  <div><div class="c"><strong>Stages</strong><span class="n">10</span></div><p>Data, cleaning, tokeniser, architecture, pre-training, evaluation, SFT, RLHF, red team, launch.</p></div>
+  <div><div class="c"><strong>Tiers</strong><span class="n">3</span></div><p>Intern is correct but simple, Researcher adds real tensions, Frontier stays close to real practice.</p></div>
+  <div><div class="c"><strong>Run length</strong><span class="n">15–35 min</span></div><p>Short enough to replay, so a different decision can be tried the same evening.</p></div>
+  <div><div class="c"><strong>Ending</strong><span class="n">Model card</span></div><p>Generated from the stats and traits the run accumulated; each stage closes on one of at least three archetypes.</p></div>
+</div>
+</section>
+
+<section class="prose rv">
+  <span class="mono">Engineering</span>
+  <div>
+    <h3>Game logic that runs without the engine</h3>
+    <p>Rules, formulas and the economy live in engine-independent code with no scene dependencies, so they can be unit-tested and rebalanced without launching the game. Scenes handle presentation and input only.</p><ul><li>Balance values sit in JSON tables validated against a schema at load, not in code.</li><li>Every stage extends one base contract and returns a result that validates itself at its boundary.</li><li>Saves are written atomically with an automatic backup and a migration hook.</li><li>All player text goes through translation keys from the first day, English first.</li></ul>
+  </div>
+</section>
+
+<section class="fig">
+  <div class="fig-head">
+    <span class="n">Film</span>
+    <h3>Trailer and a minute of play</h3>
+    <span class="rule" aria-hidden="true"></span>
+  </div>
+  <p>Captured from the current internal build.</p>
+<div class="films">
+<figure class="film rv">
+  <div class="plate-bar"><strong>Trailer · 20 s</strong></div>
+  <video controls preload="none" playsinline poster="../assets/video/pixel-trailer-en.jpg">
+    <source src="../assets/video/pixel-trailer-en.mp4" type="video/mp4">
+  </video>
+</figure>
+<figure class="film rv">
+  <div class="plate-bar"><strong>Gameplay · 60 s</strong></div>
+  <video controls preload="none" playsinline poster="../assets/video/pixel-demo-en.jpg">
+    <source src="../assets/video/pixel-demo-en.mp4" type="video/mp4">
+  </video>
+</figure>
+</div>
+</section>
+
+<div class="note note--warn"><span class="mono">Status</span><p><strong>In development under a working title.</strong> Internal web and Windows builds exist, external playtesting comes next, and no store page is live. The repository is private, so nothing here links out. The game teaches the pipeline; it does not train a real model.</p></div>
+
+</div>
+
+<div class="wrap">
+  <nav class="pager" aria-label="More projects">
+    <a href="neuron-to-gpt.html"><span class="mono">← 07 · previous</span><strong>neuron-to-gpt</strong></a>
+    <a href="founder-exe.html"><span class="mono">09 · next →</span><strong>FOUNDER.EXE</strong></a>
+  </nav>
+</div>
+
+
+<section class="contact">
+  <div class="wrap">
+    <div class="contact-grid">
+      <div>
+        <span class="kicker mono rv">Open to collaboration</span>
+        <h2 class="rv" style="--d:60ms">Build spatial systems that hold up.</h2>
+        <div class="cta rv" style="--d:140ms">
+          <a class="btn btn--solid" href="mailto:nsduraan@gmail.com"><span>nsduraan@gmail.com</span></a>
+          <a class="btn btn--ghost" href="https://www.linkedin.com/in/muhammed-enes-duran/" target="_blank" rel="noopener"><span class="dot" aria-hidden="true"></span><span>LinkedIn</span></a>
+          <a class="btn btn--ghost" href="../index.html#projects"><span>All projects</span></a>
+        </div>
+      </div>
+    </div>
+    <div class="colophon mono">
+      <span>© 2026 Muhammed Enes Duran</span>
+      <span>Static site · no trackers</span>
+    </div>
+  </div>
+</section>
+
+</main>
+
+<dialog class="dlg" id="dlg" aria-labelledby="dlg-title">
+  <div class="dlg-head">
+    <strong id="dlg-title">Technical diagram</strong>
+    <button class="dlg-close" type="button" data-close>Close</button>
+  </div>
+  <div class="dlg-body" id="dlg-body"></div>
+</dialog>
+
+<script src="../assets/site.js" defer></script>
+</body>
+</html>

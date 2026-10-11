@@ -1,0 +1,75 @@
+<svg viewBox="0 0 1180 478" role="img" preserveAspectRatio="xMidYMid meet"
+     aria-label="EatBetter production writes: only a human connects to the live PostgreSQL database; a read-only export feeds a local lab that produces a plan, guarded SQL and a rollback file; each write is rehearsed inside BEGIN and ROLLBACK against an expected row count and is committed only when the count matches and a human approves. Below, the write path for a new food before and after the write gate: unchecked saves, numbered duplicate rows and junk brands are replaced by a rule gate, a model gate, linking to the existing row and zero starting popularity.">
+  <defs>
+    <marker id="ewA" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto"><path d="M0 0 7 3.5 0 7Z" fill="var(--green)"/></marker>
+    <marker id="ewB" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto"><path d="M0 0 7 3.5 0 7Z" fill="var(--amber-deep)"/></marker>
+  </defs>
+
+  <text class="d-title" x="20" y="26">PRODUCTION WRITES / ONE PERMITTED PATH, ONE GATE AT THE SOURCE</text>
+  <text class="d-micro" x="1160" y="26" text-anchor="end">LIVE POSTGRESQL · ≈387K ROWS</text>
+  <path class="d-rule" d="M20 36H1160"/>
+
+  <!-- 01 the only way to write -->
+  <text class="d-micro" x="20"   y="58">01 / THE ONLY WAY TO WRITE TO PRODUCTION</text>
+  <text class="d-micro" x="1160" y="58" text-anchor="end">NO AI AGENT EVER CONNECTED TO THE LIVE DATABASE</text>
+  <g class="d-pop">
+    <rect class="d-box d-box--ink" x="20" y="66" width="212" height="56"/>
+    <text class="d-node d-inv" x="126" y="90" text-anchor="middle">LIVE DATABASE</text>
+    <text class="d-sub d-inv"  x="126" y="106" text-anchor="middle">HUMANS ONLY</text>
+
+    <rect class="d-box" x="252" y="66" width="212" height="56"/>
+    <text class="d-node" x="358" y="90" text-anchor="middle">READ-ONLY EXPORT</text>
+    <text class="d-sub"  x="358" y="106" text-anchor="middle">CSV · CHECKSUM MATCHED</text>
+
+    <rect class="d-box d-box--g" x="484" y="66" width="212" height="56"/>
+    <text class="d-node" x="590" y="90" text-anchor="middle">LOCAL LAB</text>
+    <text class="d-sub"  x="590" y="106" text-anchor="middle">PLAN · GUARDED SQL · UNDO FILE</text>
+
+    <rect class="d-box d-box--a" x="716" y="66" width="212" height="56"/>
+    <text class="d-node" x="822" y="90" text-anchor="middle">ROLLBACK REHEARSAL</text>
+    <text class="d-sub"  x="822" y="106" text-anchor="middle">BEGIN … ROLLBACK · EXPECTED n</text>
+
+    <rect class="d-box d-box--g" x="948" y="66" width="212" height="56"/>
+    <text class="d-node" x="1054" y="90" text-anchor="middle">COMMIT</text>
+    <text class="d-sub"  x="1054" y="106" text-anchor="middle">COUNT MATCHES · HUMAN APPROVES</text>
+  </g>
+  <path class="d-flow" d="M232 94h12" marker-end="url(#ewA)"/>
+  <path class="d-flow" d="M464 94h12" marker-end="url(#ewA)"/>
+  <path class="d-flow" d="M696 94h12" marker-end="url(#ewA)"/>
+  <path class="d-flow" d="M928 94h12" marker-end="url(#ewA)"/>
+  <path class="d-flow--a" d="M1054 122v20H126v-12" marker-end="url(#ewB)"/>
+  <text class="d-micro" x="590" y="160" text-anchor="middle">EVERY WRITE SHIPS WITH ITS UNDO FILE · LONG LOCKS RUN OFF-PEAK · DEVIATIONS ARE RECORDED, NOT HIDDEN</text>
+
+  <!-- 02 write path before / after -->
+  <text class="d-micro" x="20"   y="194">02 / WRITE PATH FOR A FOOD NOT YET IN THE CATALOGUE</text>
+  <text class="d-micro" x="1160" y="194" text-anchor="end">THE GATE WENT LIVE BEFORE THE CLEANUP</text>
+
+  <text class="d-micro" x="20" y="218">BEFORE · UNTIL 22 SEP</text>
+  <g class="d-pop" style="--dly:140ms">
+    <rect class="d-box d-box--r" x="20" y="226" width="540" height="36"/>
+    <text class="d-node" x="290" y="249" text-anchor="middle">NAME, BRAND AND CALORIES SAVED UNCHECKED</text>
+    <rect class="d-box d-box--r" x="20" y="270" width="540" height="36"/>
+    <text class="d-node" x="290" y="293" text-anchor="middle">SLUG COLLISION OPENS A NEW ROW (-2 … -9)</text>
+    <rect class="d-box d-box--r" x="20" y="314" width="540" height="36"/>
+    <text class="d-node" x="290" y="337" text-anchor="middle">JUNK BRAND · MODEL-GUESSED POPULARITY</text>
+    <rect class="d-box d-box--r" x="20" y="358" width="540" height="36"/>
+    <text class="d-node" x="290" y="381" text-anchor="middle">PUBLISH GATE CHECKS ONLY "3 DISTINCT USERS"</text>
+  </g>
+
+  <path class="d-flow--a" d="M568 310h36" marker-end="url(#ewB)"/>
+
+  <text class="d-micro d-accent" x="620" y="218">AFTER · LIVE SINCE 23 SEP</text>
+  <g class="d-pop" style="--dly:260ms">
+    <rect class="d-box d-box--g" x="620" y="226" width="540" height="36"/>
+    <text class="d-node" x="890" y="249" text-anchor="middle">RULE GATE · PLACEHOLDER AND EMPTY NAMES REJECTED</text>
+    <rect class="d-box d-box--g" x="620" y="270" width="540" height="36"/>
+    <text class="d-node" x="890" y="293" text-anchor="middle">MODEL GATE · IS IT A FOOD, IS THE NAME SANE</text>
+    <rect class="d-box d-box--g" x="620" y="314" width="540" height="36"/>
+    <text class="d-node" x="890" y="337" text-anchor="middle">COLLISION LINKS TO THE EXISTING ROW</text>
+    <rect class="d-box d-box--g" x="620" y="358" width="540" height="36"/>
+    <text class="d-node" x="890" y="381" text-anchor="middle">NEW ROW STARTS AT POPULARITY 0 · COPIES STAY UNPUBLISHED</text>
+  </g>
+
+  <rect class="d-box d-box--ink" x="20" y="414" width="1140" height="36"/>
+  <text class="d-node d-inv" x="590" y="437" text-anchor="middle">MONTHLY DEFECT RATE HAD RISEN FROM 1–2% TO 12–13% · CLEANED ROWS CANNOT COME BACK</text>
+</svg>

@@ -1,0 +1,93 @@
+<svg viewBox="0 0 1180 500" role="img" preserveAspectRatio="xMidYMid meet"
+     aria-label="Pixel LLM run structure: ten stages from archive, cleaning, tokeniser, architecture and pre-training to evaluation, supervised fine-tuning, preference training, red teaming and launch; corpus quality and corpus volume carry forward into later stages; every stage updates a feature vector of stats and traits across three difficulty tiers, and the run ends in a procedurally generated model card.">
+  <defs>
+    <marker id="pxA" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto"><path d="M0 0 7 3.5 0 7Z" fill="var(--green)"/></marker>
+    <marker id="pxB" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto"><path d="M0 0 7 3.5 0 7Z" fill="var(--amber-deep)"/></marker>
+  </defs>
+
+  <text class="d-title" x="20" y="26">PIXEL LLM / ONE RUN, ONE MODEL</text>
+  <text class="d-micro" x="1160" y="26" text-anchor="end">GODOT 4.7.1 · EN / TR · WORKING TITLE</text>
+  <path class="d-rule" d="M20 36H1160"/>
+
+  <!-- 01 ten stages -->
+  <text class="d-micro" x="20"   y="58">01 / TEN STAGES</text>
+  <text class="d-micro" x="1160" y="58" text-anchor="end">EACH STAGE: A STRATEGY CHOICE, THEN A MINI-GAME</text>
+  <g class="d-pop">
+    <rect class="d-box d-box--g" x="20" y="66" width="216" height="52"/>
+    <text class="d-node" x="128" y="88" text-anchor="middle">01 · ARCHIVE</text>
+    <text class="d-sub"  x="128" y="104" text-anchor="middle">DATA COLLECTION</text>
+
+    <rect class="d-box d-box--g" x="251" y="66" width="216" height="52"/>
+    <text class="d-node" x="359" y="88" text-anchor="middle">02 · CLEANING</text>
+    <text class="d-sub"  x="359" y="104" text-anchor="middle">DEDUP · QUALITY FILTER</text>
+
+    <rect class="d-box" x="482" y="66" width="216" height="52"/>
+    <text class="d-node" x="590" y="88" text-anchor="middle">03 · TOKENISER</text>
+    <text class="d-sub"  x="590" y="104" text-anchor="middle">VOCABULARY SIZE</text>
+
+    <rect class="d-box" x="713" y="66" width="216" height="52"/>
+    <text class="d-node" x="821" y="88" text-anchor="middle">04 · ARCHITECTURE</text>
+    <text class="d-sub"  x="821" y="104" text-anchor="middle">LAYERS · HEADS · PARAMETERS</text>
+
+    <rect class="d-box" x="944" y="66" width="216" height="52"/>
+    <text class="d-node" x="1052" y="88" text-anchor="middle">05 · PRE-TRAINING</text>
+    <text class="d-sub"  x="1052" y="104" text-anchor="middle">COMPUTE · LOSS</text>
+  </g>
+  <path class="d-flow" d="M236 92h15M467 92h15M698 92h15M929 92h15"/>
+  <path class="d-flow" d="M1052 118v13H128v13" marker-end="url(#pxA)"/>
+  <g class="d-pop" style="--dly:110ms">
+    <rect class="d-box" x="20" y="146" width="216" height="52"/>
+    <text class="d-node" x="128" y="168" text-anchor="middle">06 · EVALUATION</text>
+    <text class="d-sub"  x="128" y="184" text-anchor="middle">BENCHMARKS · WEAK SPOTS</text>
+
+    <rect class="d-box d-box--d" x="251" y="146" width="216" height="52"/>
+    <text class="d-node" x="359" y="168" text-anchor="middle">07 · SFT</text>
+    <text class="d-sub"  x="359" y="184" text-anchor="middle">ASSISTANT BEHAVIOUR</text>
+
+    <rect class="d-box d-box--d" x="482" y="146" width="216" height="52"/>
+    <text class="d-node" x="590" y="168" text-anchor="middle">08 · RLHF</text>
+    <text class="d-sub"  x="590" y="184" text-anchor="middle">PREFERENCES · PERSONA</text>
+
+    <rect class="d-box d-box--r" x="713" y="146" width="216" height="52"/>
+    <text class="d-node" x="821" y="168" text-anchor="middle">09 · RED TEAM</text>
+    <text class="d-sub"  x="821" y="184" text-anchor="middle">JAILBREAK DEFENCE</text>
+
+    <rect class="d-box d-box--a" x="944" y="146" width="216" height="52"/>
+    <text class="d-node" x="1052" y="168" text-anchor="middle">10 · LAUNCH</text>
+    <text class="d-sub"  x="1052" y="184" text-anchor="middle">QUANTISE · API · WEEK ONE</text>
+  </g>
+  <path class="d-flow" d="M236 172h15M467 172h15M698 172h15M929 172h15"/>
+
+  <!-- 02 what carries over -->
+  <text class="d-micro" x="20"   y="232">02 / WHAT CARRIES OVER</text>
+  <text class="d-micro" x="1160" y="232" text-anchor="end">UPSTREAM SHORTCUTS SURFACE DOWNSTREAM</text>
+  <g class="d-pop" style="--dly:210ms">
+    <rect class="d-box d-box--a" x="20" y="240" width="560" height="52"/>
+    <text class="d-node" x="300" y="262" text-anchor="middle">DIRTY CORPUS → NOISY PATTERNS, BLURRED EVALUATION</text>
+    <text class="d-sub"  x="300" y="278" text-anchor="middle">STAGES 01–02 SHAPE WHAT 05 LEARNS AND WHAT 06 CAN SEE</text>
+
+    <rect class="d-box d-box--a" x="600" y="240" width="560" height="52"/>
+    <text class="d-node" x="880" y="262" text-anchor="middle">SMALL CORPUS → AN OVERSIZED MODEL STARVES</text>
+    <text class="d-sub"  x="880" y="278" text-anchor="middle">CORPUS VOLUME SETS THE PARAMETER BUDGET IN 04</text>
+  </g>
+  <path class="d-hair" d="M300 300v10h580v-10"/>
+  <path class="d-flow--a" d="M590 310v18" marker-end="url(#pxB)"/>
+
+  <!-- 03 state -->
+  <text class="d-micro" x="20" y="342">03 / STATE</text>
+  <g class="d-pop" style="--dly:300ms">
+    <rect class="d-box d-box--d" x="20" y="350" width="746" height="56"/>
+    <text class="d-node" x="393" y="373" text-anchor="middle">FEATURE VECTOR</text>
+    <text class="d-sub"  x="393" y="390" text-anchor="middle">STATS + TRAITS UPDATED BY EVERY STAGE · EACH RESULT VALIDATED AT ITS BOUNDARY</text>
+
+    <rect class="d-box" x="786" y="350" width="374" height="56"/>
+    <text class="d-node" x="973" y="373" text-anchor="middle">THREE TIERS</text>
+    <text class="d-sub"  x="973" y="390" text-anchor="middle">INTERN · RESEARCHER · FRONTIER</text>
+  </g>
+  <path class="d-flow--a" d="M393 406v12M973 406v12"/>
+  <path class="d-flow--a" d="M393 418h580"/>
+  <path class="d-flow--a" d="M590 418v14" marker-end="url(#pxB)"/>
+
+  <rect class="d-box d-box--ink" x="20" y="432" width="1140" height="40"/>
+  <text class="d-node d-inv" x="590" y="457" text-anchor="middle">MODEL CARD · GENERATED FROM STATS + TRAITS · A NEW RUN BUILDS A DIFFERENT MODEL</text>
+</svg>

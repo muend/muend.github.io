@@ -32,8 +32,8 @@
           <rect class="d-box" x="40" y="70" width="300" height="116"/>
           <text class="d-micro d-accent" x="58" y="96">N-01 / EVALUATION + KNOWLEDGE</text>
           <text class="d-h" x="58" y="124">benchfck + geoai-skills</text>
-          <text class="d-note" x="58" y="148">Measures controlled reasoning and routes</text>
-          <text class="d-note" x="58" y="164">spatial work with explicit invariants.</text>
+          <text class="d-note" x="58" y="148">Exact benchmarks and routed invariants;</text>
+          <text class="d-note" x="58" y="164">EatBetter applies them in production.</text>
         </g>
         <!-- N-02 -->
         <g class="d-pop" style="--dly:100ms">
@@ -48,15 +48,15 @@
           <rect class="d-box" x="40" y="390" width="300" height="116"/>
           <text class="d-micro d-accent" x="58" y="416">N-03 / DATA + MODEL LAYER</text>
           <text class="d-h" x="58" y="444">Sentinel pipeline + U-Net</text>
-          <text class="d-note" x="58" y="468">Prepares reproducible EO datasets and</text>
-          <text class="d-note" x="58" y="484">downstream segmentation work.</text>
+          <text class="d-note" x="58" y="468">Reproducible EO datasets, segmentation,</text>
+          <text class="d-note" x="58" y="484">and neuron-to-gpt for model internals.</text>
         </g>
         <!-- N-04 -->
         <g class="d-pop" style="--dly:300ms">
           <rect class="d-box" x="800" y="390" width="300" height="116"/>
           <text class="d-micro d-accent" x="818" y="416">N-04 / PRODUCT LAYER</text>
           <text class="d-h" x="818" y="444">agri-dss · FOUNDER.EXE</text>
-          <text class="d-note" x="818" y="468">Turns spatial and institutional knowledge</text>
-          <text class="d-note" x="818" y="484">into usable interactive systems.</text>
+          <text class="d-note" x="818" y="468">With PlaceTwin and Pixel LLM: knowledge</text>
+          <text class="d-note" x="818" y="484">turned into usable interactive systems.</text>
         </g>
       </svg>

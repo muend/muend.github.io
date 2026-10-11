@@ -1,0 +1,294 @@
+<!DOCTYPE html>
+<html lang="tr" data-page="projects">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+<script>document.documentElement.classList.add('js');</script>
+<link rel="icon" type="image/svg+xml" href="../../assets/brand/favicon.svg">
+<link rel="icon" sizes="any" href="../../assets/brand/favicon.ico">
+<link rel="icon" type="image/png" sizes="32x32" href="../../assets/brand/favicon-32.png">
+<link rel="apple-touch-icon" href="../../assets/brand/favicon-180.png">
+<link rel="manifest" href="../../assets/brand/site.webmanifest">
+<link rel="canonical" href="https://muend.github.io/tr/projects/pixel-llm.html">
+<link rel="alternate" hreflang="en" href="https://muend.github.io/projects/pixel-llm.html">
+<link rel="alternate" hreflang="tr" href="https://muend.github.io/tr/projects/pixel-llm.html">
+<link rel="alternate" hreflang="x-default" href="https://muend.github.io/projects/pixel-llm.html">
+<title>Pixel LLM — dil modeli inşa etmek üzerine bir oyun</title>
+<meta name="description" content="LLM hattını veri toplamadan lansmana on oynanabilir aşamaya çeviren bir Godot oyunu; üç zorluk kademesi var ve koşu bir model kartıyla biter.">
+<meta name="theme-color" content="#F7F7F1">
+<meta name="color-scheme" content="light">
+<meta name="referrer" content="strict-origin-when-cross-origin">
+<meta name="robots" content="index,follow,max-image-preview:large">
+<meta name="author" content="Muhammed Enes Duran">
+<meta property="og:title" content="Pixel LLM — dil modeli inşa etmek üzerine bir oyun">
+<meta property="og:description" content="LLM hattını veri toplamadan lansmana on oynanabilir aşamaya çeviren bir Godot oyunu; üç zorluk kademesi var ve koşu bir model kartıyla biter.">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://muend.github.io/tr/projects/pixel-llm.html">
+<meta property="og:site_name" content="Muhammed Enes Duran">
+<meta property="og:locale" content="tr_TR">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Pixel LLM — dil modeli inşa etmek üzerine bir oyun">
+<meta name="twitter:description" content="LLM hattını veri toplamadan lansmana on oynanabilir aşamaya çeviren bir Godot oyunu; üç zorluk kademesi var ve koşu bir model kartıyla biter.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wdth,wght@12..96,75..100,400..800&family=IBM+Plex+Mono:wght@400;500;600&family=Instrument+Sans:ital,wght@0,400..700;1,400..600&display=swap">
+<link rel="stylesheet" href="../../assets/site.css">
+</head>
+<body>
+<a class="skip-link" href="#main">İçeriğe geç</a>
+<div class="progress" id="progress" aria-hidden="true"></div>
+<div class="cur cur-ring" id="cur-ring" aria-hidden="true"></div>
+<div class="cur cur-dot" id="cur-dot" aria-hidden="true"></div>
+<div class="cur cur-cap" id="cur-cap" aria-hidden="true"></div>
+<div class="topbar" id="topbar">
+  <div class="wrap">
+    <a class="brand" href="../../tr/index.html" aria-label="Muhammed Enes Duran — ana sayfa">muend<b>.</b></a>
+    <div class="nav-area">
+      <nav class="navlinks mono" aria-label="Ana">
+        <a href="../../tr/index.html#projects" data-nav="projects">Projeler</a>
+        <a href="../../tr/research.html" data-nav="research">Araştırma</a>
+        <a href="../../tr/practice.html" data-nav="practice">Yöntem</a>
+        <a href="../../tr/index.html#contact" data-nav="contact">İletişim</a>
+      </nav>
+      <div class="langsw mono" role="group" aria-label="Dili değiştir"><a class="lang-opt" href="../../projects/pixel-llm.html" hreflang="en" lang="en">EN</a><span aria-hidden="true">/</span><span class="lang-opt is-on" aria-current="true">TR</span></div>
+      <span class="status-pill mono"><i aria-hidden="true"></i><span>Açık kaynak · aktif</span></span>
+    </div>
+  </div>
+</div>
+
+<main id="main">
+
+<div class="wrap">
+  <nav class="crumb mono" aria-label="Sayfa yolu">
+    <a href="../../tr/index.html#projects">Projeler</a><span>/</span><span>08 · Pixel LLM</span>
+  </nav>
+</div>
+
+<header class="phead">
+  <div class="wrap phead-grid">
+    <div>
+      <span class="kind mono rv">Uygulamalı simülasyon · LLM geliştirme oyunu</span>
+      <h1 class="rv" style="--d:60ms">Pixel LLM</h1>
+      <p class="deck rv" style="--d:120ms">Dil modeli inşa etmek üzerine bir oyun: veri toplamadan lansmana on aşama; yukarı akıştaki kararlar final model kartına kadar taşınır.</p>
+    </div>
+    <div class="phead-side rv" style="--d:160ms">
+      <div class="ptags"><span class="tag-chip tag-chip--new">Geliştiriliyor</span><span class="tag-chip">Godot 4.7.1</span><span class="tag-chip ">EN / TR</span><span class="tag-chip ">Geçici ad</span></div>
+      <div class="spec">
+  <div><span class="k">Motor</span><span class="v">Godot 4.7.1 · GDScript</span></div>
+  <div><span class="k">Yapı</span><span class="v">Bir koşu = bir model, on aşama</span></div>
+  <div><span class="k">Kademeler</span><span class="v">Intern ≈15 dk · Researcher ≈25 dk · Frontier ≈35 dk</span></div>
+  <div><span class="k">Diller</span><span class="v">İngilizce ve Türkçe</span></div>
+  <div><span class="k">Hedefler</span><span class="v">Önce web demosu, sonra masaüstü</span></div>
+  <div><span class="k">Durum</span><span class="v">Geliştiriliyor · iç derleme 0.2.0 · henüz yayımlanmadı</span></div>
+</div>
+    </div>
+  </div>
+</header>
+
+<div class="wrap">
+
+<section class="prose rv">
+  <span class="mono">Neden</span>
+  <div>
+    <h3>Hat, oyunun kendisi</h3>
+    <p>Çoğu insan bir dil modeliyle bir sohbet kutusu olarak tanışır. Nasıl davranacağını belirleyen her şey ondan önce olmuştur: hangi verinin toplandığı, neyin süzüldüğü, metnin tokenlara nasıl bölündüğü, ağın ne kadar büyük olduğu, neyle ödüllendirildiği.</p><p>Pixel LLM bu on aşamayı oynanabilir kılar ve daha da önemlisi birbirine bağlar. İkinci aşamada özensiz temizlenen bir külliyat, ön eğitimde daha gürültülü örüntüler ve değerlendirmede sorulara bulanık bir bakış üretir. Küçük bir külliyat büyük bir mimariyi besleyemez. Oyuncu hattı, sonuçlarıyla yaşayarak öğrenir.</p>
+  </div>
+</section>
+
+<section class="fig">
+  <div class="fig-head">
+    <span class="n">Şekil 01</span>
+    <h3>On aşama, tek model kartı</h3>
+    <span class="rule" aria-hidden="true"></span>
+  </div>
+  <p>Aşamalar birbirini bilmez. Her biri modelin profilini alır, doğrulanmış bir sonuç döndürür ve koşu denetleyicisi bunu işler. Birinci aşamadaki bir kararın onuncu aşamada hâlâ önem taşımasını sağlayan şey bu sözleşmedir.</p>
+<div class="plate rv" data-plate data-title="Şekil 01 — Koşu yapısı ve taşınan etkiler">
+  <div class="plate-bar"><strong>Şekil 01 / Koşu yapısı ve taşınan etkiler</strong>
+    <button class="expand" type="button" data-expand>Büyüt<svg viewBox="0 0 16 16" aria-hidden="true"><path d="M2 6V2h4M14 10v4h-4M2 2l5 5M14 14l-5-5" fill="none" stroke="currentColor" stroke-width="1.7"/></svg></button>
+  </div>
+<svg viewBox="0 0 1180 500" role="img" preserveAspectRatio="xMidYMid meet"
+     aria-label="Pixel LLM run structure: ten stages from archive, cleaning, tokeniser, architecture and pre-training to evaluation, supervised fine-tuning, preference training, red teaming and launch; corpus quality and corpus volume carry forward into later stages; every stage updates a feature vector of stats and traits across three difficulty tiers, and the run ends in a procedurally generated model card.">
+  <defs>
+    <marker id="pxA" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto"><path d="M0 0 7 3.5 0 7Z" fill="var(--green)"/></marker>
+    <marker id="pxB" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto"><path d="M0 0 7 3.5 0 7Z" fill="var(--amber-deep)"/></marker>
+  </defs>
+
+  <text class="d-title" x="20" y="26">PIXEL LLM / ONE RUN, ONE MODEL</text>
+  <text class="d-micro" x="1160" y="26" text-anchor="end">GODOT 4.7.1 · EN / TR · WORKING TITLE</text>
+  <path class="d-rule" d="M20 36H1160"/>
+
+  <!-- 01 ten stages -->
+  <text class="d-micro" x="20"   y="58">01 / TEN STAGES</text>
+  <text class="d-micro" x="1160" y="58" text-anchor="end">EACH STAGE: A STRATEGY CHOICE, THEN A MINI-GAME</text>
+  <g class="d-pop">
+    <rect class="d-box d-box--g" x="20" y="66" width="216" height="52"/>
+    <text class="d-node" x="128" y="88" text-anchor="middle">01 · ARCHIVE</text>
+    <text class="d-sub"  x="128" y="104" text-anchor="middle">DATA COLLECTION</text>
+
+    <rect class="d-box d-box--g" x="251" y="66" width="216" height="52"/>
+    <text class="d-node" x="359" y="88" text-anchor="middle">02 · CLEANING</text>
+    <text class="d-sub"  x="359" y="104" text-anchor="middle">DEDUP · QUALITY FILTER</text>
+
+    <rect class="d-box" x="482" y="66" width="216" height="52"/>
+    <text class="d-node" x="590" y="88" text-anchor="middle">03 · TOKENISER</text>
+    <text class="d-sub"  x="590" y="104" text-anchor="middle">VOCABULARY SIZE</text>
+
+    <rect class="d-box" x="713" y="66" width="216" height="52"/>
+    <text class="d-node" x="821" y="88" text-anchor="middle">04 · ARCHITECTURE</text>
+    <text class="d-sub"  x="821" y="104" text-anchor="middle">LAYERS · HEADS · PARAMETERS</text>
+
+    <rect class="d-box" x="944" y="66" width="216" height="52"/>
+    <text class="d-node" x="1052" y="88" text-anchor="middle">05 · PRE-TRAINING</text>
+    <text class="d-sub"  x="1052" y="104" text-anchor="middle">COMPUTE · LOSS</text>
+  </g>
+  <path class="d-flow" d="M236 92h15M467 92h15M698 92h15M929 92h15"/>
+  <path class="d-flow" d="M1052 118v13H128v13" marker-end="url(#pxA)"/>
+  <g class="d-pop" style="--dly:110ms">
+    <rect class="d-box" x="20" y="146" width="216" height="52"/>
+    <text class="d-node" x="128" y="168" text-anchor="middle">06 · EVALUATION</text>
+    <text class="d-sub"  x="128" y="184" text-anchor="middle">BENCHMARKS · WEAK SPOTS</text>
+
+    <rect class="d-box d-box--d" x="251" y="146" width="216" height="52"/>
+    <text class="d-node" x="359" y="168" text-anchor="middle">07 · SFT</text>
+    <text class="d-sub"  x="359" y="184" text-anchor="middle">ASSISTANT BEHAVIOUR</text>
+
+    <rect class="d-box d-box--d" x="482" y="146" width="216" height="52"/>
+    <text class="d-node" x="590" y="168" text-anchor="middle">08 · RLHF</text>
+    <text class="d-sub"  x="590" y="184" text-anchor="middle">PREFERENCES · PERSONA</text>
+
+    <rect class="d-box d-box--r" x="713" y="146" width="216" height="52"/>
+    <text class="d-node" x="821" y="168" text-anchor="middle">09 · RED TEAM</text>
+    <text class="d-sub"  x="821" y="184" text-anchor="middle">JAILBREAK DEFENCE</text>
+
+    <rect class="d-box d-box--a" x="944" y="146" width="216" height="52"/>
+    <text class="d-node" x="1052" y="168" text-anchor="middle">10 · LAUNCH</text>
+    <text class="d-sub"  x="1052" y="184" text-anchor="middle">QUANTISE · API · WEEK ONE</text>
+  </g>
+  <path class="d-flow" d="M236 172h15M467 172h15M698 172h15M929 172h15"/>
+
+  <!-- 02 what carries over -->
+  <text class="d-micro" x="20"   y="232">02 / WHAT CARRIES OVER</text>
+  <text class="d-micro" x="1160" y="232" text-anchor="end">UPSTREAM SHORTCUTS SURFACE DOWNSTREAM</text>
+  <g class="d-pop" style="--dly:210ms">
+    <rect class="d-box d-box--a" x="20" y="240" width="560" height="52"/>
+    <text class="d-node" x="300" y="262" text-anchor="middle">DIRTY CORPUS → NOISY PATTERNS, BLURRED EVALUATION</text>
+    <text class="d-sub"  x="300" y="278" text-anchor="middle">STAGES 01–02 SHAPE WHAT 05 LEARNS AND WHAT 06 CAN SEE</text>
+
+    <rect class="d-box d-box--a" x="600" y="240" width="560" height="52"/>
+    <text class="d-node" x="880" y="262" text-anchor="middle">SMALL CORPUS → AN OVERSIZED MODEL STARVES</text>
+    <text class="d-sub"  x="880" y="278" text-anchor="middle">CORPUS VOLUME SETS THE PARAMETER BUDGET IN 04</text>
+  </g>
+  <path class="d-hair" d="M300 300v10h580v-10"/>
+  <path class="d-flow--a" d="M590 310v18" marker-end="url(#pxB)"/>
+
+  <!-- 03 state -->
+  <text class="d-micro" x="20" y="342">03 / STATE</text>
+  <g class="d-pop" style="--dly:300ms">
+    <rect class="d-box d-box--d" x="20" y="350" width="746" height="56"/>
+    <text class="d-node" x="393" y="373" text-anchor="middle">FEATURE VECTOR</text>
+    <text class="d-sub"  x="393" y="390" text-anchor="middle">STATS + TRAITS UPDATED BY EVERY STAGE · EACH RESULT VALIDATED AT ITS BOUNDARY</text>
+
+    <rect class="d-box" x="786" y="350" width="374" height="56"/>
+    <text class="d-node" x="973" y="373" text-anchor="middle">THREE TIERS</text>
+    <text class="d-sub"  x="973" y="390" text-anchor="middle">INTERN · RESEARCHER · FRONTIER</text>
+  </g>
+  <path class="d-flow--a" d="M393 406v12M973 406v12"/>
+  <path class="d-flow--a" d="M393 418h580"/>
+  <path class="d-flow--a" d="M590 418v14" marker-end="url(#pxB)"/>
+
+  <rect class="d-box d-box--ink" x="20" y="432" width="1140" height="40"/>
+  <text class="d-node d-inv" x="590" y="457" text-anchor="middle">MODEL CARD · GENERATED FROM STATS + TRAITS · A NEW RUN BUILDS A DIFFERENT MODEL</text>
+</svg>
+</div>
+</section>
+
+<section class="fig">
+  <div class="fig-head">
+    <span class="n">Tasarım</span>
+    <h3>Bir koşu nasıl biçimlenir</h3>
+    <span class="rule" aria-hidden="true"></span>
+  </div>
+<div class="catalog rv">
+  <div><div class="c"><strong>Aşama</strong><span class="n">10</span></div><p>Veri, temizleme, tokenizer, mimari, ön eğitim, değerlendirme, SFT, RLHF, kırmızı takım, lansman.</p></div>
+  <div><div class="c"><strong>Kademe</strong><span class="n">3</span></div><p>Intern doğru ama sade, Researcher gerçek gerilimleri ekler, Frontier gerçek pratiğe çok yakındır.</p></div>
+  <div><div class="c"><strong>Koşu süresi</strong><span class="n">15–35 dk</span></div><p>Yeniden oynanacak kadar kısa; farklı bir karar aynı akşam denenebilir.</p></div>
+  <div><div class="c"><strong>Bitiş</strong><span class="n">Model kartı</span></div><p>Koşunun biriktirdiği stat ve etiketlerden üretilir; her aşama en az üç arketipten biriyle kapanır.</p></div>
+</div>
+</section>
+
+<section class="prose rv">
+  <span class="mono">Mühendislik</span>
+  <div>
+    <h3>Motor olmadan çalışan oyun mantığı</h3>
+    <p>Kurallar, formüller ve ekonomi, sahne bağımlılığı olmayan, motordan bağımsız kodda durur; böylece oyun açılmadan birim testi yapılabilir ve denge ayarlanabilir. Sahneler yalnızca sunumu ve girdiyi yönetir.</p><ul><li>Denge değerleri kodda değil, yüklenirken şemaya karşı doğrulanan JSON tablolarında durur.</li><li>Her aşama tek bir temel sözleşmeyi genişletir ve kendi sınırında kendini doğrulayan bir sonuç döndürür.</li><li>Kayıtlar atomik yazılır; otomatik yedek ve sürüm geçiş kancası vardır.</li><li>Bütün oyuncu metinleri ilk günden çeviri anahtarlarından geçer; önce İngilizce.</li></ul>
+  </div>
+</section>
+
+<section class="fig">
+  <div class="fig-head">
+    <span class="n">Film</span>
+    <h3>Fragman ve bir dakikalık oynanış</h3>
+    <span class="rule" aria-hidden="true"></span>
+  </div>
+  <p>Güncel iç derlemeden çekildi.</p>
+<div class="films">
+<figure class="film rv">
+  <div class="plate-bar"><strong>Fragman · 20 sn</strong></div>
+  <video controls preload="none" playsinline poster="../../assets/video/pixel-trailer-tr.jpg">
+    <source src="../../assets/video/pixel-trailer-tr.mp4" type="video/mp4">
+  </video>
+</figure>
+<figure class="film rv">
+  <div class="plate-bar"><strong>Oynanış · 60 sn</strong></div>
+  <video controls preload="none" playsinline poster="../../assets/video/pixel-demo-tr.jpg">
+    <source src="../../assets/video/pixel-demo-tr.mp4" type="video/mp4">
+  </video>
+</figure>
+</div>
+</section>
+
+<div class="note note--warn"><span class="mono">Durum</span><p><strong>Geçici bir adla geliştiriliyor.</strong> İç web ve Windows derlemeleri var, sırada dış oyuncu testi bulunuyor ve yayında bir mağaza sayfası yok. Depo özeldir; bu yüzden buradaki hiçbir şey dışarıya bağlanmaz. Oyun hattı öğretir; gerçek bir model eğitmez.</p></div>
+
+</div>
+
+<div class="wrap">
+  <nav class="pager" aria-label="Diğer projeler">
+    <a href="neuron-to-gpt.html"><span class="mono">← 07 · önceki</span><strong>neuron-to-gpt</strong></a>
+    <a href="founder-exe.html"><span class="mono">09 · sonraki →</span><strong>FOUNDER.EXE</strong></a>
+  </nav>
+</div>
+
+
+<section class="contact">
+  <div class="wrap">
+    <div class="contact-grid">
+      <div>
+        <span class="kicker mono rv">İş birliğine açık</span>
+        <h2 class="rv" style="--d:60ms">Sağlam duran mekânsal sistemler kuralım.</h2>
+        <div class="cta rv" style="--d:140ms">
+          <a class="btn btn--solid" href="mailto:nsduraan@gmail.com"><span>nsduraan@gmail.com</span></a>
+          <a class="btn btn--ghost" href="https://www.linkedin.com/in/muhammed-enes-duran/" target="_blank" rel="noopener"><span class="dot" aria-hidden="true"></span><span>LinkedIn</span></a>
+          <a class="btn btn--ghost" href="../../tr/index.html#projects"><span>Tüm projeler</span></a>
+        </div>
+      </div>
+    </div>
+    <div class="colophon mono">
+      <span>© 2026 Muhammed Enes Duran</span>
+      <span>Statik site · izleyici yok</span>
+    </div>
+  </div>
+</section>
+
+</main>
+
+<dialog class="dlg" id="dlg" aria-labelledby="dlg-title">
+  <div class="dlg-head">
+    <strong id="dlg-title">Teknik diyagram</strong>
+    <button class="dlg-close" type="button" data-close>Kapat</button>
+  </div>
+  <div class="dlg-body" id="dlg-body"></div>
+</dialog>
+
+<script src="../../assets/site.js" defer></script>
+</body>
+</html>

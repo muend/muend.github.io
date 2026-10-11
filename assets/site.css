@@ -995,3 +995,9 @@ body.cur-idle .cur-dot,body.cur-idle .cur-ring,body.cur-idle .cur-cap{opacity:0}
 .spec .v,.spec .v code{overflow-wrap:anywhere}
 .catalog p,.prow-main p{overflow-wrap:break-word}
 .prose ul + p{margin-top:var(--s-4)}
+
+/* Self-hosted films — same frame as a diagram plate, loaded only on play */
+.films{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,340px),1fr));gap:var(--s-5)}
+.film{margin:0;background:var(--paper-sunk);border:1px solid var(--line);overflow:hidden}
+.film video{display:block;width:100%;height:auto;aspect-ratio:16/9;background:var(--ink)}
+.film-cap{padding:10px 16px;border-top:1px solid var(--line);color:var(--ink-mute);font-size:13px;line-height:1.55}

@@ -29,11 +29,11 @@ def out_path(page_path):
 
 
 def catalog(items):
-    """items: (name, number, description); name and description may be (en, tr)."""
+    """items: (name, number, description); each may be (en, tr)."""
     def s(v):
         return T(*v) if isinstance(v, tuple) else v
     body = "\n".join(
-        f'  <div><div class="c"><strong>{s(n)}</strong><span class="n">{v}</span></div>'
+        f'  <div><div class="c"><strong>{s(n)}</strong><span class="n">{s(v)}</span></div>'
         f'<p>{s(d)}</p></div>' for n, v, d in items
     )
     return f'<div class="catalog rv">\n{body}\n</div>'
@@ -54,22 +54,25 @@ def tags(items):
 # ---------------------------------------------------------------- landing copy
 
 LEAD = {
-    "kicker": ("GeoAI · Spatial ML · Agent systems", "GeoAI · Mekânsal ML · Ajan sistemleri"),
+    "kicker": ("AI engineering · LLM evaluation · GeoAI",
+               "Yapay zekâ mühendisliği · LLM değerlendirme · GeoAI"),
     "edition": ("Portfolio / 2026", "Portfolyo / 2026"),
-    "deck": ("I turn geospatial methods into reliable software systems.",
-             "Mekânsal yöntemleri güvenilir yazılım sistemlerine dönüştürüyorum."),
-    "lede": ("Six systems, each occupying one layer of the same stack: "
-             "<strong>deterministic evaluation</strong>, geospatial knowledge for agents, guarded "
-             "execution, reproducible data preparation, decision delivery, and simulation. Every "
-             "claim below links to something you can inspect.",
-             "Altı sistem, her biri aynı yığının bir katmanında: "
-             "<strong>deterministik değerlendirme</strong>, ajanlar için mekânsal bilgi, korumalı "
-             "yürütme, yeniden üretilebilir veri hazırlığı, karar teslimi ve simülasyon. "
-             "Aşağıdaki her iddia, inceleyebileceğiniz bir şeye bağlanıyor."),
+    "deck": ("I build AI and geospatial systems that are measured before they are trusted.",
+             "Güvenilmeden önce ölçülen yapay zekâ ve mekânsal sistemler kuruyorum."),
+    "lede": ("Ten systems along one line of work: <strong>LLM evaluation in production</strong>, "
+             "deterministic benchmarks, geospatial knowledge for agents, guarded execution, "
+             "reproducible data preparation, decision delivery, an urban digital twin, a GPT built "
+             "from scratch, and simulation. Open work links to something you can inspect; client "
+             "work is described from its own records.",
+             "Tek bir çalışma çizgisinde on sistem: <strong>üretimde LLM değerlendirme</strong>, "
+             "deterministik kıyaslamalar, ajanlar için mekânsal bilgi, korumalı yürütme, yeniden "
+             "üretilebilir veri hazırlığı, karar teslimi, bir kentsel dijital ikiz, sıfırdan "
+             "kurulan bir GPT ve simülasyon. Açık işler inceleyebileceğiniz bir şeye bağlanıyor; "
+             "müşteri işi kendi kayıtlarından anlatılıyor."),
     "cta1": ("See the systems", "Sistemlere bak"),
     "focus": ("Focus", "Odak"),
-    "focus_v": ("GeoAI agent systems, spatial ML, secure GIS automation",
-                "GeoAI ajan sistemleri, mekânsal ML, güvenli CBS otomasyonu"),
+    "focus_v": ("GeoAI agent systems, LLM evaluation, spatial ML, secure GIS automation",
+                "GeoAI ajan sistemleri, LLM değerlendirme, mekânsal ML, güvenli CBS otomasyonu"),
     "shipped": ("Shipped", "Yayınlanan"),
     "shipped_v": ("2 PyPI packages, 1 DOI release, 2 live products",
                   "2 PyPI paketi, 1 DOI sürümü, 2 canlı ürün"),
@@ -79,11 +82,11 @@ LEAD = {
     "based": ("Based", "Konum"),
     "based_v": ("Türkiye · open to collaboration", "Türkiye · iş birliğine açık"),
     "systems": ("Systems", "Sistemler"),
-    "systems_tag": ("06 · open each for diagrams", "06 · diyagramlar için tıklayın"),
+    "systems_tag": ("10 · open each for diagrams", "10 · diyagramlar için tıklayın"),
+    "f0": ("LLM eval cases built", "Kurulan LLM değerlendirme vakası"),
     "f1": ("GeoAI agent skills", "GeoAI ajan skill'i"),
     "f2": ("ArcGIS tools exposed", "Açılan ArcGIS aracı"),
     "f3": ("Full-route accuracy*", "Tam rota doğruluğu*"),
-    "f4": ("Neighbourhoods modelled", "Modellenen mahalle"),
     "foot": ("* Routing metrics come from the frozen 18-skill, 167-case suite measured on Claude "
              "Code 2.1.214 with claude-sonnet-5 (2026-08-05). They describe routing behaviour, not "
              "answer quality.",
@@ -119,7 +122,79 @@ LEAD = {
     "r3": ("agri-unet: downstream segmentation work",
            "agri-unet: aşağı akış segmentasyon çalışması"),
     "r_more": ("Read the studies", "Çalışmaları oku"),
+    "recent": ("Experience", "Deneyim"),
+    "recent_tag": ("work · research · education", "iş · araştırma · eğitim"),
+    "x_more": ("Read the full case study", "Vaka çalışmasının tamamını oku"),
+    "x_label": ("Sep 2026", "Eyl 2026"),
+    "x_title": ("AI Engineer (Contract) · EatBetter",
+                "Yapay Zekâ Mühendisi (Sözleşmeli) · EatBetter"),
+    "x_body": (
+        "<p>Contract work on an AI-powered nutrition app, run on one rule: measure the model "
+        "before changing it.</p>"
+        "<ul>"
+        "<li><strong>Evaluation platform.</strong> Built a 923-case benchmark from scratch: 569 "
+        "human-adjudicated gold labels, a 277-case sealed holdout, 16 deterministic metrics and "
+        "742 automated tests in CI. Comparisons use user-clustered bootstrap confidence intervals, "
+        "and the release gate counts missing evidence as a failure.</li>"
+        "<li><strong>Model decisions by measurement.</strong> Retired a model that cost 7× more "
+        "after showing no gain (ΔF1 −0.006, 95% CI [−0.023, +0.012]), and shut down a candidate "
+        "pipeline that lost to the bare model in 4 of 4 comparisons.</li>"
+        "<li><strong>Assistant safety.</strong> On a frozen 400-case scorecard, a fix for users "
+        "with long memory profiles cut the missed-allergy-context veto rate from 96.4% to 2.1%, "
+        "the only one of ten candidates to pass the gate. The LLM judge was calibrated on 80 "
+        "hand-labelled meals (agreement 0.82 against a 0.66 rule baseline).</li>"
+        "<li><strong>Production data quality.</strong> In a live PostgreSQL catalogue of about "
+        "387k rows, soft-deleted 88,970 and unpublished 90,735. Every write ran as a ROLLBACK "
+        "rehearsal against a predicted row count before a human-approved COMMIT, and a rule plus "
+        "LLM write gate closed the source.</li>"
+        "</ul>"
+        "<p>Python · TypeScript / Node.js · PostgreSQL · Azure OpenAI</p>",
+        "<p>Yapay zekâ destekli bir beslenme uygulamasında sözleşmeli çalışma; tek kuralla "
+        "yürüdü: modeli değiştirmeden önce ölç.</p>"
+        "<ul>"
+        "<li><strong>Değerlendirme platformu.</strong> 923 vakalık bir kıyaslamayı sıfırdan "
+        "kurdum: insan hakemli 569 altın etiket, 277 vakalık mühürlü ayrık küme, 16 deterministik "
+        "metrik ve CI'da 742 otomatik test. Karşılaştırmalar kullanıcı kümeli bootstrap güven "
+        "aralıklarıyla yapılır; yayın kapısı eksik kanıtı geçme değil, kalma sayar.</li>"
+        "<li><strong>Ölçüme dayalı model kararları.</strong> 7 kat pahalı bir modeli, kazanç "
+        "sağlamadığını göstererek devreden çıkardım (ΔF1 −0,006; %95 GA [−0,023, +0,012]); yalın "
+        "modele 4 karşılaştırmanın 4'ünde yenilen bir aday hattı kapattım.</li>"
+        "<li><strong>Asistan güvenliği.</strong> Dondurulmuş 400 vakalık bir puan kartında, uzun "
+        "bellek profilli kullanıcılar için yaptığım düzeltme, gözden kaçan alerji bağlamı veto "
+        "oranını %96,4'ten %2,1'e indirdi; on aday arasında kapıyı geçen tek düzeltme oldu. LLM "
+        "hakemini elle etiketlenmiş 80 öğünle kalibre ettim (uyum 0,82; kural tabanlı temel "
+        "çizgi 0,66).</li>"
+        "<li><strong>Üretim veri kalitesi.</strong> Yaklaşık 387 bin satırlık canlı bir PostgreSQL "
+        "kataloğunda 88.970 satırı yumuşak sildim, 90.735 satırı yayından kaldırdım. Her yazmayı, "
+        "insan onaylı COMMIT'ten önce öngörülen satır sayısına karşı bir ROLLBACK provası olarak "
+        "çalıştırdım; kaynağı kural ve LLM tabanlı bir yazma kapısıyla kapattım.</li>"
+        "</ul>"
+        "<p>Python · TypeScript / Node.js · PostgreSQL · Azure OpenAI</p>"),
+    "t_label": ("2026 – 2027", "2026 – 2027"),
+    "t_title": ("Undergraduate Researcher · TÜBİTAK 2209-A",
+                "Lisans Araştırmacısı · TÜBİTAK 2209-A"),
+    "t_body": (
+        "<p>A Sentinel-2 crop-classification study using U-Net semantic segmentation with "
+        "spatially blocked validation. "
+        "<a href='projects/sentinel-crop-pipeline.html' style='text-decoration:underline'>"
+        "sentinel-crop-pipeline</a> is the study's reproducible data backbone; its Urla run "
+        "produced 990 training patches from 9 scenes.</p>",
+        "<p>U-Net anlamsal segmentasyonu ve mekânsal bloklu doğrulamayla yürütülen bir Sentinel-2 "
+        "ürün sınıflandırma çalışması. Çalışmanın yeniden üretilebilir veri omurgası "
+        "<a href='projects/sentinel-crop-pipeline.html' style='text-decoration:underline'>"
+        "sentinel-crop-pipeline</a>; Urla koşusu 9 sahneden 990 eğitim yaması üretti.</p>"),
+    "e_label": ("Education", "Eğitim"),
+    "e_title": ("City &amp; Regional Planning, with a second degree in MIS",
+                "Şehir ve Bölge Planlama; ikinci lisans YBS"),
+    "e_body": (
+        "<p>B.Sc. City and Regional Planning, İzmir Institute of Technology (İYTE), 2021 – June "
+        "2027 (expected). B.Sc. Management Information Systems, Istanbul University (AUZEF), "
+        "concurrent second degree, 2022 – 2027 (expected).</p>",
+        "<p>Şehir ve Bölge Planlama lisansı, İzmir Yüksek Teknoloji Enstitüsü (İYTE), 2021 – "
+        "Haziran 2027 (beklenen). Yönetim Bilişim Sistemleri lisansı, İstanbul Üniversitesi "
+        "(AUZEF), eşzamanlı ikinci lisans, 2022 – 2027 (beklenen).</p>"),
 }
+
 
 
 def L(key):
@@ -143,6 +218,9 @@ def build_index():
         <span class="go" aria-hidden="true"><svg viewBox="0 0 16 16" width="13" height="13"><path d="M3 13 13 3M6 3h7v7" fill="none" stroke="currentColor" stroke-width="1.7"/></svg></span>
       </a>""")
     rows_html = "\n".join(rows)
+    x_more = ('<div class="plinks" style="margin-top:var(--s-5)">'
+              + shell.btn("projects/eatbetter.html", L('x_more'), "solid", external=False)
+              + '</div>')
 
     body = f"""<main id="main">
 
@@ -185,10 +263,10 @@ def build_index():
     </div>
 
     <div class="figs rv" style="margin-bottom:var(--s-8)">
+      <div><strong data-count="923">923</strong><span>{L('f0')}</span></div>
       <div><strong data-count="18">18</strong><span>{L('f1')}</span></div>
       <div><strong data-count="100">100</strong><span>{L('f2')}</span></div>
       <div><strong>96.41%</strong><span>{L('f3')}</span></div>
-      <div><strong data-count="147">147</strong><span>{L('f4')}</span></div>
     </div>
 
     <div class="pindex">
@@ -201,10 +279,28 @@ def build_index():
   </div>
 </section>
 
-<section class="sec sec--sunk" aria-labelledby="more-title">
+<section class="sec" id="recent" aria-labelledby="recent-title">
   <div class="wrap">
     <div class="sec-head rv">
       <span class="idx mono">02</span>
+      <h2 id="recent-title">{L('recent')}</h2>
+      <span class="rule" aria-hidden="true"></span>
+      <span class="tag mono">{L('recent_tag')}</span>
+    </div>
+
+{shell.prose(L('x_label'), L('x_title'), L('x_body') + x_more)}
+
+{shell.prose(L('t_label'), L('t_title'), L('t_body'))}
+
+{shell.prose(L('e_label'), L('e_title'), L('e_body'))}
+
+  </div>
+</section>
+
+<section class="sec sec--sunk" aria-labelledby="more-title">
+  <div class="wrap">
+    <div class="sec-head rv">
+      <span class="idx mono">03</span>
       <h2 id="more-title">{L('behind')}</h2>
       <span class="rule" aria-hidden="true"></span>
       <span class="tag mono">{L('behind_tag')}</span>
@@ -238,14 +334,14 @@ def build_index():
   </div>
 </section>
 """
-    title = T("Muhammed Enes Duran — GeoAI Agent Systems · Spatial ML · Applied Simulation",
-              "Muhammed Enes Duran — GeoAI Ajan Sistemleri · Mekânsal ML · Uygulamalı Simülasyon")
-    desc = T("GeoAI agent systems, secure ArcGIS automation, reproducible Sentinel-2 pipelines, "
-             "spatial decision-support products and applied simulations — each with inspectable "
-             "evidence.",
-             "GeoAI ajan sistemleri, güvenli ArcGIS otomasyonu, yeniden üretilebilir Sentinel-2 "
-             "hatları, mekânsal karar destek ürünleri ve uygulamalı simülasyonlar — her biri "
-             "incelenebilir kanıtla.")
+    title = T("Muhammed Enes Duran — AI Engineer · LLM Evaluation · GeoAI Agent Systems",
+              "Muhammed Enes Duran — Yapay Zekâ Mühendisi · LLM Değerlendirme · GeoAI Ajan Sistemleri")
+    desc = T("LLM evaluation in production, GeoAI agent systems, secure ArcGIS automation, "
+             "reproducible Sentinel-2 pipelines, an urban digital twin and applied simulations — "
+             "each with inspectable evidence.",
+             "Üretimde LLM değerlendirme, GeoAI ajan sistemleri, güvenli ArcGIS otomasyonu, "
+             "yeniden üretilebilir Sentinel-2 hatları, bir kentsel dijital ikiz ve uygulamalı "
+             "simülasyonlar — her biri incelenebilir kanıtla.")
     html = (shell.head(title, desc, "projects", "index.html", person=True)
             + body + shell.footer("index.html", contact=True))
     out_path("index.html").write_text(html, encoding="utf-8")
@@ -273,6 +369,10 @@ def project_page(slug, spec_rows, sections):
     links = "\n          ".join(
         shell.btn(url, T(*label), kind=("solid" if i == 0 else "ghost"))
         for i, (url, label) in enumerate(p["links"]))
+    plinks = f"""
+      <div class="plinks">
+          {links}
+      </div>""" if p["links"] else ""
     home = f"{r}{'tr/' if shell.LANG == 'tr' else ''}index.html"
     body = f"""<main id="main">
 
@@ -291,10 +391,7 @@ def project_page(slug, spec_rows, sections):
     </div>
     <div class="phead-side rv" style="--d:160ms">
       {tags(p['tags'])}
-      {shell.spec(spec_rows)}
-      <div class="plinks">
-          {links}
-      </div>
+      {shell.spec(spec_rows)}{plinks}
     </div>
   </div>
 </header>
@@ -312,10 +409,12 @@ def project_page(slug, spec_rows, sections):
 
 def build_all():
     import pagebodies
+    import pagebodies_more
     for lang in shell.LANGS:
         shell.LANG = lang
         build_index()
         pagebodies.build()
+        pagebodies_more.build()
     print("built:", sorted(
         str(q.relative_to(ROOT)) for q in ROOT.rglob("*.html") if "build" not in q.parts))
 

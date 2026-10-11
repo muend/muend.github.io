@@ -1,0 +1,410 @@
+<!DOCTYPE html>
+<html lang="tr" data-page="projects">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+<script>document.documentElement.classList.add('js');</script>
+<link rel="icon" type="image/svg+xml" href="../../assets/brand/favicon.svg">
+<link rel="icon" sizes="any" href="../../assets/brand/favicon.ico">
+<link rel="icon" type="image/png" sizes="32x32" href="../../assets/brand/favicon-32.png">
+<link rel="apple-touch-icon" href="../../assets/brand/favicon-180.png">
+<link rel="manifest" href="../../assets/brand/site.webmanifest">
+<link rel="canonical" href="https://muend.github.io/tr/projects/eatbetter.html">
+<link rel="alternate" hreflang="en" href="https://muend.github.io/projects/eatbetter.html">
+<link rel="alternate" hreflang="tr" href="https://muend.github.io/tr/projects/eatbetter.html">
+<link rel="alternate" hreflang="x-default" href="https://muend.github.io/projects/eatbetter.html">
+<title>EatBetter — üretimde LLM değerlendirme ve veri kalitesi</title>
+<meta name="description" content="Bir beslenme uygulamasında sözleşmeli yapay zekâ mühendisliği: insan hakemli etiketlere sahip 923 vakalık değerlendirme platformu, canlı bir PostgreSQL kataloğunun korumalı temizliği ve uygulama içi asistan için ölçülmüş bir güvenlik düzeltmesi.">
+<meta name="theme-color" content="#F7F7F1">
+<meta name="color-scheme" content="light">
+<meta name="referrer" content="strict-origin-when-cross-origin">
+<meta name="robots" content="index,follow,max-image-preview:large">
+<meta name="author" content="Muhammed Enes Duran">
+<meta property="og:title" content="EatBetter — üretimde LLM değerlendirme ve veri kalitesi">
+<meta property="og:description" content="Bir beslenme uygulamasında sözleşmeli yapay zekâ mühendisliği: insan hakemli etiketlere sahip 923 vakalık değerlendirme platformu, canlı bir PostgreSQL kataloğunun korumalı temizliği ve uygulama içi asistan için ölçülmüş bir güvenlik düzeltmesi.">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://muend.github.io/tr/projects/eatbetter.html">
+<meta property="og:site_name" content="Muhammed Enes Duran">
+<meta property="og:locale" content="tr_TR">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="EatBetter — üretimde LLM değerlendirme ve veri kalitesi">
+<meta name="twitter:description" content="Bir beslenme uygulamasında sözleşmeli yapay zekâ mühendisliği: insan hakemli etiketlere sahip 923 vakalık değerlendirme platformu, canlı bir PostgreSQL kataloğunun korumalı temizliği ve uygulama içi asistan için ölçülmüş bir güvenlik düzeltmesi.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wdth,wght@12..96,75..100,400..800&family=IBM+Plex+Mono:wght@400;500;600&family=Instrument+Sans:ital,wght@0,400..700;1,400..600&display=swap">
+<link rel="stylesheet" href="../../assets/site.css">
+</head>
+<body>
+<a class="skip-link" href="#main">İçeriğe geç</a>
+<div class="progress" id="progress" aria-hidden="true"></div>
+<div class="cur cur-ring" id="cur-ring" aria-hidden="true"></div>
+<div class="cur cur-dot" id="cur-dot" aria-hidden="true"></div>
+<div class="cur cur-cap" id="cur-cap" aria-hidden="true"></div>
+<div class="topbar" id="topbar">
+  <div class="wrap">
+    <a class="brand" href="../../tr/index.html" aria-label="Muhammed Enes Duran — ana sayfa">muend<b>.</b></a>
+    <div class="nav-area">
+      <nav class="navlinks mono" aria-label="Ana">
+        <a href="../../tr/index.html#projects" data-nav="projects">Projeler</a>
+        <a href="../../tr/research.html" data-nav="research">Araştırma</a>
+        <a href="../../tr/practice.html" data-nav="practice">Yöntem</a>
+        <a href="../../tr/index.html#contact" data-nav="contact">İletişim</a>
+      </nav>
+      <div class="langsw mono" role="group" aria-label="Dili değiştir"><a class="lang-opt" href="../../projects/eatbetter.html" hreflang="en" lang="en">EN</a><span aria-hidden="true">/</span><span class="lang-opt is-on" aria-current="true">TR</span></div>
+      <span class="status-pill mono"><i aria-hidden="true"></i><span>Açık kaynak · aktif</span></span>
+    </div>
+  </div>
+</div>
+
+<main id="main">
+
+<div class="wrap">
+  <nav class="crumb mono" aria-label="Sayfa yolu">
+    <a href="../../tr/index.html#projects">Projeler</a><span>/</span><span>00 · EatBetter</span>
+  </nav>
+</div>
+
+<header class="phead">
+  <div class="wrap phead-grid">
+    <div>
+      <span class="kind mono rv">Müşteri işi · LLM değerlendirme ve veri kalitesi</span>
+      <h1 class="rv" style="--d:60ms">EatBetter</h1>
+      <p class="deck rv" style="--d:120ms">Bir beslenme uygulamasında yirmi beş günlük sözleşmeli yapay zekâ mühendisliği; modele, kataloğa ya da asistana yapılan her değişiklik bir ölçümle hak edildi.</p>
+    </div>
+    <div class="phead-side rv" style="--d:160ms">
+      <div class="ptags"><span class="tag-chip tag-chip--live">Üretime alındı</span><span class="tag-chip ">Sözleşmeli · Eyl 2026</span><span class="tag-chip ">Özel depolar</span></div>
+      <div class="spec">
+  <div><span class="k">Rol</span><span class="v">Yapay Zekâ Mühendisi, sözleşmeli</span></div>
+  <div><span class="k">Dönem</span><span class="v">6–30 Eylül 2026 · 25 gün</span></div>
+  <div><span class="k">Yığın</span><span class="v">Python · TypeScript / Node.js · PostgreSQL · Azure OpenAI</span></div>
+  <div><span class="k">Teslim</span><span class="v">Birleşen 17 PR · testler dahil +14,5 bin / −2,4 bin satır</span></div>
+  <div><span class="k">Yöntem</span><span class="v">Yazılı görev tanımlarıyla paralel yapay zekâ kodlama ajanlarını yöneten tek mühendis</span></div>
+  <div><span class="k">Kaynak</span><span class="v">Özel müşteri depoları; sayılar işin kendi kayıtlarından</span></div>
+</div>
+    </div>
+  </div>
+</header>
+
+<div class="wrap">
+
+<section class="prose rv">
+  <span class="mono">Neden</span>
+  <div>
+    <h3>Önce ölç, sonra değiştir</h3>
+    <p>İş başladığında, üretimdeki öğün analizini şirketin kendi verisiyle ölçen sürümlü bir yol yoktu. Bir modelin ya da istemin ötekinden daha iyi olup olmadığı kanıtla söylenemiyordu. Yemek kataloğu model üretimi yazımlarla dolmuştu ve kusurları içeri alan yol hâlâ açıktı.</p><p>Yirmi beş gün sonra, depoyu alan herkesin koşabildiği bir ölçüm platformu, kaynağı kapatılmış temiz bir katalog, kullanıcı düzeltmelerini kaydeden ve değerlendiren bir hat ve canlı çağrıyla birebir örtüşen bir ince ayar veri seti vardı. Bu sayfa her birinin nasıl kurulduğunu ve ölçümlerin ne dediğini anlatır; “dur” diyenler dahil.</p>
+  </div>
+</section>
+
+<section class="fig">
+  <div class="fig-head">
+    <span class="n">Şekil 01</span>
+    <h3>Üretim örnekleminden yayın kararına</h3>
+    <span class="rule" aria-hidden="true"></span>
+  </div>
+  <p>Etiketleri üç modelli bir panel önerir, son kararı insan verir; model çıktısı hiçbir zaman doğru kabul edilmez ve etiket önerisine katılan bir model aday olarak değerlendirilemez. Her karşılaştırma aynı vakalarda eşlenir ve kullanıcıya göre yeniden örneklenir; çünkü bir kişinin öğünleri birbirinden bağımsız gözlemler değildir.</p>
+<div class="plate rv" data-plate data-title="Şekil 01 — Değerlendirme platformu">
+  <div class="plate-bar"><strong>Şekil 01 / Değerlendirme platformu</strong>
+    <button class="expand" type="button" data-expand>Büyüt<svg viewBox="0 0 16 16" aria-hidden="true"><path d="M2 6V2h4M14 10v4h-4M2 2l5 5M14 14l-5-5" fill="none" stroke="currentColor" stroke-width="1.7"/></svg></button>
+  </div>
+<svg viewBox="0 0 1180 548" role="img" preserveAspectRatio="xMidYMid meet"
+     aria-label="EatBetter evaluation platform: a read-only, de-identified production sample is labelled by a three-model proposal panel and settled by human adjudication; the resulting benchmark has 923 cases, a sealed 277-case holdout, 16 deterministic metrics and 742 automated tests; candidates are compared on the same cases with a user-clustered bootstrap and pass a three-part release gate; three model decisions were made from those measurements.">
+  <defs>
+    <marker id="ebA" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto"><path d="M0 0 7 3.5 0 7Z" fill="var(--green)"/></marker>
+    <marker id="ebB" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto"><path d="M0 0 7 3.5 0 7Z" fill="var(--amber-deep)"/></marker>
+  </defs>
+
+  <text class="d-title" x="20" y="26">GROUND TRUTH → BENCHMARK → COMPARISON → DECISION</text>
+  <text class="d-micro" x="1160" y="26" text-anchor="end">CLIENT WORK · SEP 2026</text>
+  <path class="d-rule" d="M20 36H1160"/>
+
+  <!-- 01 ground truth -->
+  <text class="d-micro" x="20"   y="58">01 / GROUND TRUTH</text>
+  <text class="d-micro" x="1160" y="58" text-anchor="end">A MODEL THAT PROPOSES LABELS CANNOT BE A CANDIDATE</text>
+  <g class="d-pop">
+    <rect class="d-box d-box--g" x="20" y="66" width="364" height="48"/>
+    <text class="d-node" x="202" y="88" text-anchor="middle">READ-ONLY PRODUCTION SAMPLE</text>
+    <text class="d-sub"  x="202" y="103" text-anchor="middle">DE-IDENTIFIED · PSEUDONYMISED</text>
+
+    <rect class="d-box d-box--g" x="408" y="66" width="364" height="48"/>
+    <text class="d-node" x="590" y="88" text-anchor="middle">THREE-MODEL PROPOSAL PANEL</text>
+    <text class="d-sub"  x="590" y="103" text-anchor="middle">MODEL OUTPUT IS NEVER TREATED AS TRUTH</text>
+
+    <rect class="d-box d-box--g" x="796" y="66" width="364" height="48"/>
+    <text class="d-node" x="978" y="88" text-anchor="middle">HUMAN ADJUDICATION</text>
+    <text class="d-sub"  x="978" y="103" text-anchor="middle">FINAL CALL · 569 GOLD LABELS</text>
+  </g>
+  <path class="d-flow" d="M384 90h16" marker-end="url(#ebA)"/>
+  <path class="d-flow" d="M772 90h16" marker-end="url(#ebA)"/>
+  <path class="d-flow" d="M978 114v12H590v14" marker-end="url(#ebA)"/>
+
+  <!-- 02 benchmark -->
+  <text class="d-micro" x="20"   y="158">02 / BENCHMARK</text>
+  <text class="d-micro" x="1160" y="158" text-anchor="end">RUNNABLE BY ANYONE WITH THE REPOSITORY</text>
+  <g class="d-pop" style="--dly:110ms">
+    <rect class="d-box" x="20" y="166" width="270" height="52"/>
+    <text class="d-node" x="155" y="188" text-anchor="middle">923 CASES</text>
+    <text class="d-sub"  x="155" y="204" text-anchor="middle">631 DEV · 292 CALIBRATION</text>
+
+    <rect class="d-box d-box--d" x="310" y="166" width="270" height="52"/>
+    <text class="d-node" x="445" y="188" text-anchor="middle">SEALED HOLDOUT</text>
+    <text class="d-sub"  x="445" y="204" text-anchor="middle">277 CASES · NEVER READ, NEVER TUNED ON</text>
+
+    <rect class="d-box" x="600" y="166" width="270" height="52"/>
+    <text class="d-node" x="735" y="188" text-anchor="middle">16 DETERMINISTIC METRICS</text>
+    <text class="d-sub"  x="735" y="204" text-anchor="middle">MISSING = NOT MEASURED, NEVER ZERO</text>
+
+    <rect class="d-box" x="890" y="166" width="270" height="52"/>
+    <text class="d-node" x="1025" y="188" text-anchor="middle">742 AUTOMATED TESTS</text>
+    <text class="d-sub"  x="1025" y="204" text-anchor="middle">WINDOWS + LINUX CI</text>
+  </g>
+  <path class="d-flow" d="M155 218v14M735 218v14M1025 218v14"/>
+  <path class="d-flow" d="M155 232h870"/>
+  <path class="d-flow" d="M590 232v22" marker-end="url(#ebA)"/>
+
+  <!-- 03 comparison + gate -->
+  <text class="d-micro" x="20"   y="268">03 / COMPARISON AND GATE</text>
+  <text class="d-micro" x="1160" y="268" text-anchor="end">SAME CASES, BOTH ARMS</text>
+  <rect class="d-zone" x="20" y="276" width="1140" height="84"/>
+  <g class="d-pop" style="--dly:210ms">
+    <rect class="d-box" x="34" y="290" width="546" height="40"/>
+    <text class="d-node" x="307" y="308" text-anchor="middle">PAIRED COMPARISON</text>
+    <text class="d-sub"  x="307" y="322" text-anchor="middle">USER-CLUSTERED BOOTSTRAP · 95% INTERVAL</text>
+
+    <rect class="d-box" x="600" y="290" width="546" height="40"/>
+    <text class="d-node" x="873" y="308" text-anchor="middle">THREE-PART RELEASE GATE</text>
+    <text class="d-sub"  x="873" y="322" text-anchor="middle">MISSING EVIDENCE BLOCKS A RELEASE, IT NEVER PASSES ONE</text>
+  </g>
+  <text class="d-micro" x="590" y="349" text-anchor="middle">ONE USER'S CASES ARE NOT INDEPENDENT · A HIGHER SCORE IS NOT A BETTER SYSTEM UNTIL THE INTERVAL SAYS SO</text>
+  <path class="d-flow--a" d="M590 360v20" marker-end="url(#ebB)"/>
+
+  <!-- 04 decisions -->
+  <text class="d-micro" x="20" y="394">04 / DECISIONS MADE BY MEASUREMENT</text>
+  <g class="d-pop" style="--dly:300ms">
+    <rect class="d-box d-box--a" x="20" y="402" width="366" height="56"/>
+    <text class="d-node" x="203" y="425" text-anchor="middle">COSTLIER MODEL RETIRED</text>
+    <text class="d-sub"  x="203" y="442" text-anchor="middle">ΔF1 −0.006 [−0.023, +0.012] · 7× THE PRICE</text>
+
+    <rect class="d-box d-box--a" x="406" y="402" width="366" height="56"/>
+    <text class="d-node" x="589" y="425" text-anchor="middle">CANDIDATE PIPELINE SHUT DOWN</text>
+    <text class="d-sub"  x="589" y="442" text-anchor="middle">LOST 4 OF 4 · 12× COST · 7× LATENCY</text>
+
+    <rect class="d-box d-box--a" x="792" y="402" width="366" height="56"/>
+    <text class="d-node" x="975" y="425" text-anchor="middle">PROMPT GAIN RE-READ</text>
+    <text class="d-sub"  x="975" y="442" text-anchor="middle">67% WAS LABEL GRANULARITY, NOT VISION</text>
+  </g>
+  <path class="d-flow--a" d="M203 458v12M589 458v12M975 458v12"/>
+  <path class="d-flow--a" d="M203 470h772"/>
+  <path class="d-flow--a" d="M590 470v14" marker-end="url(#ebB)"/>
+
+  <rect class="d-box d-box--ink" x="20" y="484" width="1140" height="36"/>
+  <text class="d-node d-inv" x="590" y="507" text-anchor="middle">EVERY NUMBER NAMES THE ARTEFACT IT CAME FROM · NO RESULT, NO CLAIM</text>
+</svg>
+</div>
+</section>
+
+<section class="fig">
+  <div class="fig-head">
+    <span class="n">Kararlar</span>
+    <h3>Platformla verilen kararlar</h3>
+    <span class="rule" aria-hidden="true"></span>
+  </div>
+<div class="catalog rv">
+  <div><div class="c"><strong>Pahalı model</strong><span class="n">−0,006</span></div><p>Canlı modele karşı ΔF1; %95 GA [−0,023, +0,012], yaklaşık yedi kat fiyata. Devreden çıkarıldı.</p></div>
+  <div><div class="c"><strong>Aday hat</strong><span class="n">4 / 4</span></div><p>Yalın modele karşı kaybedilen karşılaştırma; 12 kat maliyet ve 7 kat gecikmeyle. Kapatıldı.</p></div>
+  <div><div class="c"><strong>İstem kazancı</strong><span class="n">%67</span></div><p>En iyi istem varyantının görünen kazancının, daha iyi tanımadan değil etiket ayrıntı düzeyinden gelen payı.</p></div>
+  <div><div class="c"><strong>LLM hakemi</strong><span class="n">0,82</span></div><p>Elle etiketlenmiş 80 öğünde beş hakem adayı arasındaki en yüksek uyum; mevcut kural yolu 0,66 aldı.</p></div>
+</div>
+  <p class="fig-note">İkinci haftada çıkarılan hata haritası, en iyi istemin kazancının üçte ikisinin hiç de bir görme iyileşmesi olmadığını gösterdi. “Daha yüksek skor” ile “daha iyi sistem”i ayıran bulgu budur; sonraki her hedefin nasıl yazıldığını değiştirdi.</p>
+</section>
+
+<section class="fig">
+  <div class="fig-head">
+    <span class="n">Şekil 02</span>
+    <h3>Üretime giden tek izinli yol</h3>
+    <span class="rule" aria-hidden="true"></span>
+  </div>
+  <p>Canlı veritabanına yalnız insan bağlandı. Her değişiklik salt okunur bir dışa aktarımdan yerelde planlandı, geri alınan bir işlem içinde prova edildi ve yalnızca etkilenen satır sayısı öngörüyle tuttuğunda yazıldı. Kaynaktaki yazma kapısı temizlikten önce canlıya alındı; böylece temizlenen satırlar geri gelemedi.</p>
+<div class="plate rv" data-plate data-title="Şekil 02 — Korumalı yazım ve yazma kapısı">
+  <div class="plate-bar"><strong>Şekil 02 / Korumalı yazım ve yazma kapısı</strong>
+    <button class="expand" type="button" data-expand>Büyüt<svg viewBox="0 0 16 16" aria-hidden="true"><path d="M2 6V2h4M14 10v4h-4M2 2l5 5M14 14l-5-5" fill="none" stroke="currentColor" stroke-width="1.7"/></svg></button>
+  </div>
+<svg viewBox="0 0 1180 478" role="img" preserveAspectRatio="xMidYMid meet"
+     aria-label="EatBetter production writes: only a human connects to the live PostgreSQL database; a read-only export feeds a local lab that produces a plan, guarded SQL and a rollback file; each write is rehearsed inside BEGIN and ROLLBACK against an expected row count and is committed only when the count matches and a human approves. Below, the write path for a new food before and after the write gate: unchecked saves, numbered duplicate rows and junk brands are replaced by a rule gate, a model gate, linking to the existing row and zero starting popularity.">
+  <defs>
+    <marker id="ewA" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto"><path d="M0 0 7 3.5 0 7Z" fill="var(--green)"/></marker>
+    <marker id="ewB" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto"><path d="M0 0 7 3.5 0 7Z" fill="var(--amber-deep)"/></marker>
+  </defs>
+
+  <text class="d-title" x="20" y="26">PRODUCTION WRITES / ONE PERMITTED PATH, ONE GATE AT THE SOURCE</text>
+  <text class="d-micro" x="1160" y="26" text-anchor="end">LIVE POSTGRESQL · ≈387K ROWS</text>
+  <path class="d-rule" d="M20 36H1160"/>
+
+  <!-- 01 the only way to write -->
+  <text class="d-micro" x="20"   y="58">01 / THE ONLY WAY TO WRITE TO PRODUCTION</text>
+  <text class="d-micro" x="1160" y="58" text-anchor="end">NO AI AGENT EVER CONNECTED TO THE LIVE DATABASE</text>
+  <g class="d-pop">
+    <rect class="d-box d-box--ink" x="20" y="66" width="212" height="56"/>
+    <text class="d-node d-inv" x="126" y="90" text-anchor="middle">LIVE DATABASE</text>
+    <text class="d-sub d-inv"  x="126" y="106" text-anchor="middle">HUMANS ONLY</text>
+
+    <rect class="d-box" x="252" y="66" width="212" height="56"/>
+    <text class="d-node" x="358" y="90" text-anchor="middle">READ-ONLY EXPORT</text>
+    <text class="d-sub"  x="358" y="106" text-anchor="middle">CSV · CHECKSUM MATCHED</text>
+
+    <rect class="d-box d-box--g" x="484" y="66" width="212" height="56"/>
+    <text class="d-node" x="590" y="90" text-anchor="middle">LOCAL LAB</text>
+    <text class="d-sub"  x="590" y="106" text-anchor="middle">PLAN · GUARDED SQL · UNDO FILE</text>
+
+    <rect class="d-box d-box--a" x="716" y="66" width="212" height="56"/>
+    <text class="d-node" x="822" y="90" text-anchor="middle">ROLLBACK REHEARSAL</text>
+    <text class="d-sub"  x="822" y="106" text-anchor="middle">BEGIN … ROLLBACK · EXPECTED n</text>
+
+    <rect class="d-box d-box--g" x="948" y="66" width="212" height="56"/>
+    <text class="d-node" x="1054" y="90" text-anchor="middle">COMMIT</text>
+    <text class="d-sub"  x="1054" y="106" text-anchor="middle">COUNT MATCHES · HUMAN APPROVES</text>
+  </g>
+  <path class="d-flow" d="M232 94h12" marker-end="url(#ewA)"/>
+  <path class="d-flow" d="M464 94h12" marker-end="url(#ewA)"/>
+  <path class="d-flow" d="M696 94h12" marker-end="url(#ewA)"/>
+  <path class="d-flow" d="M928 94h12" marker-end="url(#ewA)"/>
+  <path class="d-flow--a" d="M1054 122v20H126v-12" marker-end="url(#ewB)"/>
+  <text class="d-micro" x="590" y="160" text-anchor="middle">EVERY WRITE SHIPS WITH ITS UNDO FILE · LONG LOCKS RUN OFF-PEAK · DEVIATIONS ARE RECORDED, NOT HIDDEN</text>
+
+  <!-- 02 write path before / after -->
+  <text class="d-micro" x="20"   y="194">02 / WRITE PATH FOR A FOOD NOT YET IN THE CATALOGUE</text>
+  <text class="d-micro" x="1160" y="194" text-anchor="end">THE GATE WENT LIVE BEFORE THE CLEANUP</text>
+
+  <text class="d-micro" x="20" y="218">BEFORE · UNTIL 22 SEP</text>
+  <g class="d-pop" style="--dly:140ms">
+    <rect class="d-box d-box--r" x="20" y="226" width="540" height="36"/>
+    <text class="d-node" x="290" y="249" text-anchor="middle">NAME, BRAND AND CALORIES SAVED UNCHECKED</text>
+    <rect class="d-box d-box--r" x="20" y="270" width="540" height="36"/>
+    <text class="d-node" x="290" y="293" text-anchor="middle">SLUG COLLISION OPENS A NEW ROW (-2 … -9)</text>
+    <rect class="d-box d-box--r" x="20" y="314" width="540" height="36"/>
+    <text class="d-node" x="290" y="337" text-anchor="middle">JUNK BRAND · MODEL-GUESSED POPULARITY</text>
+    <rect class="d-box d-box--r" x="20" y="358" width="540" height="36"/>
+    <text class="d-node" x="290" y="381" text-anchor="middle">PUBLISH GATE CHECKS ONLY "3 DISTINCT USERS"</text>
+  </g>
+
+  <path class="d-flow--a" d="M568 310h36" marker-end="url(#ewB)"/>
+
+  <text class="d-micro d-accent" x="620" y="218">AFTER · LIVE SINCE 23 SEP</text>
+  <g class="d-pop" style="--dly:260ms">
+    <rect class="d-box d-box--g" x="620" y="226" width="540" height="36"/>
+    <text class="d-node" x="890" y="249" text-anchor="middle">RULE GATE · PLACEHOLDER AND EMPTY NAMES REJECTED</text>
+    <rect class="d-box d-box--g" x="620" y="270" width="540" height="36"/>
+    <text class="d-node" x="890" y="293" text-anchor="middle">MODEL GATE · IS IT A FOOD, IS THE NAME SANE</text>
+    <rect class="d-box d-box--g" x="620" y="314" width="540" height="36"/>
+    <text class="d-node" x="890" y="337" text-anchor="middle">COLLISION LINKS TO THE EXISTING ROW</text>
+    <rect class="d-box d-box--g" x="620" y="358" width="540" height="36"/>
+    <text class="d-node" x="890" y="381" text-anchor="middle">NEW ROW STARTS AT POPULARITY 0 · COPIES STAY UNPUBLISHED</text>
+  </g>
+
+  <rect class="d-box d-box--ink" x="20" y="414" width="1140" height="36"/>
+  <text class="d-node d-inv" x="590" y="437" text-anchor="middle">MONTHLY DEFECT RATE HAD RISEN FROM 1–2% TO 12–13% · CLEANED ROWS CANNOT COME BACK</text>
+</svg>
+</div>
+</section>
+
+<section class="fig">
+  <div class="fig-head">
+    <span class="n">Katalog</span>
+    <h3>Canlı veritabanında ne değişti</h3>
+    <span class="rule" aria-hidden="true"></span>
+  </div>
+  <p>Yüzdeler, temizlikten önce alınan 387.668 satırlık katalog dışa aktarımına göredir. Silme bir sayı hedefine göre değil, içerik grubuna göre yapıldı: tek seferlik bileşimler, sayı ekli kopyalar ve bozuk slug'lar silindi; aranabilir genel adlar yalnızca yayından çekildi.</p>
+<div class="catalog rv">
+  <div><div class="c"><strong>Yumuşak silinen</strong><span class="n">88.970</span></div><p>Kataloğun %23,0'ı; her satır geri alma dosyasından kurtarılabilir.</p></div>
+  <div><div class="c"><strong>Yayından çekilen</strong><span class="n">90.735</span></div><p>%23,4; veritabanında tutuldu, yayından çıkarıldı.</p></div>
+  <div><div class="c"><strong>Popülerliği düzeltilen</strong><span class="n">292.113</span></div><p>%75,4: modelin uydurduğu popülerlik gerçek kullanımla değiştirildi.</p></div>
+  <div><div class="c"><strong>Bağlantı ve marka onarımı</strong><span class="n">35.979</span></div><p>Üç günde satır işlemi: zincirler düzleştirildi, yanlış birleştirmeler ayrıldı, çöp markalar boşaltıldı.</p></div>
+</div>
+<div class="note note--warn"><span class="mono">Bir hata ve onarımı</span><p>21 Eylül'de kopya birleştirme betiğinin ilk sürümü birleştirmenin iki alanından yalnızca birini yazdı ve 1.845 yönlendirmeyi kırdı. Aynı gün canlıdaki güncel değerlerle onarıldı, bir sağlık sorgusuyla doğrulandı ve betiğe kök kalite süzgeci eklendi. Bir başka adımda ayrı ROLLBACK provası atlandı; sayı öngörüyle birebir tuttu ve sapma kayda geçti. İkisi de işin kayıtlarında duruyor; olması gereken yer de orası.</p></div>
+</section>
+
+<section class="prose rv">
+  <span class="mono">Asistan güvenliği</span>
+  <div>
+    <h3>Gerçek hatalardan kurulan bir karne</h3>
+    <p>Uygulama içi asistan her kullanıcı için bir bellek tutar. Gerçek bir profile otuzdan fazla sentetik bellek kaydı ekleyen bir stres testinde, eski bir alerji kaydı cevaba ulaşmaz hâle geldi. Bunu ön kayıtlı bir karne ölçtü: 400 dondurulmuş vaka, 6.000 üretim ve iki hakem modeli ile iki sıralama üzerinden 24.000 hakem slotu.</p><p>Alerji, ilaç ve hastalık kayıtlarını istemde öne alan düzeltme, eşlenmiş veto oranını 172 çiftte %96,4'ten %2,1'e indirdi (Holm düzeltmeli p = 0,0001). Kabul kapısını geçen, on aday arasındaki tek düzeltme oldu ve yeniden dağıtım gerektirmeden açılan bir bayrağın arkasında teslim edildi.</p><p>Ders bir gün önce çıkmıştı. 24 varyantlı bir turnuva doğrulanmış bir iyileşme bulamadı; çünkü kontrol kolu zaten %97–98'deydi ve test seti asıl mekanizmayı hiç zorlamıyordu. Kazancı bulan karne, yalnızca mevcut sürümün gerçekten hata yaptığı vakalardan kuruldu ve yaklaşık dörtte bir maliyete çıktı. Güvenlik sonuçları tavsiye niteliğindedir: ekipte diyetisyen yoktu.</p>
+  </div>
+</section>
+
+<section class="fig">
+  <div class="fig-head">
+    <span class="n">Hatlar</span>
+    <h3>Yanında teslim edilen veri ve hatlar</h3>
+    <span class="rule" aria-hidden="true"></span>
+  </div>
+<div class="catalog rv">
+  <div><div class="c"><strong>Besin değeri doğrulaması</strong><span class="n">242.707</span></div><p>Üç modelle bağımsız kontrol edilen yemek. 215.584 yemeklik düzeltme paketi satır başına “eski değer hâlâ buysa yaz” koruması ve geri alma SQL'i taşır; canlı dışa aktarımın yerel kopyasında prova edildi.</p></div>
+  <div><div class="c"><strong>Görsel üretim hattı</strong><span class="n">≈29 / dk</span></div><p>Üç uç noktalı bir havuz üzerinde, bütçe tavanlı kalıcı işler ve AIMD hız kontrolü; sağlayıcı kotasının tavanında. Yaklaşık 250 bin yemek görseli (tahmini).</p></div>
+  <div><div class="c"><strong>İnce ayar veri seti</strong><span class="n">561.314</span></div><p>Qwen3-VL için sürümlü kayıt: mühürlü setlere karşı sızıntı denetimi, kişisel veri taraması, tekrar temizliği ve kullanıcıya göre bölme; 638.493 kayıtta 0 şablon ya da tokenizer hatası.</p></div>
+  <div><div class="c"><strong>Araç kullanım sohbeti</strong><span class="n">38.417</span></div><p>Altı dilde, 15 aracın tamamını kapsayan sentetik asistan sohbeti; %89'u bütün kod kontrollerinden geçti. Gerçek kullanıcı sohbeti kullanılmadı.</p></div>
+  <div><div class="c"><strong>Etiketlenen öğün notu</strong><span class="n">259.986</span></div><p>Canlı sözleşmeyle etiketlenen gerçek öğün notu; öncesinde altı kollu bir öğretmen kıyaslaması etiket kalitesini maliyete karşı tarttı.</p></div>
+  <div><div class="c"><strong>Düzeltme döngüsü</strong><span class="n">3 PR</span></div><p>Kaybolan kullanıcı düzeltmeleri artık kaydediliyor ve modelin ilk cevabı korunuyor; kişisel alışkanlıklar ve harcama tavanlı LLM hakemi bayrak arkasında.</p></div>
+</div>
+  <p class="fig-note">1 Ekim'deki devirde besin değeri paketi onaylıydı ve düşük trafikte yazılmayı bekliyordu, güvenlik düzeltmesi bayrağının açılmasını bekliyordu, görsel toplamı ise iş tablosundan doğrulanması gereken bir tahmindi.</p>
+</section>
+
+<section class="prose rv">
+  <span class="mono">Olumsuz sonuçlar</span>
+  <div>
+    <h3>Kanıtla durdurulanlar</h3>
+    <p>Bir ölçümün ya da incelemenin sonlandırdığı iş, yayına çıkan işle aynı ağırlıkta listelenir. Çoğu, sonraki işin yönünü belirledi.</p><ul><li><strong>Aday tanıma hattı.</strong> Dört karşılaştırmanın dördünde yalın modelden kötü; 12 kat maliyetle. Kapatıldı.</li><li><strong>İstem modülü seti.</strong> Üç tekrarda da anlamlı çıkan +0,04 F1, kullanıcıya görünür bir fayda için fazla küçük bulundu. PR açılmadan arşivlendi.</li><li><strong>Daha pahalı öğretmen adayı.</strong> Canlı modelden %9 kötü, 20 kat pahalı. Canlı taban çizgisi korundu.</li><li><strong>Düzeltme döngüsü, ilk tasarım.</strong> 20 commit ve 724 test; incelemede reddedildi: kişisel ipucu yalnızca nota bakıyordu, oysa taramaların yarısı fotoğraflıydı. İki gün sonra birleşen, birbiriyle çakışmayan üç küçük PR olarak yeniden kuruldu.</li><li><strong>24 varyantlı turnuva.</strong> Doğrulanmış bir iyileşme yok. Ölçüm düzeni, iyileşmeyi bulan karnede yeniden kullanıldı.</li></ul>
+  </div>
+</section>
+
+<section class="prose rv">
+  <span class="mono">Çalışma yöntemi</span>
+  <div>
+    <h3>Tek mühendis, çok ajan, değişmez kurallar</h3>
+    <p>İş, birden çok yapay zekâ kodlama ajanını paralel yöneten tek bir mühendisle yürüdü. Kararlar, kurallar ve üretime dokunan her adım insanda kaldı; ajanlar 94 yazılı görev tanımıyla, sınırlı yetkiyle ve her biri kendi worktree'sinde çalıştı.</p><ul><li>Canlı veritabanına yalnız insan yazar: önce ROLLBACK ile prova, sonra COMMIT, her zaman bir geri alma dosyasıyla.</li><li>Davranış değişiklikleri, varsayılanı bugünkü davranış olan bir bayrağın arkasındadır; geri dönüş dağıtım gerektirmez.</li><li>PR'lar tasarım gereği çakışmasızdır; ana dallara ve birbirlerine karşı merge-tree matrisiyle denetlenir.</li><li>PR açılmadan önce çok ajanlı karşıt inceleme: tek bir değişiklikte 44 ajan, 19 doğrulanmış bulgu üretti.</li><li>Sonuç diye öne sürülen her şey için mutasyon testi, ön kayıt, Holm düzeltmesi ve kullanıcı kümeli bootstrap.</li></ul><p>Devir; karar kayıtları, günlük notlar ve her çıktıyı SHA-256 özetiyle listeleyen bir teslim tutanağından oluştu.</p>
+  </div>
+</section>
+
+<div class="note"><span class="mono">Kapsam</span><p><strong>Müşteri işi.</strong> Depolar ve veri özeldir; bu yüzden bu sayfadaki hiçbir şey dışarıya bağlanmaz ve ürünün iç yapısı yalnızca yöntemin gerektirdiği kadar anlatılır. Sayılar, işin 30 Eylül 2026 tarihli kendi kayıtlarından aktarılmıştır; teslim edilmiş ama devir anında henüz canlıya alınmamış kalemler öyle belirtilmiştir.</p></div>
+
+</div>
+
+<div class="wrap">
+  <nav class="pager" aria-label="Diğer projeler">
+    <a href="founder-exe.html"><span class="mono">← 09 · önceki</span><strong>FOUNDER.EXE</strong></a>
+    <a href="benchfck.html"><span class="mono">01 · sonraki →</span><strong>benchfck</strong></a>
+  </nav>
+</div>
+
+
+<section class="contact">
+  <div class="wrap">
+    <div class="contact-grid">
+      <div>
+        <span class="kicker mono rv">İş birliğine açık</span>
+        <h2 class="rv" style="--d:60ms">Sağlam duran mekânsal sistemler kuralım.</h2>
+        <div class="cta rv" style="--d:140ms">
+          <a class="btn btn--solid" href="mailto:nsduraan@gmail.com"><span>nsduraan@gmail.com</span></a>
+          <a class="btn btn--ghost" href="https://www.linkedin.com/in/muhammed-enes-duran/" target="_blank" rel="noopener"><span class="dot" aria-hidden="true"></span><span>LinkedIn</span></a>
+          <a class="btn btn--ghost" href="../../tr/index.html#projects"><span>Tüm projeler</span></a>
+        </div>
+      </div>
+    </div>
+    <div class="colophon mono">
+      <span>© 2026 Muhammed Enes Duran</span>
+      <span>Statik site · izleyici yok</span>
+    </div>
+  </div>
+</section>
+
+</main>
+
+<dialog class="dlg" id="dlg" aria-labelledby="dlg-title">
+  <div class="dlg-head">
+    <strong id="dlg-title">Teknik diyagram</strong>
+    <button class="dlg-close" type="button" data-close>Kapat</button>
+  </div>
+  <div class="dlg-body" id="dlg-body"></div>
+</dialog>
+
+<script src="../../assets/site.js" defer></script>
+</body>
+</html>

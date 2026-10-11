@@ -28,8 +28,13 @@ def fighead(n, heading):
   </div>"""
 
 
+def video(name):
+    """Site-relative path to a film or its poster, from a project page."""
+    return f"{shell.rel('projects/x.html', shell.LANG)}assets/video/{name}"
+
+
 def build():
-    # ======================================================== 00 benchfck
+    # ======================================================== 01 benchfck
     project_page(
         "benchfck",
         spec_rows=[
@@ -144,7 +149,7 @@ def build():
     "kümesidir ve özel puanlama dönemi henüz başlatılmadı."), warn=True)}
 """)
 
-    # ======================================================== 01 geoai-skills
+    # ======================================================== 02 geoai-skills
     evidence = SVGDIR.joinpath("evidence.html").read_text(encoding="utf-8")
     if shell.LANG == "tr":
         for en, tr in [
@@ -529,7 +534,7 @@ def build():
     "piyasa veri akışlarıyla desteklenmesi gerekir."), warn=True)}
 """)
 
-    # ======================================================== 05 FOUNDER.EXE
+    # ======================================================== 09 FOUNDER.EXE
     project_page(
         "founder-exe",
         spec_rows=[
@@ -592,6 +597,16 @@ def build():
     "Ayrıca: canlı piyasa verisi, isteğe bağlı yapay zekâ asistanı, liderlik tabloları, dışa/içe "
     "aktarmalı yerel kayıtlar ve yüksek kontrast ile renk körü paletlerini kapsayan erişilebilirlik "
     "kipleri.")}</p>
+</section>
+
+<section class="fig">
+{fighead(_("Film", "Film"), _("Launch film and a minute of play", "Lansman filmi ve bir dakikalık oynanış"))}
+  <p>{_("Captured from the current development build.", "Güncel geliştirme derlemesinden çekildi.")}</p>
+{shell.films(
+    shell.film(video(f"founder-launch-{shell.LANG}.mp4"), video(f"founder-launch-{shell.LANG}.jpg"),
+               _("Launch film · 18 s", "Lansman filmi · 18 sn")),
+    shell.film(video(f"founder-gameplay-{shell.LANG}.mp4"), video(f"founder-gameplay-{shell.LANG}.jpg"),
+               _("Gameplay · 56 s", "Oynanış · 56 sn")))}
 </section>
 
 {shell.prose(_("Design note", "Tasarım notu"),
@@ -825,7 +840,7 @@ def build():
           (_("Delivery", "Teslimat"), _("Package · map · DSS", "Paket · harita · KDS"))],
          ["GeoPandas", "Shapely", "ArcPy", "Rasterio", "PySAL", "QGIS", "Sentinel-2", "CDSE",
           "STAC", "PostGIS"]),
-        ("agents", _("Agents / Eval", "Ajanlar / Değerlendirme"), "08",
+        ("agents", _("Agents / Eval", "Ajanlar / Değerlendirme"), "10",
          _("Agents / evaluation", "Ajanlar / değerlendirme"),
          _("Tool-using agents that route, execute and fail safely.",
            "Yönlendiren, yürüten ve güvenle hata veren araç kullanan ajanlar."),
@@ -838,7 +853,8 @@ def build():
            _("Unsafe or wrong routing", "Güvensiz ya da yanlış yönlendirme")),
           (_("Delivery", "Teslimat"), _("Plugin · MCP · benchmark", "Eklenti · MCP · kıyaslama"))],
          ["Agent Skills", "MCP", "JSON-RPC", "JSON Schema", "Routing evals", "Behavior evals",
-          "Guarded execution", "Benchmark harnesses"]),
+          "Guarded execution", "Benchmark harnesses", "LLM-as-judge calibration",
+          "Bootstrap CIs"]),
         ("ml", _("AI / ML", "YZ / ML"), "07",
          _("AI / ML / data", "YZ / ML / veri"),
          _("Models built on defensible data and evaluation.",
@@ -852,7 +868,7 @@ def build():
            _("Leakage / false confidence", "Sızıntı / yanlış güven")),
           (_("Delivery", "Teslimat"), _("Dataset · model · report", "Veri seti · model · rapor"))],
          ["Python", "PyTorch", "TensorFlow", "scikit-learn", "NumPy", "pandas", "SciPy"]),
-        ("systems", _("Systems / Product", "Sistemler / Ürün"), "10",
+        ("systems", _("Systems / Product", "Sistemler / Ürün"), "12",
          _("Systems / product", "Sistemler / ürün"),
          _("Research logic translated into software people can operate.",
            "Araştırma mantığının, insanların çalıştırabileceği yazılıma çevrilmesi."),
@@ -865,7 +881,7 @@ def build():
            _("Unmaintainable delivery", "Sürdürülemez teslimat")),
           (_("Delivery", "Teslimat"), _("PyPI · web · game", "PyPI · web · oyun"))],
          ["FastAPI", "Pydantic v2", "Docker", "Pytest", "Ruff", "Mypy", "GitHub Actions",
-          "Vanilla JS", "HTML/CSS", "Web storage"]),
+          "Vanilla JS", "HTML/CSS", "Web storage", "TypeScript / Node.js", "PostgreSQL"]),
     ]
     tabs_html = "\n      ".join(
         f'<button class="cap-tab mono" role="tab" id="tab-{k}" aria-controls="panel-{k}" '

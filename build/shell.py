@@ -145,7 +145,7 @@ def person_ld(enabled):
   "name": "Muhammed Enes Duran",
   "url": "%s/",
   "email": "mailto:%s",
-  "jobTitle": "GeoAI and spatial systems engineer",
+  "jobTitle": "AI engineer, LLM evaluation and GeoAI systems",
   "sameAs": [
     "%s",
     "%s",
@@ -160,7 +160,8 @@ def person_ld(enabled):
     "ArcGIS Pro Automation",
     "Spatial Machine Learning",
     "Decision Support Systems",
-    "Agent Skills Evaluation"
+    "Agent Skills Evaluation",
+    "LLM Evaluation"
   ]
 }
 </script>
@@ -214,12 +215,14 @@ CONTACT_COPY = {
                 "GeoAI ajan sistemleri, üretim düzeyinde mekânsal veri bilimi, uzaktan algılama ML "
                 "hatları, CBS otomasyonu, karar destek ürünleri ve uygulamalı simülasyonlar "
                 "konularında iş birliğine açığım."),
-    "note":    ("Based in Türkiye · Open-source, research and production collaboration welcome.",
-                "Türkiye merkezli · Açık kaynak, araştırma ve üretim iş birliklerine açık."),
+    "note":    ("Based in İzmir, Türkiye · Available part-time now, full-time from July 2027 · "
+                "Open-source, research and production collaboration welcome.",
+                "İzmir, Türkiye · Şu an yarı zamanlı, Temmuz 2027'den itibaren tam zamanlı "
+                "çalışmaya uygun · Açık kaynak, araştırma ve üretim iş birliklerine açık."),
     "eng":     ("Engagement", "Çalışma alanları"),
     "open":    ("2026 / open", "2026 / açık"),
-    "e1":      ("Agent skill systems and evaluation harnesses",
-                "Ajan skill sistemleri ve değerlendirme koşumları"),
+    "e1":      ("Agent skill systems and LLM evaluation harnesses",
+                "Ajan skill sistemleri ve LLM değerlendirme koşumları"),
     "e2":      ("Guarded GIS automation and MCP infrastructure",
                 "Korumalı CBS otomasyonu ve MCP altyapısı"),
     "e3":      ("Reproducible remote-sensing pipelines",
@@ -342,6 +345,25 @@ def plate(fig_no, title, svg, note=""):
   </div>
 {svg}
 </div>{note_html}"""
+
+
+def film(src, poster, label, caption=""):
+    """A self-hosted film in the same frame as a diagram plate.
+
+    src and poster are already relative to the page being emitted. Nothing is
+    fetched until the visitor presses play.
+    """
+    cap = f'\n  <p class="film-cap">{caption}</p>' if caption else ""
+    return f"""<figure class="film rv">
+  <div class="plate-bar"><strong>{label}</strong></div>
+  <video controls preload="none" playsinline poster="{poster}">
+    <source src="{src}" type="video/mp4">
+  </video>{cap}
+</figure>"""
+
+
+def films(*items):
+    return '<div class="films">\n' + "\n".join(items) + "\n</div>"
 
 
 def figure(n, heading, intro, svg_plate):

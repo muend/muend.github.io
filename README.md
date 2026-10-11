@@ -1,7 +1,7 @@
 # muend.github.io
 
-Personal site of **Muhammed Enes Duran** — GeoAI agent systems, spatial ML, secure GIS
-automation and applied simulation.
+Personal site of **Muhammed Enes Duran** — AI engineering, LLM evaluation, GeoAI agent
+systems, spatial ML and applied simulation.
 
 🔗 Live: https://muend.github.io
 
@@ -11,14 +11,15 @@ A landing page that lets a visitor understand each system in one line, with a de
 behind every project holding the technical diagrams and specifications.
 
 ```
-index.html              landing — hero, project index, contact
+index.html              landing — hero, project index, experience, contact
 research.html           academic work
 practice.html           method, capability matrix, system map
-projects/*.html         one page per flagship system (6)
-tr/                     the same nine pages in Turkish
+projects/*.html         one page per system (10)
+tr/                     the same thirteen pages in Turkish
 assets/site.css         the whole design system, one file
 assets/site.js          reveal choreography, tabs, diagram dialog, cursor
 assets/brand/           favicon set and web manifest
+assets/video/           launch films, 720p H.264, loaded only on play
 build/                  the generator that emits every page
 ```
 
@@ -82,15 +83,19 @@ overflow, no broken internal links, and zero WCAG AA contrast failures.
 
 | # | Project | Role |
 |---|---|---|
-| 00 | [benchfck](https://github.com/muend/benchfck) | Deterministic evaluation, exact Rust harness |
-| 01 | [geoai-skills](https://github.com/muend/geoai-skills) | 18-skill GeoAI discipline layer for agents |
-| 02 | [arcgis-mcp-bridge](https://github.com/muend/arcgis-mcp-bridge) | Local-first MCP server for ArcGIS Pro |
-| 03 | [sentinel-crop-pipeline](https://github.com/muend/sentinel-crop-pipeline) | Reproducible Sentinel-2 data preparation |
-| 04 | [agri-dss](https://tarimsalkoridor.online) | Spatial decision-support product |
-| 05 | [FOUNDER.EXE](https://muend.itch.io/founderexe) | Applied simulation, Windows |
+| 00 | EatBetter | Client work: production LLM evaluation and data quality |
+| 01 | [benchfck](https://github.com/muend/benchfck) | Deterministic evaluation, exact Rust harness |
+| 02 | [geoai-skills](https://github.com/muend/geoai-skills) | 18-skill GeoAI discipline layer for agents |
+| 03 | [arcgis-mcp-bridge](https://github.com/muend/arcgis-mcp-bridge) | Local-first MCP server for ArcGIS Pro |
+| 04 | [sentinel-crop-pipeline](https://github.com/muend/sentinel-crop-pipeline) | Reproducible Sentinel-2 data preparation |
+| 05 | [agri-dss](https://tarimsalkoridor.online) | Spatial decision-support product |
+| 06 | PlaceTwin | Urban digital twin and studio platform (private) |
+| 07 | [neuron-to-gpt](https://github.com/muend/neuron-to-gpt) | Character-level GPT built from one neuron up |
+| 08 | Pixel LLM | LLM development game, in development (private) |
+| 09 | [FOUNDER.EXE](https://muend.itch.io/founderexe) | Applied simulation, Windows |
 
-Every figure on the site is transcribed from the project's own repository, package page or
-store listing. Routing metrics come from the frozen 18-skill, 167-case suite in
+Every figure on the site is transcribed from the project's own repository, package page,
+store listing or, for client work, the engagement's own records. Routing metrics come from the frozen 18-skill, 167-case suite in
 [`geoai-skills/BENCHMARK.md`](https://github.com/muend/geoai-skills/blob/main/BENCHMARK.md)
 (v0.2.0, 2026-08-05) and describe routing behaviour only, not answer quality.
 

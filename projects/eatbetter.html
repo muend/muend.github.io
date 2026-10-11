@@ -1,0 +1,410 @@
+<!DOCTYPE html>
+<html lang="en" data-page="projects">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+<script>document.documentElement.classList.add('js');</script>
+<link rel="icon" type="image/svg+xml" href="../assets/brand/favicon.svg">
+<link rel="icon" sizes="any" href="../assets/brand/favicon.ico">
+<link rel="icon" type="image/png" sizes="32x32" href="../assets/brand/favicon-32.png">
+<link rel="apple-touch-icon" href="../assets/brand/favicon-180.png">
+<link rel="manifest" href="../assets/brand/site.webmanifest">
+<link rel="canonical" href="https://muend.github.io/projects/eatbetter.html">
+<link rel="alternate" hreflang="en" href="https://muend.github.io/projects/eatbetter.html">
+<link rel="alternate" hreflang="tr" href="https://muend.github.io/tr/projects/eatbetter.html">
+<link rel="alternate" hreflang="x-default" href="https://muend.github.io/projects/eatbetter.html">
+<title>EatBetter — production LLM evaluation and data quality</title>
+<meta name="description" content="Contract AI engineering on a nutrition app: a 923-case evaluation platform with human-adjudicated labels, a guarded cleanup of a live PostgreSQL catalogue and a measured safety fix for the in-app assistant.">
+<meta name="theme-color" content="#F7F7F1">
+<meta name="color-scheme" content="light">
+<meta name="referrer" content="strict-origin-when-cross-origin">
+<meta name="robots" content="index,follow,max-image-preview:large">
+<meta name="author" content="Muhammed Enes Duran">
+<meta property="og:title" content="EatBetter — production LLM evaluation and data quality">
+<meta property="og:description" content="Contract AI engineering on a nutrition app: a 923-case evaluation platform with human-adjudicated labels, a guarded cleanup of a live PostgreSQL catalogue and a measured safety fix for the in-app assistant.">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://muend.github.io/projects/eatbetter.html">
+<meta property="og:site_name" content="Muhammed Enes Duran">
+<meta property="og:locale" content="en_US">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="EatBetter — production LLM evaluation and data quality">
+<meta name="twitter:description" content="Contract AI engineering on a nutrition app: a 923-case evaluation platform with human-adjudicated labels, a guarded cleanup of a live PostgreSQL catalogue and a measured safety fix for the in-app assistant.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wdth,wght@12..96,75..100,400..800&family=IBM+Plex+Mono:wght@400;500;600&family=Instrument+Sans:ital,wght@0,400..700;1,400..600&display=swap">
+<link rel="stylesheet" href="../assets/site.css">
+</head>
+<body>
+<a class="skip-link" href="#main">Skip to content</a>
+<div class="progress" id="progress" aria-hidden="true"></div>
+<div class="cur cur-ring" id="cur-ring" aria-hidden="true"></div>
+<div class="cur cur-dot" id="cur-dot" aria-hidden="true"></div>
+<div class="cur cur-cap" id="cur-cap" aria-hidden="true"></div>
+<div class="topbar" id="topbar">
+  <div class="wrap">
+    <a class="brand" href="../index.html" aria-label="Muhammed Enes Duran — home">muend<b>.</b></a>
+    <div class="nav-area">
+      <nav class="navlinks mono" aria-label="Primary">
+        <a href="../index.html#projects" data-nav="projects">Projects</a>
+        <a href="../research.html" data-nav="research">Research</a>
+        <a href="../practice.html" data-nav="practice">Practice</a>
+        <a href="../index.html#contact" data-nav="contact">Contact</a>
+      </nav>
+      <div class="langsw mono" role="group" aria-label="Change language"><span class="lang-opt is-on" aria-current="true">EN</span><span aria-hidden="true">/</span><a class="lang-opt" href="../tr/projects/eatbetter.html" hreflang="tr" lang="tr">TR</a></div>
+      <span class="status-pill mono"><i aria-hidden="true"></i><span>Open source · active</span></span>
+    </div>
+  </div>
+</div>
+
+<main id="main">
+
+<div class="wrap">
+  <nav class="crumb mono" aria-label="Breadcrumb">
+    <a href="../index.html#projects">Projects</a><span>/</span><span>00 · EatBetter</span>
+  </nav>
+</div>
+
+<header class="phead">
+  <div class="wrap phead-grid">
+    <div>
+      <span class="kind mono rv">Client work · LLM evaluation and data quality</span>
+      <h1 class="rv" style="--d:60ms">EatBetter</h1>
+      <p class="deck rv" style="--d:120ms">Twenty-five days of contract AI engineering on a nutrition app, where every change to the model, the catalogue or the assistant had to be earned by a measurement.</p>
+    </div>
+    <div class="phead-side rv" style="--d:160ms">
+      <div class="ptags"><span class="tag-chip tag-chip--live">Shipped to production</span><span class="tag-chip ">Contract · Sep 2026</span><span class="tag-chip ">Private repositories</span></div>
+      <div class="spec">
+  <div><span class="k">Role</span><span class="v">AI Engineer, contract</span></div>
+  <div><span class="k">Period</span><span class="v">6–30 September 2026 · 25 days</span></div>
+  <div><span class="k">Stack</span><span class="v">Python · TypeScript / Node.js · PostgreSQL · Azure OpenAI</span></div>
+  <div><span class="k">Shipped</span><span class="v">17 merged pull requests · +14.5k / −2.4k lines incl. tests</span></div>
+  <div><span class="k">Method</span><span class="v">One engineer directing parallel AI coding agents from written task specs</span></div>
+  <div><span class="k">Source</span><span class="v">Private client repositories; figures from the engagement's own records</span></div>
+</div>
+    </div>
+  </div>
+</header>
+
+<div class="wrap">
+
+<section class="prose rv">
+  <span class="mono">Why</span>
+  <div>
+    <h3>Measure first, then change</h3>
+    <p>When the engagement started there was no versioned way to measure the production meal analysis against the company's own data. Whether one model or prompt was better than another could not be said with evidence. The food catalogue had been filled by model-generated writes, and the path that let defects in was still open.</p><p>Twenty-five days later there was a measurement platform anyone with the repository can run, a cleaned catalogue with its source closed, a pipeline that records and judges user corrections, and a fine-tuning dataset that matches the live call exactly. This page describes how each was built and what the measurements said, including the ones that said stop.</p>
+  </div>
+</section>
+
+<section class="fig">
+  <div class="fig-head">
+    <span class="n">Fig. 01</span>
+    <h3>From production sample to release decision</h3>
+    <span class="rule" aria-hidden="true"></span>
+  </div>
+  <p>Labels are proposed by a three-model panel and settled by a human; model output is never treated as ground truth, and a model that helped propose labels cannot be evaluated as a candidate. Every comparison is paired on the same cases and resampled by user, because one person's meals are not independent observations.</p>
+<div class="plate rv" data-plate data-title="Fig. 01 — Evaluation platform">
+  <div class="plate-bar"><strong>Fig. 01 / Evaluation platform</strong>
+    <button class="expand" type="button" data-expand>Expand<svg viewBox="0 0 16 16" aria-hidden="true"><path d="M2 6V2h4M14 10v4h-4M2 2l5 5M14 14l-5-5" fill="none" stroke="currentColor" stroke-width="1.7"/></svg></button>
+  </div>
+<svg viewBox="0 0 1180 548" role="img" preserveAspectRatio="xMidYMid meet"
+     aria-label="EatBetter evaluation platform: a read-only, de-identified production sample is labelled by a three-model proposal panel and settled by human adjudication; the resulting benchmark has 923 cases, a sealed 277-case holdout, 16 deterministic metrics and 742 automated tests; candidates are compared on the same cases with a user-clustered bootstrap and pass a three-part release gate; three model decisions were made from those measurements.">
+  <defs>
+    <marker id="ebA" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto"><path d="M0 0 7 3.5 0 7Z" fill="var(--green)"/></marker>
+    <marker id="ebB" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto"><path d="M0 0 7 3.5 0 7Z" fill="var(--amber-deep)"/></marker>
+  </defs>
+
+  <text class="d-title" x="20" y="26">GROUND TRUTH → BENCHMARK → COMPARISON → DECISION</text>
+  <text class="d-micro" x="1160" y="26" text-anchor="end">CLIENT WORK · SEP 2026</text>
+  <path class="d-rule" d="M20 36H1160"/>
+
+  <!-- 01 ground truth -->
+  <text class="d-micro" x="20"   y="58">01 / GROUND TRUTH</text>
+  <text class="d-micro" x="1160" y="58" text-anchor="end">A MODEL THAT PROPOSES LABELS CANNOT BE A CANDIDATE</text>
+  <g class="d-pop">
+    <rect class="d-box d-box--g" x="20" y="66" width="364" height="48"/>
+    <text class="d-node" x="202" y="88" text-anchor="middle">READ-ONLY PRODUCTION SAMPLE</text>
+    <text class="d-sub"  x="202" y="103" text-anchor="middle">DE-IDENTIFIED · PSEUDONYMISED</text>
+
+    <rect class="d-box d-box--g" x="408" y="66" width="364" height="48"/>
+    <text class="d-node" x="590" y="88" text-anchor="middle">THREE-MODEL PROPOSAL PANEL</text>
+    <text class="d-sub"  x="590" y="103" text-anchor="middle">MODEL OUTPUT IS NEVER TREATED AS TRUTH</text>
+
+    <rect class="d-box d-box--g" x="796" y="66" width="364" height="48"/>
+    <text class="d-node" x="978" y="88" text-anchor="middle">HUMAN ADJUDICATION</text>
+    <text class="d-sub"  x="978" y="103" text-anchor="middle">FINAL CALL · 569 GOLD LABELS</text>
+  </g>
+  <path class="d-flow" d="M384 90h16" marker-end="url(#ebA)"/>
+  <path class="d-flow" d="M772 90h16" marker-end="url(#ebA)"/>
+  <path class="d-flow" d="M978 114v12H590v14" marker-end="url(#ebA)"/>
+
+  <!-- 02 benchmark -->
+  <text class="d-micro" x="20"   y="158">02 / BENCHMARK</text>
+  <text class="d-micro" x="1160" y="158" text-anchor="end">RUNNABLE BY ANYONE WITH THE REPOSITORY</text>
+  <g class="d-pop" style="--dly:110ms">
+    <rect class="d-box" x="20" y="166" width="270" height="52"/>
+    <text class="d-node" x="155" y="188" text-anchor="middle">923 CASES</text>
+    <text class="d-sub"  x="155" y="204" text-anchor="middle">631 DEV · 292 CALIBRATION</text>
+
+    <rect class="d-box d-box--d" x="310" y="166" width="270" height="52"/>
+    <text class="d-node" x="445" y="188" text-anchor="middle">SEALED HOLDOUT</text>
+    <text class="d-sub"  x="445" y="204" text-anchor="middle">277 CASES · NEVER READ, NEVER TUNED ON</text>
+
+    <rect class="d-box" x="600" y="166" width="270" height="52"/>
+    <text class="d-node" x="735" y="188" text-anchor="middle">16 DETERMINISTIC METRICS</text>
+    <text class="d-sub"  x="735" y="204" text-anchor="middle">MISSING = NOT MEASURED, NEVER ZERO</text>
+
+    <rect class="d-box" x="890" y="166" width="270" height="52"/>
+    <text class="d-node" x="1025" y="188" text-anchor="middle">742 AUTOMATED TESTS</text>
+    <text class="d-sub"  x="1025" y="204" text-anchor="middle">WINDOWS + LINUX CI</text>
+  </g>
+  <path class="d-flow" d="M155 218v14M735 218v14M1025 218v14"/>
+  <path class="d-flow" d="M155 232h870"/>
+  <path class="d-flow" d="M590 232v22" marker-end="url(#ebA)"/>
+
+  <!-- 03 comparison + gate -->
+  <text class="d-micro" x="20"   y="268">03 / COMPARISON AND GATE</text>
+  <text class="d-micro" x="1160" y="268" text-anchor="end">SAME CASES, BOTH ARMS</text>
+  <rect class="d-zone" x="20" y="276" width="1140" height="84"/>
+  <g class="d-pop" style="--dly:210ms">
+    <rect class="d-box" x="34" y="290" width="546" height="40"/>
+    <text class="d-node" x="307" y="308" text-anchor="middle">PAIRED COMPARISON</text>
+    <text class="d-sub"  x="307" y="322" text-anchor="middle">USER-CLUSTERED BOOTSTRAP · 95% INTERVAL</text>
+
+    <rect class="d-box" x="600" y="290" width="546" height="40"/>
+    <text class="d-node" x="873" y="308" text-anchor="middle">THREE-PART RELEASE GATE</text>
+    <text class="d-sub"  x="873" y="322" text-anchor="middle">MISSING EVIDENCE BLOCKS A RELEASE, IT NEVER PASSES ONE</text>
+  </g>
+  <text class="d-micro" x="590" y="349" text-anchor="middle">ONE USER'S CASES ARE NOT INDEPENDENT · A HIGHER SCORE IS NOT A BETTER SYSTEM UNTIL THE INTERVAL SAYS SO</text>
+  <path class="d-flow--a" d="M590 360v20" marker-end="url(#ebB)"/>
+
+  <!-- 04 decisions -->
+  <text class="d-micro" x="20" y="394">04 / DECISIONS MADE BY MEASUREMENT</text>
+  <g class="d-pop" style="--dly:300ms">
+    <rect class="d-box d-box--a" x="20" y="402" width="366" height="56"/>
+    <text class="d-node" x="203" y="425" text-anchor="middle">COSTLIER MODEL RETIRED</text>
+    <text class="d-sub"  x="203" y="442" text-anchor="middle">ΔF1 −0.006 [−0.023, +0.012] · 7× THE PRICE</text>
+
+    <rect class="d-box d-box--a" x="406" y="402" width="366" height="56"/>
+    <text class="d-node" x="589" y="425" text-anchor="middle">CANDIDATE PIPELINE SHUT DOWN</text>
+    <text class="d-sub"  x="589" y="442" text-anchor="middle">LOST 4 OF 4 · 12× COST · 7× LATENCY</text>
+
+    <rect class="d-box d-box--a" x="792" y="402" width="366" height="56"/>
+    <text class="d-node" x="975" y="425" text-anchor="middle">PROMPT GAIN RE-READ</text>
+    <text class="d-sub"  x="975" y="442" text-anchor="middle">67% WAS LABEL GRANULARITY, NOT VISION</text>
+  </g>
+  <path class="d-flow--a" d="M203 458v12M589 458v12M975 458v12"/>
+  <path class="d-flow--a" d="M203 470h772"/>
+  <path class="d-flow--a" d="M590 470v14" marker-end="url(#ebB)"/>
+
+  <rect class="d-box d-box--ink" x="20" y="484" width="1140" height="36"/>
+  <text class="d-node d-inv" x="590" y="507" text-anchor="middle">EVERY NUMBER NAMES THE ARTEFACT IT CAME FROM · NO RESULT, NO CLAIM</text>
+</svg>
+</div>
+</section>
+
+<section class="fig">
+  <div class="fig-head">
+    <span class="n">Decisions</span>
+    <h3>What the platform was used to decide</h3>
+    <span class="rule" aria-hidden="true"></span>
+  </div>
+<div class="catalog rv">
+  <div><div class="c"><strong>Costlier model</strong><span class="n">−0.006</span></div><p>ΔF1 against the live model, 95% CI [−0.023, +0.012], at about seven times the price. Retired.</p></div>
+  <div><div class="c"><strong>Candidate pipeline</strong><span class="n">4 / 4</span></div><p>Comparisons lost to the bare model, at 12× the cost and 7× the latency. Shut down.</p></div>
+  <div><div class="c"><strong>Prompt gain</strong><span class="n">67%</span></div><p>Share of the best prompt variant's apparent gain that came from label granularity rather than better recognition.</p></div>
+  <div><div class="c"><strong>LLM judge</strong><span class="n">0.82</span></div><p>Best agreement among five judge candidates on 80 hand-labelled meals; the existing rule path scored 0.66.</p></div>
+</div>
+  <p class="fig-note">An error map drawn in the second week showed that two thirds of the best prompt's gain was not a vision improvement at all. That finding is what separates a higher score from a better system, and it changed how every later target was written.</p>
+</section>
+
+<section class="fig">
+  <div class="fig-head">
+    <span class="n">Fig. 02</span>
+    <h3>One permitted path to production</h3>
+    <span class="rule" aria-hidden="true"></span>
+  </div>
+  <p>Only a human connected to the live database. Each change was planned locally from a read-only export, rehearsed inside a transaction that was rolled back, and committed only when the affected row count matched the prediction. The write gate at the source went live before the cleanup, so cleaned rows could not return.</p>
+<div class="plate rv" data-plate data-title="Fig. 02 — Guarded writes and the write gate">
+  <div class="plate-bar"><strong>Fig. 02 / Guarded writes and the write gate</strong>
+    <button class="expand" type="button" data-expand>Expand<svg viewBox="0 0 16 16" aria-hidden="true"><path d="M2 6V2h4M14 10v4h-4M2 2l5 5M14 14l-5-5" fill="none" stroke="currentColor" stroke-width="1.7"/></svg></button>
+  </div>
+<svg viewBox="0 0 1180 478" role="img" preserveAspectRatio="xMidYMid meet"
+     aria-label="EatBetter production writes: only a human connects to the live PostgreSQL database; a read-only export feeds a local lab that produces a plan, guarded SQL and a rollback file; each write is rehearsed inside BEGIN and ROLLBACK against an expected row count and is committed only when the count matches and a human approves. Below, the write path for a new food before and after the write gate: unchecked saves, numbered duplicate rows and junk brands are replaced by a rule gate, a model gate, linking to the existing row and zero starting popularity.">
+  <defs>
+    <marker id="ewA" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto"><path d="M0 0 7 3.5 0 7Z" fill="var(--green)"/></marker>
+    <marker id="ewB" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto"><path d="M0 0 7 3.5 0 7Z" fill="var(--amber-deep)"/></marker>
+  </defs>
+
+  <text class="d-title" x="20" y="26">PRODUCTION WRITES / ONE PERMITTED PATH, ONE GATE AT THE SOURCE</text>
+  <text class="d-micro" x="1160" y="26" text-anchor="end">LIVE POSTGRESQL · ≈387K ROWS</text>
+  <path class="d-rule" d="M20 36H1160"/>
+
+  <!-- 01 the only way to write -->
+  <text class="d-micro" x="20"   y="58">01 / THE ONLY WAY TO WRITE TO PRODUCTION</text>
+  <text class="d-micro" x="1160" y="58" text-anchor="end">NO AI AGENT EVER CONNECTED TO THE LIVE DATABASE</text>
+  <g class="d-pop">
+    <rect class="d-box d-box--ink" x="20" y="66" width="212" height="56"/>
+    <text class="d-node d-inv" x="126" y="90" text-anchor="middle">LIVE DATABASE</text>
+    <text class="d-sub d-inv"  x="126" y="106" text-anchor="middle">HUMANS ONLY</text>
+
+    <rect class="d-box" x="252" y="66" width="212" height="56"/>
+    <text class="d-node" x="358" y="90" text-anchor="middle">READ-ONLY EXPORT</text>
+    <text class="d-sub"  x="358" y="106" text-anchor="middle">CSV · CHECKSUM MATCHED</text>
+
+    <rect class="d-box d-box--g" x="484" y="66" width="212" height="56"/>
+    <text class="d-node" x="590" y="90" text-anchor="middle">LOCAL LAB</text>
+    <text class="d-sub"  x="590" y="106" text-anchor="middle">PLAN · GUARDED SQL · UNDO FILE</text>
+
+    <rect class="d-box d-box--a" x="716" y="66" width="212" height="56"/>
+    <text class="d-node" x="822" y="90" text-anchor="middle">ROLLBACK REHEARSAL</text>
+    <text class="d-sub"  x="822" y="106" text-anchor="middle">BEGIN … ROLLBACK · EXPECTED n</text>
+
+    <rect class="d-box d-box--g" x="948" y="66" width="212" height="56"/>
+    <text class="d-node" x="1054" y="90" text-anchor="middle">COMMIT</text>
+    <text class="d-sub"  x="1054" y="106" text-anchor="middle">COUNT MATCHES · HUMAN APPROVES</text>
+  </g>
+  <path class="d-flow" d="M232 94h12" marker-end="url(#ewA)"/>
+  <path class="d-flow" d="M464 94h12" marker-end="url(#ewA)"/>
+  <path class="d-flow" d="M696 94h12" marker-end="url(#ewA)"/>
+  <path class="d-flow" d="M928 94h12" marker-end="url(#ewA)"/>
+  <path class="d-flow--a" d="M1054 122v20H126v-12" marker-end="url(#ewB)"/>
+  <text class="d-micro" x="590" y="160" text-anchor="middle">EVERY WRITE SHIPS WITH ITS UNDO FILE · LONG LOCKS RUN OFF-PEAK · DEVIATIONS ARE RECORDED, NOT HIDDEN</text>
+
+  <!-- 02 write path before / after -->
+  <text class="d-micro" x="20"   y="194">02 / WRITE PATH FOR A FOOD NOT YET IN THE CATALOGUE</text>
+  <text class="d-micro" x="1160" y="194" text-anchor="end">THE GATE WENT LIVE BEFORE THE CLEANUP</text>
+
+  <text class="d-micro" x="20" y="218">BEFORE · UNTIL 22 SEP</text>
+  <g class="d-pop" style="--dly:140ms">
+    <rect class="d-box d-box--r" x="20" y="226" width="540" height="36"/>
+    <text class="d-node" x="290" y="249" text-anchor="middle">NAME, BRAND AND CALORIES SAVED UNCHECKED</text>
+    <rect class="d-box d-box--r" x="20" y="270" width="540" height="36"/>
+    <text class="d-node" x="290" y="293" text-anchor="middle">SLUG COLLISION OPENS A NEW ROW (-2 … -9)</text>
+    <rect class="d-box d-box--r" x="20" y="314" width="540" height="36"/>
+    <text class="d-node" x="290" y="337" text-anchor="middle">JUNK BRAND · MODEL-GUESSED POPULARITY</text>
+    <rect class="d-box d-box--r" x="20" y="358" width="540" height="36"/>
+    <text class="d-node" x="290" y="381" text-anchor="middle">PUBLISH GATE CHECKS ONLY "3 DISTINCT USERS"</text>
+  </g>
+
+  <path class="d-flow--a" d="M568 310h36" marker-end="url(#ewB)"/>
+
+  <text class="d-micro d-accent" x="620" y="218">AFTER · LIVE SINCE 23 SEP</text>
+  <g class="d-pop" style="--dly:260ms">
+    <rect class="d-box d-box--g" x="620" y="226" width="540" height="36"/>
+    <text class="d-node" x="890" y="249" text-anchor="middle">RULE GATE · PLACEHOLDER AND EMPTY NAMES REJECTED</text>
+    <rect class="d-box d-box--g" x="620" y="270" width="540" height="36"/>
+    <text class="d-node" x="890" y="293" text-anchor="middle">MODEL GATE · IS IT A FOOD, IS THE NAME SANE</text>
+    <rect class="d-box d-box--g" x="620" y="314" width="540" height="36"/>
+    <text class="d-node" x="890" y="337" text-anchor="middle">COLLISION LINKS TO THE EXISTING ROW</text>
+    <rect class="d-box d-box--g" x="620" y="358" width="540" height="36"/>
+    <text class="d-node" x="890" y="381" text-anchor="middle">NEW ROW STARTS AT POPULARITY 0 · COPIES STAY UNPUBLISHED</text>
+  </g>
+
+  <rect class="d-box d-box--ink" x="20" y="414" width="1140" height="36"/>
+  <text class="d-node d-inv" x="590" y="437" text-anchor="middle">MONTHLY DEFECT RATE HAD RISEN FROM 1–2% TO 12–13% · CLEANED ROWS CANNOT COME BACK</text>
+</svg>
+</div>
+</section>
+
+<section class="fig">
+  <div class="fig-head">
+    <span class="n">Catalogue</span>
+    <h3>What changed in the live database</h3>
+    <span class="rule" aria-hidden="true"></span>
+  </div>
+  <p>Percentages are of the 387,668-row catalogue export taken before the cleanup. Deletion went by content group, not by a target number: one-off compositions, numbered copies and broken slugs were removed, while searchable generic names were only unpublished.</p>
+<div class="catalog rv">
+  <div><div class="c"><strong>Soft-deleted</strong><span class="n">88,970</span></div><p>23.0% of the catalogue, each row recoverable from its undo file.</p></div>
+  <div><div class="c"><strong>Unpublished</strong><span class="n">90,735</span></div><p>23.4%, kept in the database but taken out of publication.</p></div>
+  <div><div class="c"><strong>Popularity re-derived</strong><span class="n">292,113</span></div><p>75.4%: model-invented popularity replaced with real usage.</p></div>
+  <div><div class="c"><strong>Link and brand repairs</strong><span class="n">35,979</span></div><p>Row operations over three days: chains flattened, wrong merges split, junk brands cleared.</p></div>
+</div>
+<div class="note note--warn"><span class="mono">A mistake, and its repair</span><p>On 21 September the first version of a duplicate-merge script wrote one of two merge fields and broke 1,845 redirects. It was repaired the same day from current live values, verified with a health query, and the script gained a root-quality filter. One other step skipped its separate rollback rehearsal; the count matched the prediction exactly and the deviation was logged. Both are in the engagement's records, which is where they belong.</p></div>
+</section>
+
+<section class="prose rv">
+  <span class="mono">Assistant safety</span>
+  <div>
+    <h3>A scorecard built from real failures</h3>
+    <p>The in-app assistant keeps a memory of each user. In a stress test that adds more than thirty synthetic memory entries to a real profile, an older allergy record stopped reaching the answer. A pre-registered scorecard measured it: 400 frozen cases, 6,000 generations and 24,000 judge slots across two judge models and two orderings.</p><p>A fix that places allergy, medication and condition records first in the prompt cut the paired veto rate from 96.4% to 2.1% over 172 pairs (Holm-corrected p = 0.0001). It was the only one of ten candidates to pass the acceptance gate, and was delivered behind a flag that switches on without a deploy.</p><p>The lesson came the day before. A 24-variant tournament found no verified improvement, because the control arm already scored 97–98% and the test set never stressed the real mechanism. The scorecard that found the win was built only from cases the current version actually got wrong, at about a quarter of the cost. Safety results are advisory: there was no dietitian on the team.</p>
+  </div>
+</section>
+
+<section class="fig">
+  <div class="fig-head">
+    <span class="n">Pipelines</span>
+    <h3>Data and pipelines delivered alongside</h3>
+    <span class="rule" aria-hidden="true"></span>
+  </div>
+<div class="catalog rv">
+  <div><div class="c"><strong>Nutrient verification</strong><span class="n">242,707</span></div><p>Foods checked independently by three models. The 215,584-food correction package carries a per-row “write only if unchanged” guard and undo SQL, and was rehearsed on a local copy of the live export.</p></div>
+  <div><div class="c"><strong>Image runner</strong><span class="n">≈29 / min</span></div><p>Persistent, budget-capped jobs over a three-endpoint pool with AIMD rate control, at the ceiling of the provider quota; about 250k food images (estimate).</p></div>
+  <div><div class="c"><strong>Fine-tuning dataset</strong><span class="n">561,314</span></div><p>Versioned records for Qwen3-VL with a leakage audit against sealed sets, PII scan, deduplication and per-user splits; 0 template or tokenizer errors over 638,493 records.</p></div>
+  <div><div class="c"><strong>Tool-use dialogues</strong><span class="n">38,417</span></div><p>Synthetic assistant conversations in six languages covering all 15 tools; 89% passed every code check. No real user chats were used.</p></div>
+  <div><div class="c"><strong>Meal notes labelled</strong><span class="n">259,986</span></div><p>Real meal notes labelled through the live contract, after a six-arm teacher benchmark weighed label quality against cost.</p></div>
+  <div><div class="c"><strong>Corrections loop</strong><span class="n">3 PRs</span></div><p>Lost user corrections are now recorded and the model's first answer preserved; personal habits and a spend-capped LLM judge sit behind flags.</p></div>
+</div>
+  <p class="fig-note">At handover on 1 October the nutrient package was approved and waiting for an off-peak write, the safety fix was waiting for its flag, and the image total was an estimate still to be confirmed from the job table.</p>
+</section>
+
+<section class="prose rv">
+  <span class="mono">Negative results</span>
+  <div>
+    <h3>Stopped on evidence</h3>
+    <p>Work that a measurement or a review ended is listed with the same weight as work that shipped. Most of it set the direction of what came next.</p><ul><li><strong>Candidate recognition pipeline.</strong> Worse than the bare model in four of four comparisons, at 12× the cost. Closed.</li><li><strong>Prompt-module set.</strong> A measured +0.04 F1, significant in three repeats, was judged too small to be visible to users. Archived without a pull request.</li><li><strong>Costlier teacher candidate.</strong> 9% worse than the live model at 20× the price. The live baseline stayed.</li><li><strong>Corrections loop, first design.</strong> 20 commits and 724 tests, rejected in review: the personal hint read only the note, while half of all scans were photos. Rebuilt as three small, conflict-free pull requests that merged two days later.</li><li><strong>24-variant tournament.</strong> No verified improvement. Its measurement harness was reused for the scorecard that found one.</li></ul>
+  </div>
+</section>
+
+<section class="prose rv">
+  <span class="mono">Way of working</span>
+  <div>
+    <h3>One engineer, many agents, fixed rules</h3>
+    <p>The work was done by one engineer directing several AI coding agents in parallel. Decisions, rules and every step that touched production stayed with the human; agents worked from 94 written task specifications with limited permissions, each in its own worktree.</p><ul><li>Only a human writes to the live database: rehearse with ROLLBACK, then COMMIT, always with an undo file.</li><li>Behaviour changes sit behind a flag whose default is today's behaviour, so rollback needs no deploy.</li><li>Pull requests are conflict-free by design, checked with a merge-tree matrix against the main branches and each other.</li><li>Adversarial multi-agent review before a pull request opens: 44 agents on one change produced 19 verified findings.</li><li>Mutation testing, pre-registration, Holm correction and user-clustered bootstrap for anything claimed as a result.</li></ul><p>The handover was a set of decision records, daily notes and a delivery manifest listing each artefact with its SHA-256.</p>
+  </div>
+</section>
+
+<div class="note"><span class="mono">Scope</span><p><strong>Client work.</strong> The repositories and data are private, so nothing on this page links out, and product internals are described only as far as the method needs. Figures are transcribed from the engagement's own records as of 30 September 2026; items delivered but not yet live at handover are stated as such.</p></div>
+
+</div>
+
+<div class="wrap">
+  <nav class="pager" aria-label="More projects">
+    <a href="founder-exe.html"><span class="mono">← 09 · previous</span><strong>FOUNDER.EXE</strong></a>
+    <a href="benchfck.html"><span class="mono">01 · next →</span><strong>benchfck</strong></a>
+  </nav>
+</div>
+
+
+<section class="contact">
+  <div class="wrap">
+    <div class="contact-grid">
+      <div>
+        <span class="kicker mono rv">Open to collaboration</span>
+        <h2 class="rv" style="--d:60ms">Build spatial systems that hold up.</h2>
+        <div class="cta rv" style="--d:140ms">
+          <a class="btn btn--solid" href="mailto:nsduraan@gmail.com"><span>nsduraan@gmail.com</span></a>
+          <a class="btn btn--ghost" href="https://www.linkedin.com/in/muhammed-enes-duran/" target="_blank" rel="noopener"><span class="dot" aria-hidden="true"></span><span>LinkedIn</span></a>
+          <a class="btn btn--ghost" href="../index.html#projects"><span>All projects</span></a>
+        </div>
+      </div>
+    </div>
+    <div class="colophon mono">
+      <span>© 2026 Muhammed Enes Duran</span>
+      <span>Static site · no trackers</span>
+    </div>
+  </div>
+</section>
+
+</main>
+
+<dialog class="dlg" id="dlg" aria-labelledby="dlg-title">
+  <div class="dlg-head">
+    <strong id="dlg-title">Technical diagram</strong>
+    <button class="dlg-close" type="button" data-close>Close</button>
+  </div>
+  <div class="dlg-body" id="dlg-body"></div>
+</dialog>
+
+<script src="../assets/site.js" defer></script>
+</body>
+</html>

@@ -1,0 +1,108 @@
+<svg viewBox="0 0 1180 566" role="img" preserveAspectRatio="xMidYMid meet"
+     aria-label="PlaceTwin chain: six open and official sources feed a deterministic build that assigns every building a height confidence class, links buildings to cadastral parcels and writes one summary file; the 3D twin holds analysis, field, research and design tools for two study areas in one scene; it is delivered as an offline single file, a team panel with an assistant and a gated site, and exports sheets, CAD, GeoJSON and a jury copy.">
+  <defs>
+    <marker id="ptA" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto"><path d="M0 0 7 3.5 0 7Z" fill="var(--green)"/></marker>
+    <marker id="ptB" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto"><path d="M0 0 7 3.5 0 7Z" fill="var(--amber-deep)"/></marker>
+  </defs>
+
+  <text class="d-title" x="20" y="26">SOURCES → BUILD → TWIN → STUDIO</text>
+  <text class="d-micro" x="1160" y="26" text-anchor="end">AYVALIK · TWO STUDY AREAS · 696 BUILDINGS</text>
+  <path class="d-rule" d="M20 36H1160"/>
+
+  <!-- 01 sources -->
+  <text class="d-micro" x="20"   y="58">01 / SOURCES</text>
+  <text class="d-micro" x="1160" y="58" text-anchor="end">EVERY VALUE KEEPS ITS SOURCE</text>
+  <g class="d-pop">
+    <rect class="d-box" x="20" y="66" width="180" height="52"/>
+    <text class="d-node" x="110" y="88" text-anchor="middle">CADASTRE</text>
+    <text class="d-sub"  x="110" y="104" text-anchor="middle">PARCELS · TITLE DEEDS</text>
+
+    <rect class="d-box" x="212" y="66" width="180" height="52"/>
+    <text class="d-node" x="302" y="88" text-anchor="middle">OPENSTREETMAP</text>
+    <text class="d-sub"  x="302" y="104" text-anchor="middle">FOOTPRINTS · ROADS · COAST</text>
+
+    <rect class="d-box" x="404" y="66" width="180" height="52"/>
+    <text class="d-node" x="494" y="88" text-anchor="middle">SECOND FOOTPRINTS</text>
+    <text class="d-sub"  x="494" y="104" text-anchor="middle">INDEPENDENT CROSS-CHECK</text>
+
+    <rect class="d-box" x="596" y="66" width="180" height="52"/>
+    <text class="d-node" x="686" y="88" text-anchor="middle">SATELLITE</text>
+    <text class="d-sub"  x="686" y="104" text-anchor="middle">SENTINEL-2 · LANDSAT</text>
+
+    <rect class="d-box" x="788" y="66" width="180" height="52"/>
+    <text class="d-node" x="878" y="88" text-anchor="middle">CLIMATE + TERRAIN</text>
+    <text class="d-sub"  x="878" y="104" text-anchor="middle">ERA5 · ELEVATION MODEL</text>
+
+    <rect class="d-box" x="980" y="66" width="180" height="52"/>
+    <text class="d-node" x="1070" y="88" text-anchor="middle">PLAN + POLICY</text>
+    <text class="d-sub"  x="1070" y="104" text-anchor="middle">SOURCED COMPILATION</text>
+  </g>
+  <path class="d-flow" d="M110 118v12M302 118v12M494 118v12M686 118v12M878 118v12M1070 118v12"/>
+  <path class="d-flow" d="M110 130h960"/>
+  <path class="d-flow" d="M590 130v20" marker-end="url(#ptA)"/>
+
+  <!-- 02 deterministic build -->
+  <text class="d-micro" x="20"   y="164">02 / DETERMINISTIC BUILD</text>
+  <text class="d-micro" x="1160" y="164" text-anchor="end">ONE SUMMARY FILE FEEDS PANEL, SITE AND ASSISTANT</text>
+  <rect class="d-zone" x="20" y="172" width="1140" height="84"/>
+  <g class="d-pop" style="--dly:110ms">
+    <rect class="d-box d-box--g" x="34" y="186" width="358" height="42"/>
+    <text class="d-node" x="213" y="204" text-anchor="middle">HEIGHT CONFIDENCE CLASS</text>
+    <text class="d-sub"  x="213" y="219" text-anchor="middle">A FIELD · B DEED · C OSM · D ESTIMATE</text>
+
+    <rect class="d-box d-box--g" x="411" y="186" width="358" height="42"/>
+    <text class="d-node" x="590" y="204" text-anchor="middle">PARCEL LINKING</text>
+    <text class="d-sub"  x="590" y="219" text-anchor="middle">CENTROID, ELSE ≥ 50% FOOTPRINT OVERLAP</text>
+
+    <rect class="d-box d-box--g" x="788" y="186" width="358" height="42"/>
+    <text class="d-node" x="967" y="204" text-anchor="middle">PROVISIONAL FLAGS</text>
+    <text class="d-sub"  x="967" y="219" text-anchor="middle">COUNTS MARKED "≥" BELOW COVERAGE THRESHOLD</text>
+  </g>
+  <text class="d-micro" x="590" y="245" text-anchor="middle">640 OF 696 HEIGHTS ARE ESTIMATES WITH A STATED RANGE · A FIELD SURVEY PROMOTES A BUILDING TO CLASS A</text>
+  <path class="d-flow" d="M590 256v20" marker-end="url(#ptA)"/>
+
+  <!-- 03 twin -->
+  <text class="d-micro" x="20"   y="290">03 / TWIN — ONE SCENE, TWO STUDY AREAS</text>
+  <text class="d-micro" x="1160" y="290" text-anchor="end">HEAVY ANALYSIS RUNS IN A WEB WORKER</text>
+  <g class="d-pop" style="--dly:210ms">
+    <rect class="d-box d-box--d" x="20" y="298" width="270" height="56"/>
+    <text class="d-node" x="155" y="321" text-anchor="middle">ANALYSIS</text>
+    <text class="d-sub"  x="155" y="338" text-anchor="middle">SUN · SEA VIEW · WALK ACCESS · RISK</text>
+
+    <rect class="d-box d-box--d" x="310" y="298" width="270" height="56"/>
+    <text class="d-node" x="445" y="321" text-anchor="middle">FIELD</text>
+    <text class="d-sub"  x="445" y="338" text-anchor="middle">BUILDING FORMS · 8 PROTOCOLS · PHOTOS</text>
+
+    <rect class="d-box d-box--d" x="600" y="298" width="270" height="56"/>
+    <text class="d-node" x="735" y="321" text-anchor="middle">RESEARCH + SYNTHESIS</text>
+    <text class="d-sub"  x="735" y="338" text-anchor="middle">LYNCH MAP · ACTORS · SWOT · OVERLAY</text>
+
+    <rect class="d-box d-box--d" x="890" y="298" width="270" height="56"/>
+    <text class="d-node" x="1025" y="321" text-anchor="middle">DESIGN + TIME</text>
+    <text class="d-sub"  x="1025" y="338" text-anchor="middle">MASSING · SKETCH TO MASS · SEA LEVEL</text>
+  </g>
+  <path class="d-hair" d="M155 362v10h870v-10"/>
+  <path class="d-flow--a" d="M590 372v20" marker-end="url(#ptB)"/>
+
+  <!-- 04 delivery -->
+  <text class="d-micro" x="20" y="406">04 / DELIVERY</text>
+  <g class="d-pop" style="--dly:300ms">
+    <rect class="d-box d-box--a" x="20" y="414" width="366" height="56"/>
+    <text class="d-node" x="203" y="437" text-anchor="middle">OFFLINE SINGLE FILE</text>
+    <text class="d-sub"  x="203" y="454" text-anchor="middle">≈ 3.6 MB · OPENS WITHOUT A CONNECTION</text>
+
+    <rect class="d-box d-box--a" x="406" y="414" width="366" height="56"/>
+    <text class="d-node" x="589" y="437" text-anchor="middle">TEAM PANEL + ASSISTANT</text>
+    <text class="d-sub"  x="589" y="454" text-anchor="middle">SHARED RECORDS · PRESENCE · TOOL CALLS INTO THE TWIN</text>
+
+    <rect class="d-box d-box--a" x="792" y="414" width="366" height="56"/>
+    <text class="d-node" x="975" y="437" text-anchor="middle">GATED SITE</text>
+    <text class="d-sub"  x="975" y="454" text-anchor="middle">LOGIN GATE · SHARED FIELD RECORDS</text>
+  </g>
+  <path class="d-flow--a" d="M203 470v12M589 470v12M975 470v12"/>
+  <path class="d-flow--a" d="M203 482h772"/>
+  <path class="d-flow--a" d="M590 482v14" marker-end="url(#ptB)"/>
+
+  <rect class="d-box d-box--ink" x="20" y="496" width="1140" height="36"/>
+  <text class="d-node d-inv" x="590" y="519" text-anchor="middle">OUTPUTS · 1/1000 A1 SHEETS · DXF / OBJ · GEOJSON / CSV · PRESENTATION SHEET · JURY COPY</text>
+</svg>

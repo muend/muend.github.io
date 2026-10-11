@@ -1,0 +1,92 @@
+<svg viewBox="0 0 1180 520" role="img" preserveAspectRatio="xMidYMid meet"
+     aria-label="neuron-to-gpt: eight weekly stages from a single neuron through autograd, a bigram model, an MLP language model, manual backpropagation, a WaveNet-style hierarchy and causal attention to a character-level GPT; weeks one and two use no machine-learning library. A six-stage comparison at a fixed budget lowers validation loss from 2.4942 for a bigram model to 1.8673 with LayerNorm. The scaled model has 4,833,345 parameters and reaches validation loss 1.4723 on Shakespeare after 5,000 updates on an A100.">
+  <text class="d-title" x="20" y="26">ONE NEURON → CHARACTER-LEVEL GPT</text>
+  <text class="d-micro" x="1160" y="26" text-anchor="end">8 WEEKS · 31 TESTS · PUBLIC</text>
+  <path class="d-rule" d="M20 36H1160"/>
+
+  <!-- 01 eight weeks -->
+  <text class="d-micro" x="20"   y="58">01 / EIGHT WEEKS, ONE DEPENDENCY CHAIN</text>
+  <text class="d-micro" x="1160" y="58" text-anchor="end">EACH LAYER IS REBUILT BEFORE IT IS USED</text>
+  <g class="d-pop">
+    <rect class="d-box d-box--a" x="20" y="66" width="132" height="58"/>
+    <text class="d-node" x="86" y="90" text-anchor="middle">W1 · NEURON</text>
+    <text class="d-sub"  x="86" y="107" text-anchor="middle">LOSS · GRADIENT</text>
+
+    <rect class="d-box d-box--a" x="164" y="66" width="132" height="58"/>
+    <text class="d-node" x="230" y="90" text-anchor="middle">W2 · AUTOGRAD</text>
+    <text class="d-sub"  x="230" y="107" text-anchor="middle">VALUE · BACKWARD()</text>
+
+    <rect class="d-box d-box--g" x="308" y="66" width="132" height="58"/>
+    <text class="d-node" x="374" y="90" text-anchor="middle">W3 · BIGRAM</text>
+    <text class="d-sub"  x="374" y="107" text-anchor="middle">COUNTS · NLL</text>
+
+    <rect class="d-box d-box--g" x="452" y="66" width="132" height="58"/>
+    <text class="d-node" x="518" y="90" text-anchor="middle">W4 · MLP LM</text>
+    <text class="d-sub"  x="518" y="107" text-anchor="middle">EMBED · BATCHNORM</text>
+
+    <rect class="d-box d-box--g" x="596" y="66" width="132" height="58"/>
+    <text class="d-node" x="662" y="90" text-anchor="middle">W5 · BACKPROP</text>
+    <text class="d-sub"  x="662" y="107" text-anchor="middle">DERIVED BY HAND</text>
+
+    <rect class="d-box d-box--g" x="740" y="66" width="132" height="58"/>
+    <text class="d-node" x="806" y="90" text-anchor="middle">W6 · HIERARCHY</text>
+    <text class="d-sub"  x="806" y="107" text-anchor="middle">WAVENET-STYLE</text>
+
+    <rect class="d-box d-box--g" x="884" y="66" width="132" height="58"/>
+    <text class="d-node" x="950" y="90" text-anchor="middle">W7 · ATTENTION</text>
+    <text class="d-sub"  x="950" y="107" text-anchor="middle">CAUSAL · ONE HEAD</text>
+
+    <rect class="d-box d-box--ink" x="1028" y="66" width="132" height="58"/>
+    <text class="d-node d-inv" x="1094" y="90" text-anchor="middle">W8 · GPT</text>
+    <text class="d-sub d-inv"  x="1094" y="107" text-anchor="middle">BLOCKS · A100</text>
+  </g>
+  <path class="d-flow" d="M152 95h12M296 95h12M440 95h12M584 95h12M728 95h12M872 95h12M1016 95h12"/>
+  <path class="d-hair" d="M20 134h276"/>
+  <text class="d-micro d-amber" x="20" y="150">WEEKS 1–2 · STANDARD LIBRARY ONLY</text>
+  <path class="d-hair" d="M308 134h852"/>
+  <text class="d-micro d-accent" x="308" y="150">WEEKS 3–8 · PYTORCH</text>
+
+  <!-- 02 six-stage comparison -->
+  <text class="d-micro" x="20"   y="186">02 / SIX-STAGE COMPARISON — VALIDATION NLL, LOWER IS BETTER</text>
+  <text class="d-micro" x="1160" y="186" text-anchor="end">SAME CORPUS · SEED · 4,000 ITERATIONS ON CPU</text>
+  <path class="d-hair" d="M250 196v188"/>
+  <g class="d-pop" style="--dly:140ms">
+    <text class="d-name" x="20" y="216">BIGRAM</text>
+    <rect class="d-box" x="250" y="202" width="748" height="20"/>
+    <text class="d-name" x="1006" y="216">2.4942</text>
+    <text class="d-tag"  x="1160" y="216" text-anchor="end">4,225 PARAMS</text>
+
+    <text class="d-name" x="20" y="246">SINGLE HEAD</text>
+    <rect class="d-box" x="250" y="232" width="646" height="20"/>
+    <text class="d-name" x="904" y="246">2.3457</text>
+    <text class="d-tag"  x="1160" y="246" text-anchor="end">22,721 PARAMS</text>
+
+    <text class="d-name" x="20" y="276">MULTI-HEAD</text>
+    <rect class="d-box d-box--g" x="250" y="262" width="500" height="20"/>
+    <text class="d-name" x="758" y="276">2.1314</text>
+    <text class="d-tag"  x="1160" y="276" text-anchor="end">26,881 PARAMS</text>
+
+    <text class="d-name" x="20" y="306">+ FEEDFORWARD</text>
+    <rect class="d-box d-box--g" x="250" y="292" width="370" height="20"/>
+    <text class="d-name" x="628" y="306">1.9422</text>
+    <text class="d-tag"  x="1160" y="306" text-anchor="end">59,969 PARAMS</text>
+
+    <text class="d-name" x="20" y="336">+ RESIDUAL PATHS</text>
+    <rect class="d-box d-box--g" x="250" y="322" width="331" height="20"/>
+    <text class="d-name" x="589" y="336">1.8846</text>
+    <text class="d-tag"  x="1160" y="336" text-anchor="end">59,969 PARAMS</text>
+
+    <text class="d-name" x="20" y="366">+ PRE-LAYERNORM</text>
+    <rect class="d-box d-box--g" x="250" y="352" width="319" height="20"/>
+    <text class="d-name" x="577" y="366">1.8673</text>
+    <text class="d-tag"  x="1160" y="366" text-anchor="end">60,353 PARAMS</text>
+  </g>
+  <text class="d-micro" x="250" y="402">BAR LENGTH = NLL ABOVE 1.40 NATS PER CHARACTER · PARAMETER COUNTS RISE, SO THIS IS NOT PARAMETER-MATCHED</text>
+
+  <!-- 03 scaled model -->
+  <text class="d-micro" x="20"   y="436">03 / SCALED MODEL</text>
+  <text class="d-micro" x="1160" y="436" text-anchor="end">WIDTH, DEPTH, CONTEXT AND BUDGET CHANGE TOGETHER: NOT AN ABLATION</text>
+  <rect class="d-box d-box--ink" x="20" y="444" width="1140" height="52"/>
+  <text class="d-node d-inv" x="590" y="466" text-anchor="middle">6 BLOCKS · 8 HEADS · WIDTH 256 · CONTEXT 256 · 4,833,345 PARAMETERS</text>
+  <text class="d-sub d-inv"  x="590" y="483" text-anchor="middle">5,000 UPDATES ON AN A100 · VALIDATION NLL 1.4723 SHAKESPEARE · 1.6239 TURKISH</text>
+</svg>
