@@ -80,12 +80,27 @@ def _lang_root(lang):
     return "tr/" if lang == "tr" else ""
 
 
+# Link-preview images as (path, width, height). A page with a film uses its
+# poster, in its own language where one exists; every other page gets the card
+# drawn by build/sharecard.py.
+OG_DEFAULT = ("assets/brand/share-card.png", 1200, 630)
+OG_IMAGES = {
+    "projects/placetwin.html": ("assets/video/placetwin-film.jpg", 1280, 720),
+    "projects/pixel-llm.html": ("assets/video/pixel-demo-en.jpg", 1280, 720),
+    ("projects/pixel-llm.html", "tr"): ("assets/video/pixel-demo-tr.jpg", 1280, 720),
+    "projects/founder-exe.html": ("assets/video/founder-gameplay-en.jpg", 1280, 720),
+    ("projects/founder-exe.html", "tr"): ("assets/video/founder-gameplay-tr.jpg", 1280, 720),
+}
+
+
 def head(title, description, page, page_path, person=False):
     lang = LANG
     r = rel(page_path, lang)
     here = f"{SITE}/{_lang_root(lang)}{page_path}".replace("/index.html", "/")
     alt_en = f"{SITE}/{page_path}".replace("/index.html", "/")
     alt_tr = f"{SITE}/tr/{page_path}".replace("/index.html", "/")
+    img_path, img_w, img_h = OG_IMAGES.get((page_path, lang)) or OG_IMAGES.get(page_path) or OG_DEFAULT
+    image = f"{SITE}/{img_path}"
     return f"""<!DOCTYPE html>
 <html lang="{lang}" data-page="{page}">
 <head>
@@ -114,9 +129,13 @@ def head(title, description, page, page_path, person=False):
 <meta property="og:url" content="{here}">
 <meta property="og:site_name" content="Muhammed Enes Duran">
 <meta property="og:locale" content="{'tr_TR' if lang == 'tr' else 'en_US'}">
+<meta property="og:image" content="{image}">
+<meta property="og:image:width" content="{img_w}">
+<meta property="og:image:height" content="{img_h}">
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:title" content="{title}">
 <meta name="twitter:description" content="{description}">
+<meta name="twitter:image" content="{image}">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wdth,wght@12..96,75..100,400..800&family=IBM+Plex+Mono:wght@400;500;600&family=Instrument+Sans:ital,wght@0,400..700;1,400..600&display=swap">
