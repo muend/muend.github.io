@@ -797,18 +797,18 @@ def build():
         f'<h3>{h}</h3><p>{b}</p></article>' for i, (ph, h, b) in enumerate(steps))
 
     principles = [
-        (_("01 / Spatial rigor", "01 / Mekânsal titizlik"),
-         _("CRS and units are explicit", "CRS ve birimler açıktır"),
-         _("Area, distance, raster alignment, scale and geometry assumptions are checked before "
-           "methods are trusted.",
-           "Alan, mesafe, raster hizalaması, ölçek ve geometri varsayımları, yöntemlere güvenilmeden "
-           "önce denetlenir.")),
+        (_("01 / Measurement rigor", "01 / Ölçüm titizliği"),
+         _("Assumptions are explicit", "Varsayımlar açıktır"),
+         _("Units, coordinate systems, label provenance and the boundaries of each sample are "
+           "checked before a method is trusted.",
+           "Birimler, koordinat sistemleri, etiketlerin kaynağı ve her örneğin sınırları, yönteme "
+           "güvenilmeden önce denetlenir.")),
         (_("02 / Honest validation", "02 / Dürüst doğrulama"),
          _("Leakage is treated as a risk", "Sızıntı bir risk olarak ele alınır"),
-         _("Spatially dependent data requires blocked splits, appropriate baselines and validation "
-           "designs that reflect deployment.",
-           "Mekânsal bağımlı veri; bloklu ayrımlar, uygun temel çizgiler ve dağıtımı yansıtan "
-           "doğrulama tasarımları gerektirir.")),
+         _("Dependent data requires blocked or clustered splits, sealed holdouts, appropriate "
+           "baselines and validation designs that reflect deployment.",
+           "Bağımlı veri; bloklu ya da kümeli ayrımlar, mühürlü ayrık test kümeleri, uygun temel "
+           "çizgiler ve dağıtımı yansıtan doğrulama tasarımları gerektirir.")),
         (_("03 / Reproducibility", "03 / Yeniden üretilebilirlik"),
          _("Evidence is versioned", "Kanıt sürümlenir"),
          _("Typed contracts, CI, immutable benchmark packages, test harnesses and DOI-backed "
@@ -827,19 +827,6 @@ def build():
         f'<h3>{h}</h3><p>{b}</p></article>' for i, (n, h, b) in enumerate(principles))
 
     panels = [
-        ("spatial", _("Spatial / EO", "Mekânsal / EO"), "10",
-         _("Spatial / remote sensing", "Mekânsal / uzaktan algılama"),
-         _("Geospatial methods with operational discipline.",
-           "Operasyonel disiplinle mekânsal yöntemler."),
-         _("Vector, raster, EO, spatial statistics, cartography and proprietary GIS workflows "
-           "handled with explicit projections, scale, validation and output checks.",
-           "Vektör, raster, EO, mekânsal istatistik, kartografya ve tescilli CBS iş akışları; açık "
-           "projeksiyon, ölçek, doğrulama ve çıktı denetimleriyle ele alınır."),
-         [(_("Primary domain", "Ana alan"), "GeoAI"),
-          (_("Core failure mode", "Temel hata kipi"), _("Silent spatial error", "Sessiz mekânsal hata")),
-          (_("Delivery", "Teslimat"), _("Package · map · DSS", "Paket · harita · KDS"))],
-         ["GeoPandas", "Shapely", "ArcPy", "Rasterio", "PySAL", "QGIS", "Sentinel-2", "CDSE",
-          "STAC", "PostGIS"]),
         ("agents", _("Agents / Eval", "Ajanlar / Değerlendirme"), "10",
          _("Agents / evaluation", "Ajanlar / değerlendirme"),
          _("Tool-using agents that route, execute and fail safely.",
@@ -848,7 +835,8 @@ def build():
            "preparation, deterministic scoring and evidence-aware benchmark publication.",
            "Agent Skills, MCP, çalışma zamanı yalıtımı, tipli değerlendirme sözleşmeleri, kör istek "
            "hazırlığı, deterministik puanlama ve kanıt bilinçli kıyaslama yayını."),
-         [(_("Primary domain", "Ana alan"), _("Agentic GIS", "Ajan tabanlı CBS")),
+         [(_("Primary domain", "Ana alan"),
+           _("Agent systems and LLM evaluation", "Ajan sistemleri ve LLM değerlendirme")),
           (_("Core failure mode", "Temel hata kipi"),
            _("Unsafe or wrong routing", "Güvensiz ya da yanlış yönlendirme")),
           (_("Delivery", "Teslimat"), _("Plugin · MCP · benchmark", "Eklenti · MCP · kıyaslama"))],
@@ -859,11 +847,13 @@ def build():
          _("AI / ML / data", "YZ / ML / veri"),
          _("Models built on defensible data and evaluation.",
            "Savunulabilir veri ve değerlendirme üzerine kurulu modeller."),
-         _("Deep-learning and classical ML workflows with spatial splitting, class-imbalance "
-           "handling, reproducible preprocessing and georeferencing-preserving inference.",
-           "Mekânsal ayrım, sınıf dengesizliği yönetimi, yeniden üretilebilir ön işleme ve coğrafi "
-           "referansı koruyan çıkarımla derin öğrenme ve klasik ML iş akışları."),
-         [(_("Primary domain", "Ana alan"), _("Spatial ML", "Mekânsal ML")),
+         _("Deep-learning and classical ML workflows with leakage-safe splits, class-imbalance "
+           "handling and reproducible preprocessing, from a Transformer written from scratch to "
+           "remote-sensing segmentation.",
+           "Sızıntıya karşı güvenli ayrım, sınıf dengesizliği yönetimi ve yeniden üretilebilir ön "
+           "işlemeyle derin öğrenme ve klasik ML iş akışları; sıfırdan yazılmış bir Transformer'dan "
+           "uzaktan algılama segmentasyonuna."),
+         [(_("Primary domain", "Ana alan"), _("Applied ML", "Uygulamalı ML")),
           (_("Core failure mode", "Temel hata kipi"),
            _("Leakage / false confidence", "Sızıntı / yanlış güven")),
           (_("Delivery", "Teslimat"), _("Dataset · model · report", "Veri seti · model · rapor"))],
@@ -882,6 +872,19 @@ def build():
           (_("Delivery", "Teslimat"), _("PyPI · web · game", "PyPI · web · oyun"))],
          ["FastAPI", "Pydantic v2", "Docker", "Pytest", "Ruff", "Mypy", "GitHub Actions",
           "Vanilla JS", "HTML/CSS", "Web storage", "TypeScript / Node.js", "PostgreSQL"]),
+        ("spatial", _("Spatial / EO", "Mekânsal / EO"), "10",
+         _("Spatial / remote sensing", "Mekânsal / uzaktan algılama"),
+         _("Geospatial methods with operational discipline.",
+           "Operasyonel disiplinle mekânsal yöntemler."),
+         _("Vector, raster, EO, spatial statistics, cartography and proprietary GIS workflows "
+           "handled with explicit projections, scale, validation and output checks.",
+           "Vektör, raster, EO, mekânsal istatistik, kartografya ve tescilli CBS iş akışları; açık "
+           "projeksiyon, ölçek, doğrulama ve çıktı denetimleriyle ele alınır."),
+         [(_("Primary domain", "Ana alan"), "GeoAI"),
+          (_("Core failure mode", "Temel hata kipi"), _("Silent spatial error", "Sessiz mekânsal hata")),
+          (_("Delivery", "Teslimat"), _("Package · map · DSS", "Paket · harita · KDS"))],
+         ["GeoPandas", "Shapely", "ArcPy", "Rasterio", "PySAL", "QGIS", "Sentinel-2", "CDSE",
+          "STAC", "PostGIS"]),
     ]
     tabs_html = "\n      ".join(
         f'<button class="cap-tab mono" role="tab" id="tab-{k}" aria-controls="panel-{k}" '
@@ -927,8 +930,8 @@ def build():
     <div class="phead-side rv" style="--d:160ms">
       <div class="spec">
         <div><span class="k">{_("Stages", "Aşama")}</span><span class="v">{_("Four, always in order", "Dört, her zaman sırayla")}</span></div>
-        <div><span class="k">{_("Primary domain", "Ana alan")}</span><span class="v">{_("GeoAI and spatial data science", "GeoAI ve mekânsal veri bilimi")}</span></div>
-        <div><span class="k">{_("Failure mode", "Hata kipi")}</span><span class="v">{_("Silent spatial error", "Sessiz mekânsal hata")}</span></div>
+        <div><span class="k">{_("Primary domain", "Ana alan")}</span><span class="v">{_("AI engineering and evaluation", "Yapay zekâ mühendisliği ve değerlendirme")}</span></div>
+        <div><span class="k">{_("Failure mode", "Hata kipi")}</span><span class="v">{_("Silent, unmeasured error", "Sessiz, ölçülmemiş hata")}</span></div>
       </div>
     </div>
   </div>
@@ -978,11 +981,11 @@ def build():
 </div>
 """
     out_path("practice.html").write_text(
-        shell.head(_("Practice — how I build spatial systems",
-                     "Yöntem — mekânsal sistemleri nasıl inşa ediyorum"),
-                   _("A four-stage method for building GeoAI infrastructure, research software and "
+        shell.head(_("Practice — how I build AI systems",
+                     "Yöntem — yapay zekâ sistemlerini nasıl inşa ediyorum"),
+                   _("A four-stage method for building AI infrastructure, research software and "
                      "decision systems, plus the full capability matrix and system map.",
-                     "GeoAI altyapısı, araştırma yazılımı ve karar sistemleri kurmak için dört "
+                     "Yapay zekâ altyapısı, araştırma yazılımı ve karar sistemleri kurmak için dört "
                      "aşamalı bir yöntem; ayrıca tam yetkinlik matrisi ve sistem haritası."),
                    "practice", "practice.html")
         + practice_body + shell.footer("practice.html", contact=False),

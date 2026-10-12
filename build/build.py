@@ -54,25 +54,25 @@ def tags(items):
 # ---------------------------------------------------------------- landing copy
 
 LEAD = {
-    "kicker": ("AI engineering · LLM evaluation · GeoAI",
-               "Yapay zekâ mühendisliği · LLM değerlendirme · GeoAI"),
+    "kicker": ("AI engineering · LLM evaluation · agent systems",
+               "Yapay zekâ mühendisliği · LLM değerlendirme · ajan sistemleri"),
     "edition": ("Portfolio / 2026", "Portfolyo / 2026"),
-    "deck": ("I build AI and geospatial systems that are measured before they are trusted.",
-             "Güvenilmeden önce ölçülen yapay zekâ ve mekânsal sistemler kuruyorum."),
+    "deck": ("I build AI systems that are measured before they are trusted.",
+             "Güvenilmeden önce ölçülen yapay zekâ sistemleri kuruyorum."),
     "lede": ("Ten systems along one line of work: <strong>LLM evaluation in production</strong>, "
-             "deterministic benchmarks, geospatial knowledge for agents, guarded execution, "
-             "reproducible data preparation, decision delivery, an urban digital twin, a GPT built "
-             "from scratch, and simulation. Open work links to something you can inspect; client "
-             "work is described from its own records.",
+             "deterministic benchmarks, a GPT built from scratch, agent skills, guarded tool "
+             "execution, an urban digital twin with a grounded assistant, simulation, reproducible "
+             "data preparation and decision delivery. Open work links to something you can inspect; "
+             "client work is described from its own records.",
              "Tek bir çalışma çizgisinde on sistem: <strong>üretimde LLM değerlendirme</strong>, "
-             "deterministik kıyaslamalar, ajanlar için mekânsal bilgi, korumalı yürütme, yeniden "
-             "üretilebilir veri hazırlığı, karar teslimi, bir kentsel dijital ikiz, sıfırdan "
-             "kurulan bir GPT ve simülasyon. Açık işler inceleyebileceğiniz bir şeye bağlanıyor; "
-             "müşteri işi kendi kayıtlarından anlatılıyor."),
+             "deterministik kıyaslamalar, sıfırdan kurulan bir GPT, ajan skill'leri, korumalı araç "
+             "yürütme, veriye dayanan asistanıyla bir kentsel dijital ikiz, simülasyon, yeniden "
+             "üretilebilir veri hazırlığı ve karar teslimi. Açık işler inceleyebileceğiniz bir şeye "
+             "bağlanıyor; müşteri işi kendi kayıtlarından anlatılıyor."),
     "cta1": ("See the systems", "Sistemlere bak"),
     "focus": ("Focus", "Odak"),
-    "focus_v": ("GeoAI agent systems, LLM evaluation, spatial ML, secure GIS automation",
-                "GeoAI ajan sistemleri, LLM değerlendirme, mekânsal ML, güvenli CBS otomasyonu"),
+    "focus_v": ("LLM evaluation, agent systems, MCP tooling, applied ML",
+                "LLM değerlendirme, ajan sistemleri, MCP araçları, uygulamalı ML"),
     "shipped": ("Shipped", "Yayınlanan"),
     "shipped_v": ("2 PyPI packages, 1 DOI release, 2 live products",
                   "2 PyPI paketi, 1 DOI sürümü, 2 canlı ürün"),
@@ -84,8 +84,8 @@ LEAD = {
     "systems": ("Systems", "Sistemler"),
     "systems_tag": ("10 · open each for diagrams", "10 · diyagramlar için tıklayın"),
     "f0": ("LLM eval cases built", "Kurulan LLM değerlendirme vakası"),
-    "f1": ("GeoAI agent skills", "GeoAI ajan skill'i"),
-    "f2": ("ArcGIS tools exposed", "Açılan ArcGIS aracı"),
+    "f1": ("Agent skills", "Ajan skill'i"),
+    "f2": ("MCP tools exposed", "Açılan MCP aracı"),
     "f3": ("Full-route accuracy*", "Tam rota doğruluğu*"),
     "foot": ("* Routing metrics come from the frozen 18-skill, 167-case suite measured on Claude "
              "Code 2.1.214 with claude-sonnet-5 (2026-08-05). They describe routing behaviour, not "
@@ -334,13 +334,13 @@ def build_index():
   </div>
 </section>
 """
-    title = T("Muhammed Enes Duran — AI Engineer · LLM Evaluation · GeoAI Agent Systems",
-              "Muhammed Enes Duran — Yapay Zekâ Mühendisi · LLM Değerlendirme · GeoAI Ajan Sistemleri")
-    desc = T("LLM evaluation in production, GeoAI agent systems, secure ArcGIS automation, "
-             "reproducible Sentinel-2 pipelines, an urban digital twin and applied simulations — "
+    title = T("Muhammed Enes Duran — AI Engineer · LLM Evaluation · Agent Systems",
+              "Muhammed Enes Duran — Yapay Zekâ Mühendisi · LLM Değerlendirme · Ajan Sistemleri")
+    desc = T("LLM evaluation in production, deterministic benchmarks, agent skills and MCP "
+             "tooling, a GPT built from scratch, an urban digital twin and applied simulations — "
              "each with inspectable evidence.",
-             "Üretimde LLM değerlendirme, GeoAI ajan sistemleri, güvenli ArcGIS otomasyonu, "
-             "yeniden üretilebilir Sentinel-2 hatları, bir kentsel dijital ikiz ve uygulamalı "
+             "Üretimde LLM değerlendirme, deterministik kıyaslamalar, ajan skill'leri ve MCP "
+             "araçları, sıfırdan kurulan bir GPT, bir kentsel dijital ikiz ve uygulamalı "
              "simülasyonlar — her biri incelenebilir kanıtla.")
     html = (shell.head(title, desc, "projects", "index.html", person=True)
             + body + shell.footer("index.html", contact=True))

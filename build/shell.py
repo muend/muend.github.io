@@ -145,7 +145,7 @@ def person_ld(enabled):
   "name": "Muhammed Enes Duran",
   "url": "%s/",
   "email": "mailto:%s",
-  "jobTitle": "AI engineer, LLM evaluation and GeoAI systems",
+  "jobTitle": "AI engineer, LLM evaluation and agent systems",
   "sameAs": [
     "%s",
     "%s",
@@ -153,15 +153,15 @@ def person_ld(enabled):
     "%s"
   ],
   "knowsAbout": [
-    "GeoAI",
-    "Spatial Data Science",
-    "Remote Sensing",
-    "Model Context Protocol",
-    "ArcGIS Pro Automation",
-    "Spatial Machine Learning",
-    "Decision Support Systems",
+    "LLM Evaluation",
+    "AI Agents",
     "Agent Skills Evaluation",
-    "LLM Evaluation"
+    "Model Context Protocol",
+    "Large Language Models",
+    "Machine Learning",
+    "Decision Support Systems",
+    "GeoAI",
+    "Remote Sensing"
   ]
 }
 </script>
@@ -208,27 +208,27 @@ def topbar(page_path):
 
 CONTACT_COPY = {
     "kicker":  ("Open to collaboration", "İş birliğine açık"),
-    "title":   ("Build spatial systems that hold up.", "Sağlam duran mekânsal sistemler kuralım."),
-    "body":    ("Available for collaboration around GeoAI agent systems, production-grade spatial "
-                "data science, remote-sensing ML pipelines, GIS automation, decision-support "
+    "title":   ("Build AI systems that hold up.", "Sağlam duran yapay zekâ sistemleri kuralım."),
+    "body":    ("Available for collaboration around LLM evaluation, agent systems and MCP "
+                "infrastructure, applied machine learning, data pipelines, decision-support "
                 "products and applied simulations.",
-                "GeoAI ajan sistemleri, üretim düzeyinde mekânsal veri bilimi, uzaktan algılama ML "
-                "hatları, CBS otomasyonu, karar destek ürünleri ve uygulamalı simülasyonlar "
-                "konularında iş birliğine açığım."),
+                "LLM değerlendirme, ajan sistemleri ve MCP altyapısı, uygulamalı makine öğrenmesi, "
+                "veri hatları, karar destek ürünleri ve uygulamalı simülasyonlar konularında iş "
+                "birliğine açığım."),
     "note":    ("Based in İzmir, Türkiye · Available part-time now, full-time from July 2027 · "
                 "Open-source, research and production collaboration welcome.",
                 "İzmir, Türkiye · Şu an yarı zamanlı, Temmuz 2027'den itibaren tam zamanlı "
                 "çalışmaya uygun · Açık kaynak, araştırma ve üretim iş birliklerine açık."),
     "eng":     ("Engagement", "Çalışma alanları"),
     "open":    ("2026 / open", "2026 / açık"),
-    "e1":      ("Agent skill systems and LLM evaluation harnesses",
-                "Ajan skill sistemleri ve LLM değerlendirme koşumları"),
-    "e2":      ("Guarded GIS automation and MCP infrastructure",
-                "Korumalı CBS otomasyonu ve MCP altyapısı"),
-    "e3":      ("Reproducible remote-sensing pipelines",
-                "Yeniden üretilebilir uzaktan algılama hatları"),
-    "e4":      ("Spatial decision-support products",
-                "Mekânsal karar destek ürünleri"),
+    "e1":      ("LLM evaluation platforms and benchmark harnesses",
+                "LLM değerlendirme platformları ve kıyaslama koşumları"),
+    "e2":      ("Agent skill systems and MCP infrastructure",
+                "Ajan skill sistemleri ve MCP altyapısı"),
+    "e3":      ("Applied ML and reproducible data pipelines",
+                "Uygulamalı ML ve yeniden üretilebilir veri hatları"),
+    "e4":      ("Geospatial AI and decision-support products",
+                "Mekânsal yapay zekâ ve karar destek ürünleri"),
     "e5":      ("Research software and citable releases",
                 "Araştırma yazılımı ve atıf verilebilir sürümler"),
     "efoot":   ("Written briefs preferred. Every engagement starts with explicit invariants, data "

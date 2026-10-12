@@ -1,7 +1,7 @@
 # muend.github.io
 
-Personal site of **Muhammed Enes Duran** — AI engineering, LLM evaluation, GeoAI agent
-systems, spatial ML and applied simulation.
+Personal site of **Muhammed Enes Duran** — AI engineering, LLM evaluation, agent systems,
+applied ML and simulation.
 
 🔗 Live: https://muend.github.io
 
@@ -85,14 +85,14 @@ overflow, no broken internal links, and zero WCAG AA contrast failures.
 |---|---|---|
 | 00 | EatBetter | Client work: production LLM evaluation and data quality |
 | 01 | [benchfck](https://github.com/muend/benchfck) | Deterministic evaluation, exact Rust harness |
-| 02 | [geoai-skills](https://github.com/muend/geoai-skills) | 18-skill GeoAI discipline layer for agents |
-| 03 | [arcgis-mcp-bridge](https://github.com/muend/arcgis-mcp-bridge) | Local-first MCP server for ArcGIS Pro |
-| 04 | [sentinel-crop-pipeline](https://github.com/muend/sentinel-crop-pipeline) | Reproducible Sentinel-2 data preparation |
-| 05 | [agri-dss](https://tarimsalkoridor.online) | Spatial decision-support product |
+| 02 | [neuron-to-gpt](https://github.com/muend/neuron-to-gpt) | Character-level GPT built from one neuron up |
+| 03 | [geoai-skills](https://github.com/muend/geoai-skills) | 18-skill GeoAI discipline layer for agents |
+| 04 | [arcgis-mcp-bridge](https://github.com/muend/arcgis-mcp-bridge) | Local-first MCP server for ArcGIS Pro |
+| 05 | Pixel LLM | LLM development game, in development (private) |
 | 06 | PlaceTwin | Urban digital twin and studio platform (private) |
-| 07 | [neuron-to-gpt](https://github.com/muend/neuron-to-gpt) | Character-level GPT built from one neuron up |
-| 08 | Pixel LLM | LLM development game, in development (private) |
-| 09 | [FOUNDER.EXE](https://muend.itch.io/founderexe) | Applied simulation, Windows |
+| 07 | [FOUNDER.EXE](https://muend.itch.io/founderexe) | Applied simulation, Windows |
+| 08 | [sentinel-crop-pipeline](https://github.com/muend/sentinel-crop-pipeline) | Reproducible Sentinel-2 data preparation |
+| 09 | [agri-dss](https://tarimsalkoridor.online) | Spatial decision-support product |
 
 Every figure on the site is transcribed from the project's own repository, package page,
 store listing or, for client work, the engagement's own records. Routing metrics come from the frozen 18-skill, 167-case suite in

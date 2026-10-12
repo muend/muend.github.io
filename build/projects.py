@@ -65,8 +65,38 @@ PROJECTS = [
         tags=[("new", ("v0.4.0-alpha", "v0.4.0-alfa")), "Apache-2.0", "Rust"],
     ),
     dict(
-        slug="geoai-skills",
+        slug="neuron-to-gpt",
         no="02",
+        name="neuron-to-gpt",
+        kind=("LLM fundamentals · Built from scratch", "LLM temelleri · Sıfırdan inşa"),
+        blurb=("Eight weeks from a single neuron to a trained character-level GPT, with each "
+               "architectural step measured rather than assumed.",
+               "Tek bir nörondan eğitilmiş, karakter düzeyinde bir GPT'ye sekiz hafta; her mimari "
+               "adım varsayılmadı, ölçüldü."),
+        fig=("8", ("weeks, neuron to GPT", "hafta, nörondan GPT'ye")),
+        title=("neuron-to-gpt — a character-level GPT built from one neuron up",
+               "neuron-to-gpt — tek nörondan kurulan karakter düzeyinde GPT"),
+        desc=("A learning journal from a single neuron to a character-level GPT: autograd without "
+              "libraries, a six-stage measured comparison and a 4.8M-parameter model trained on an "
+              "A100.",
+              "Tek bir nörondan karakter düzeyinde bir GPT'ye uzanan öğrenme günlüğü: kütüphanesiz "
+              "otomatik türev, altı aşamalı ölçülmüş karşılaştırma ve A100'de eğitilen 4,8 milyon "
+              "parametreli bir model."),
+        deck=("A learning journal that starts at one neuron and ends at a trained character-level "
+              "GPT, with the architecture's gains measured stage by stage.",
+              "Tek bir nöronla başlayıp eğitilmiş, karakter düzeyinde bir GPT ile biten öğrenme "
+              "günlüğü; mimarinin kazançları aşama aşama ölçüldü."),
+        links=[
+            ("https://github.com/muend/neuron-to-gpt", ("Repository", "Depo")),
+            ("https://github.com/muend/neuron-to-gpt/tree/main/week08",
+             ("Week 8 results", "8. hafta sonuçları")),
+        ],
+        tags=[("live", ("Public", "Açık")), "PyTorch",
+              ("", ("A100-trained", "A100'de eğitildi")), ("", ("31 tests", "31 test"))],
+    ),
+    dict(
+        slug="geoai-skills",
+        no="03",
         name="geoai-skills",
         kind=("Agent skills · GeoAI knowledge infrastructure",
               "Ajan skill'leri · GeoAI bilgi altyapısı"),
@@ -95,7 +125,7 @@ PROJECTS = [
     ),
     dict(
         slug="arcgis-mcp-bridge",
-        no="03",
+        no="04",
         name="arcgis-mcp-bridge",
         kind=("MCP · Secure GIS execution", "MCP · Güvenli CBS yürütme"),
         blurb=("Exposes ArcGIS Pro geoprocessing to AI agents while keeping the licensed ArcPy "
@@ -124,60 +154,29 @@ PROJECTS = [
               ("", ("100 tools", "100 araç")), ("", ("Windows", "Windows"))],
     ),
     dict(
-        slug="sentinel-crop-pipeline",
-        no="04",
-        name="sentinel-crop-pipeline",
-        kind=("Remote sensing · Reproducible data pipeline",
-              "Uzaktan algılama · Yeniden üretilebilir veri hattı"),
-        blurb=("Takes Sentinel-2 scenes from search to training patches, counting every pixel it "
-               "throws away along the way.",
-               "Sentinel-2 sahnelerini aramadan eğitim yamalarına taşır ve yol boyunca attığı her "
-               "pikseli hesaba katar."),
-        fig=("5", ("auditable stages", "denetlenebilir aşama")),
-        title=("sentinel-crop-pipeline — reproducible Sentinel-2 data preparation",
-               "sentinel-crop-pipeline — yeniden üretilebilir Sentinel-2 veri hazırlığı"),
-        desc=("A five-stage Sentinel-2 L2A preparation pipeline for crop classification, with SCL "
-              "masking, spatially blocked splits and a full accounting trail.",
-              "Ürün sınıflandırması için beş aşamalı Sentinel-2 L2A hazırlık hattı: SCL maskeleme, "
-              "mekânsal bloklu ayrım ve eksiksiz hesap izi."),
-        deck=("A reproducible Sentinel-2 data preparation pipeline for crop-classification "
-              "research, where every discarded pixel is accounted for.",
-              "Ürün sınıflandırma araştırması için yeniden üretilebilir bir Sentinel-2 veri "
-              "hazırlık hattı; atılan her piksel kayda geçer."),
-        links=[
-            ("https://github.com/muend/sentinel-crop-pipeline", ("Repository", "Depo")),
-            ("https://pypi.org/project/sentinel-crop-pipeline/", ("PyPI", "PyPI")),
-            ("https://doi.org/10.5281/zenodo.21284444", ("Zenodo DOI", "Zenodo DOI")),
-        ],
-        tags=[("pkg", ("Zenodo DOI", "Zenodo DOI")), "Apache-2.0",
-              ("", ("Beta", "Beta")), ("", ("CDSE", "CDSE"))],
-    ),
-    dict(
-        slug="agri-dss",
+        slug="pixel-llm",
         no="05",
-        name="agri-dss",
-        kind=("Spatial DSS · Public-facing product", "Mekânsal KDS · Kamuya açık ürün"),
-        blurb=("Turns regional agricultural data for 147 neighbourhoods into a crop plan a "
-               "cooperative can pin to a village board.",
-               "147 mahalleye ait bölgesel tarım verisini, bir kooperatifin köy panosuna asabileceği "
-               "bir ürün planına dönüştürür."),
-        fig=("147", ("neighbourhoods", "mahalle")),
-        title=("agri-dss — decision support for the Western Antalya corridor",
-               "agri-dss — Batı Antalya koridoru için karar desteği"),
-        desc=("A zero-backend decision-support system covering five districts and 147 "
-              "neighbourhoods, producing printable single-sheet crop plans.",
-              "Beş ilçe ve 147 mahalleyi kapsayan, tek sayfalık yazdırılabilir ürün planları "
-              "üreten, sunucusuz bir karar destek sistemi."),
-        deck=("Decision support for the Western Antalya agricultural corridor, ending in something "
-              "you can print on one A4 sheet.",
-              "Batı Antalya tarımsal koridoru için karar desteği; sonucu tek bir A4 sayfaya "
-              "yazdırabildiğiniz bir çıktı."),
-        links=[
-            ("https://tarimsalkoridor.online", ("Live app", "Canlı uygulama")),
-            ("https://github.com/muend/agri-dss", ("Repository", "Depo")),
-        ],
-        tags=[("live", ("Live", "Canlı")), "Apache-2.0",
-              ("", ("5 districts", "5 ilçe")), ("", ("No backend", "Sunucusuz"))],
+        name="Pixel LLM",
+        kind=("Applied simulation · LLM development game",
+              "Uygulamalı simülasyon · LLM geliştirme oyunu"),
+        blurb=("A run-based game where each run trains one language model through ten stages, and "
+               "every shortcut taken upstream shows up in the final model card.",
+               "Her koşunun on aşamada bir dil modeli eğittiği, koşu tabanlı bir oyun; yukarı "
+               "akışta alınan her kestirme final model kartında ortaya çıkar."),
+        fig=("10", ("stages, data to launch", "aşama, veriden lansmana")),
+        title=("Pixel LLM — a game about building a language model",
+               "Pixel LLM — dil modeli inşa etmek üzerine bir oyun"),
+        desc=("A Godot game that turns the LLM pipeline into ten playable stages, from data "
+              "collection to launch, across three difficulty tiers and ending in a model card.",
+              "LLM hattını veri toplamadan lansmana on oynanabilir aşamaya çeviren bir Godot oyunu; "
+              "üç zorluk kademesi var ve koşu bir model kartıyla biter."),
+        deck=("A game about building a language model: ten stages from data collection to launch, "
+              "where upstream decisions carry through to a final model card.",
+              "Dil modeli inşa etmek üzerine bir oyun: veri toplamadan lansmana on aşama; yukarı "
+              "akıştaki kararlar final model kartına kadar taşınır."),
+        links=[],
+        tags=[("new", ("In development", "Geliştiriliyor")), "Godot 4.7.1",
+              ("", ("EN / TR", "EN / TR")), ("", ("Working title", "Geçici ad"))],
     ),
     dict(
         slug="placetwin",
@@ -207,63 +206,8 @@ PROJECTS = [
               ("", ("TR / EN outputs", "TR / EN çıktı"))],
     ),
     dict(
-        slug="neuron-to-gpt",
-        no="07",
-        name="neuron-to-gpt",
-        kind=("LLM fundamentals · Built from scratch", "LLM temelleri · Sıfırdan inşa"),
-        blurb=("Eight weeks from a single neuron to a trained character-level GPT, with each "
-               "architectural step measured rather than assumed.",
-               "Tek bir nörondan eğitilmiş, karakter düzeyinde bir GPT'ye sekiz hafta; her mimari "
-               "adım varsayılmadı, ölçüldü."),
-        fig=("8", ("weeks, neuron to GPT", "hafta, nörondan GPT'ye")),
-        title=("neuron-to-gpt — a character-level GPT built from one neuron up",
-               "neuron-to-gpt — tek nörondan kurulan karakter düzeyinde GPT"),
-        desc=("A learning journal from a single neuron to a character-level GPT: autograd without "
-              "libraries, a six-stage measured comparison and a 4.8M-parameter model trained on an "
-              "A100.",
-              "Tek bir nörondan karakter düzeyinde bir GPT'ye uzanan öğrenme günlüğü: kütüphanesiz "
-              "otomatik türev, altı aşamalı ölçülmüş karşılaştırma ve A100'de eğitilen 4,8 milyon "
-              "parametreli bir model."),
-        deck=("A learning journal that starts at one neuron and ends at a trained character-level "
-              "GPT, with the architecture's gains measured stage by stage.",
-              "Tek bir nöronla başlayıp eğitilmiş, karakter düzeyinde bir GPT ile biten öğrenme "
-              "günlüğü; mimarinin kazançları aşama aşama ölçüldü."),
-        links=[
-            ("https://github.com/muend/neuron-to-gpt", ("Repository", "Depo")),
-            ("https://github.com/muend/neuron-to-gpt/tree/main/week08",
-             ("Week 8 results", "8. hafta sonuçları")),
-        ],
-        tags=[("live", ("Public", "Açık")), "PyTorch",
-              ("", ("A100-trained", "A100'de eğitildi")), ("", ("31 tests", "31 test"))],
-    ),
-    dict(
-        slug="pixel-llm",
-        no="08",
-        name="Pixel LLM",
-        kind=("Applied simulation · LLM development game",
-              "Uygulamalı simülasyon · LLM geliştirme oyunu"),
-        blurb=("A run-based game where each run trains one language model through ten stages, and "
-               "every shortcut taken upstream shows up in the final model card.",
-               "Her koşunun on aşamada bir dil modeli eğittiği, koşu tabanlı bir oyun; yukarı "
-               "akışta alınan her kestirme final model kartında ortaya çıkar."),
-        fig=("10", ("stages, data to launch", "aşama, veriden lansmana")),
-        title=("Pixel LLM — a game about building a language model",
-               "Pixel LLM — dil modeli inşa etmek üzerine bir oyun"),
-        desc=("A Godot game that turns the LLM pipeline into ten playable stages, from data "
-              "collection to launch, across three difficulty tiers and ending in a model card.",
-              "LLM hattını veri toplamadan lansmana on oynanabilir aşamaya çeviren bir Godot oyunu; "
-              "üç zorluk kademesi var ve koşu bir model kartıyla biter."),
-        deck=("A game about building a language model: ten stages from data collection to launch, "
-              "where upstream decisions carry through to a final model card.",
-              "Dil modeli inşa etmek üzerine bir oyun: veri toplamadan lansmana on aşama; yukarı "
-              "akıştaki kararlar final model kartına kadar taşınır."),
-        links=[],
-        tags=[("new", ("In development", "Geliştiriliyor")), "Godot 4.7.1",
-              ("", ("EN / TR", "EN / TR")), ("", ("Working title", "Geçici ad"))],
-    ),
-    dict(
         slug="founder-exe",
-        no="09",
+        no="07",
         name="FOUNDER.EXE",
         kind=("Applied simulation · Desktop game", "Uygulamalı simülasyon · Masaüstü oyunu"),
         blurb=("A startup simulation where cash, compliance, product and people interact under two "
@@ -286,6 +230,62 @@ PROJECTS = [
         ],
         tags=[("new", ("In development", "Geliştiriliyor")),
               ("", ("Windows x64", "Windows x64")), ("", ("EN / TR", "EN / TR"))],
+    ),
+    dict(
+        slug="sentinel-crop-pipeline",
+        no="08",
+        name="sentinel-crop-pipeline",
+        kind=("Remote sensing · Reproducible data pipeline",
+              "Uzaktan algılama · Yeniden üretilebilir veri hattı"),
+        blurb=("Takes Sentinel-2 scenes from search to training patches, counting every pixel it "
+               "throws away along the way.",
+               "Sentinel-2 sahnelerini aramadan eğitim yamalarına taşır ve yol boyunca attığı her "
+               "pikseli hesaba katar."),
+        fig=("5", ("auditable stages", "denetlenebilir aşama")),
+        title=("sentinel-crop-pipeline — reproducible Sentinel-2 data preparation",
+               "sentinel-crop-pipeline — yeniden üretilebilir Sentinel-2 veri hazırlığı"),
+        desc=("A five-stage Sentinel-2 L2A preparation pipeline for crop classification, with SCL "
+              "masking, spatially blocked splits and a full accounting trail.",
+              "Ürün sınıflandırması için beş aşamalı Sentinel-2 L2A hazırlık hattı: SCL maskeleme, "
+              "mekânsal bloklu ayrım ve eksiksiz hesap izi."),
+        deck=("A reproducible Sentinel-2 data preparation pipeline for crop-classification "
+              "research, where every discarded pixel is accounted for.",
+              "Ürün sınıflandırma araştırması için yeniden üretilebilir bir Sentinel-2 veri "
+              "hazırlık hattı; atılan her piksel kayda geçer."),
+        links=[
+            ("https://github.com/muend/sentinel-crop-pipeline", ("Repository", "Depo")),
+            ("https://pypi.org/project/sentinel-crop-pipeline/", ("PyPI", "PyPI")),
+            ("https://doi.org/10.5281/zenodo.21284444", ("Zenodo DOI", "Zenodo DOI")),
+        ],
+        tags=[("pkg", ("Zenodo DOI", "Zenodo DOI")), "Apache-2.0",
+              ("", ("Beta", "Beta")), ("", ("CDSE", "CDSE"))],
+    ),
+    dict(
+        slug="agri-dss",
+        no="09",
+        name="agri-dss",
+        kind=("Spatial DSS · Public-facing product", "Mekânsal KDS · Kamuya açık ürün"),
+        blurb=("Turns regional agricultural data for 147 neighbourhoods into a crop plan a "
+               "cooperative can pin to a village board.",
+               "147 mahalleye ait bölgesel tarım verisini, bir kooperatifin köy panosuna asabileceği "
+               "bir ürün planına dönüştürür."),
+        fig=("147", ("neighbourhoods", "mahalle")),
+        title=("agri-dss — decision support for the Western Antalya corridor",
+               "agri-dss — Batı Antalya koridoru için karar desteği"),
+        desc=("A zero-backend decision-support system covering five districts and 147 "
+              "neighbourhoods, producing printable single-sheet crop plans.",
+              "Beş ilçe ve 147 mahalleyi kapsayan, tek sayfalık yazdırılabilir ürün planları "
+              "üreten, sunucusuz bir karar destek sistemi."),
+        deck=("Decision support for the Western Antalya agricultural corridor, ending in something "
+              "you can print on one A4 sheet.",
+              "Batı Antalya tarımsal koridoru için karar desteği; sonucu tek bir A4 sayfaya "
+              "yazdırabildiğiniz bir çıktı."),
+        links=[
+            ("https://tarimsalkoridor.online", ("Live app", "Canlı uygulama")),
+            ("https://github.com/muend/agri-dss", ("Repository", "Depo")),
+        ],
+        tags=[("live", ("Live", "Canlı")), "Apache-2.0",
+              ("", ("5 districts", "5 ilçe")), ("", ("No backend", "Sunucusuz"))],
     ),
 ]
 
