@@ -23,7 +23,7 @@ def build():
         "eatbetter",
         spec_rows=[
             (_("Role", "Rol"), _("AI Engineer, contract", "Yapay Zekâ Mühendisi, sözleşmeli")),
-            (_("Period", "Dönem"), _("6–30 September 2026 · 25 days", "6–30 Eylül 2026 · 25 gün")),
+            (_("Period", "Dönem"), _("August – October 2026", "Ağustos – Ekim 2026")),
             (_("Stack", "Yığın"), "Python · TypeScript / Node.js · PostgreSQL · Azure OpenAI"),
             (_("Shipped", "Teslim"), _("17 merged pull requests · +14.5k / −2.4k lines incl. tests",
                                        "Birleşen 17 PR · testler dahil +14,5 bin / −2,4 bin satır")),
@@ -41,7 +41,7 @@ def build():
     "analysis against the company's own data. Whether one model or prompt was better than another "
     "could not be said with evidence. The food catalogue had been filled by model-generated "
     "writes, and the path that let defects in was still open.</p>"
-    "<p>Twenty-five days later there was a measurement platform anyone with the repository can "
+    "<p>By handover there was a measurement platform anyone with the repository can "
     "run, a cleaned catalogue with its source closed, a pipeline that records and judges user "
     "corrections, and a fine-tuning dataset that matches the live call exactly. This page "
     "describes how each was built and what the measurements said, including the ones that said "
@@ -49,7 +49,7 @@ def build():
     "<p>İş başladığında, üretimdeki öğün analizini şirketin kendi verisiyle ölçen sürümlü bir yol "
     "yoktu. Bir modelin ya da istemin ötekinden daha iyi olup olmadığı kanıtla söylenemiyordu. "
     "Yemek kataloğu model üretimi yazımlarla dolmuştu ve kusurları içeri alan yol hâlâ açıktı.</p>"
-    "<p>Yirmi beş gün sonra, depoyu alan herkesin koşabildiği bir ölçüm platformu, kaynağı "
+    "<p>Devir anında, depoyu alan herkesin koşabildiği bir ölçüm platformu, kaynağı "
     "kapatılmış temiz bir katalog, kullanıcı düzeltmelerini kaydeden ve değerlendiren bir hat ve "
     "canlı çağrıyla birebir örtüşen bir ince ayar veri seti vardı. Bu sayfa her birinin nasıl "
     "kurulduğunu ve ölçümlerin ne dediğini anlatır; “dur” diyenler dahil.</p>"))}
@@ -135,17 +135,17 @@ def build():
      _("75.4%: model-invented popularity replaced with real usage.",
        "%75,4: modelin uydurduğu popülerlik gerçek kullanımla değiştirildi.")),
     (_("Link and brand repairs", "Bağlantı ve marka onarımı"), _("35,979", "35.979"),
-     _("Row operations over three days: chains flattened, wrong merges split, junk brands cleared.",
-       "Üç günde satır işlemi: zincirler düzleştirildi, yanlış birleştirmeler ayrıldı, çöp "
+     _("Row operations: chains flattened, wrong merges split, junk brands cleared.",
+       "Satır işlemi: zincirler düzleştirildi, yanlış birleştirmeler ayrıldı, çöp "
        "markalar boşaltıldı.")),
 ])}
 {shell.note(_("A mistake, and its repair", "Bir hata ve onarımı"),
-  _("On 21 September the first version of a duplicate-merge script wrote one of two merge fields "
+  _("During the cleanup the first version of a duplicate-merge script wrote one of two merge fields "
     "and broke 1,845 redirects. It was repaired the same day from current live values, verified "
     "with a health query, and the script gained a root-quality filter. One other step skipped its "
     "separate rollback rehearsal; the count matched the prediction exactly and the deviation was "
     "logged. Both are in the engagement's records, which is where they belong.",
-    "21 Eylül'de kopya birleştirme betiğinin ilk sürümü birleştirmenin iki alanından yalnızca "
+    "Temizlik sırasında kopya birleştirme betiğinin ilk sürümü birleştirmenin iki alanından yalnızca "
     "birini yazdı ve 1.845 yönlendirmeyi kırdı. Aynı gün canlıdaki güncel değerlerle onarıldı, bir "
     "sağlık sorgusuyla doğrulandı ve betiğe kök kalite süzgeci eklendi. Bir başka adımda ayrı "
     "ROLLBACK provası atlandı; sayı öngörüyle birebir tuttu ve sapma kayda geçti. İkisi de işin "
@@ -220,10 +220,10 @@ def build():
        "kişisel alışkanlıklar ve harcama tavanlı LLM hakemi bayrak arkasında.")),
 ])}
   <p class="fig-note">{_(
-    "At handover on 1 October the nutrient package was approved and waiting for an off-peak "
+    "At handover the nutrient package was approved and waiting for an off-peak "
     "write, the safety fix was waiting for its flag, and the image total was an estimate still "
     "to be confirmed from the job table.",
-    "1 Ekim'deki devirde besin değeri paketi onaylıydı ve düşük trafikte yazılmayı bekliyordu, "
+    "Devir anında besin değeri paketi onaylıydı ve düşük trafikte yazılmayı bekliyordu, "
     "güvenlik düzeltmesi bayrağının açılmasını bekliyordu, görsel toplamı ise iş tablosundan "
     "doğrulanması gereken bir tahmindi.")}</p>
 </section>
@@ -302,11 +302,11 @@ def build():
 {shell.note(_("Scope", "Kapsam"),
   _("<strong>Client work.</strong> The repositories and data are private, so nothing on this "
     "page links out, and product internals are described only as far as the method needs. "
-    "Figures are transcribed from the engagement's own records as of 30 September 2026; items "
+    "Figures are transcribed from the engagement's own records at handover; items "
     "delivered but not yet live at handover are stated as such.",
     "<strong>Müşteri işi.</strong> Depolar ve veri özeldir; bu yüzden bu sayfadaki hiçbir şey "
     "dışarıya bağlanmaz ve ürünün iç yapısı yalnızca yöntemin gerektirdiği kadar anlatılır. "
-    "Sayılar, işin 30 Eylül 2026 tarihli kendi kayıtlarından aktarılmıştır; teslim edilmiş ama "
+    "Sayılar, işin devir anındaki kendi kayıtlarından aktarılmıştır; teslim edilmiş ama "
     "devir anında henüz canlıya alınmamış kalemler öyle belirtilmiştir."))}
 """)
 

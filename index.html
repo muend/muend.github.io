@@ -149,7 +149,7 @@
         <div class="prow-main">
           <span class="kind">Client work · LLM evaluation and data quality</span>
           <h2>EatBetter</h2>
-          <p>Twenty-five days as the AI engineer on a nutrition app: a measurement platform, a cleaned food catalogue and a safer assistant, each change earned by evidence.</p>
+          <p>Contract AI engineering on a nutrition app: a measurement platform, a cleaned food catalogue and a safer assistant, each change earned by evidence.</p>
         </div>
         <div class="prow-fig">
           <strong>923</strong><span>benchmark cases</span>
@@ -375,10 +375,10 @@
     </div>
 
 <section class="prose rv">
-  <span class="mono">Sep 2026</span>
+  <span class="mono">Aug – Oct 2026</span>
   <div>
     <h3>AI Engineer (Contract) · EatBetter</h3>
-    <p>Contract work on an AI-powered nutrition app, run on one rule: measure the model before changing it.</p><ul><li><strong>Evaluation platform.</strong> Built a 923-case benchmark from scratch: 569 human-adjudicated gold labels, a 277-case sealed holdout, 16 deterministic metrics and 742 automated tests in CI. Comparisons use user-clustered bootstrap confidence intervals, and the release gate counts missing evidence as a failure.</li><li><strong>Model decisions by measurement.</strong> Retired a model that cost 7× more after showing no gain (ΔF1 −0.006, 95% CI [−0.023, +0.012]), and shut down a candidate pipeline that lost to the bare model in 4 of 4 comparisons.</li><li><strong>Assistant safety.</strong> On a frozen 400-case scorecard, a fix for users with long memory profiles cut the missed-allergy-context veto rate from 96.4% to 2.1%, the only one of ten candidates to pass the gate. The LLM judge was calibrated on 80 hand-labelled meals (agreement 0.82 against a 0.66 rule baseline).</li><li><strong>Production data quality.</strong> In a live PostgreSQL catalogue of about 387k rows, soft-deleted 88,970 and unpublished 90,735. Every write ran as a ROLLBACK rehearsal against a predicted row count before a human-approved COMMIT, and a rule plus LLM write gate closed the source.</li></ul><p>Python · TypeScript / Node.js · PostgreSQL · Azure OpenAI</p><div class="plinks" style="margin-top:var(--s-5)"><a class="btn btn--solid" href="projects/eatbetter.html"><span>Read the full case study</span><svg viewBox="0 0 16 16" aria-hidden="true"><path d="M3 13 13 3M6 3h7v7" fill="none" stroke="currentColor" stroke-width="1.7"/></svg></a></div>
+    <p>Contract work on an AI-powered nutrition app, run on one rule: measure the model before changing it.</p><ul><li><strong>Evaluation platform.</strong> Built a 923-case benchmark from scratch: 569 human-adjudicated gold labels, a 277-case sealed holdout, 16 deterministic metrics and 742 automated tests in CI. Comparisons use user-clustered bootstrap confidence intervals, and the release gate counts missing evidence as a failure.</li><li><strong>Model decisions by measurement.</strong> Retired a model that cost 7× more after showing no gain (ΔF1 −0.006, 95% CI [−0.023, +0.012]), and shut down a candidate pipeline that lost to the bare model in 4 of 4 comparisons.</li><li><strong>Assistant safety.</strong> On a frozen 400-case scorecard, a fix for users with long memory profiles cut the missed-allergy-context veto rate from 96.4% to 2.1%, the only one of ten candidates to pass the gate. Five LLM-judge candidates were compared on 80 hand-labelled meals (best agreement 0.82 against a 0.66 rule baseline).</li><li><strong>Production data quality.</strong> In a live PostgreSQL catalogue of about 387k rows, soft-deleted 88,970 and unpublished 90,735. Every write ran as a ROLLBACK rehearsal against a predicted row count before a human-approved COMMIT, and a rule plus LLM write gate closed the source.</li></ul><p>Python · TypeScript / Node.js · PostgreSQL · Azure OpenAI</p><div class="plinks" style="margin-top:var(--s-5)"><a class="btn btn--solid" href="projects/eatbetter.html"><span>Read the full case study</span><svg viewBox="0 0 16 16" aria-hidden="true"><path d="M3 13 13 3M6 3h7v7" fill="none" stroke="currentColor" stroke-width="1.7"/></svg></a></div>
   </div>
 </section>
 

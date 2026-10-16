@@ -12,9 +12,9 @@ PROJECTS = [
         name="EatBetter",
         kind=("Client work · LLM evaluation and data quality",
               "Müşteri işi · LLM değerlendirme ve veri kalitesi"),
-        blurb=("Twenty-five days as the AI engineer on a nutrition app: a measurement platform, a "
+        blurb=("Contract AI engineering on a nutrition app: a measurement platform, a "
                "cleaned food catalogue and a safer assistant, each change earned by evidence.",
-               "Bir beslenme uygulamasında yapay zekâ mühendisi olarak yirmi beş gün: bir ölçüm "
+               "Bir beslenme uygulamasında sözleşmeli yapay zekâ mühendisliği: bir ölçüm "
                "platformu, temizlenmiş bir yemek kataloğu ve daha güvenli bir asistan; her "
                "değişiklik kanıtla hak edildi."),
         fig=("923", ("benchmark cases", "kıyaslama vakası")),
@@ -27,13 +27,13 @@ PROJECTS = [
               "etiketlere sahip 923 vakalık değerlendirme platformu, canlı bir PostgreSQL "
               "kataloğunun korumalı temizliği ve uygulama içi asistan için ölçülmüş bir güvenlik "
               "düzeltmesi."),
-        deck=("Twenty-five days of contract AI engineering on a nutrition app, where every change to "
+        deck=("Contract AI engineering on a nutrition app, where every change to "
               "the model, the catalogue or the assistant had to be earned by a measurement.",
-              "Bir beslenme uygulamasında yirmi beş günlük sözleşmeli yapay zekâ mühendisliği; "
+              "Bir beslenme uygulamasında sözleşmeli yapay zekâ mühendisliği; "
               "modele, kataloğa ya da asistana yapılan her değişiklik bir ölçümle hak edildi."),
         links=[],
         tags=[("live", ("Shipped to production", "Üretime alındı")),
-              ("", ("Contract · Sep 2026", "Sözleşmeli · Eyl 2026")),
+              ("", ("Contract · Aug – Oct 2026", "Sözleşmeli · Ağu – Eki 2026")),
               ("", ("Private repositories", "Özel depolar"))],
     ),
     dict(

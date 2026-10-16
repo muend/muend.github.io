@@ -73,13 +73,13 @@
     <div>
       <span class="kind mono rv">Client work · LLM evaluation and data quality</span>
       <h1 class="rv" style="--d:60ms">EatBetter</h1>
-      <p class="deck rv" style="--d:120ms">Twenty-five days of contract AI engineering on a nutrition app, where every change to the model, the catalogue or the assistant had to be earned by a measurement.</p>
+      <p class="deck rv" style="--d:120ms">Contract AI engineering on a nutrition app, where every change to the model, the catalogue or the assistant had to be earned by a measurement.</p>
     </div>
     <div class="phead-side rv" style="--d:160ms">
-      <div class="ptags"><span class="tag-chip tag-chip--live">Shipped to production</span><span class="tag-chip ">Contract · Sep 2026</span><span class="tag-chip ">Private repositories</span></div>
+      <div class="ptags"><span class="tag-chip tag-chip--live">Shipped to production</span><span class="tag-chip ">Contract · Aug – Oct 2026</span><span class="tag-chip ">Private repositories</span></div>
       <div class="spec">
   <div><span class="k">Role</span><span class="v">AI Engineer, contract</span></div>
-  <div><span class="k">Period</span><span class="v">6–30 September 2026 · 25 days</span></div>
+  <div><span class="k">Period</span><span class="v">August – October 2026</span></div>
   <div><span class="k">Stack</span><span class="v">Python · TypeScript / Node.js · PostgreSQL · Azure OpenAI</span></div>
   <div><span class="k">Shipped</span><span class="v">17 merged pull requests · +14.5k / −2.4k lines incl. tests</span></div>
   <div><span class="k">Method</span><span class="v">One engineer directing parallel AI coding agents from written task specs</span></div>
@@ -95,7 +95,7 @@
   <span class="mono">Why</span>
   <div>
     <h3>Measure first, then change</h3>
-    <p>When the engagement started there was no versioned way to measure the production meal analysis against the company's own data. Whether one model or prompt was better than another could not be said with evidence. The food catalogue had been filled by model-generated writes, and the path that let defects in was still open.</p><p>Twenty-five days later there was a measurement platform anyone with the repository can run, a cleaned catalogue with its source closed, a pipeline that records and judges user corrections, and a fine-tuning dataset that matches the live call exactly. This page describes how each was built and what the measurements said, including the ones that said stop.</p>
+    <p>When the engagement started there was no versioned way to measure the production meal analysis against the company's own data. Whether one model or prompt was better than another could not be said with evidence. The food catalogue had been filled by model-generated writes, and the path that let defects in was still open.</p><p>By handover there was a measurement platform anyone with the repository can run, a cleaned catalogue with its source closed, a pipeline that records and judges user corrections, and a fine-tuning dataset that matches the live call exactly. This page describes how each was built and what the measurements said, including the ones that said stop.</p>
   </div>
 </section>
 
@@ -118,7 +118,7 @@
   </defs>
 
   <text class="d-title" x="20" y="26">GROUND TRUTH → BENCHMARK → COMPARISON → DECISION</text>
-  <text class="d-micro" x="1160" y="26" text-anchor="end">CLIENT WORK · SEP 2026</text>
+  <text class="d-micro" x="1160" y="26" text-anchor="end">CLIENT WORK · AUG – OCT 2026</text>
   <path class="d-rule" d="M20 36H1160"/>
 
   <!-- 01 ground truth -->
@@ -321,9 +321,9 @@
   <div><div class="c"><strong>Soft-deleted</strong><span class="n">88,970</span></div><p>23.0% of the catalogue, each row recoverable from its undo file.</p></div>
   <div><div class="c"><strong>Unpublished</strong><span class="n">90,735</span></div><p>23.4%, kept in the database but taken out of publication.</p></div>
   <div><div class="c"><strong>Popularity re-derived</strong><span class="n">292,113</span></div><p>75.4%: model-invented popularity replaced with real usage.</p></div>
-  <div><div class="c"><strong>Link and brand repairs</strong><span class="n">35,979</span></div><p>Row operations over three days: chains flattened, wrong merges split, junk brands cleared.</p></div>
+  <div><div class="c"><strong>Link and brand repairs</strong><span class="n">35,979</span></div><p>Row operations: chains flattened, wrong merges split, junk brands cleared.</p></div>
 </div>
-<div class="note note--warn"><span class="mono">A mistake, and its repair</span><p>On 21 September the first version of a duplicate-merge script wrote one of two merge fields and broke 1,845 redirects. It was repaired the same day from current live values, verified with a health query, and the script gained a root-quality filter. One other step skipped its separate rollback rehearsal; the count matched the prediction exactly and the deviation was logged. Both are in the engagement's records, which is where they belong.</p></div>
+<div class="note note--warn"><span class="mono">A mistake, and its repair</span><p>During the cleanup the first version of a duplicate-merge script wrote one of two merge fields and broke 1,845 redirects. It was repaired the same day from current live values, verified with a health query, and the script gained a root-quality filter. One other step skipped its separate rollback rehearsal; the count matched the prediction exactly and the deviation was logged. Both are in the engagement's records, which is where they belong.</p></div>
 </section>
 
 <section class="prose rv">
@@ -348,7 +348,7 @@
   <div><div class="c"><strong>Meal notes labelled</strong><span class="n">259,986</span></div><p>Real meal notes labelled through the live contract, after a six-arm teacher benchmark weighed label quality against cost.</p></div>
   <div><div class="c"><strong>Corrections loop</strong><span class="n">3 PRs</span></div><p>Lost user corrections are now recorded and the model's first answer preserved; personal habits and a spend-capped LLM judge sit behind flags.</p></div>
 </div>
-  <p class="fig-note">At handover on 1 October the nutrient package was approved and waiting for an off-peak write, the safety fix was waiting for its flag, and the image total was an estimate still to be confirmed from the job table.</p>
+  <p class="fig-note">At handover the nutrient package was approved and waiting for an off-peak write, the safety fix was waiting for its flag, and the image total was an estimate still to be confirmed from the job table.</p>
 </section>
 
 <section class="prose rv">
@@ -367,7 +367,7 @@
   </div>
 </section>
 
-<div class="note"><span class="mono">Scope</span><p><strong>Client work.</strong> The repositories and data are private, so nothing on this page links out, and product internals are described only as far as the method needs. Figures are transcribed from the engagement's own records as of 30 September 2026; items delivered but not yet live at handover are stated as such.</p></div>
+<div class="note"><span class="mono">Scope</span><p><strong>Client work.</strong> The repositories and data are private, so nothing on this page links out, and product internals are described only as far as the method needs. Figures are transcribed from the engagement's own records at handover; items delivered but not yet live at handover are stated as such.</p></div>
 
 </div>
 

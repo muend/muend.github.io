@@ -125,7 +125,7 @@ LEAD = {
     "recent": ("Experience", "Deneyim"),
     "recent_tag": ("work · research · education", "iş · araştırma · eğitim"),
     "x_more": ("Read the full case study", "Vaka çalışmasının tamamını oku"),
-    "x_label": ("Sep 2026", "Eyl 2026"),
+    "x_label": ("Aug – Oct 2026", "Ağu – Eki 2026"),
     "x_title": ("AI Engineer (Contract) · EatBetter",
                 "Yapay Zekâ Mühendisi (Sözleşmeli) · EatBetter"),
     "x_body": (
@@ -141,8 +141,8 @@ LEAD = {
         "pipeline that lost to the bare model in 4 of 4 comparisons.</li>"
         "<li><strong>Assistant safety.</strong> On a frozen 400-case scorecard, a fix for users "
         "with long memory profiles cut the missed-allergy-context veto rate from 96.4% to 2.1%, "
-        "the only one of ten candidates to pass the gate. The LLM judge was calibrated on 80 "
-        "hand-labelled meals (agreement 0.82 against a 0.66 rule baseline).</li>"
+        "the only one of ten candidates to pass the gate. Five LLM-judge candidates were compared "
+        "on 80 hand-labelled meals (best agreement 0.82 against a 0.66 rule baseline).</li>"
         "<li><strong>Production data quality.</strong> In a live PostgreSQL catalogue of about "
         "387k rows, soft-deleted 88,970 and unpublished 90,735. Every write ran as a ROLLBACK "
         "rehearsal against a predicted row count before a human-approved COMMIT, and a rule plus "
@@ -161,9 +161,9 @@ LEAD = {
         "modele 4 karşılaştırmanın 4'ünde yenilen bir aday hattı kapattım.</li>"
         "<li><strong>Asistan güvenliği.</strong> Dondurulmuş 400 vakalık bir puan kartında, uzun "
         "bellek profilli kullanıcılar için yaptığım düzeltme, gözden kaçan alerji bağlamı veto "
-        "oranını %96,4'ten %2,1'e indirdi; on aday arasında kapıyı geçen tek düzeltme oldu. LLM "
-        "hakemini elle etiketlenmiş 80 öğünle kalibre ettim (uyum 0,82; kural tabanlı temel "
-        "çizgi 0,66).</li>"
+        "oranını %96,4'ten %2,1'e indirdi; on aday arasında kapıyı geçen tek düzeltme oldu. Beş "
+        "LLM hakem adayını elle etiketlenmiş 80 öğünde karşılaştırdım (en iyi uyum 0,82; kural "
+        "tabanlı temel çizgi 0,66).</li>"
         "<li><strong>Üretim veri kalitesi.</strong> Yaklaşık 387 bin satırlık canlı bir PostgreSQL "
         "kataloğunda 88.970 satırı yumuşak sildim, 90.735 satırı yayından kaldırdım. Her yazmayı, "
         "insan onaylı COMMIT'ten önce öngörülen satır sayısına karşı bir ROLLBACK provası olarak "
