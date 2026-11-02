@@ -19,7 +19,7 @@ tr/                     the same fifteen pages in Turkish
 assets/site.css         the whole design system, one file
 assets/site.js          reveal choreography, tabs, diagram dialog, cursor
 assets/brand/           favicon set and web manifest
-assets/video/           launch films, 720p H.264, loaded only on play
+assets/video/           launch films, 720p/1080p H.264, loaded only on play
 build/                  the generator that emits every page
 ```
 

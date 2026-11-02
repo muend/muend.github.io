@@ -187,7 +187,7 @@ PROJECTS = [{'slug': 'eatbetter',
            'into inspectable analysis for two Ayvalık study areas.',
            'Ayvalık’taki iki çalışma alanı için kadastro, halihazır ve saha kayıtlarını '
            'incelenebilir analizde birleştiren dijital ikiz ve stüdyo platformu.'),
-  'links': [],
+  'links': [('https://studyomsahane.online/', ('Open Mendirek', 'Mendirek’i aç'))],
   'tags': [('live', ('In studio use', 'Stüdyoda kullanımda')),
            ('', ('Private repository', 'Özel depo')),
            ('', ('TR / EN outputs', 'TR / EN çıktı'))]},
