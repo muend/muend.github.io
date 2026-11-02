@@ -234,10 +234,8 @@ CONTACT_COPY = {
                 "LLM değerlendirme, ajan sistemleri ve MCP altyapısı, uygulamalı makine öğrenmesi, "
                 "veri hatları, karar destek ürünleri ve uygulamalı simülasyonlar konularında iş "
                 "birliğine açığım."),
-    "note":    ("Based in İzmir, Türkiye · Available part-time now, full-time from July 2027 · "
-                "Open-source, research and production collaboration welcome.",
-                "İzmir, Türkiye · Şu an yarı zamanlı, Temmuz 2027'den itibaren tam zamanlı "
-                "çalışmaya uygun · Açık kaynak, araştırma ve üretim iş birliklerine açık."),
+    "note":    ("Based in İzmir, Türkiye · Collaboration scope and schedule agreed directly.",
+                "İzmir, Türkiye · İş birliği kapsamı ve çalışma düzeni birlikte planlanır."),
     "eng":     ("Engagement", "Çalışma alanları"),
     "open":    ("2026 / open", "2026 / açık"),
     "e1":      ("LLM evaluation platforms and benchmark harnesses",

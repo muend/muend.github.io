@@ -1,0 +1,29 @@
+<svg viewBox="0 0 1180 395" role="img" preserveAspectRatio="xMidYMid meet" aria-label="PLAN FORGE / LOCAL REPORT WORKFLOW. React · Python / FastAPI · SQLite · Windows v0.2.2">
+<text class="d-title" x="20" y="28">PLAN FORGE / LOCAL REPORT WORKFLOW</text>
+<text class="d-sub" x="20" y="55">React · Python / FastAPI · SQLite · Windows v0.2.2</text>
+<path class="d-rule" d="M20 70H1160"/>
+<text class="d-micro" x="20" y="95">01 / DOCUMENT TO APPROVED DRAFT</text>
+<rect class="d-box d-box--g" x="20.0" y="111" width="368.0" height="82"/>
+<text class="d-node" x="204.0" y="143" text-anchor="middle">LOCAL DOCX</text>
+<text class="d-sub" x="204.0" y="168" text-anchor="middle">text / tables / images</text>
+<path class="d-flow" d="M390.0 152h14"/>
+<rect class="d-box d-box--g" x="406.0" y="111" width="368.0" height="82"/>
+<text class="d-node" x="590.0" y="143" text-anchor="middle">VERSIONED MAPPING</text>
+<text class="d-sub" x="590.0" y="168" text-anchor="middle">template / verified fields</text>
+<path class="d-flow" d="M776.0 152h14"/>
+<rect class="d-box d-box--g" x="792.0" y="111" width="368.0" height="82"/>
+<text class="d-node" x="976.0" y="143" text-anchor="middle">EXPERT APPROVAL</text>
+<text class="d-sub" x="976.0" y="168" text-anchor="middle">freeze approved draft</text>
+<text class="d-micro" x="20" y="245">02 / CONTROLLED OUTPUT</text>
+<rect class="d-box d-box--g" x="20.0" y="261" width="368.0" height="82"/>
+<text class="d-node" x="204.0" y="293" text-anchor="middle">OPTIONAL AI DRAFT</text>
+<text class="d-sub" x="204.0" y="318" text-anchor="middle">verified anonymized fields</text>
+<path class="d-flow" d="M390.0 302h14"/>
+<rect class="d-box d-box--g" x="406.0" y="261" width="368.0" height="82"/>
+<text class="d-node" x="590.0" y="293" text-anchor="middle">SOURCE CHECKS</text>
+<text class="d-sub" x="590.0" y="318" text-anchor="middle">facts / dates / references</text>
+<path class="d-flow" d="M776.0 302h14"/>
+<rect class="d-box d-box--g" x="792.0" y="261" width="368.0" height="82"/>
+<text class="d-node" x="976.0" y="293" text-anchor="middle">DOCX + PDF</text>
+<text class="d-sub" x="976.0" y="318" text-anchor="middle">export + audit record</text>
+</svg>

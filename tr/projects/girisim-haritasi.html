@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="tr" data-page="projects">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+<script>document.documentElement.classList.add('js');</script>
+<link rel="icon" type="image/svg+xml" href="../../assets/brand/favicon.svg">
+<link rel="icon" sizes="any" href="../../assets/brand/favicon.ico">
+<link rel="icon" type="image/png" sizes="32x32" href="../../assets/brand/favicon-32.png">
+<link rel="apple-touch-icon" href="../../assets/brand/favicon-180.png">
+<link rel="manifest" href="../../assets/brand/site.webmanifest">
+<link rel="canonical" href="https://muend.github.io/tr/projects/girisim-haritasi.html">
+<link rel="alternate" hreflang="en" href="https://muend.github.io/projects/girisim-haritasi.html">
+<link rel="alternate" hreflang="tr" href="https://muend.github.io/tr/projects/girisim-haritasi.html">
+<link rel="alternate" hreflang="x-default" href="https://muend.github.io/projects/girisim-haritasi.html">
+<title>Girişim Haritası — kaynaklı firma verisi ve API’ler</title>
+<meta name="description" content="23 toplama yöntemiyle 3.257 profil; kaynak izlenebilirliği, düzenli besleme, PostgreSQL ve Cloudflare Workers API’leri.">
+<meta name="theme-color" content="#F7F7F1">
+<meta name="color-scheme" content="light">
+<meta name="referrer" content="strict-origin-when-cross-origin">
+<meta name="robots" content="index,follow,max-image-preview:large">
+<meta name="author" content="Muhammed Enes Duran">
+<meta property="og:title" content="Girişim Haritası — kaynaklı firma verisi ve API’ler">
+<meta property="og:description" content="23 toplama yöntemiyle 3.257 profil; kaynak izlenebilirliği, düzenli besleme, PostgreSQL ve Cloudflare Workers API’leri.">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://muend.github.io/tr/projects/girisim-haritasi.html">
+<meta property="og:site_name" content="Muhammed Enes Duran">
+<meta property="og:locale" content="tr_TR">
+<meta property="og:image" content="https://muend.github.io/assets/brand/share-card.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Girişim Haritası — kaynaklı firma verisi ve API’ler">
+<meta name="twitter:description" content="23 toplama yöntemiyle 3.257 profil; kaynak izlenebilirliği, düzenli besleme, PostgreSQL ve Cloudflare Workers API’leri.">
+<meta name="twitter:image" content="https://muend.github.io/assets/brand/share-card.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wdth,wght@12..96,75..100,400..800&family=IBM+Plex+Mono:wght@400;500;600&family=Instrument+Sans:ital,wght@0,400..700;1,400..600&display=swap">
+<link rel="stylesheet" href="../../assets/site.css">
+</head>
+<body>
+<a class="skip-link" href="#main">İçeriğe geç</a>
+<div class="progress" id="progress" aria-hidden="true"></div>
+<div class="cur cur-ring" id="cur-ring" aria-hidden="true"></div>
+<div class="cur cur-dot" id="cur-dot" aria-hidden="true"></div>
+<div class="cur cur-cap" id="cur-cap" aria-hidden="true"></div>
+<div class="topbar" id="topbar">
+  <div class="wrap">
+    <a class="brand" href="../../tr/index.html" aria-label="Muhammed Enes Duran — ana sayfa">muend<b>.</b></a>
+    <div class="nav-area">
+      <nav class="navlinks mono" aria-label="Ana">
+        <a href="../../tr/index.html#projects" data-nav="projects">Projeler</a>
+        <a href="../../tr/research.html" data-nav="research">Araştırma</a>
+        <a href="../../tr/practice.html" data-nav="practice">Yöntem</a>
+        <a href="../../tr/index.html#contact" data-nav="contact">İletişim</a>
+      </nav>
+      <div class="langsw mono" role="group" aria-label="Dili değiştir"><a class="lang-opt" href="../../projects/girisim-haritasi.html" hreflang="en" lang="en">EN</a><span aria-hidden="true">/</span><span class="lang-opt is-on" aria-current="true">TR</span></div>
+      <span class="status-pill mono"><i aria-hidden="true"></i><span>Açık kaynak · aktif</span></span>
+    </div>
+  </div>
+</div>
+
+<main id="main">
+
+<div class="wrap">
+  <nav class="crumb mono" aria-label="Sayfa yolu">
+    <a href="../../tr/index.html#projects">Projeler</a><span>/</span><span>10 · Girişim Haritası</span>
+  </nav>
+</div>
+
+<header class="phead">
+  <div class="wrap phead-grid">
+    <div>
+      <span class="kind mono rv">Veri mühendisliği · Web platformu</span>
+      <h1 class="rv" style="--d:60ms">Girişim Haritası</h1>
+      <p class="deck rv" style="--d:120ms">Farklı açık firma kayıtlarını izlenebilir profillere, aramaya ve API’lere dönüştüren çalışan veri ürünü.</p>
+    </div>
+    <div class="phead-side rv" style="--d:160ms">
+      <div class="ptags"><span class="tag-chip tag-chip--live">Canlı prototip</span><span class="tag-chip">PostgreSQL</span><span class="tag-chip">Workers / D1</span><span class="tag-chip ">Özel depo</span></div>
+      <div class="spec">
+  <div><span class="k">Durum</span><span class="v">Canlı prototip</span></div>
+  <div><span class="k">Derleme</span><span class="v">2026-11-02</span></div>
+  <div><span class="k">Yığın</span><span class="v">JavaScript / Node · PostgreSQL · Workers / D1</span></div>
+  <div><span class="k">Profil</span><span class="v">3,257</span></div>
+  <div><span class="k">Yöntem</span><span class="v">23</span></div>
+</div>
+      <div class="plinks">
+          <a class="btn btn--solid" href="https://izmir-girisim-haritasi.founderexe.workers.dev" target="_blank" rel="noopener"><span>Canlı platform</span><svg viewBox="0 0 16 16" aria-hidden="true"><path d="M3 13 13 3M6 3h7v7" fill="none" stroke="currentColor" stroke-width="1.7"/></svg></a>
+          <a class="btn btn--ghost" href="https://izmir-girisim-haritasi.founderexe.workers.dev/api/v1/openapi.json" target="_blank" rel="noopener"><span>OpenAPI</span><svg viewBox="0 0 16 16" aria-hidden="true"><path d="M3 13 13 3M6 3h7v7" fill="none" stroke="currentColor" stroke-width="1.7"/></svg></a>
+      </div>
+    </div>
+  </div>
+</header>
+
+<div class="wrap">
+<section class="prose rv">
+  <span class="mono">Ürün</span>
+  <div>
+    <h3>Farklı kayıtlar, izlenebilir tek profil</h3>
+    <p>Girişim Haritası, daha geniş firma verisi platformunun çalışan ilk ürünüdür. Tanımlı yöntemlerle açık kayıt toplar, yinelenen varlıkları eşleştirir ve kaynaksız bir rehber yerine alan bazında kaynak/tarih bilgisi tutar.</p><p>2 Kasım derlemesinde 4.306 kaynak kaydı ve 23 toplama yönteminden oluşturulmuş 3.257 firma profili var. Profil sayısı katalog kapsamını ölçer; müşteri veya aktif kullanıcı sayısı değildir.</p>
+  </div>
+</section><section class="fig">
+  <div class="fig-head">
+    <span class="n">Şekil 01</span>
+    <h3>Toplamadan API’lere</h3>
+    <span class="rule" aria-hidden="true"></span>
+  </div>
+<div class="plate rv" data-plate data-title="Şekil 01 — İzlenebilir veri ürünü">
+  <div class="plate-bar"><strong>Şekil 01 / İzlenebilir veri ürünü</strong>
+    <button class="expand" type="button" data-expand>Büyüt<svg viewBox="0 0 16 16" aria-hidden="true"><path d="M2 6V2h4M14 10v4h-4M2 2l5 5M14 14l-5-5" fill="none" stroke="currentColor" stroke-width="1.7"/></svg></button>
+  </div>
+<svg viewBox="0 0 1180 395" role="img" preserveAspectRatio="xMidYMid meet" aria-label="GİRİŞİM HARİTASI / TRACEABLE DATA. 3,257 company profiles · 4,306 source records · 23 collection methods · 2026-11-02 snapshot">
+<text class="d-title" x="20" y="28">GİRİŞİM HARİTASI / TRACEABLE DATA</text>
+<text class="d-sub" x="20" y="55">3,257 company profiles · 4,306 source records · 23 collection methods · 2026-11-02 snapshot</text>
+<path class="d-rule" d="M20 70H1160"/>
+<text class="d-micro" x="20" y="95">01 / COLLECT AND RESOLVE</text>
+<rect class="d-box d-box--g" x="20.0" y="111" width="368.0" height="82"/>
+<text class="d-node" x="204.0" y="143" text-anchor="middle">METHOD CONTRACTS</text>
+<text class="d-sub" x="204.0" y="168" text-anchor="middle">sources / refresh rules</text>
+<path class="d-flow" d="M390.0 152h14"/>
+<rect class="d-box d-box--g" x="406.0" y="111" width="368.0" height="82"/>
+<text class="d-node" x="590.0" y="143" text-anchor="middle">ENTITY RESOLUTION</text>
+<text class="d-sub" x="590.0" y="168" text-anchor="middle">deduplicate / match</text>
+<path class="d-flow" d="M776.0 152h14"/>
+<rect class="d-box d-box--g" x="792.0" y="111" width="368.0" height="82"/>
+<text class="d-node" x="976.0" y="143" text-anchor="middle">PROVENANCE</text>
+<text class="d-sub" x="976.0" y="168" text-anchor="middle">field-level source / date</text>
+<text class="d-micro" x="20" y="245">02 / STORE AND SERVE</text>
+<rect class="d-box d-box--g" x="20.0" y="261" width="368.0" height="82"/>
+<text class="d-node" x="204.0" y="293" text-anchor="middle">POSTGRESQL</text>
+<text class="d-sub" x="204.0" y="318" text-anchor="middle">schema / load pipeline</text>
+<path class="d-flow" d="M390.0 302h14"/>
+<rect class="d-box d-box--g" x="406.0" y="261" width="368.0" height="82"/>
+<text class="d-node" x="590.0" y="293" text-anchor="middle">WORKERS + D1</text>
+<text class="d-sub" x="590.0" y="318" text-anchor="middle">API keys / quotas</text>
+<path class="d-flow" d="M776.0 302h14"/>
+<rect class="d-box d-box--g" x="792.0" y="261" width="368.0" height="82"/>
+<text class="d-node" x="976.0" y="293" text-anchor="middle">WEB + API v1</text>
+<text class="d-sub" x="976.0" y="318" text-anchor="middle">profiles / search / OpenAPI</text>
+</svg>
+</div>
+</section><div class="catalog rv">
+  <div><div class="c"><strong>Firma profili</strong><span class="n">3.257</span></div><p>Güncel derleme, 2 Kasım 2026.</p></div>
+  <div><div class="c"><strong>Kaynak kaydı</strong><span class="n">4.306</span></div><p>Girdiler kaynaklarına bağlı kalır.</p></div>
+  <div><div class="c"><strong>Toplama yöntemi</strong><span class="n">23</span></div><p>Tanımlı yenileme ve kaynak kuralları.</p></div>
+  <div><div class="c"><strong>Sunum katmanı</strong><span class="n">API v1</span></div><p>Arama, profiller, kaynak yöntemleri ve kota kontrolleri.</p></div>
+</div><section class="prose rv">
+  <span class="mono">Mühendislik</span>
+  <div>
+    <h3>Tek seferlik toplama yerine işletilen veri hattı</h3>
+    <ul><li>Toplama sözleşmeleri, varlık eşleştirme, artımlı zenginleştirme ve tarihli besleme kayıtları.</li><li>PostgreSQL şeması/yükleme, Cloudflare Workers API’leri, D1 tabanlı anahtar ve kullanım kotaları.</li><li>OpenAPI belgesi, arama/süzgeçler ve kaynaklı profil görünümleri.</li><li>Düzenli besleme ve yayın öncesi kontroller; mevcut prototip modülleri gelecekteki ürün hedeflerinden ayrı.</li></ul>
+  </div>
+</section><div class="note"><span class="mono">Kanıt kapsamı</span><p>Kaynak depo özel; açık platform ve API belgesi bağlantılı. Veri kapsamı tarihli bir anlık görüntüdür; ekosistemin tamamının kapsandığı iddiası değildir.</p></div>
+</div>
+
+<div class="wrap">
+  <nav class="pager" aria-label="Diğer projeler">
+    <a href="agri-dss.html"><span class="mono">← 09 · önceki</span><strong>agri-dss</strong></a>
+    <a href="plan-forge.html"><span class="mono">11 · sonraki →</span><strong>Plan Forge</strong></a>
+  </nav>
+</div>
+
+
+<section class="contact">
+  <div class="wrap">
+    <div class="contact-grid">
+      <div>
+        <span class="kicker mono rv">İş birliğine açık</span>
+        <h2 class="rv" style="--d:60ms">Sağlam duran yapay zekâ sistemleri kuralım.</h2>
+        <div class="cta rv" style="--d:140ms">
+          <a class="btn btn--solid" href="mailto:nsduraan@gmail.com"><span>nsduraan@gmail.com</span></a>
+          <a class="btn btn--ghost" href="https://www.linkedin.com/in/muhammed-enes-duran/" target="_blank" rel="noopener"><span class="dot" aria-hidden="true"></span><span>LinkedIn</span></a>
+          <a class="btn btn--ghost" href="../../tr/index.html#projects"><span>Tüm projeler</span></a>
+        </div>
+      </div>
+    </div>
+    <div class="colophon mono">
+      <span>© 2026 Muhammed Enes Duran</span>
+      <span>Statik site · izleyici yok</span>
+    </div>
+  </div>
+</section>
+
+</main>
+
+<dialog class="dlg" id="dlg" aria-labelledby="dlg-title">
+  <div class="dlg-head">
+    <strong id="dlg-title">Teknik diyagram</strong>
+    <button class="dlg-close" type="button" data-close>Kapat</button>
+  </div>
+  <div class="dlg-body" id="dlg-body"></div>
+</dialog>
+
+<script src="../../assets/site.js" defer></script>
+</body>
+</html>

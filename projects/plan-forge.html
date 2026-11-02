@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="en" data-page="projects">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+<script>document.documentElement.classList.add('js');</script>
+<link rel="icon" type="image/svg+xml" href="../assets/brand/favicon.svg">
+<link rel="icon" sizes="any" href="../assets/brand/favicon.ico">
+<link rel="icon" type="image/png" sizes="32x32" href="../assets/brand/favicon-32.png">
+<link rel="apple-touch-icon" href="../assets/brand/favicon-180.png">
+<link rel="manifest" href="../assets/brand/site.webmanifest">
+<link rel="canonical" href="https://muend.github.io/projects/plan-forge.html">
+<link rel="alternate" hreflang="en" href="https://muend.github.io/projects/plan-forge.html">
+<link rel="alternate" hreflang="tr" href="https://muend.github.io/tr/projects/plan-forge.html">
+<link rel="alternate" hreflang="x-default" href="https://muend.github.io/projects/plan-forge.html">
+<title>Plan Forge — local-first planning report software</title>
+<meta name="description" content="React and Python/FastAPI desktop software for parsing DOCX documents, freezing approved mappings and producing auditable DOCX/PDF reports.">
+<meta name="theme-color" content="#F7F7F1">
+<meta name="color-scheme" content="light">
+<meta name="referrer" content="strict-origin-when-cross-origin">
+<meta name="robots" content="index,follow,max-image-preview:large">
+<meta name="author" content="Muhammed Enes Duran">
+<meta property="og:title" content="Plan Forge — local-first planning report software">
+<meta property="og:description" content="React and Python/FastAPI desktop software for parsing DOCX documents, freezing approved mappings and producing auditable DOCX/PDF reports.">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://muend.github.io/projects/plan-forge.html">
+<meta property="og:site_name" content="Muhammed Enes Duran">
+<meta property="og:locale" content="en_US">
+<meta property="og:image" content="https://muend.github.io/assets/brand/share-card.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Plan Forge — local-first planning report software">
+<meta name="twitter:description" content="React and Python/FastAPI desktop software for parsing DOCX documents, freezing approved mappings and producing auditable DOCX/PDF reports.">
+<meta name="twitter:image" content="https://muend.github.io/assets/brand/share-card.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wdth,wght@12..96,75..100,400..800&family=IBM+Plex+Mono:wght@400;500;600&family=Instrument+Sans:ital,wght@0,400..700;1,400..600&display=swap">
+<link rel="stylesheet" href="../assets/site.css">
+</head>
+<body>
+<a class="skip-link" href="#main">Skip to content</a>
+<div class="progress" id="progress" aria-hidden="true"></div>
+<div class="cur cur-ring" id="cur-ring" aria-hidden="true"></div>
+<div class="cur cur-dot" id="cur-dot" aria-hidden="true"></div>
+<div class="cur cur-cap" id="cur-cap" aria-hidden="true"></div>
+<div class="topbar" id="topbar">
+  <div class="wrap">
+    <a class="brand" href="../index.html" aria-label="Muhammed Enes Duran — home">muend<b>.</b></a>
+    <div class="nav-area">
+      <nav class="navlinks mono" aria-label="Primary">
+        <a href="../index.html#projects" data-nav="projects">Projects</a>
+        <a href="../research.html" data-nav="research">Research</a>
+        <a href="../practice.html" data-nav="practice">Practice</a>
+        <a href="../index.html#contact" data-nav="contact">Contact</a>
+      </nav>
+      <div class="langsw mono" role="group" aria-label="Change language"><span class="lang-opt is-on" aria-current="true">EN</span><span aria-hidden="true">/</span><a class="lang-opt" href="../tr/projects/plan-forge.html" hreflang="tr" lang="tr">TR</a></div>
+      <span class="status-pill mono"><i aria-hidden="true"></i><span>Open source · active</span></span>
+    </div>
+  </div>
+</div>
+
+<main id="main">
+
+<div class="wrap">
+  <nav class="crumb mono" aria-label="Breadcrumb">
+    <a href="../index.html#projects">Projects</a><span>/</span><span>11 · Plan Forge</span>
+  </nav>
+</div>
+
+<header class="phead">
+  <div class="wrap phead-grid">
+    <div>
+      <span class="kind mono rv">Desktop software · Document engineering</span>
+      <h1 class="rv" style="--d:60ms">Plan Forge</h1>
+      <p class="deck rv" style="--d:120ms">A planning report workflow that keeps source documents local and requires expert approval before draft content becomes a report.</p>
+    </div>
+    <div class="phead-side rv" style="--d:160ms">
+      <div class="ptags"><span class="tag-chip ">Windows package</span><span class="tag-chip">v0.2.2</span><span class="tag-chip">React / FastAPI</span><span class="tag-chip ">Private repository</span></div>
+      <div class="spec">
+  <div><span class="k">Version</span><span class="v">v0.2.2 / 2026-09-07</span></div>
+  <div><span class="k">Platform</span><span class="v">Windows</span></div>
+  <div><span class="k">Interface</span><span class="v">React</span></div>
+  <div><span class="k">Backend</span><span class="v">Python / FastAPI / SQLite</span></div>
+  <div><span class="k">Outputs</span><span class="v">DOCX / PDF / audit record</span></div>
+</div>
+    </div>
+  </div>
+</header>
+
+<div class="wrap">
+<section class="prose rv">
+  <span class="mono">Workflow</span>
+  <div>
+    <h3>Source documents become approved reports</h3>
+    <p>Plan Forge is a Windows desktop application for planning-report preparation. A local DOCX document is parsed into text, tables and images; the user maps those layers into a versioned template and an expert freezes the approved draft before DOCX/PDF output is produced.</p><p>The product combines a React interface with a Python/FastAPI backend and local SQLite storage. The v0.2.2 Windows build includes publisher metadata, PyInstaller packaging and an auditable document-export workflow.</p>
+  </div>
+</section><section class="fig">
+  <div class="fig-head">
+    <span class="n">Fig. 01</span>
+    <h3>Local input, explicit approval, traceable output</h3>
+    <span class="rule" aria-hidden="true"></span>
+  </div>
+<div class="plate rv" data-plate data-title="Fig. 01 — Report-production workflow">
+  <div class="plate-bar"><strong>Fig. 01 / Report-production workflow</strong>
+    <button class="expand" type="button" data-expand>Expand<svg viewBox="0 0 16 16" aria-hidden="true"><path d="M2 6V2h4M14 10v4h-4M2 2l5 5M14 14l-5-5" fill="none" stroke="currentColor" stroke-width="1.7"/></svg></button>
+  </div>
+<svg viewBox="0 0 1180 395" role="img" preserveAspectRatio="xMidYMid meet" aria-label="PLAN FORGE / LOCAL REPORT WORKFLOW. React · Python / FastAPI · SQLite · Windows v0.2.2">
+<text class="d-title" x="20" y="28">PLAN FORGE / LOCAL REPORT WORKFLOW</text>
+<text class="d-sub" x="20" y="55">React · Python / FastAPI · SQLite · Windows v0.2.2</text>
+<path class="d-rule" d="M20 70H1160"/>
+<text class="d-micro" x="20" y="95">01 / DOCUMENT TO APPROVED DRAFT</text>
+<rect class="d-box d-box--g" x="20.0" y="111" width="368.0" height="82"/>
+<text class="d-node" x="204.0" y="143" text-anchor="middle">LOCAL DOCX</text>
+<text class="d-sub" x="204.0" y="168" text-anchor="middle">text / tables / images</text>
+<path class="d-flow" d="M390.0 152h14"/>
+<rect class="d-box d-box--g" x="406.0" y="111" width="368.0" height="82"/>
+<text class="d-node" x="590.0" y="143" text-anchor="middle">VERSIONED MAPPING</text>
+<text class="d-sub" x="590.0" y="168" text-anchor="middle">template / verified fields</text>
+<path class="d-flow" d="M776.0 152h14"/>
+<rect class="d-box d-box--g" x="792.0" y="111" width="368.0" height="82"/>
+<text class="d-node" x="976.0" y="143" text-anchor="middle">EXPERT APPROVAL</text>
+<text class="d-sub" x="976.0" y="168" text-anchor="middle">freeze approved draft</text>
+<text class="d-micro" x="20" y="245">02 / CONTROLLED OUTPUT</text>
+<rect class="d-box d-box--g" x="20.0" y="261" width="368.0" height="82"/>
+<text class="d-node" x="204.0" y="293" text-anchor="middle">OPTIONAL AI DRAFT</text>
+<text class="d-sub" x="204.0" y="318" text-anchor="middle">verified anonymized fields</text>
+<path class="d-flow" d="M390.0 302h14"/>
+<rect class="d-box d-box--g" x="406.0" y="261" width="368.0" height="82"/>
+<text class="d-node" x="590.0" y="293" text-anchor="middle">SOURCE CHECKS</text>
+<text class="d-sub" x="590.0" y="318" text-anchor="middle">facts / dates / references</text>
+<path class="d-flow" d="M776.0 302h14"/>
+<rect class="d-box d-box--g" x="792.0" y="261" width="368.0" height="82"/>
+<text class="d-node" x="976.0" y="293" text-anchor="middle">DOCX + PDF</text>
+<text class="d-sub" x="976.0" y="318" text-anchor="middle">export + audit record</text>
+</svg>
+</div>
+</section><section class="prose rv">
+  <span class="mono">Controls</span>
+  <div>
+    <h3>AI drafts stay behind an approval boundary</h3>
+    <ul><li>Source documents and the database stay local.</li><li>Gemini drafting receives verified, anonymized fields; images require separate explicit approval.</li><li>Unsupported numbers, dates, parcel references and regulatory citations are blocked before output.</li><li>Report mappings are versioned and exports retain an audit record; credentials use Windows Credential Manager.</li></ul>
+  </div>
+</section><div class="note"><span class="mono">Evidence boundary</span><p>Private repository. This describes implemented software and a Windows build, not a claim of municipal deployment, paying customers or adoption. A walkthrough can be discussed directly.</p></div>
+</div>
+
+<div class="wrap">
+  <nav class="pager" aria-label="More projects">
+    <a href="girisim-haritasi.html"><span class="mono">← 10 · previous</span><strong>Girişim Haritası</strong></a>
+    <a href="eatbetter.html"><span class="mono">00 · next →</span><strong>EatBetter</strong></a>
+  </nav>
+</div>
+
+
+<section class="contact">
+  <div class="wrap">
+    <div class="contact-grid">
+      <div>
+        <span class="kicker mono rv">Open to collaboration</span>
+        <h2 class="rv" style="--d:60ms">Build AI systems that hold up.</h2>
+        <div class="cta rv" style="--d:140ms">
+          <a class="btn btn--solid" href="mailto:nsduraan@gmail.com"><span>nsduraan@gmail.com</span></a>
+          <a class="btn btn--ghost" href="https://www.linkedin.com/in/muhammed-enes-duran/" target="_blank" rel="noopener"><span class="dot" aria-hidden="true"></span><span>LinkedIn</span></a>
+          <a class="btn btn--ghost" href="../index.html#projects"><span>All projects</span></a>
+        </div>
+      </div>
+    </div>
+    <div class="colophon mono">
+      <span>© 2026 Muhammed Enes Duran</span>
+      <span>Static site · no trackers</span>
+    </div>
+  </div>
+</section>
+
+</main>
+
+<dialog class="dlg" id="dlg" aria-labelledby="dlg-title">
+  <div class="dlg-head">
+    <strong id="dlg-title">Technical diagram</strong>
+    <button class="dlg-close" type="button" data-close>Close</button>
+  </div>
+  <div class="dlg-body" id="dlg-body"></div>
+</dialog>
+
+<script src="../assets/site.js" defer></script>
+</body>
+</html>

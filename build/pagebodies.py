@@ -181,87 +181,6 @@ def build():
         ]:
             evidence = evidence.replace(en, tr)
 
-    project_page(
-        "geoai-skills",
-        spec_rows=[
-            (_("Version", "Sürüm"), "0.4.0"),
-            (_("License", "Lisans"), "MIT"),
-            (_("Skills", "Skill sayısı"), _("18, grouped into five lifecycle stages",
-                                            "18, beş yaşam döngüsü aşamasına ayrılmış")),
-            ("Claude Code", "<code>claude plugin marketplace add muend/geoai-skills</code>"),
-            ("Codex", "<code>npx skills add muend/geoai-skills --skill '*' -a codex</code>"),
-            (_("Evaluation", "Değerlendirme"), _("167 native cases + 5 external",
-                                                 "167 yerel vaka + 5 dış vaka")),
-        ],
-        sections=f"""
-{shell.prose(_("Why", "Neden"),
-  _("Geospatial work fails quietly", "Mekânsal iş sessizce bozulur"),
-  _("<p>A wrong projection does not raise an exception. Neither does a train/test split that lets "
-    "the same field appear on both sides, an area computed in degrees, or a confident number with "
-    "no uncertainty attached. The analysis completes, the map renders, and the error ships.</p>"
-    "<p>These eighteen skills give a general-purpose agent the reflexes a geospatial specialist "
-    "has: check the CRS before trusting a distance, treat spatial autocorrelation as the default, "
-    "and refuse to state a result the evidence does not support.</p>",
-    "<p>Yanlış bir projeksiyon istisna fırlatmaz. Aynı tarlanın iki tarafta birden yer almasına izin "
-    "veren bir eğitim/test ayrımı da, derece cinsinden hesaplanmış bir alan da, belirsizliği "
-    "belirtilmemiş kendinden emin bir sayı da fırlatmaz. Analiz tamamlanır, harita çizilir ve hata "
-    "yayına çıkar.</p>"
-    "<p>Bu on sekiz skill, genel amaçlı bir ajana mekânsal uzmanın reflekslerini kazandırır: bir "
-    "mesafeye güvenmeden önce CRS'i kontrol et, mekânsal otokorelasyonu varsayılan kabul et ve "
-    "kanıtın desteklemediği bir sonucu söylemeyi reddet.</p>"))}
-
-{shell.figure(_("Fig. 01", "Şekil 01"),
-  _("Eighteen skills across one lifecycle", "Tek bir yaşam döngüsünde on sekiz skill"),
-  _("The orchestrator decomposes a request and routes it across the five stages. Skills are written "
-    "to trigger narrowly: negative and collision cases in the suite test specifically against "
-    "over-triggering.",
-    "Orkestratör isteği parçalara ayırır ve beş aşama boyunca yönlendirir. Skill'ler dar tetiklenecek "
-    "biçimde yazılmıştır: takımdaki negatif ve çakışma vakaları özellikle aşırı tetiklenmeyi sınar."),
-  shell.plate(_("Fig. 01", "Şekil 01"),
-              _("Lifecycle routing atlas", "Yaşam döngüsü yönlendirme atlası"),
-              svg("atlas.svg")))}
-
-<section class="fig">
-{fighead(_("Fig. 02", "Şekil 02"), _("Measured routing behaviour", "Ölçülen yönlendirme davranışı"))}
-  <p>{_("Deterministic scoring from recorded activations against a frozen suite, with an "
-        "enabled/disabled control. The control is the part that matters: with the skills switched "
-        "off, the same model on the same cases activates nothing at all.",
-        "Dondurulmuş bir takıma karşı kaydedilmiş aktivasyonlardan deterministik puanlama ve "
-        "açık/kapalı kontrol koşulu. Asıl önemli olan kontrol: skill'ler kapalıyken aynı model aynı "
-        "vakalarda hiçbir şey tetiklemiyor.")}</p>
-{evidence}
-</section>
-
-{shell.prose(_("Invariants", "Değişmezler"),
-  _("What every skill enforces, regardless of task",
-    "Her skill'in, görevden bağımsız olarak dayattığı kurallar"),
-  _("<ul>"
-    "<li>CRS and units are explicit before any measurement is trusted.</li>"
-    "<li>Spatial leakage is the default risk, not an edge case.</li>"
-    "<li>Every stage ends with a verification step.</li>"
-    "<li>Uncertainty and sensitivity are outputs, not footnotes.</li>"
-    "<li>Missing evidence narrows the claim, or blocks it.</li>"
-    "</ul>",
-    "<ul>"
-    "<li>Herhangi bir ölçüme güvenilmeden önce CRS ve birimler açıkça belirtilir.</li>"
-    "<li>Mekânsal sızıntı uç durum değil, varsayılan risktir.</li>"
-    "<li>Her aşama bir doğrulama adımıyla biter.</li>"
-    "<li>Belirsizlik ve duyarlılık dipnot değil, çıktıdır.</li>"
-    "<li>Eksik kanıt iddiayı daraltır ya da engeller.</li>"
-    "</ul>"))}
-
-{shell.note(_("Scope", "Kapsam"),
-  _("The published metrics describe <strong>routing behaviour</strong>: whether the right skill "
-    "activates for the right request on Claude Code 2.1.214 with claude-sonnet-5, measured "
-    "2026-08-05. They say nothing about the quality of the answers those skills then produce. The "
-    "held-out split was already consumed by a prior run, which limits its power to confirm "
-    "improvement.",
-    "Yayımlanan metrikler <strong>yönlendirme davranışını</strong> tanımlar: doğru istek için doğru "
-    "skill'in tetiklenip tetiklenmediğini, Claude Code 2.1.214 ve claude-sonnet-5 üzerinde, "
-    "2026-08-05 tarihinde ölçülmüş. Bu skill'lerin ürettiği cevapların kalitesi hakkında hiçbir şey "
-    "söylemezler. Ayrılmış küme önceki bir koşuda kullanılmıştı; bu da iyileşmeyi doğrulama gücünü "
-    "sınırlar."))}
-""")
 
     # ======================================================== 02 arcgis-mcp-bridge
     project_page(
@@ -270,8 +189,8 @@ def build():
             (_("License", "Lisans"), "Apache-2.0"),
             (_("Package", "Paket"), "<code>pip install arcgis-mcp-bridge</code>"),
             (_("Tools", "Araçlar"), _("100 across 10 verticals", "10 dikeyde 100 araç")),
-            (_("Requires", "Gereksinim"), _("Python 3.11+ · ArcGIS Pro 3.1–3.3 tested",
-                                            "Python 3.11+ · ArcGIS Pro 3.1–3.3 test edildi")),
+            (_("Requires", "Gereksinim"), _("Python 3.11+ · ArcGIS Pro 3.7 runtime verified",
+                                            "Python 3.11+ · ArcGIS Pro 3.7 runtime doğrulandı")),
             (_("Platform", "Platform"), _("Windows, with a licensed ArcGIS Pro install",
                                           "Windows, lisanslı ArcGIS Pro kurulumuyla")),
             (_("Tests", "Testler"), _("86 offline, ArcPy mocked",
@@ -539,9 +458,9 @@ def build():
         "founder-exe",
         spec_rows=[
             (_("Platform", "Platform"), "Windows x64"),
-            (_("Price", "Fiyat"), _("$4.99 USD or more", "4,99 USD ve üzeri")),
-            (_("Status", "Durum"), _("In development · updated 2026-07-30",
-                                     "Geliştiriliyor · güncelleme 2026-07-30")),
+            (_("Release", "Sürüm"), "v1.7.0"),
+            (_("Status", "Durum"), _("Web demo live · Windows package ready",
+                                     "Web demosu canlı · Windows paketi hazır")),
             (_("Languages", "Diller"), _("English and Turkish", "İngilizce ve Türkçe")),
             (_("Genre", "Tür"), _("Simulation · Educational · Strategy",
                                   "Simülasyon · Eğitici · Strateji")),
@@ -730,11 +649,11 @@ def build():
   <p class="fig-note">{_(
     "Pillars: Natural Hazard &amp; Physical Vulnerability; Socio-Demographic Adaptive Capacity; "
     "Economic Resilience; Infrastructure &amp; Service Continuity; Environmental &amp; Cultural "
-    "Capital. Weights come from an Analytic Hierarchy Process eigenvector, with nominal policy "
-    "weights tested as an alternative. MIT licence covers the source; raw data is not redistributed.",
+    "Capital. The headline uses nominal policy weights; AHP eigenvector weights are reported as a "
+    "separate sensitivity variant. MIT licence covers the source; raw data is not redistributed.",
     "Sütunlar: Doğal Afet ve Fiziksel Kırılganlık; Sosyo-Demografik Uyum Kapasitesi; Ekonomik "
-    "Dayanıklılık; Altyapı ve Hizmet Sürekliliği; Çevresel ve Kültürel Sermaye. Ağırlıklar Analitik "
-    "Hiyerarşi Süreci özvektöründen gelir; alternatif olarak nominal politika ağırlıkları sınanmıştır. "
+    "Dayanıklılık; Altyapı ve Hizmet Sürekliliği; Çevresel ve Kültürel Sermaye. Ana sonuç nominal politika "
+    "ağırlıklarıyla hesaplanır; AHP özvektör ağırlıkları ayrı duyarlılık seçeneğidir. "
     "MIT lisansı kaynağı kapsar; ham veri yeniden dağıtılmaz.")}</p>
 {shell.note(_("Limitations", "Sınırlar"),
   _("Explicitly <strong>not a universal or fully validated resilience model</strong>. It is a "

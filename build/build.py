@@ -31,7 +31,12 @@ def out_path(page_path):
 def catalog(items):
     """items: (name, number, description); each may be (en, tr)."""
     def s(v):
-        return T(*v) if isinstance(v, tuple) else v
+        value = T(*v) if isinstance(v, tuple) else v
+        if shell.LANG == 'tr' and isinstance(value, str):
+            import re
+            if re.fullmatch(r'\d{1,3}(,\d{3})+', value):
+                return value.replace(',', '.')
+        return value
     body = "\n".join(
         f'  <div><div class="c"><strong>{s(n)}</strong><span class="n">{s(v)}</span></div>'
         f'<p>{s(d)}</p></div>' for n, v, d in items
@@ -59,13 +64,13 @@ LEAD = {
     "edition": ("Portfolio / 2026", "Portfolyo / 2026"),
     "deck": ("I build AI systems that are measured before they are trusted.",
              "Güvenilmeden önce ölçülen yapay zekâ sistemleri kuruyorum."),
-    "lede": ("Ten systems along one line of work: <strong>LLM evaluation in production</strong>, "
-             "deterministic benchmarks, a GPT built from scratch, agent skills, guarded tool "
+    "lede": ("Twelve systems along one line of work: <strong>LLM evaluation in production</strong>, "
+             "deterministic benchmarks, a GPT-2 124M implementation, agent skills, guarded tool "
              "execution, an urban digital twin with a grounded assistant, simulation, reproducible "
              "data preparation and decision delivery. Open work links to something you can inspect; "
              "client work is described from its own records.",
-             "Tek bir çalışma çizgisinde on sistem: <strong>üretimde LLM değerlendirme</strong>, "
-             "deterministik kıyaslamalar, sıfırdan kurulan bir GPT, ajan skill'leri, korumalı araç "
+             "Tek bir çalışma çizgisinde on iki sistem: <strong>üretimde LLM değerlendirme</strong>, "
+             "deterministik kıyaslamalar, 124M parametreli GPT-2 uygulaması, ajan skill'leri, korumalı araç "
              "yürütme, veriye dayanan asistanıyla bir kentsel dijital ikiz, simülasyon, yeniden "
              "üretilebilir veri hazırlığı ve karar teslimi. Açık işler inceleyebileceğiniz bir şeye "
              "bağlanıyor; müşteri işi kendi kayıtlarından anlatılıyor."),
@@ -74,25 +79,21 @@ LEAD = {
     "focus_v": ("LLM evaluation, agent systems, MCP tooling, applied ML",
                 "LLM değerlendirme, ajan sistemleri, MCP araçları, uygulamalı ML"),
     "shipped": ("Shipped", "Yayınlanan"),
-    "shipped_v": ("2 PyPI packages, 1 DOI release, 2 live products",
-                  "2 PyPI paketi, 1 DOI sürümü, 2 canlı ürün"),
+    "shipped_v": ("2 PyPI packages · Glama A · 2 Awesome lists",
+                  "2 PyPI paketi · Glama A · 2 Awesome listesi"),
     "method": ("Method", "Yöntem"),
     "method_v": ("Invariants first, failure modes second, artifact last",
                  "Önce değişmezler, sonra hata kipleri, en son çıktı"),
     "based": ("Based", "Konum"),
     "based_v": ("Türkiye · open to collaboration", "Türkiye · iş birliğine açık"),
     "systems": ("Systems", "Sistemler"),
-    "systems_tag": ("10 · open each for diagrams", "10 · diyagramlar için tıklayın"),
+    "systems_tag": ("12 · inspect each system", "12 · her sistemi inceleyin"),
     "f0": ("LLM eval cases built", "Kurulan LLM değerlendirme vakası"),
     "f1": ("Agent skills", "Ajan skill'i"),
-    "f2": ("MCP tools exposed", "Açılan MCP aracı"),
-    "f3": ("Full-route accuracy*", "Tam rota doğruluğu*"),
-    "foot": ("* Routing metrics come from the frozen 18-skill, 167-case suite measured on Claude "
-             "Code 2.1.214 with claude-sonnet-5 (2026-08-05). They describe routing behaviour, not "
-             "answer quality.",
-             "* Yönlendirme metrikleri, Claude Code 2.1.214 ve claude-sonnet-5 üzerinde ölçülen "
-             "dondurulmuş 18 skill / 167 vakalık takımdan gelir (2026-08-05). Cevap kalitesini "
-             "değil, yönlendirme davranışını tanımlar."),
+    "f2": ("Geoprocessing tools", "Coğrafi işlem aracı"),
+    "f3": ("GPT-2 implementation", "GPT-2 uygulaması"),
+    "foot": ("Verified 2 November 2026. Source-linked project pages distinguish shipped products, research results and work in progress.",
+             "2 Kasım 2026’da doğrulandı. Kaynak bağlantılı proje sayfaları yayımlanan ürünleri, araştırma sonuçlarını ve devam eden işleri ayrı belirtir."),
     "behind": ("Behind the systems", "Sistemlerin ardında"),
     "behind_tag": ("method &amp; research", "yöntem ve araştırma"),
     "p_kind": ("How I build", "Nasıl inşa ediyorum"),
@@ -125,7 +126,7 @@ LEAD = {
     "recent": ("Experience", "Deneyim"),
     "recent_tag": ("work · research · education", "iş · araştırma · eğitim"),
     "x_more": ("Read the full case study", "Vaka çalışmasının tamamını oku"),
-    "x_label": ("Aug – Oct 2026", "Ağu – Eki 2026"),
+    "x_label": ("September 2026", "Eylül 2026"),
     "x_title": ("AI Engineer (Contract) · EatBetter",
                 "Yapay Zekâ Mühendisi (Sözleşmeli) · EatBetter"),
     "x_body": (
@@ -189,10 +190,16 @@ LEAD = {
     "e_body": (
         "<p>B.Sc. City and Regional Planning, İzmir Institute of Technology (İYTE), 2021 – June "
         "2027 (expected). B.Sc. Management Information Systems, Istanbul University (AUZEF), "
-        "concurrent second degree, 2022 – 2027 (expected).</p>",
+        "concurrent second degree, 2022 – June 2027 (expected).</p>"
+        "<p>Selected credentials: DataCamp AI Fundamentals certification (March 2026); "
+        "Working with Hugging Face (October 2026), OpenAI API and prompt-engineering courses. "
+        "Claude Academy / Anthropic: Claude 101 and AI Fluency course-completion badges (March 2026).</p>",
         "<p>Şehir ve Bölge Planlama lisansı, İzmir Yüksek Teknoloji Enstitüsü (İYTE), 2021 – "
         "Haziran 2027 (beklenen). Yönetim Bilişim Sistemleri lisansı, İstanbul Üniversitesi "
-        "(AUZEF), eşzamanlı ikinci lisans, 2022 – 2027 (beklenen).</p>"),
+        "(AUZEF), eşzamanlı ikinci lisans, 2022 – Haziran 2027 (beklenen).</p>"
+        "<p>Seçilmiş belgeler: DataCamp AI Fundamentals sertifikasyonu (Mart 2026); "
+        "Working with Hugging Face (Ekim 2026), OpenAI API ve prompt mühendisliği kursları. "
+        "Claude Academy / Anthropic: Claude 101 ve AI Fluency kurs rozetleri (Mart 2026).</p>"),
 }
 
 
@@ -204,6 +211,9 @@ def L(key):
 def build_index():
     rows = []
     for p in PROJECTS:
+        fig_value = p['fig'][0]
+        if shell.LANG == 'tr' and fig_value in ('1,712', '3,257'):
+            fig_value = fig_value.replace(',', '.')
         rows.append(f"""      <a class="prow rv" href="projects/{p['slug']}.html">
         <span class="pno">{p['no']}</span>
         {glyphs.BY_SLUG[p['slug']]}
@@ -213,7 +223,7 @@ def build_index():
           <p>{T(*p['blurb'])}</p>
         </div>
         <div class="prow-fig">
-          <strong>{p['fig'][0]}</strong><span>{T(*p['fig'][1])}</span>
+          <strong>{fig_value}</strong><span>{T(*p['fig'][1])}</span>
         </div>
         <span class="go" aria-hidden="true"><svg viewBox="0 0 16 16" width="13" height="13"><path d="M3 13 13 3M6 3h7v7" fill="none" stroke="currentColor" stroke-width="1.7"/></svg></span>
       </a>""")
@@ -266,7 +276,7 @@ def build_index():
       <div><strong data-count="923">923</strong><span>{L('f0')}</span></div>
       <div><strong data-count="18">18</strong><span>{L('f1')}</span></div>
       <div><strong data-count="100">100</strong><span>{L('f2')}</span></div>
-      <div><strong>96.41%</strong><span>{L('f3')}</span></div>
+      <div><strong>124M</strong><span>{L('f3')}</span></div>
     </div>
 
     <div class="pindex">
@@ -337,10 +347,10 @@ def build_index():
     title = T("Muhammed Enes Duran — AI Engineer · LLM Evaluation · Agent Systems",
               "Muhammed Enes Duran — Yapay Zekâ Mühendisi · LLM Değerlendirme · Ajan Sistemleri")
     desc = T("LLM evaluation in production, deterministic benchmarks, agent skills and MCP "
-             "tooling, a GPT built from scratch, an urban digital twin and applied simulations — "
+             "tooling, a GPT-2 124M implementation, an urban digital twin and applied simulations — "
              "each with inspectable evidence.",
              "Üretimde LLM değerlendirme, deterministik kıyaslamalar, ajan skill'leri ve MCP "
-             "araçları, sıfırdan kurulan bir GPT, bir kentsel dijital ikiz ve uygulamalı "
+             "araçları, 124M parametreli GPT-2 uygulaması, bir kentsel dijital ikiz ve uygulamalı "
              "simülasyonlar — her biri incelenebilir kanıtla.")
     html = (shell.head(title, desc, "projects", "index.html", person=True)
             + body + shell.footer("index.html", contact=True))
@@ -363,6 +373,9 @@ def pager(slug):
 
 
 def project_page(slug, spec_rows, sections):
+    if slug in ('arcgis-mcp-bridge','benchfck'):
+        import currentpages
+        sections = currentpages.recognition(slug) + sections
     p = BY_SLUG[slug]
     page_path = f"projects/{slug}.html"
     r = shell.rel(page_path, shell.LANG)
@@ -410,11 +423,13 @@ def project_page(slug, spec_rows, sections):
 def build_all():
     import pagebodies
     import pagebodies_more
+    import currentpages
     for lang in shell.LANGS:
         shell.LANG = lang
         build_index()
         pagebodies.build()
         pagebodies_more.build()
+        currentpages.build()
     print("built:", sorted(
         str(q.relative_to(ROOT)) for q in ROOT.rglob("*.html") if "build" not in q.parts))
 

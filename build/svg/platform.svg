@@ -1,0 +1,29 @@
+<svg viewBox="0 0 1180 395" role="img" preserveAspectRatio="xMidYMid meet" aria-label="GİRİŞİM HARİTASI / TRACEABLE DATA. 3,257 company profiles · 4,306 source records · 23 collection methods · 2026-11-02 snapshot">
+<text class="d-title" x="20" y="28">GİRİŞİM HARİTASI / TRACEABLE DATA</text>
+<text class="d-sub" x="20" y="55">3,257 company profiles · 4,306 source records · 23 collection methods · 2026-11-02 snapshot</text>
+<path class="d-rule" d="M20 70H1160"/>
+<text class="d-micro" x="20" y="95">01 / COLLECT AND RESOLVE</text>
+<rect class="d-box d-box--g" x="20.0" y="111" width="368.0" height="82"/>
+<text class="d-node" x="204.0" y="143" text-anchor="middle">METHOD CONTRACTS</text>
+<text class="d-sub" x="204.0" y="168" text-anchor="middle">sources / refresh rules</text>
+<path class="d-flow" d="M390.0 152h14"/>
+<rect class="d-box d-box--g" x="406.0" y="111" width="368.0" height="82"/>
+<text class="d-node" x="590.0" y="143" text-anchor="middle">ENTITY RESOLUTION</text>
+<text class="d-sub" x="590.0" y="168" text-anchor="middle">deduplicate / match</text>
+<path class="d-flow" d="M776.0 152h14"/>
+<rect class="d-box d-box--g" x="792.0" y="111" width="368.0" height="82"/>
+<text class="d-node" x="976.0" y="143" text-anchor="middle">PROVENANCE</text>
+<text class="d-sub" x="976.0" y="168" text-anchor="middle">field-level source / date</text>
+<text class="d-micro" x="20" y="245">02 / STORE AND SERVE</text>
+<rect class="d-box d-box--g" x="20.0" y="261" width="368.0" height="82"/>
+<text class="d-node" x="204.0" y="293" text-anchor="middle">POSTGRESQL</text>
+<text class="d-sub" x="204.0" y="318" text-anchor="middle">schema / load pipeline</text>
+<path class="d-flow" d="M390.0 302h14"/>
+<rect class="d-box d-box--g" x="406.0" y="261" width="368.0" height="82"/>
+<text class="d-node" x="590.0" y="293" text-anchor="middle">WORKERS + D1</text>
+<text class="d-sub" x="590.0" y="318" text-anchor="middle">API keys / quotas</text>
+<path class="d-flow" d="M776.0 302h14"/>
+<rect class="d-box d-box--g" x="792.0" y="261" width="368.0" height="82"/>
+<text class="d-node" x="976.0" y="293" text-anchor="middle">WEB + API v1</text>
+<text class="d-sub" x="976.0" y="318" text-anchor="middle">profiles / search / OpenAPI</text>
+</svg>

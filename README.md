@@ -14,8 +14,8 @@ behind every project holding the technical diagrams and specifications.
 index.html              landing — hero, project index, experience, contact
 research.html           academic work
 practice.html           method, capability matrix, system map
-projects/*.html         one page per system (10)
-tr/                     the same thirteen pages in Turkish
+projects/*.html         one page per system (12)
+tr/                     the same fifteen pages in Turkish
 assets/site.css         the whole design system, one file
 assets/site.js          reveal choreography, tabs, diagram dialog, cursor
 assets/brand/           favicon set and web manifest
@@ -76,8 +76,10 @@ just re-run the generator afterwards or your change will be overwritten.
 - **Motion** — staggered scroll reveals, one-shot diagram draw-in, and a reticle cursor on fine
   pointers. All of it is disabled under `prefers-reduced-motion`.
 
-Verified at 1440 / 820 / 390px across all eighteen pages: no console errors, no horizontal
-overflow, no broken internal links, and zero WCAG AA contrast failures.
+`python build/check_site.py` checks all thirty pages for local links/assets, language
+alternates, headings, duplicate IDs and the current project facts. Browser spot checks
+cover the desktop home and mobile home, Plan Forge, Girişim Haritası, neuron-to-gpt
+and GeoAI Skills. These checks are not a new full accessibility audit.
 
 ## Systems
 
@@ -85,19 +87,25 @@ overflow, no broken internal links, and zero WCAG AA contrast failures.
 |---|---|---|
 | 00 | EatBetter | Client work: production LLM evaluation and data quality |
 | 01 | [benchfck](https://github.com/muend/benchfck) | Deterministic evaluation, exact Rust harness |
-| 02 | [neuron-to-gpt](https://github.com/muend/neuron-to-gpt) | Character-level GPT built from one neuron up |
+| 02 | [neuron-to-gpt](https://github.com/muend/neuron-to-gpt) | From scalar autograd to GPT-2 124M, BPE and checked GPU experiments |
 | 03 | [geoai-skills](https://github.com/muend/geoai-skills) | 18-skill GeoAI discipline layer for agents |
 | 04 | [arcgis-mcp-bridge](https://github.com/muend/arcgis-mcp-bridge) | Local-first MCP server for ArcGIS Pro |
 | 05 | Pixel LLM | LLM development game, in development (private) |
-| 06 | PlaceTwin | Urban digital twin and studio platform (private) |
-| 07 | [FOUNDER.EXE](https://muend.itch.io/founderexe) | Applied simulation, Windows |
+| 06 | Mendirek / PlaceTwin | Urban digital twin and studio platform (private) |
+| 07 | FOUNDER.EXE | v1.7 Windows package ready; web demo live |
 | 08 | [sentinel-crop-pipeline](https://github.com/muend/sentinel-crop-pipeline) | Reproducible Sentinel-2 data preparation |
 | 09 | [agri-dss](https://tarimsalkoridor.online) | Spatial decision-support product |
+| 10 | [Girişim Haritası](https://izmir-girisim-haritasi.founderexe.workers.dev) | Source-linked company data, PostgreSQL and APIs |
+| 11 | Plan Forge | Local-first Windows document/report software |
 
 Every figure on the site is transcribed from the project's own repository, package page,
 store listing or, for client work, the engagement's own records. Routing metrics come from the frozen 18-skill, 167-case suite in
 [`geoai-skills/BENCHMARK.md`](https://github.com/muend/geoai-skills/blob/main/BENCHMARK.md)
-(v0.2.0, 2026-08-05) and describe routing behaviour only, not answer quality.
+(2026-08-05) and describe routing behaviour only, not answer quality. The v0.4.1 paired behavior package is reported separately and retains its unmet quality gate.
+
+Updated 2 November 2026: GPT-2 124M, the 1,712-structure Mendirek inventory, Girişim Haritası and Plan Forge; corrected engagement and graduation dates. ArcGIS MCP has Glama TDQS A (3.5/5, score dated 25 Sep 2026); GeoAI Skills appears in Awesome Claude Code and Awesome Geospatial. Smithery links were removed after the service change.
+
+Current case studies live in `build/currentpages.py`; generated HTML remains bilingual. No private repository contents or client reports are published.
 
 ## Contact
 

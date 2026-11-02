@@ -1,0 +1,41 @@
+<svg viewBox="0 0 1180 545" role="img" preserveAspectRatio="xMidYMid meet" aria-label="MENDIREK / PLACETWIN. Ayvalık · 1,712 structures · 669 parcels · 43.6 ha · verified 2026-11-02">
+<text class="d-title" x="20" y="28">MENDIREK / PLACETWIN</text>
+<text class="d-sub" x="20" y="55">Ayvalık · 1,712 structures · 669 parcels · 43.6 ha · verified 2026-11-02</text>
+<path class="d-rule" d="M20 70H1160"/>
+<text class="d-micro" x="20" y="95">01 / SOURCE RECORDS</text>
+<rect class="d-box d-box--g" x="20.0" y="111" width="368.0" height="82"/>
+<text class="d-node" x="204.0" y="143" text-anchor="middle">SURVEY + CADASTRE</text>
+<text class="d-sub" x="204.0" y="168" text-anchor="middle">geometry / parcels</text>
+<path class="d-flow" d="M390.0 152h14"/>
+<rect class="d-box d-box--g" x="406.0" y="111" width="368.0" height="82"/>
+<text class="d-node" x="590.0" y="143" text-anchor="middle">FIELD RECORDS</text>
+<text class="d-sub" x="590.0" y="168" text-anchor="middle">source / confidence</text>
+<path class="d-flow" d="M776.0 152h14"/>
+<rect class="d-box d-box--g" x="792.0" y="111" width="368.0" height="82"/>
+<text class="d-node" x="976.0" y="143" text-anchor="middle">TERRAIN + NETWORKS</text>
+<text class="d-sub" x="976.0" y="168" text-anchor="middle">water / wastewater</text>
+<text class="d-micro" x="20" y="245">02 / WORKING TWIN</text>
+<rect class="d-box d-box--g" x="20.0" y="261" width="368.0" height="82"/>
+<text class="d-node" x="204.0" y="293" text-anchor="middle">3D + GIS</text>
+<text class="d-sub" x="204.0" y="318" text-anchor="middle">CRS-aware geometry</text>
+<path class="d-flow" d="M390.0 302h14"/>
+<rect class="d-box d-box--g" x="406.0" y="261" width="368.0" height="82"/>
+<text class="d-node" x="590.0" y="293" text-anchor="middle">ANALYSIS</text>
+<text class="d-sub" x="590.0" y="318" text-anchor="middle">sun / view / infrastructure</text>
+<path class="d-flow" d="M776.0 302h14"/>
+<rect class="d-box d-box--g" x="792.0" y="261" width="368.0" height="82"/>
+<text class="d-node" x="976.0" y="293" text-anchor="middle">TEAM + ASSISTANT</text>
+<text class="d-sub" x="976.0" y="318" text-anchor="middle">shared work / tool calls</text>
+<text class="d-micro" x="20" y="395">03 / DELIVERY</text>
+<rect class="d-box d-box--g" x="20.0" y="411" width="368.0" height="82"/>
+<text class="d-node" x="204.0" y="443" text-anchor="middle">WEB STUDIO</text>
+<text class="d-sub" x="204.0" y="468" text-anchor="middle">three.js / Node</text>
+<path class="d-flow" d="M390.0 452h14"/>
+<rect class="d-box d-box--g" x="406.0" y="411" width="368.0" height="82"/>
+<text class="d-node" x="590.0" y="443" text-anchor="middle">PERSISTENCE</text>
+<text class="d-sub" x="590.0" y="468" text-anchor="middle">Cloudflare Pages / D1</text>
+<path class="d-flow" d="M776.0 452h14"/>
+<rect class="d-box d-box--g" x="792.0" y="411" width="368.0" height="82"/>
+<text class="d-node" x="976.0" y="443" text-anchor="middle">EXPORTS</text>
+<text class="d-sub" x="976.0" y="468" text-anchor="middle">TUREF / TM27 + reports</text>
+</svg>

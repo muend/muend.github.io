@@ -1,0 +1,41 @@
+<svg viewBox="0 0 1180 545" role="img" preserveAspectRatio="xMidYMid meet" aria-label="ONE NEURON → GPT-2 124M. 124,439,808 unique parameters · implementation and training checks reported separately">
+<text class="d-title" x="20" y="28">ONE NEURON → GPT-2 124M</text>
+<text class="d-sub" x="20" y="55">124,439,808 unique parameters · implementation and training checks reported separately</text>
+<path class="d-rule" d="M20 70H1160"/>
+<text class="d-micro" x="20" y="95">01 / BUILD THE FOUNDATIONS</text>
+<rect class="d-box d-box--g" x="20.0" y="111" width="368.0" height="82"/>
+<text class="d-node" x="204.0" y="143" text-anchor="middle">W1–2 · AUTOGRAD</text>
+<text class="d-sub" x="204.0" y="168" text-anchor="middle">scalar derivatives</text>
+<path class="d-flow" d="M390.0 152h14"/>
+<rect class="d-box d-box--g" x="406.0" y="111" width="368.0" height="82"/>
+<text class="d-node" x="590.0" y="143" text-anchor="middle">W3–6 · LANGUAGE MODELS</text>
+<text class="d-sub" x="590.0" y="168" text-anchor="middle">manual backpropagation</text>
+<path class="d-flow" d="M776.0 152h14"/>
+<rect class="d-box d-box--g" x="792.0" y="111" width="368.0" height="82"/>
+<text class="d-node" x="976.0" y="143" text-anchor="middle">W7–8 · TRANSFORMER</text>
+<text class="d-sub" x="976.0" y="168" text-anchor="middle">character-level GPT</text>
+<text class="d-micro" x="20" y="245">02 / TOKENIZATION AND GPT-2</text>
+<rect class="d-box d-box--g" x="20.0" y="261" width="368.0" height="82"/>
+<text class="d-node" x="204.0" y="293" text-anchor="middle">W9 · BYTE-LEVEL BPE</text>
+<text class="d-sub" x="204.0" y="318" text-anchor="middle">cl100k_base compatibility</text>
+<path class="d-flow" d="M390.0 302h14"/>
+<rect class="d-box d-box--g" x="406.0" y="261" width="368.0" height="82"/>
+<text class="d-node" x="590.0" y="293" text-anchor="middle">W10 · GPT-2</text>
+<text class="d-sub" x="590.0" y="318" text-anchor="middle">pretrained weight import</text>
+<path class="d-flow" d="M776.0 302h14"/>
+<rect class="d-box d-box--g" x="792.0" y="261" width="368.0" height="82"/>
+<text class="d-node" x="976.0" y="293" text-anchor="middle">FP32 LOGITS PARITY</text>
+<text class="d-sub" x="976.0" y="318" text-anchor="middle">checked against reference</text>
+<text class="d-micro" x="20" y="395">03 / MATCHED FIXED-BATCH DIAGNOSTIC</text>
+<rect class="d-box d-box--g" x="20.0" y="411" width="368.0" height="82"/>
+<text class="d-node" x="204.0" y="443" text-anchor="middle">A100 · BF16</text>
+<text class="d-sub" x="204.0" y="468" text-anchor="middle">300 actual updates</text>
+<path class="d-flow" d="M390.0 452h14"/>
+<rect class="d-box d-box--g" x="406.0" y="411" width="368.0" height="82"/>
+<text class="d-node" x="590.0" y="443" text-anchor="middle">T4 · FP16</text>
+<text class="d-sub" x="590.0" y="468" text-anchor="middle">300 actual updates</text>
+<path class="d-flow" d="M776.0 452h14"/>
+<rect class="d-box d-box--g" x="792.0" y="411" width="368.0" height="82"/>
+<text class="d-node" x="976.0" y="443" text-anchor="middle">SCOPE</text>
+<text class="d-sub" x="976.0" y="468" text-anchor="middle">not full-corpus pretraining</text>
+</svg>

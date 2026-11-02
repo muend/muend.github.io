@@ -127,4 +127,6 @@ BY_SLUG = {
     "sentinel-crop-pipeline": SENTINEL,
     "agri-dss": AGRI_DSS,
     "founder-exe": FOUNDER,
+    "girisim-haritasi": SENTINEL,
+    "plan-forge": FOUNDER,
 }
