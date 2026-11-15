@@ -83,7 +83,7 @@
   <div><span class="k">Tools</span><span class="v">100 across 10 verticals</span></div>
   <div><span class="k">Requires</span><span class="v">Python 3.11+ · ArcGIS Pro 3.7 runtime verified</span></div>
   <div><span class="k">Platform</span><span class="v">Windows, with a licensed ArcGIS Pro install</span></div>
-  <div><span class="k">Tests</span><span class="v">86 offline, ArcPy mocked</span></div>
+  <div><span class="k">Tests</span><span class="v">128 offline, ArcPy mocked</span></div>
 </div>
       <div class="plinks">
           <a class="btn btn--solid" href="https://github.com/muend/arcgis-mcp-bridge" target="_blank" rel="noopener"><span>Repository</span><svg viewBox="0 0 16 16" aria-hidden="true"><path d="M3 13 13 3M6 3h7v7" fill="none" stroke="currentColor" stroke-width="1.7"/></svg></a>
@@ -101,7 +101,7 @@
   <span class="mono">Distribution & review</span>
   <div>
     <h3>Published, inspectable infrastructure</h3>
-    <p>The package is published on PyPI and listed by Glama. Glama’s Tool Definition Quality Score is <strong>A, 3.5/5</strong> across 103 exposed tools; the scorecard is dated 25 September 2026 and was checked on 2 November. This assesses tool definitions, not GIS result accuracy.</p><p>A separate maintainer-run ArcGIS Pro 3.7 benchmark passes 8/8 runtime and safety cases. The 100 geoprocessing tools, 103 total MCP endpoints, 86 mocked unit tests and 8 runtime cases are separate counts.</p><p><a href="https://glama.ai/mcp/servers/muend/arcgis-mcp-bridge">Glama scorecard</a> · <a href="https://pypi.org/project/arcgis-mcp-bridge/">PyPI</a> · <a href="https://github.com/muend/arcgis-mcp-bridge/tree/main/benchmarks">Runtime evidence</a></p>
+    <p>The package is published on PyPI and listed by Glama. Glama’s Tool Definition Quality Score is <strong>A, 3.5/5</strong> across 103 exposed tools; the scorecard is dated 25 September 2026 and was checked on 2 November. This assesses tool definitions, not GIS result accuracy.</p><p>A separate maintainer-run ArcGIS Pro 3.7 benchmark passes 8/8 runtime and safety cases. The 100 geoprocessing tools, 103 total MCP endpoints, 128 mocked unit tests and 8 runtime cases are separate counts.</p><p><a href="https://glama.ai/mcp/servers/muend/arcgis-mcp-bridge">Glama scorecard</a> · <a href="https://pypi.org/project/arcgis-mcp-bridge/">PyPI</a> · <a href="https://github.com/muend/arcgis-mcp-bridge/tree/main/benchmarks">Runtime evidence</a></p>
   </div>
 </section>
 <section class="prose rv">
@@ -199,7 +199,7 @@
   <span class="mono">Safety</span>
   <div>
     <h3>What PathGuard actually does</h3>
-    <p>Every path-bearing argument is normalised and checked against an allowed root before dispatch, then re-validated inside the worker that holds the licence. Destructive operations sit behind an explicit confirmation gate rather than a flag a model can set on its own.</p><p>The 86-test suite runs with ArcPy mocked, so contributors without a Windows licence can still verify validation, security, licence handling and geoprocessing contracts offline.</p>
+    <p>Every path-bearing argument is normalised and checked against an allowed root before dispatch, then re-validated inside the worker that holds the licence. Destructive operations sit behind an explicit confirmation gate rather than a flag a model can set on its own.</p><p>The 128-test suite runs with ArcPy mocked, so contributors without a Windows licence can still verify validation, security, licence handling and geoprocessing contracts offline.</p>
   </div>
 </section>
 

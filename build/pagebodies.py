@@ -193,8 +193,8 @@ def build():
                                             "Python 3.11+ · ArcGIS Pro 3.7 runtime doğrulandı")),
             (_("Platform", "Platform"), _("Windows, with a licensed ArcGIS Pro install",
                                           "Windows, lisanslı ArcGIS Pro kurulumuyla")),
-            (_("Tests", "Testler"), _("86 offline, ArcPy mocked",
-                                      "86 çevrimdışı test, ArcPy taklit edilmiş")),
+            (_("Tests", "Testler"), _("128 offline, ArcPy mocked",
+                                      "128 çevrimdışı test, ArcPy taklit edilmiş")),
         ],
         sections=f"""
 {shell.prose(_("Why", "Neden"),
@@ -273,12 +273,12 @@ def build():
   _("<p>Every path-bearing argument is normalised and checked against an allowed root before "
     "dispatch, then re-validated inside the worker that holds the licence. Destructive operations "
     "sit behind an explicit confirmation gate rather than a flag a model can set on its own.</p>"
-    "<p>The 86-test suite runs with ArcPy mocked, so contributors without a Windows licence can "
+    "<p>The 128-test suite runs with ArcPy mocked, so contributors without a Windows licence can "
     "still verify validation, security, licence handling and geoprocessing contracts offline.</p>",
     "<p>Yol içeren her argüman gönderimden önce normalleştirilir ve izin verilen kök dizine karşı "
     "denetlenir; ardından lisansı tutan işçi sürecinin içinde yeniden doğrulanır. Yıkıcı işlemler, "
     "modelin kendi başına ayarlayabileceği bir bayrağın değil, açık bir onay kapısının arkasındadır.</p>"
-    "<p>86 testlik takım ArcPy taklit edilerek çalışır; böylece Windows lisansı olmayan katkıcılar "
+    "<p>128 testlik takım ArcPy taklit edilerek çalışır; böylece Windows lisansı olmayan katkıcılar "
     "da doğrulama, güvenlik, lisans işleme ve coğrafi işlem sözleşmelerini çevrimdışı "
     "sınayabilir.</p>"))}
 """)
